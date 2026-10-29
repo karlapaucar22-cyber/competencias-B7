@@ -1,5 +1,5 @@
 // publico/js/modulos/admin-ia.js
-// Estado de Google Gemini (configurado en el .env del servidor), prueba de conexión y modelos
+// Estado de Google Gemini (variables del servidor), prueba de conexión y modelos
 
 import { montarPlantilla } from '../nucleo/plantilla.js';
 import * as api from '../nucleo/api.js';
@@ -15,10 +15,10 @@ function pintar(c) {
   config = c;
   const clave = $('estadoClave');
   clave.classList.toggle('ia-sin-clave', !c.claveConfigurada);
-  clave.textContent = c.claveConfigurada ? `${c.claveMascara} (desde .env)` : 'Sin configurar: falta GEMINI_API_KEY en .env';
+  clave.textContent = c.claveConfigurada ? `${c.claveMascara} (variable protegida del servidor)` : 'Sin configurar: falta GEMINI_API_KEY en el servidor';
   const modelo = $('estadoModelo');
   modelo.classList.toggle('ia-sin-clave', !c.modeloConfigurado);
-  modelo.textContent = c.modelo || 'Sin configurar: falta IA_MODELO en .env';
+  modelo.textContent = c.modelo || 'Sin configurar: falta IA_MODELO en el servidor';
   $('estadoAlterno').textContent = c.modeloAlterno || 'Ninguno';
   $('btnProbar').disabled = !c.claveConfigurada || !c.modeloConfigurado;
   $('btnModelos').disabled = !c.claveConfigurada;
@@ -59,7 +59,7 @@ async function verModelos() {
     const configurados = [config.modelo, config.modeloAlterno].filter(Boolean);
     $('estadoModelosConfigurados').textContent = configurados.length
       ? configurados.map((id) => `${id}: ${disponibles.has(id) ? '✔ disponible' : '✖ no disponible para esta clave'}`).join(' · ')
-      : 'No hay modelos configurados en .env.';
+      : 'No hay modelos configurados en las variables del servidor.';
     $('listaDisponibles').replaceChildren(...modelos.map((m) => {
       const li = document.createElement('li');
       li.className = `chip${configurados.includes(m.id) ? ' ia-modelo--actual' : ''}`;

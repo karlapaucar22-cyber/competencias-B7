@@ -3,8 +3,38 @@
 
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
-import { rellenar, separar, extraerJson, temperaturaDe, formatoDe, ejecutarTarea } from '../servidor/ia.js';
+import { rellenar, separar, extraerJson, temperaturaDe, formatoDe, ejecutarTarea, configuracion, configuracionPublica } from '../servidor/ia.js';
 import { validarSalida } from '../servidor/esquemas-ia.js';
+
+describe('configuración de Gemini', () => {
+  test('lee las variables de proceso de Render sin depender de un archivo .env', () => {
+    const anterior = {
+      clave: process.env.GEMINI_API_KEY,
+      modelo: process.env.IA_MODELO,
+      alterno: process.env.IA_MODELO_ALTERNO
+    };
+    try {
+      process.env.GEMINI_API_KEY = 'clave-solo-para-prueba';
+      process.env.IA_MODELO = 'models/gemini-3.5-flash-lite';
+      process.env.IA_MODELO_ALTERNO = 'gemini-3.8-flash';
+      assert.deepEqual(configuracion(), {
+        proveedor: 'gemini', clave: 'clave-solo-para-prueba',
+        modelo: 'gemini-3.5-flash-lite', modeloAlterno: 'gemini-3.8-flash'
+      });
+      const publica = configuracionPublica();
+      assert.equal(publica.origen, 'variables de entorno del servidor');
+      assert.equal(publica.claveConfigurada, true);
+      assert.ok(!JSON.stringify(publica).includes('clave-solo-para-prueba'));
+    } finally {
+      for (const [nombre, valor] of Object.entries({
+        GEMINI_API_KEY: anterior.clave, IA_MODELO: anterior.modelo, IA_MODELO_ALTERNO: anterior.alterno
+      })) {
+        if (valor === undefined) delete process.env[nombre];
+        else process.env[nombre] = valor;
+      }
+    }
+  });
+});
 
 describe('rellenar (marcadores {{clave}})', () => {
   test('reemplaza claves y deja vacías las que faltan', () => {

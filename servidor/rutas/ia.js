@@ -1,5 +1,5 @@
 // servidor/rutas/ia.js
-// Rutas de IA: estado de la configuración (.env), prueba de conexión y ejecución de tareas
+// Rutas de IA: estado de las variables del servidor, prueba de conexión y ejecución de tareas
 
 import { Router } from 'express';
 import * as almacen from '../almacen.js';
@@ -41,7 +41,7 @@ function responderError(res, err) {
 }
 
 /**
- * GET /api/ia/configuracion (admin) · proveedor, modelos y clave enmascarada (se configuran en .env)
+ * GET /api/ia/configuracion (admin) · proveedor, modelos y clave enmascarada
  */
 router.get('/ia/configuracion', exigirRol('admin'), (req, res) => {
   res.json(ia.configuracionPublica());

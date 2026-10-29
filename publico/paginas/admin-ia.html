@@ -43,11 +43,11 @@
 
       <section class="tarjeta" aria-labelledby="tituloCambiar">
         <h2 id="tituloCambiar" class="ia-seccion-titulo">Cómo cambiar la clave o el modelo</h2>
-        <p class="ia-ayuda">Por seguridad, la clave no se guarda ni se muestra en el navegador: se configura en el archivo <code>.env</code> del servidor (que no se sube al repositorio).</p>
+        <p class="ia-ayuda">Por seguridad, la clave no se guarda ni se muestra en el navegador: se configura como variable protegida del servidor y nunca se sube al repositorio.</p>
         <ol class="ia-pasos">
-          <li>Abre el archivo <code>.env</code> en la carpeta del proyecto.</li>
-          <li>Edita <code>GEMINI_API_KEY=</code> (clave de Google AI Studio), <code>IA_MODELO=</code> y, si quieres un respaldo, <code>IA_MODELO_ALTERNO=</code>. Usa «Ver modelos de mi clave» para elegir un nombre válido.</li>
-          <li>Reinicia el servidor (<code>npm start</code>) y pulsa «Probar conexión».</li>
+          <li>En Render, abre el servicio y entra en <strong>Environment</strong>.</li>
+          <li>Agrega <code>GEMINI_API_KEY</code> como secreto y configura <code>IA_MODELO=gemini-3.5-flash-lite</code>. El modelo alterno es opcional.</li>
+          <li>Guarda los cambios, espera el nuevo despliegue y pulsa «Probar conexión». En desarrollo local se pueden definir las mismas variables en <code>.env</code>.</li>
         </ol>
       </section>
     </div>

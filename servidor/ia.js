@@ -95,7 +95,7 @@ export function configuracionPublica() {
   const { clave, ...resto } = configuracion();
   return {
     ...resto,
-    origen: '.env',
+    origen: 'variables de entorno del servidor',
     claveConfigurada: Boolean(clave),
     claveMascara: enmascarar(clave),
     modeloConfigurado: Boolean(resto.modelo),
@@ -105,7 +105,7 @@ export function configuracionPublica() {
 
 function exigirConfiguracion(config) {
   if (!config.clave || !config.modelo) {
-    throw errorIa('La IA no está configurada en el servidor: faltan GEMINI_API_KEY o IA_MODELO en .env', 503);
+    throw errorIa('La IA no está configurada en el servidor: faltan las variables de entorno GEMINI_API_KEY o IA_MODELO', 503);
   }
 }
 
@@ -201,7 +201,7 @@ export async function generar({ sistema = '', usuario, formato = 'json', histori
 // Modelos de la clave que admiten generateContent
 export async function listarModelos() {
   const config = configuracion();
-  if (!config.clave) throw errorIa('Falta GEMINI_API_KEY en el .env del servidor', 503);
+  if (!config.clave) throw errorIa('Falta la variable de entorno GEMINI_API_KEY en el servidor', 503);
   const datos = await solicitar('models?pageSize=1000', config.clave);
   return (datos.models || [])
     .filter((m) => m.supportedGenerationMethods?.includes('generateContent'))

@@ -4,6 +4,18 @@ Guía paso a paso para publicar el Ecosistema Educativo Digital en un VPS o máq
 un dominio propio y HTTPS. Copia los comandos tal cual; donde veas un texto en MAYÚSCULAS entre `< >`,
 reemplázalo por tu dato.
 
+## Configurar Gemini en Render
+
+Render inyecta las variables en `process.env`; no necesita ni debe recibir el archivo `.env` local.
+
+1. Abre **Render Dashboard → neuroritmo-digital → Environment**.
+2. Añade `GEMINI_API_KEY` con la clave de Google AI Studio y marca el valor como secreto.
+3. Comprueba `IA_MODELO=gemini-3.5-flash-lite`; deja `IA_MODELO_ALTERNO` vacío o usa otro modelo que aparezca en **Ver modelos de mi clave**.
+4. Pulsa **Save Changes** y espera a que termine el despliegue automático de `main`.
+5. Ingresa como administrador, abre **Inteligencia artificial**, pulsa **Ver modelos de mi clave** y después **Probar conexión**. Debe informar conexión correcta y una respuesta que contenga `OK`.
+
+No escribas la clave en `render.yaml`, GitHub, el navegador ni una captura. Si Render indica que la clave no tiene permiso, crea o restringe la clave para Gemini API en Google AI Studio y vuelve a guardarla.
+
 ## Antes de empezar
 - Un servidor Ubuntu 22.04 o 24.04 (mínimo 1 vCPU, 1 GB de RAM y 10 GB de disco) con acceso por SSH.
 - Un dominio con dos registros DNS tipo **A** apuntando a la IP pública del servidor:
