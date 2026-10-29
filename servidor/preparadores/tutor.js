@@ -10,7 +10,10 @@ export const MAX_TURNOS = 10;       // últimos mensajes considerados
 const MAX_TERMINOS = 30;            // términos del glosario en el contenido
 const MAX_VALOR = 6000;             // ia.rellenar recorta cada {{clave}} a 6.000 caracteres
 const ROLES = { estudiante: 'Estudiante', tutor: 'Tutor' };
-const ACTIVIDADES = new Set(['tema', 'explora', 'autodiagnostico', 'canciones', 'agenda', 'foro', 'juego', 'mision', 'general']);
+const ACTIVIDADES = new Set([
+  'tema', 'explora', 'autodiagnostico', 'canciones', 'agenda', 'foro', 'mision', 'general',
+  'ahorcado', 'parejas', 'crucigrama', 'sopa-letras', 'quiz', 'simulador'
+]);
 
 function rechazar(mensaje, estado) {
   const err = new Error(mensaje);
@@ -35,6 +38,10 @@ export async function temaDelUsuario(usuario, temaId) {
   const visible = tema && (tema.estado === 'publicado' || usuario.rol !== 'estudiante');
   if (!asignatura || !visible) rechazar('Tema no encontrado', 404);
   if (!suyas.has(asignatura.id)) rechazar('No tienes acceso a este tema', 403);
+  const experiencia = await almacen.leerConfig('neuroritmo');
+  if (asignatura.id !== experiencia.asignaturaId) {
+    rechazar('Neuri acompaña exclusivamente los contenidos de NeuroRitmo: Misión Cerebro Sonoro', 403);
+  }
   return { tema, asignatura };
 }
 

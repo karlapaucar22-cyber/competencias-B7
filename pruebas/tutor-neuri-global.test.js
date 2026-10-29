@@ -20,6 +20,20 @@ test('NR-08.3C · detecta temas, misiones e ítems y pide orientación contextua
   assert.match(global, /h2\[id\^="titulo-"\]/);
   assert.match(global, /contexto: \{ misionId: contexto\.misionId, itemId: contexto\.itemId, actividad: contexto\.actividad \}/);
   assert.match(global, /Necesito otra pista/);
+  assert.match(global, /unidad\.asignaturaId === experiencia\?\.asignaturaId/);
+  assert.match(global, /permitidos\.has\(mensaje\.temaId\)/);
+  assert.match(global, /'parejas', 'm2'/);
+});
+
+test('NR-09.4 · Neuri excluye DigCompEdu y conserva el foco de las tres misiones', () => {
+  const prompt = leer('../servidor/prompts/tutor.txt');
+  const pagina = leer('../publico/js/modulos/tutor.js');
+  assert.match(prompt, /Detectives de la atención/);
+  assert.match(prompt, /Laboratorio de la memoria/);
+  assert.match(prompt, /Crea tu misión musical/);
+  assert.match(prompt, /DigCompEdu/);
+  assert.match(pagina, /asignaturaIds: \[experiencia\.asignaturaId\]/);
+  assert.match(pagina, /temaIds\.includes\(mensaje\.temaId\)/);
 });
 
 test('NR-08.3C · el historial es privado de la sesión y no toca calificaciones', () => {

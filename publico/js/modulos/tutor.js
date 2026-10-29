@@ -24,6 +24,7 @@ let tema = null;
 let historial = leerHistorialTutor();
 let enviando = false;
 let agotado = false;
+let opcionesNeuroRitmo = {};
 
 function crear(tag, clase = '', texto = '') {
   const nodo = document.createElement(tag);
@@ -167,7 +168,7 @@ async function pintarTema() {
 }
 
 async function cambiarTema() {
-  const elegido = await obtenerTemaActividad({ forzarModal: true });
+  const elegido = await obtenerTemaActividad({ ...opcionesNeuroRitmo, forzarModal: true });
   if (!elegido?.id) return;
   tema = elegido;
   history.replaceState(null, '', `?temaId=${encodeURIComponent(tema.id)}`);
@@ -177,7 +178,24 @@ async function cambiarTema() {
 }
 
 async function iniciar() {
-  tema = await obtenerTemaActividad();
+  const [respuestaNeuro, unidades, temas] = await Promise.all([
+    api.llamar('GET', '/api/neuroritmo'), api.listar('unidades'), api.listar('temas')
+  ]);
+  const experiencia = respuestaNeuro.experiencia;
+  const unidadesNeuro = new Set((unidades || [])
+    .filter((unidad) => unidad.asignaturaId === experiencia.asignaturaId)
+    .map((unidad) => unidad.id));
+  const temaIds = (temas || [])
+    .filter((item) => item.estado === 'publicado' && unidadesNeuro.has(item.unidadId))
+    .map((item) => item.id);
+  const predeterminado = experiencia.misiones?.[0]?.temaId || temaIds[0];
+  opcionesNeuroRitmo = { asignaturaIds: [experiencia.asignaturaId], temaIds, temaIdPredeterminado: predeterminado };
+  const solicitado = new URL(location.href).searchParams.get('temaId');
+  if (solicitado && !temaIds.includes(solicitado)) {
+    history.replaceState(null, '', `?temaId=${encodeURIComponent(predeterminado)}`);
+  }
+  historial = guardarHistorialTutor(historial.filter((mensaje) => temaIds.includes(mensaje.temaId)));
+  tema = await obtenerTemaActividad(opcionesNeuroRitmo);
   if (!tema) {
     $('tutorEstado').textContent = 'Elige un tema para conversar con el tutor. Puedes entrar desde la página de un tema con "Pregunta al tutor".';
     return;

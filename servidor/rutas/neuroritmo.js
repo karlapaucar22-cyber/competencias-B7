@@ -105,6 +105,7 @@ function itemPublico(i) {
 
 export function versionPublica(e, cancionPrincipal = null) {
   return {
+    asignaturaId: e.asignaturaId,
     titulo: e.titulo, narrativa: e.narrativa, objetivo: e.objetivo, duracion: e.duracion, reglasJuego: e.reglasJuego,
     aprobacion: e.aprobacion, logroTotal: e.logroTotal, justificacionValidaM3: e.justificacionValidaM3, reglas: reglasPublicas(e.reglas || reglas.normalizarReglas()), recursos: e.recursos, cancionPrincipal, galeria: { titulo: e.galeria?.titulo || '' },
     // Uso progresivo de Neuri por misión (sin notas internas)

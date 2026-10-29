@@ -83,6 +83,12 @@ describe('NR-08.3C · tutor socrático contextual', () => {
     assert.equal(preparado.__control.maxFrases, 4);
   });
 
+  test('el servidor rechaza temas ajenos a NeuroRitmo aunque el estudiante tenga acceso', async () => {
+    await assert.rejects(prepararTutor({
+      temaId: 'tem_000006', contexto: { actividad: 'tema' }, historial: [est('¿Qué es DigCompEdu?')]
+    }, { id: 'usu_000009', rol: 'estudiante' }), (error) => error.estado === 403 && /exclusivamente/.test(error.message));
+  });
+
   test('acepta 2–4 frases con una pregunta y rechaza soluciones o respuestas extensas', () => {
     const control = { maxPalabras: 90, minFrases: 2, maxFrases: 4, preguntas: 1 };
     const valida = 'Pensemos en la demanda verbal de la tarea. ¿Qué podría competir con las palabras del texto?';

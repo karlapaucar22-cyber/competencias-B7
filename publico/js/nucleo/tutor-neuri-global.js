@@ -15,13 +15,14 @@ const RUTA_ACTIVIDAD = {
   '/paginas/explorar.html': ['explora', 'm1'],
   '/paginas/autodiagnostico-musical.html': ['autodiagnostico', 'm1'],
   '/paginas/recurso-neurociencia.html': ['tema', 'm1'],
+  '/paginas/tema.html': ['tema', ''],
   '/paginas/canciones.html': ['canciones', 'm2'],
-  '/paginas/pareja.html': ['juego', 'm2'],
-  '/paginas/ahorcado.html': ['juego', 'm1'],
-  '/paginas/crucigrama.html': ['juego', 'm1'],
-  '/paginas/sopa-letras.html': ['juego', 'm1'],
-  '/paginas/quiz.html': ['juego', 'm1'],
-  '/paginas/simulador.html': ['juego', 'm1'],
+  '/paginas/pareja.html': ['parejas', 'm2'],
+  '/paginas/ahorcado.html': ['ahorcado', 'm1'],
+  '/paginas/crucigrama.html': ['crucigrama', 'm1'],
+  '/paginas/sopa-letras.html': ['sopa-letras', 'm1'],
+  '/paginas/quiz.html': ['quiz', 'm1'],
+  '/paginas/simulador.html': ['simulador', 'm1'],
   '/paginas/agenda.html': ['agenda', 'm3'],
   '/paginas/foros.html': ['foro', 'm3'],
   '/paginas/hilo.html': ['foro', 'm3']
@@ -108,7 +109,7 @@ export async function montarTutorNeuriGlobal({ raiz } = {}) {
     const url = new URL(location.href);
     const ruta = url.pathname === '/' ? '/index.html' : url.pathname;
     const hashMision = /^#mision-(m[1-3])$/.exec(url.hash)?.[1];
-    const [actividadRuta = 'general', misionRuta = ''] = RUTA_ACTIVIDAD[ruta] || [];
+    const [actividadRuta = '', misionRuta = ''] = RUTA_ACTIVIDAD[ruta] || [];
     const misionId = hashMision || (ruta === '/index.html' && url.hash === '#actividad' ? leerContextoGuardado()?.misionId : '') || misionRuta;
     const mision = misionPorId(misionId);
     const explicito = url.searchParams.get('temaId') || (ruta.endsWith('/tema.html') ? url.searchParams.get('id') : '');
@@ -117,7 +118,7 @@ export async function montarTutorNeuriGlobal({ raiz } = {}) {
     const tema = candidatos.map((id) => temas.find((t) => t.id === id)).find(Boolean) || null;
     const itemId = ruta === '/index.html' ? document.querySelector('#vista h2[id^="titulo-"]')?.id.replace('titulo-', '') || '' : '';
     const tituloItem = itemId ? document.getElementById(`titulo-${itemId}`)?.textContent?.trim() : '';
-    const actividad = mision ? 'mision' : actividadRuta;
+    const actividad = actividadRuta || (mision ? 'mision' : 'general');
     const etiqueta = [mision ? `Misión ${mision.numero}: ${mision.titulo}` : '', tituloItem, !mision && tema ? tema.titulo : ''].filter(Boolean).join(' · ');
     return { temaId: tema?.id || '', tituloTema: tema?.titulo || '', misionId: mision?.id || '', itemId, actividad, etiqueta: etiqueta || 'Contenido general de NeuroRitmo' };
   }
@@ -215,11 +216,18 @@ export async function montarTutorNeuriGlobal({ raiz } = {}) {
   });
 
   try {
-    [temas, experiencia] = await Promise.all([
+    const [todosTemas, respuestaNeuro, unidades] = await Promise.all([
       api.listar('temas'),
-      api.llamar('GET', '/api/neuroritmo').then((r) => r.experiencia).catch(() => null)
+      api.llamar('GET', '/api/neuroritmo').catch(() => null),
+      api.listar('unidades')
     ]);
-    temas = (temas || []).filter((tema) => tema.estado === 'publicado');
+    experiencia = respuestaNeuro?.experiencia || null;
+    const unidadesNeuro = new Set((unidades || [])
+      .filter((unidad) => unidad.asignaturaId === experiencia?.asignaturaId)
+      .map((unidad) => unidad.id));
+    temas = (todosTemas || []).filter((tema) => tema.estado === 'publicado' && unidadesNeuro.has(tema.unidadId));
+    const permitidos = new Set(temas.map((tema) => tema.id));
+    historial = guardarHistorialTutor(historial.filter((mensaje) => permitidos.has(mensaje.temaId)));
   } catch (error) {
     pie.textContent = `Neuri no pudo cargar el contexto: ${error.message}`;
   }
@@ -241,4 +249,3 @@ export function abrirTutorNeuriGlobal() {
   abrirAvatar();
   document.querySelector('.avatar-tutor textarea:not(:disabled)')?.focus();
 }
-
