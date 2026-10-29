@@ -559,4 +559,6 @@ Ejecutada en el navegador (Edge sin ventana, 360 px) con **estudiante2** y **doc
 - Respaldo previo autorizado: `datos/respaldos/produccion-2026-10-29T02-20-46-720Z/` (ignorado por Git; contiene solo colecciones que la API administrativa permite consultar y no incluye claves ni tokens).
 - Se preparó una fusión idempotente por identificador: conserva registros existentes, agrega ausentes, une matrículas sin duplicarlas y aplica una sola vez la corrección versionada de usuarios.
 - Prueba aislada: 10 usuarios, 7 unidades, 14 temas, 34 preguntas, Karla Paucar como docente y 8 estudiantes visibles. El progreso sobrevivió a un reinicio y a un segundo checkout usando el mismo disco.
-- Estado: **PENDIENTE DE VERIFICACIÓN EN PRODUCCIÓN** hasta desplegar el commit y configurar un disco persistente con `DISCO=/var/data` en Render.
+- Producción verificada en el commit `985b78c994bc`: 10 usuarios, 2 asignaturas, 2 grupos, 7 unidades, 14 temas administrativos, 34 preguntas, 3 misiones y 8 estudiantes en NeuroRitmo.
+- Recorrido Chrome con `usu_000009`: 2 asignaturas, 12 temas publicados (2 permanecen protegidos por estado/visibilidad), 2 subtemas, 2 foros, 3 tarjetas de misión y Participantes adaptable a 360 px, sin errores de consola.
+- Estado: **SINCRONIZACIÓN DE CONTENIDOS VERIFICADA; PERSISTENCIA E IA PENDIENTES**. Render reporta almacenamiento `efimero` y Gemini devuelve 503 porque falta `GEMINI_API_KEY`. No se declara NR-09.1 completa hasta configurar un disco persistente con `DISCO=/var/data` y comprobar un nuevo despliegue real.
