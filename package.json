@@ -4,6 +4,7 @@
   "description": "Plataforma web educativa para competencias digitales",
   "type": "module",
   "scripts": {
+    "prestart": "node servidor/semilla.js",
     "start": "node servidor/server.js",
     "semilla": "node servidor/semilla.js",
     "crear-admin": "node servidor/crear-admin.js",
