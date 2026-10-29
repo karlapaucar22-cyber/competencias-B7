@@ -1,0 +1,120 @@
+/* publico/css/modulos/tutor.css · Página del tutor IA por tema (reutiliza las burbujas de .tutor__*) */
+
+.tutor-pagina {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+  max-width: 52rem;
+  margin: 0 auto;
+}
+
+.tutor-pagina__nota {
+  margin: 0;
+  font-size: var(--tamano-s);
+  color: var(--color-texto-suave);
+}
+
+.tutor-pagina__nota:empty {
+  display: none;
+}
+
+.tutor-pagina__encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espacio-m);
+  padding: var(--espacio-m) var(--espacio-l);
+  border-radius: var(--radio-l);
+  background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
+  color: var(--color-texto-inverso);
+}
+
+.tutor-pagina__avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  flex-shrink: 0;
+  border-radius: var(--radio-completo);
+  background-color: var(--color-superficie);
+  font-size: var(--tamano-2xl);
+}
+
+.tutor-pagina__identidad {
+  flex: 1 1 14rem;
+  min-width: 0;
+}
+
+.tutor-pagina__eyebrow {
+  margin: 0;
+  font-size: var(--tamano-xs);
+  font-weight: var(--peso-seminegrita);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tutor-pagina__titulo {
+  margin: var(--espacio-xs) 0;
+  font-size: var(--tamano-xl);
+  color: var(--color-texto-inverso);
+  overflow-wrap: anywhere;
+}
+
+.tutor-pagina__encabezado .tutor-pagina__nota {
+  color: var(--color-texto-inverso);
+}
+
+.tutor-pagina__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-s);
+}
+
+.tutor-pagina__acciones .btn--texto {
+  color: var(--color-texto-inverso);
+}
+
+.tutor-pagina__acciones .btn--texto:focus-visible,
+.tutor-pagina__acciones .btn--secundario:focus-visible {
+  outline: 3px solid var(--color-acento);
+  outline-offset: 2px;
+}
+
+.tutor-pagina__chat {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-l);
+  background-color: var(--color-superficie);
+  box-shadow: var(--sombra-1);
+  overflow: hidden;
+}
+
+.tutor-pagina__mensajes {
+  height: min(60vh, 36rem);
+  min-height: 16rem;
+}
+
+.tutor-pagina__mensajes .tutor__mensaje {
+  font-size: var(--tamano-m);
+}
+
+.tutor-pagina__sugerencias[hidden] {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .tutor-pagina__encabezado {
+    padding: var(--espacio-m);
+  }
+
+  .tutor-pagina__mensajes {
+    height: 58vh;
+  }
+
+  .tutor-pagina__mensajes .tutor__mensaje {
+    max-width: 92%;
+  }
+}

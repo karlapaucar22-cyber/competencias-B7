@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matriz de autodiagnóstico musical · NeuroRitmo Digital</title>
+<link rel="stylesheet" href="/css/tokens.css"><link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/componentes.css">
+<link rel="stylesheet" href="/css/modulos/autodiagnostico-musical.css"></head>
+<body><div id="plantilla"></div><main id="contenido" class="contenedor autodiagnostico">
+  <nav class="migas-pan" aria-label="Ruta de navegación">
+    <ol><li><a href="/paginas/explorar.html#seccion-recursos-neuroritmo">Explora y aprende</a></li><li aria-current="page">Matriz de autodiagnóstico musical</li></ol>
+  </nav>
+
+  <header class="tarjeta autodiagnostico__portada">
+    <div>
+      <p class="autodiagnostico__antetitulo">Recurso interactivo · NeuroRitmo Digital</p>
+      <h1>Matriz de autodiagnóstico musical</h1>
+      <p>Compara cómo estudias en distintas condiciones sonoras y registra evidencias sobre atención, memoria y autorregulación. El resultado describe tus respuestas actuales: no es una calificación, un diagnóstico ni una regla sobre qué música debe funcionar.</p>
+    </div>
+    <aside class="alerta alerta--info" role="note">
+      <strong>Fuente recuperada.</strong> Esta versión adapta la matriz incluida en las páginas 34–35 del informe original del proyecto. Conserva sus dos actividades, escala e indicadores observables.
+    </aside>
+  </header>
+
+  <section class="tarjeta" aria-labelledby="matrizOriginalTitulo">
+    <h2 id="matrizOriginalTitulo">Matriz original recuperada</h2>
+    <p>Las valoraciones son una propuesta inicial de autodiagnóstico, no resultados de una evaluación real.</p>
+    <p><strong>Escala:</strong> 1 = nunca o muy poco · 2 = ocasionalmente · 3 = frecuentemente · 4 = sistemáticamente.</p>
+    <div class="autodiagnostico__tabla-contenedor" tabindex="0" aria-label="Tabla desplazable de la matriz original">
+      <table class="autodiagnostico__tabla">
+        <caption>Comparación de dos actividades académicas</caption>
+        <thead><tr><th scope="col">Criterio</th><th scope="col">Actividad 1: lectura y análisis académico</th><th scope="col">Actividad 2: resolución de problemas</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Descripción</th><td>Leer un artículo científico y elaborar una síntesis de sus ideas principales.</td><td>Resolver ejercicios o casos prácticos relacionados con los contenidos de una asignatura.</td></tr>
+          <tr><th scope="row">Tipo de música propuesto</th><td>Música instrumental suave, sin letra y a volumen bajo.</td><td>Música instrumental durante la preparación, con silencio durante los ejercicios más complejos si resulta más favorable.</td></tr>
+          <tr><th scope="row">Función ejecutiva prioritaria</th><td>Atención sostenida y memoria de trabajo.</td><td>Control inhibitorio, atención selectiva y memoria de trabajo.</td></tr>
+          <tr><th scope="row">Objetivo de la estimulación</th><td>Explorar si la música facilita la continuidad de la lectura sin interferir en la comprensión.</td><td>Explorar si la música ayuda a mantener un ritmo de trabajo sin competir con el razonamiento.</td></tr>
+          <tr><th scope="row">Planificación</th><td>Comparar una sesión de lectura en silencio con otra utilizando música instrumental.</td><td>Resolver ejercicios comparables en condiciones de silencio y con música instrumental.</td></tr>
+          <tr><th scope="row">Indicador observable</th><td>Número de interrupciones, ideas identificadas correctamente y calidad de la síntesis.</td><td>Ejercicios resueltos correctamente, tiempo empleado y errores cometidos.</td></tr>
+          <tr><th scope="row">Valoración inicial propuesta</th><td>2/4: uso ocasional o por comprobar.</td><td>2/4: uso ocasional o por comprobar.</td></tr>
+          <tr><th scope="row">Evidencia</th><td>Síntesis escrita y registro breve de concentración percibida.</td><td>Resultados de los ejercicios y registro de errores y distracciones.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="autodiagnostico__nota">La versión interactiva no añade canciones instrumentales que no estén cargadas. Para una prueba dentro de la plataforma compara silencio con la única canción principal disponible y considera que su letra puede competir con tareas verbales.</p>
+  </section>
+
+  <section id="cancionPrincipal" class="tarjeta" aria-labelledby="cancionPrincipalTitulo">
+    <h2 id="cancionPrincipalTitulo">Canción principal para la comparación</h2>
+    <p id="cancionEstado" role="status">Cargando canción principal…</p>
+  </section>
+
+  <form id="formAutodiagnostico" class="autodiagnostico__formulario" novalidate>
+    <section class="tarjeta" aria-labelledby="condicionesTitulo">
+      <h2 id="condicionesTitulo">1. Define la comparación</h2>
+      <fieldset>
+        <legend>Actividad académica</legend>
+        <label class="autodiagnostico__opcion"><input type="radio" name="contexto" value="lectura" required> Lectura y análisis académico</label>
+        <label class="autodiagnostico__opcion"><input type="radio" name="contexto" value="problemas" required> Resolución de problemas</label>
+      </fieldset>
+      <fieldset>
+        <legend>Condición que estás observando</legend>
+        <label class="autodiagnostico__opcion"><input type="radio" name="condicion" value="silencio" required> Silencio</label>
+        <label class="autodiagnostico__opcion"><input type="radio" name="condicion" value="cancion-principal" required> Canción principal del curso</label>
+      </fieldset>
+    </section>
+
+    <section class="tarjeta" aria-labelledby="preguntasTitulo">
+      <h2 id="preguntasTitulo">2. Responde según tu práctica actual</h2>
+      <p>Usa la escala original de 1 a 4. Valora tus hábitos de observación, no cuánto te gusta una canción.</p>
+      <div id="listaPreguntas" class="autodiagnostico__preguntas"></div>
+      <div class="campo">
+        <label for="observacion">Observación personal (opcional)</label>
+        <textarea id="observacion" maxlength="500" rows="4" aria-describedby="ayudaObservacion"></textarea>
+        <p id="ayudaObservacion" class="autodiagnostico__nota">Puedes anotar la tarea, el momento o el indicador que compararás. No incluyas datos personales sensibles.</p>
+      </div>
+      <p id="errorFormulario" class="campo__error" role="alert" hidden></p>
+      <div class="autodiagnostico__acciones">
+        <button type="submit" class="btn btn--primario">Guardar y ver orientación</button>
+        <span id="estadoGuardado" role="status" aria-live="polite"></span>
+      </div>
+    </section>
+  </form>
+
+  <section id="resultadoAutodiagnostico" class="tarjeta" aria-labelledby="resultadoTitulo" tabindex="-1" hidden>
+    <h2 id="resultadoTitulo">Tu resultado orientativo</h2>
+    <p id="resumenResultado"></p>
+    <div id="dimensionesResultado" class="autodiagnostico__dimensiones"></div>
+    <p class="alerta alerta--info">Esta devolución se basa en tu autoinforme. Comprueba el efecto con tareas comparables y no generalices una experiencia individual.</p>
+  </section>
+
+  <section class="tarjeta" aria-labelledby="continuidadTitulo">
+    <h2 id="continuidadTitulo">Continúa en las misiones</h2>
+    <p>La matriz es formativa y no modifica puntuaciones ni desbloqueos.</p>
+    <nav class="autodiagnostico__acciones" aria-label="Vínculos con las misiones">
+      <a class="btn btn--secundario" href="/index.html#mision-m1">Misión 1 · Comparar condiciones</a>
+      <a class="btn btn--secundario" href="/index.html#mision-m2">Misión 2 · Memoria y recuperación</a>
+      <a class="btn btn--primario" href="/index.html#mision-m3">Misión 3 · Diseñar una actividad</a>
+      <a class="btn btn--texto" href="/index.html#mapa">Volver al mapa</a>
+    </nav>
+  </section>
+</main><script type="module" src="/js/modulos/autodiagnostico-musical.js"></script></body></html>

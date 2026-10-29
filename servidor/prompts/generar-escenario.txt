@@ -1,0 +1,17 @@
+Eres un diseñador instruccional experto en {{asignatura}} para el nivel {{nivel}}.
+Creas simulaciones ramificadas realistas y respetuosas, en español de Ecuador.
+Usa el contenido del tema como base conceptual. Responde SOLO con JSON válido.
+### USUARIO
+Tema: {{tema}}
+Contenido:
+{{contenido}}
+Situación propuesta por el docente: {{situacion}}
+
+Crea un escenario de {{escenas}} escenas con esta forma:
+{"titulo": "...", "escenaInicial": "E1",
+ "escenas": [{"id": "E1", "texto": "situación en 2 a 4 oraciones",
+   "opciones": [{"texto": "decisión", "destino": "E2", "puntos": número de -10 a 10,
+                 "consecuencia": "qué ocurre y por qué, en 1 o 2 oraciones"}]}]}
+Reglas: 2 o 3 opciones por escena; al menos 2 finales (escenas con "opciones": []);
+sin ciclos; todas las escenas alcanzables desde E1; las mejores decisiones aplican
+el contenido del tema.

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mensajes · NeuroRitmo Digital</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/componentes.css">
+  <link rel="stylesheet" href="/css/modulos/mensajes.css">
+</head>
+<body>
+  <div id="plantilla"></div>
+  <main id="contenido" class="contenedor">
+    <div id="mensajesApp" class="mensajes-app">
+      <section class="mensajes-lateral" aria-labelledby="tituloMensajes">
+        <div class="mensajes-lateral__cabecera">
+          <h1 id="tituloMensajes" class="mensajes-titulo">Mensajes</h1>
+          <button type="button" id="btnNueva" class="btn btn--primario btn--sm">＋ Nueva conversación</button>
+          <button type="button" id="btnDifusion" class="btn btn--secundario btn--sm" hidden>📣 Mensaje al curso</button>
+        </div>
+        <div class="campo mensajes-buscador">
+          <label for="buscador" class="sr-only">Buscar conversación</label>
+          <input type="search" id="buscador" placeholder="Buscar por nombre..." autocomplete="off">
+        </div>
+        <p id="estadoLista" class="mensajes-nota" role="status">Cargando conversaciones...</p>
+        <ul id="listaConversaciones" class="mensajes-lista" aria-label="Conversaciones"></ul>
+      </section>
+
+      <section id="panelChat" class="mensajes-chat" aria-labelledby="chatNombre">
+        <div id="chatVacio" class="vacio mensajes-chat__vacio">
+          <div class="vacio__icono" aria-hidden="true">💬</div>
+          <h2 class="vacio__titulo">Elige una conversación</h2>
+          <p class="vacio__texto">O empieza una nueva con tus docentes o compañeros.</p>
+        </div>
+
+        <div id="chat" class="mensajes-chat__contenido" hidden>
+          <header class="mensajes-chat__cabecera">
+            <button type="button" id="btnVolver" class="btn btn--texto btn--sm mensajes-volver">← Volver</button>
+            <span id="chatInicial" class="mensajes-avatar" aria-hidden="true"></span>
+            <div class="mensajes-chat__persona">
+              <h2 id="chatNombre" class="mensajes-chat__nombre"></h2>
+              <span id="chatRol" class="mensajes-nota"></span>
+            </div>
+            <button type="button" id="btnBloquear" class="btn btn--texto btn--sm"></button>
+          </header>
+
+          <div id="historial" class="mensajes-historial" tabindex="0" aria-label="Historial de mensajes">
+            <button type="button" id="btnAnteriores" class="btn btn--secundario btn--sm mensajes-anteriores" hidden>Ver anteriores</button>
+            <ol id="listaMensajes" class="mensajes-burbujas" role="log" aria-live="polite" aria-relevant="additions"></ol>
+          </div>
+
+          <p id="avisoBloqueo" class="mensajes-bloqueo" role="status" hidden></p>
+          <form id="formMensaje" class="mensajes-redactor" novalidate>
+            <label for="textoMensaje" class="sr-only">Escribe un mensaje</label>
+            <textarea id="textoMensaje" rows="2" maxlength="2000" placeholder="Escribe un mensaje..." aria-describedby="contadorMensaje ayudaMensaje"></textarea>
+            <div class="mensajes-redactor__pie">
+              <span id="ayudaMensaje" class="mensajes-nota">Enter envía · Mayús + Enter, nueva línea</span>
+              <span id="contadorMensaje" class="mensajes-nota">0 / 2.000</span>
+              <button type="submit" id="btnEnviar" class="btn btn--primario btn--sm">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="/js/modulos/mensajes.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "uni_000001",
+    "asignaturaId": "asi_000001",
+    "titulo": "Neurociencia Sonora y Funciones Cognitivas",
+    "orden": 1,
+    "visible": true,
+    "fecha": "2026-01-15T08:00:00.000Z"
+  },
+  {
+    "id": "uni_000002",
+    "asignaturaId": "asi_000001",
+    "titulo": "Misiones NeuroRitmo: de la evidencia a la práctica",
+    "orden": 2,
+    "visible": true,
+    "fecha": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "uni_000003",
+    "asignaturaId": "asi_000002",
+    "titulo": "Competencia digital docente",
+    "orden": 1,
+    "visible": true,
+    "fecha": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "uni_000004",
+    "asignaturaId": "asi_000002",
+    "titulo": "Gamificación del aprendizaje",
+    "orden": 2,
+    "visible": true,
+    "fecha": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "uni_000005",
+    "asignaturaId": "asi_000002",
+    "titulo": "Inteligencia artificial generativa en educación",
+    "orden": 3,
+    "visible": true,
+    "fecha": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "uni_000006",
+    "asignaturaId": "asi_000002",
+    "titulo": "Del diseño al producto digital",
+    "orden": 4,
+    "visible": true,
+    "fecha": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "asignaturaId": "asi_000001",
+    "titulo": "La Música en la Educación",
+    "orden": 3,
+    "visible": false,
+    "id": "uni_000007",
+    "fecha": "2026-10-27T14:25:16.017Z"
+  }
+]

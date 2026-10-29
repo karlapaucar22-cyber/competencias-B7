@@ -1,0 +1,93 @@
+/* publico/css/modulos/simulaciones.css · Listado de simulaciones por tema */
+
+.simulaciones-app {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+}
+
+.simulaciones-encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--espacio-m);
+  padding-bottom: var(--espacio-m);
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.simulaciones-titulo {
+  margin: 0 0 var(--espacio-xs);
+  font-size: var(--tamano-2xl);
+}
+
+.simulaciones-subtitulo,
+.simulaciones-nota {
+  margin: 0;
+  color: var(--color-texto-suave);
+}
+
+.simulaciones-nota {
+  font-size: var(--tamano-s);
+}
+
+.simulaciones-nota:empty {
+  display: none;
+}
+
+.simulaciones-listado {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-l);
+}
+
+.simulaciones-tema__titulo {
+  margin: 0 0 var(--espacio-xs);
+  font-size: var(--tamano-l);
+}
+
+.simulaciones-tema__asignatura {
+  margin: 0 0 var(--espacio-s);
+  font-size: var(--tamano-s);
+  color: var(--color-texto-suave);
+}
+
+.simulaciones-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: var(--espacio-m);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.simulacion-tarjeta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
+  height: 100%;
+  padding: var(--espacio-m);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-l);
+  background-color: var(--color-superficie);
+  box-shadow: var(--sombra-1);
+}
+
+.simulacion-tarjeta__titulo {
+  margin: 0;
+  font-size: var(--tamano-m);
+  overflow-wrap: anywhere;
+}
+
+.simulacion-tarjeta__etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-xs);
+}
+
+.simulacion-tarjeta__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-s);
+  margin-top: auto;
+}

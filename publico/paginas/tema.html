@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estudio del Tema · NeuroRitmo Digital</title>
+<link rel="stylesheet" href="/css/tokens.css"><link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/componentes.css">
+<link rel="stylesheet" href="/css/modulos/tema.css"></head>
+<body><div id="plantilla"></div><main id="contenido" class="contenedor">
+  <!-- Migas de pan accesibles -->
+  <nav class="migas-pan" aria-label="Ruta de navegación">
+    <ol id="migas-lista">
+      <li><a href="/index.html">Inicio</a></li>
+      <li><a href="/paginas/asignaturas.html">Mis Asignaturas</a></li>
+      <li id="miga-asig"><span style="color: var(--color-texto-suave);">Cargando...</span></li>
+      <li id="miga-uni"></li>
+      <li id="miga-tema" aria-current="page"></li>
+    </ol>
+  </nav>
+
+  <div id="tema-cargando" class="tarjeta" style="text-align: center; padding: var(--espacio-xxl);">
+    <div class="cargando cargando--activo" style="position: static; height: 60px;"></div>
+    <p>Cargando tema de estudio...</p>
+  </div>
+
+  <div id="tema-contenido-estudio" style="display: none;">
+    <!-- Encabezado del tema -->
+    <header class="tarjeta tema-estudio-cabecera">
+      <div class="tema-estudio-cabecera__meta">
+        <span id="badge-dificultad" class="insignia insignia--acento">Dificultad</span>
+        <span id="badge-estado" class="insignia" hidden></span>
+        <span id="badge-revisado-cabecera" class="insignia" style="display: none;"></span>
+      </div>
+
+      <h1 id="tema-titulo-principal" class="tema-estudio-cabecera__titulo">Título del Tema</h1>
+
+      <div class="tema-estudio-cabecera__accion-revisado">
+        <button type="button" id="btn-marcar-revisado" class="btn btn--primario">
+          Marcar como revisado
+        </button>
+      </div>
+    </header>
+
+    <!-- Lección -->
+    <section class="tarjeta tema-seccion-bloque" aria-labelledby="titulo-resumen">
+      <h2 id="titulo-resumen" class="tema-seccion-titulo">Lección</h2>
+      <div id="tema-resumen-cuerpo" class="tema-resumen-cuerpo"></div>
+    </section>
+
+    <!-- Meta de aprendizaje -->
+    <section class="tarjeta tema-seccion-bloque" aria-labelledby="titulo-objetivos">
+      <h2 id="titulo-objetivos" class="tema-seccion-titulo">Meta de aprendizaje</h2>
+      <div id="tema-objetivos-lista" class="tema-listado-items"></div>
+    </section>
+
+    <!-- Ejemplos prácticos -->
+    <section class="tarjeta tema-seccion-bloque" id="seccion-ejemplos" aria-labelledby="titulo-ejemplos" style="display: none;">
+      <h2 id="titulo-ejemplos" class="tema-seccion-titulo">Ejemplo aplicado a lectura y estudio</h2>
+      <div id="tema-ejemplos-lista" class="tema-listado-items"></div>
+    </section>
+
+    <section class="tarjeta tema-seccion-bloque" id="seccion-precauciones" aria-labelledby="titulo-precauciones" hidden>
+      <h2 id="titulo-precauciones" class="tema-seccion-titulo">Precauciones de interpretación</h2>
+      <div id="tema-precauciones-lista" class="tema-listado-items"></div>
+    </section>
+
+    <section class="tarjeta tema-seccion-bloque" id="seccion-reflexion" aria-labelledby="titulo-reflexion" hidden>
+      <h2 id="titulo-reflexion" class="tema-seccion-titulo">Preguntas de reflexión</h2>
+      <div id="tema-reflexion-lista" class="tema-listado-items"></div>
+    </section>
+
+    <!-- Recursos multimedia didácticos -->
+    <section class="tarjeta tema-seccion-bloque" id="seccion-recursos" aria-labelledby="titulo-recursos" style="display: none;">
+      <h2 id="titulo-recursos" class="tema-seccion-titulo">Recursos Didácticos y Multimedia</h2>
+      <div id="tema-recursos-lista" class="tema-recursos-galeria"></div>
+    </section>
+
+    <section class="tarjeta tema-seccion-bloque" id="seccion-fuentes" aria-labelledby="titulo-fuentes" hidden>
+      <h2 id="titulo-fuentes" class="tema-seccion-titulo">Fuentes</h2>
+      <div id="tema-fuentes" class="tema-resumen-cuerpo"></div>
+    </section>
+
+    <!-- Practica este tema -->
+    <section class="tarjeta tema-seccion-bloque practica-tema-bloque" aria-labelledby="titulo-practica">
+      <div class="practica-tema-bloque__cabecera">
+        <h2 id="titulo-practica" class="tema-seccion-titulo" style="margin: 0;">🎮 Practica este Tema</h2>
+        <span class="tarjeta__subtitulo" style="margin: 0;">Actividades gamificadas y desafíos de aprendizaje</span>
+      </div>
+      <div id="tema-actividades-contenedor" class="tema-actividades-grid" aria-live="polite">
+        <!-- Rellenado por catalogo-actividades.js -->
+      </div>
+      <div class="tema-regreso-misiones">
+        <a class="btn btn--secundario" href="/paginas/explorar.html">← Volver a Explora y aprende</a>
+        <a class="btn btn--primario" href="/index.html#mapa">Volver al mapa de misiones</a>
+      </div>
+    </section>
+  </div>
+</main>
+<script type="module" src="/js/modulos/tema.js"></script></body></html>

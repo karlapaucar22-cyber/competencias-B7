@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Explora y aprende · NeuroRitmo Digital</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/componentes.css">
+  <link rel="stylesheet" href="/css/modulos/explorar.css">
+</head>
+<body>
+  <div id="plantilla"></div>
+  <main id="contenido" class="contenedor">
+    <!-- Banner de bienvenida -->
+    <section class="tarjeta inicio-bienvenida" id="seccion-bienvenida">
+      <div class="inicio-bienvenida__contenido">
+        <h1 id="bienvenida-titulo">Explora y aprende</h1>
+        <p id="bienvenida-subtitulo">
+          Catálogo de asignaturas, unidades y temas de NeuroRitmo Digital.
+        </p>
+      </div>
+      <div id="bienvenida-acciones" class="inicio-bienvenida__acciones">
+        <!-- Rellenado dinámicamente según sesión -->
+      </div>
+    </section>
+
+    <section id="ruta-academica" class="explorar-ruta" aria-labelledby="titulo-ruta-academica" hidden>
+      <div class="explorar-seccion-cabecera">
+        <div>
+          <p class="explorar-antetitulo">Ruta académica NeuroRitmo</p>
+          <h2 id="titulo-ruta-academica">La Música en la Educación</h2>
+          <p>Comprende los fundamentos antes de aplicar lo aprendido en las misiones.</p>
+        </div>
+        <a class="btn btn--secundario" href="/index.html#mapa">Ir al mapa de misiones</a>
+      </div>
+      <div id="presentacion-academica" aria-live="polite"></div>
+    </section>
+
+    <section id="seccion-recursos-neuroritmo" class="explorar-recursos" aria-labelledby="titulo-recursos-neuroritmo" hidden>
+      <div class="explorar-seccion-cabecera">
+        <div>
+          <p class="explorar-antetitulo">Colección del equipo</p>
+          <h2 id="titulo-recursos-neuroritmo">Recursos para explorar y repasar</h2>
+          <p>Cada tarjeta explica para qué sirve el material y su estado de acceso.</p>
+        </div>
+      </div>
+      <div id="tarjetas-recursos-neuroritmo" class="explorar-recursos-grid"></div>
+    </section>
+
+    <!-- Sección de Noticias Destacadas -->
+    <section id="seccion-noticias-destacadas" class="inicio-seccion-noticias" style="display: none;" aria-labelledby="titulo-seccion-noticias">
+      <div class="inicio-noticias-cabecera">
+        <div>
+          <h2 id="titulo-seccion-noticias" class="inicio-noticias-titulo">Novedades y Noticias Destacadas</h2>
+          <p class="tarjeta__subtitulo" style="margin: 0;">Infórmate sobre proyectos, recursos educativos abiertos y eventos académicos</p>
+        </div>
+        <a href="/paginas/noticias.html" class="btn btn--texto">Ver todas las noticias →</a>
+      </div>
+      <div id="contenedor-noticias-destacadas" class="inicio-noticias-grid"></div>
+    </section>
+
+    <!-- Sección de Contenidos y Temas -->
+    <section id="seccion-temas" class="inicio-seccion-temas" style="display: none;" aria-labelledby="titulo-seccion-temas">
+      <div class="inicio-temas-cabecera">
+        <div>
+          <h2 id="titulo-seccion-temas" class="inicio-temas-titulo">Temas de Aprendizaje y Contenidos</h2>
+          <p class="tarjeta__subtitulo" style="margin: 0;">Explora las asignaturas, unidades didácticas y fichas interactivas</p>
+        </div>
+        <div class="campo inicio-buscador-temas" style="margin-bottom: 0;">
+          <label for="buscar-temas-inicio" class="sr-only">Buscar temas o conceptos</label>
+          <input type="search" id="buscar-temas-inicio" placeholder="Buscar temas, palabras clave o resúmenes...">
+        </div>
+      </div>
+
+      <p id="estado-busqueda-temas" class="sr-only" role="status"></p>
+      <div id="contenedor-asignaturas-temas" class="inicio-asignaturas-lista">
+        <div class="tarjeta" style="text-align: center; padding: var(--espacio-xl);">
+          <div class="cargando cargando--activo" style="position: static; height: 60px;"></div>
+          <p>Cargando asignaturas y temas disponibles...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="/js/modulos/explorar.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Distributivo Académico</title>
+<link rel="stylesheet" href="/css/tokens.css"><link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/componentes.css">
+<link rel="stylesheet" href="/css/modulos/distributivo.css"></head>
+<body><div id="plantilla"></div><main id="contenido" class="contenedor">
+  <header class="distributivo-cabecera">
+    <div>
+      <h1>Distributivo Académico</h1>
+      <p class="tarjeta__subtitulo">Asignación de asignaturas, paralelos, docentes y listas de estudiantes por período lectivo</p>
+    </div>
+    <div>
+      <button type="button" id="btn-nuevo-grupo" class="btn btn--primario">
+        + Nuevo Grupo
+      </button>
+    </div>
+  </header>
+
+  <section class="distributivo-filtros" aria-label="Filtros de búsqueda del distributivo">
+    <div class="campo distributivo-buscador" style="margin-bottom: 0;">
+      <label for="buscar-grupo" class="sr-only">Buscar grupo</label>
+      <input type="search" id="buscar-grupo" placeholder="Buscar por asignatura, docente o paralelo...">
+    </div>
+
+    <div class="campo distributivo-filtro-asig" style="margin-bottom: 0;">
+      <label for="filtro-asig" class="sr-only">Filtrar por asignatura</label>
+      <select id="filtro-asig">
+        <option value="">Todas las asignaturas</option>
+      </select>
+    </div>
+
+    <div class="campo distributivo-filtro-periodo" style="margin-bottom: 0;">
+      <label for="filtro-periodo" class="sr-only">Filtrar por período</label>
+      <select id="filtro-periodo">
+        <option value="">Todos los períodos</option>
+      </select>
+    </div>
+  </section>
+
+  <div class="tabla-contenedor" tabindex="0" aria-label="Listado de grupos del distributivo">
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th scope="col">Asignatura</th>
+          <th scope="col" style="text-align: center;">Paralelo</th>
+          <th scope="col" style="text-align: center;">Período</th>
+          <th scope="col">Docente</th>
+          <th scope="col" style="text-align: center;">Estudiantes</th>
+          <th scope="col" style="text-align: right;">Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-distributivo-cuerpo">
+        <tr>
+          <td colspan="6" style="text-align: center; padding: var(--espacio-xl);">
+            <div class="cargando cargando--activo" style="position: static; height: 60px;"></div>
+            Cargando distributivo...
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+<script type="module" src="/js/modulos/distributivo.js"></script></body></html>

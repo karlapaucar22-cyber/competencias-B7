@@ -1,0 +1,91 @@
+/* publico/css/modulos/admin-ia.css · Estado de la inteligencia artificial */
+
+.ia-app {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+  max-width: 56rem;
+}
+
+.ia-encabezado {
+  border-bottom: 1px solid var(--color-borde);
+  padding-bottom: var(--espacio-m);
+}
+
+.ia-titulo {
+  font-size: var(--tamano-2xl);
+  font-weight: var(--peso-negrita);
+  margin: 0 0 var(--espacio-xs);
+}
+
+.ia-subtitulo,
+.ia-ayuda {
+  color: var(--color-texto-suave);
+  margin: 0;
+}
+
+.ia-ayuda {
+  font-size: var(--tamano-s);
+}
+
+.ia-seccion-titulo {
+  font-size: var(--tamano-l);
+  margin: 0 0 var(--espacio-m);
+}
+
+.ia-datos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: var(--espacio-m);
+  margin: 0 0 var(--espacio-m);
+}
+
+.ia-datos dt {
+  font-size: var(--tamano-xs);
+  color: var(--color-texto-suave);
+  text-transform: uppercase;
+}
+
+.ia-datos dd {
+  margin: 0;
+  font-weight: var(--peso-seminegrita);
+  overflow-wrap: anywhere;
+}
+
+.ia-sin-clave {
+  color: var(--color-error);
+}
+
+.ia-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-s);
+}
+
+.ia-modelos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-xs);
+  list-style: none;
+  margin: var(--espacio-s) 0 0;
+  padding: 0;
+}
+
+.ia-modelo--actual {
+  border-color: var(--color-exito);
+  color: var(--color-exito);
+  font-weight: var(--peso-negrita);
+}
+
+.ia-pasos {
+  margin: var(--espacio-s) 0 0;
+  padding-left: var(--espacio-l);
+  font-size: var(--tamano-s);
+  line-height: var(--interlineado-base);
+}
+
+.ia-pasos code,
+.ia-ayuda code {
+  font-size: var(--tamano-s);
+  overflow-wrap: anywhere;
+}

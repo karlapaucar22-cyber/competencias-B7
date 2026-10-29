@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ahorcado Pedagógico · NeuroRitmo Digital</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/componentes.css">
+  <link rel="stylesheet" href="/css/modulos/ahorcado.css">
+</head>
+<body>
+  <div id="plantilla"></div>
+  <main id="contenido" class="contenedor" data-avatar="Adivina la palabra del tema letra por letra. Usa la pista y cuida tus intentos.">
+    <div class="ahorcado-app">
+      <nav class="migas-pan" aria-label="Navegación">
+        <ol>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/paginas/actividades.html">Actividades</a></li>
+          <li aria-current="page">Ahorcado</li>
+        </ol>
+      </nav>
+
+      <!-- Encabezado del juego con temas de la carpeta Tareas -->
+      <div class="ahorcado-encabezado">
+        <div>
+          <h1 class="ahorcado-titulo">Ahorcado Pedagógico · NeuroRitmo</h1>
+          <p class="ahorcado-subtitulo">Adivina los conceptos clave de 6 letras basados en los temas de la carpeta Tareas (Colección: La Música en la Educación) antes de que el globo aerostático se desinfle.</p>
+        </div>
+        <div id="badgeTemaContenedor" class="ahorcado-tema-controles">
+          <div style="display: flex; gap: var(--espacio-xs); flex-wrap: wrap; align-items: center;">
+            <span class="insignia insignia--primario" id="badgeTema">Cargando tema...</span>
+            <span class="insignia insignia--secundario" id="badgeMision">Misión Cerebro Sonoro</span>
+          </div>
+          <button type="button" id="btnCambiarTema" class="btn btn--secundario btn--sm">🎯 Cambiar tema</button>
+        </div>
+      </div>
+
+      <!-- Accesos directos a los temas pedagógicos de la carpeta Tareas -->
+      <div class="ahorcado-temas-acceso" id="accesosTemasTareas" aria-label="Temas del juego de la carpeta Tareas">
+        <span class="etiqueta-acceso">Temas de la carpeta Tareas:</span>
+        <button type="button" class="btn-pildora-tema" data-tema-id="tem_000001" id="pildoraTema1">
+          🧠 Tema 1: Funciones Ejecutivas y Escucha (Subtema 1.1)
+        </button>
+        <button type="button" class="btn-pildora-tema" data-tema-id="tem_000002" id="pildoraTema2">
+          💖 Tema 2: Autorregulación y Estrés Sonoro (Subtema 1.2)
+        </button>
+      </div>
+
+      <!-- Estado cargando -->
+      <div id="ahorcadoCargando" class="tarjeta" style="text-align: center; padding: var(--espacio-xl);">
+        <p>Cargando términos del tema...</p>
+      </div>
+
+      <!-- Estado vacío (sin términos de 6 letras disponibles) -->
+      <div id="ahorcadoVacio" class="vacio" style="display: none;">
+        <div class="vacio__icono">🎈</div>
+        <h2 class="vacio__titulo">Sin palabras de 6 letras disponibles</h2>
+        <p class="vacio__texto">
+          No hay términos aprobados de exactamente 6 letras en el glosario de este tema o ya completaste todas las palabras disponibles.
+        </p>
+        <div style="display: flex; gap: var(--espacio-s); margin-top: var(--espacio-s);">
+          <a href="#" id="enlaceVolverTema" class="btn btn--primario">Ir al tema de estudio</a>
+          <a href="/paginas/actividades.html" class="btn btn--secundario">Otras actividades</a>
+        </div>
+      </div>
+
+      <!-- Tablero del juego -->
+      <div id="ahorcadoTablero" class="ahorcado-tablero" style="display: none;">
+        <div class="ahorcado-panel-superior">
+          <!-- Figura del globo no violenta (SVG inline con 4 estados de desinflado) -->
+          <div class="ahorcado-figura-contenedor" aria-label="Estado del globo didáctico">
+            <svg class="ahorcado-globo-svg estado-0" id="svgGlobo" viewBox="0 0 200 240" role="img" aria-label="Globo aerostático inflado">
+              <!-- Nube decorativa de fondo -->
+              <path d="M 20 60 Q 35 40 55 50 Q 75 35 95 55 Q 110 50 115 65 Z" fill="var(--color-borde)" opacity="0.5" />
+              <!-- Hilos de soporte -->
+              <line x1="85" y1="180" x2="92" y2="210" stroke="var(--color-texto-suave)" stroke-width="2" />
+              <line x1="115" y1="180" x2="108" y2="210" stroke="var(--color-texto-suave)" stroke-width="2" />
+              <!-- Canasta / Nudo -->
+              <rect x="90" y="210" width="20" height="15" rx="3" fill="var(--color-primario)" />
+              <line x1="90" y1="217" x2="110" y2="217" stroke="var(--color-superficie)" stroke-width="1.5" />
+              <!-- Aire expulsado (visible en desinflado) -->
+              <g class="globo-aire" id="grupoAire" opacity="0">
+                <path d="M 125 190 Q 140 185 155 190" stroke="var(--color-info)" stroke-width="2" stroke-linecap="round" fill="none" />
+                <path d="M 130 197 Q 145 192 160 200" stroke="var(--color-info)" stroke-width="2" stroke-linecap="round" fill="none" />
+              </g>
+              <!-- Cuerpo del Globo -->
+              <g id="globoCuerpo" class="globo-cuerpo">
+                <ellipse id="formaGlobo" cx="100" cy="110" rx="60" ry="75" fill="var(--color-acento)" />
+                <!-- Brillo del globo -->
+                <ellipse id="brilloGlobo" cx="80" cy="80" rx="14" ry="24" transform="rotate(-25 80 80)" fill="rgba(255,255,255,0.45)" />
+                <!-- Cuello del globo -->
+                <polygon id="cuelloGlobo" points="92,185 108,185 104,195 96,195" fill="var(--color-acento)" />
+              </g>
+            </svg>
+            <div class="ahorcado-vidas-indicador" id="indicadorVidas">
+              <span class="etiqueta-vidas">Oportunidades:</span>
+              <span id="vidasTexto" class="contador-vidas">3 intentos restantes</span>
+            </div>
+          </div>
+
+          <!-- Pista y palabra oculta -->
+          <div class="ahorcado-palabra-seccion">
+            <div class="ahorcado-pista-tarjeta">
+              <span class="ahorcado-pista-etiqueta">💡 Pista didáctica:</span>
+              <p class="ahorcado-pista-texto" id="textoPista">Cargando pista...</p>
+            </div>
+
+            <!-- Casillas de 6 letras -->
+            <div class="ahorcado-casillas" id="contenedorCasillas" aria-label="Letras de la palabra">
+              <!-- 6 casillas generadas dinámicamente -->
+            </div>
+
+            <!-- Estado de fin de juego y botón siguiente -->
+            <div id="panelFinPartida" style="display: none; margin-top: var(--espacio-m);">
+              <div id="contenedorRetro"></div>
+              <div style="margin-top: var(--espacio-m); text-align: center;">
+                <button type="button" id="btnOtraPalabra" class="btn btn--primario">
+                  🔄 Otra palabra
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Teclado en pantalla (A-Z con Ñ) -->
+        <div class="ahorcado-teclado-seccion">
+          <p class="sr-only">Teclado en pantalla para seleccionar letras. También puedes pulsar teclas en tu teclado físico.</p>
+          <div class="ahorcado-teclado" id="tecladoEnPantalla">
+            <!-- Teclas generadas dinámicamente -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="/js/modulos/ahorcado.js"></script>
+</body>
+</html>

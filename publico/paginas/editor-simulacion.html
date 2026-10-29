@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editor de simulación · NeuroRitmo Digital</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/componentes.css">
+  <link rel="stylesheet" href="/css/modulos/editor-simulacion.css">
+</head>
+<body>
+  <div id="plantilla"></div>
+  <main id="contenido" class="contenedor">
+    <p id="estadoCarga" class="editor-sim__nota" role="status">Cargando el editor...</p>
+
+    <div id="editor" class="editor-sim" hidden>
+      <header class="editor-sim__encabezado">
+        <div>
+          <a href="/paginas/simulaciones.html" class="editor-sim__volver">← Simulaciones</a>
+          <h1 id="tituloEditor" class="editor-sim__titulo">Nueva simulación</h1>
+          <p id="estadoGuardado" class="editor-sim__nota" role="status"></p>
+        </div>
+        <div class="editor-sim__acciones">
+          <a id="btnPrevia" class="btn btn--secundario" target="_blank" rel="noopener" hidden>▶ Vista previa</a>
+          <button type="button" id="btnGuardar" class="btn btn--primario">💾 Guardar</button>
+        </div>
+      </header>
+
+      <section class="tarjeta editor-sim__general" aria-labelledby="tituloGeneral">
+        <h2 id="tituloGeneral" class="editor-sim__seccion">Datos generales</h2>
+        <div class="editor-sim__fila">
+          <div class="campo editor-sim__campo-ancho">
+            <label for="simTitulo">Título</label>
+            <input type="text" id="simTitulo" maxlength="150" required>
+          </div>
+          <div class="campo">
+            <label for="simTema">Tema</label>
+            <select id="simTema" required><option value="">Elige un tema</option></select>
+          </div>
+          <div class="campo">
+            <label for="simModo">Modo</label>
+            <select id="simModo">
+              <option value="escenarios">Escenarios</option>
+              <option value="rol">Juego de roles</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="simEstado">Estado</label>
+            <select id="simEstado">
+              <option value="borrador">Borrador</option>
+              <option value="publicado">Publicado</option>
+            </select>
+          </div>
+          <div class="campo" id="campoInicial">
+            <label for="simInicial">Escena inicial</label>
+            <select id="simInicial"></select>
+          </div>
+        </div>
+      </section>
+
+      <div id="zonaRol" class="editor-sim__rol" hidden>
+        <section class="tarjeta" aria-labelledby="tituloPersonaje">
+          <h2 id="tituloPersonaje" class="editor-sim__seccion">Personaje</h2>
+          <p class="editor-sim__nota">La IA interpretará a este personaje; el estudiante conversa con él para lograr su objetivo.</p>
+          <div class="editor-sim__fila">
+            <div class="campo">
+              <label for="rolNombre">Nombre del personaje</label>
+              <input type="text" id="rolNombre" maxlength="80" placeholder="Ej.: Señora Martínez, madre de familia">
+            </div>
+            <div class="campo">
+              <label for="rolTurnos">Máximo de turnos (4 a 12)</label>
+              <input type="number" id="rolTurnos" min="4" max="12" step="1" value="6">
+            </div>
+            <div class="campo editor-sim__campo-ancho">
+              <label for="rolDescripcion">Descripción (personalidad, rol, preocupaciones)</label>
+              <textarea id="rolDescripcion" rows="3" maxlength="1000"></textarea>
+            </div>
+            <div class="campo editor-sim__campo-ancho">
+              <label for="rolContexto">Contexto del caso</label>
+              <textarea id="rolContexto" rows="3" maxlength="1500"></textarea>
+            </div>
+            <div class="campo editor-sim__campo-ancho">
+              <label for="rolObjetivo">Objetivo del estudiante</label>
+              <textarea id="rolObjetivo" rows="2" maxlength="600"></textarea>
+            </div>
+          </div>
+        </section>
+
+        <section class="tarjeta" aria-labelledby="tituloRubrica">
+          <div class="editor-sim__cabecera-escenas">
+            <h2 id="tituloRubrica" class="editor-sim__seccion">Rúbrica (3 a 5 criterios)</h2>
+            <button type="button" id="btnAgregarCriterio" class="btn btn--secundario btn--sm">＋ Agregar criterio</button>
+          </div>
+          <p class="editor-sim__nota" id="totalRubrica"></p>
+          <div id="listaCriterios" class="editor-sim__lista"></div>
+        </section>
+      </div>
+
+      <section id="panelErrores" class="alerta alerta--error editor-sim__errores" tabindex="-1" aria-labelledby="tituloErrores" hidden>
+        <h2 id="tituloErrores" class="editor-sim__seccion">Revisa antes de publicar</h2>
+        <ul id="listaErrores"></ul>
+      </section>
+
+      <div id="zonaEscenarios" class="editor-sim__cuerpo">
+        <section class="editor-sim__escenas" aria-labelledby="tituloEscenas">
+          <div class="editor-sim__cabecera-escenas">
+            <h2 id="tituloEscenas" class="editor-sim__seccion">Escenas</h2>
+            <div class="editor-sim__acciones">
+              <button type="button" id="btnGenerarIA" class="btn btn--secundario btn--sm">🤖 Generar borrador con IA</button>
+              <button type="button" id="btnAgregarEscena" class="btn btn--secundario btn--sm">＋ Agregar escena</button>
+            </div>
+          </div>
+          <div id="listaEscenas" class="editor-sim__lista"></div>
+        </section>
+
+        <aside class="tarjeta editor-sim__mapa" aria-labelledby="tituloMapa">
+          <h2 id="tituloMapa" class="editor-sim__seccion">Mapa del escenario</h2>
+          <p class="editor-sim__nota">Se genera desde las escenas: cada flecha es una opción.</p>
+          <div id="mapa" class="mapa-escenario"></div>
+        </aside>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="/js/modulos/editor-simulacion.js"></script>
+</body>
+</html>

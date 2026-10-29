@@ -1,0 +1,106 @@
+.recurso-neuro {
+  display: grid;
+  gap: var(--espacio-l);
+}
+
+.recurso-neuro__portada {
+  display: grid;
+  gap: var(--espacio-l);
+  border-inline-start: var(--espacio-xs) solid var(--color-accion);
+}
+
+.recurso-neuro__antetitulo {
+  color: var(--color-accion);
+  font-size: var(--tamano-s);
+  font-weight: var(--peso-negrita);
+  text-transform: uppercase;
+}
+
+.recurso-neuro__estado,
+.recurso-neuro__resultado {
+  padding: var(--espacio-m);
+  border-radius: var(--radio-m);
+  background: var(--color-fondo-advertencia);
+}
+
+.recurso-neuro__ruta {
+  display: grid;
+  gap: var(--espacio-s);
+  align-items: stretch;
+}
+
+.recurso-neuro__ruta article,
+.recurso-neuro__columnas > div {
+  padding: var(--espacio-m);
+  border-radius: var(--radio-m);
+  background: var(--color-fondo-info);
+  border: var(--espacio-xs) solid var(--color-borde);
+}
+
+.recurso-neuro__ruta article > span {
+  display: inline-grid;
+  place-items: center;
+  min-inline-size: var(--espacio-xl);
+  min-block-size: var(--espacio-xl);
+  border-radius: var(--radio-completo);
+  background: var(--color-primario);
+  color: var(--color-texto-inverso);
+  font-size: var(--tamano-l);
+}
+
+.recurso-neuro__flecha {
+  align-self: center;
+  justify-self: center;
+  color: var(--color-accion);
+  font-size: var(--tamano-xl);
+  transform: rotate(90deg);
+}
+
+.recurso-neuro__selector,
+.recurso-neuro__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-s);
+}
+
+.recurso-neuro__resultado {
+  margin-block-start: var(--espacio-m);
+  background: var(--color-fondo-info);
+}
+
+.recurso-neuro__resultado dl {
+  display: grid;
+  gap: var(--espacio-s);
+}
+
+.recurso-neuro__resultado dt {
+  font-weight: var(--peso-negrita);
+  color: var(--color-primario);
+}
+
+.recurso-neuro__resultado dd {
+  margin: 0;
+}
+
+.recurso-neuro__columnas {
+  display: grid;
+  gap: var(--espacio-m);
+}
+
+@media (min-width: 720px) {
+  .recurso-neuro__portada {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .recurso-neuro__ruta {
+    grid-template-columns: repeat(7, auto);
+  }
+
+  .recurso-neuro__flecha {
+    transform: none;
+  }
+
+  .recurso-neuro__columnas {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

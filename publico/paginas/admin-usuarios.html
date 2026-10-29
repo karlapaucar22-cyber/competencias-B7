@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Administración de Usuarios</title>
+<link rel="stylesheet" href="/css/tokens.css"><link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/componentes.css">
+<link rel="stylesheet" href="/css/modulos/admin-usuarios.css"></head>
+<body><div id="plantilla"></div><main id="contenido" class="contenedor">
+  <header style="margin-bottom: var(--espacio-l);">
+    <h1>Administración de Usuarios</h1>
+    <p class="tarjeta__subtitulo">Gestiona los roles, estados de activación y credenciales de acceso</p>
+  </header>
+
+  <!-- Filtros y buscador -->
+  <section class="admin-usuarios-filtros" aria-label="Filtros de búsqueda">
+    <div class="campo admin-buscador" style="margin-bottom: 0;">
+      <label for="buscar-usuario" class="sr-only">Buscar por nombre o correo</label>
+      <input type="search" id="buscar-usuario" placeholder="Buscar por nombre, apellido o correo...">
+    </div>
+
+    <div class="campo admin-filtro-rol" style="margin-bottom: 0;">
+      <label for="filtro-rol" class="sr-only">Filtrar por rol</label>
+      <select id="filtro-rol">
+        <option value="">Todos los roles</option>
+        <option value="estudiante">Estudiantes</option>
+        <option value="docente">Docentes</option>
+        <option value="admin">Administradores</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- Tabla de usuarios -->
+  <div class="tabla-contenedor" tabindex="0" aria-label="Lista de usuarios registrados">
+    <table class="tabla">
+      <thead>
+        <tr>
+          <th scope="col">Usuario</th>
+          <th scope="col">Rol</th>
+          <th scope="col" style="text-align: center;">Activo</th>
+          <th scope="col" style="text-align: right;">Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-usuarios-cuerpo">
+        <tr>
+          <td colspan="4" style="text-align: center; padding: var(--espacio-xl);">
+            <div class="cargando cargando--activo" style="position: static; height: 60px;"></div>
+            Cargando usuarios...
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+<script type="module" src="/js/modulos/admin-usuarios.js"></script></body></html>

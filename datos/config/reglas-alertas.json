@@ -1,0 +1,24 @@
+{
+  "promedioBajo": {
+    "activa": true,
+    "umbral": 7,
+    "ultimos": 3
+  },
+  "fallosQuiz": {
+    "activa": true,
+    "veces": 3
+  },
+  "inactividad": {
+    "activa": true,
+    "dias": 7
+  },
+  "vencidas": {
+    "activa": true,
+    "diasGracia": 1
+  },
+  "mensajesApoyo": [
+    "Vi que este tema te está costando. ¿Lo repasamos juntos? Estoy para ayudarte.",
+    "Te extrañamos en la plataforma. Hay una actividad corta para retomar el ritmo.",
+    "¡Buen esfuerzo! Repasa el tema y vuelve a intentarlo: vas por buen camino."
+  ]
+}

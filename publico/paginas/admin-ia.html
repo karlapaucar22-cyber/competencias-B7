@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inteligencia artificial · NeuroRitmo Digital</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/componentes.css">
+  <link rel="stylesheet" href="/css/modulos/admin-ia.css">
+</head>
+<body>
+  <div id="plantilla"></div>
+  <main id="contenido" class="contenedor">
+    <div class="ia-app">
+      <header class="ia-encabezado">
+        <h1 class="ia-titulo">Inteligencia artificial</h1>
+        <p class="ia-subtitulo">Estado de Google Gemini, el servicio que usa la plataforma para el tutor y para generar preguntas y glosarios.</p>
+      </header>
+
+      <section class="tarjeta ia-estado" aria-labelledby="tituloEstado">
+        <h2 id="tituloEstado" class="ia-seccion-titulo">Configuración del servidor</h2>
+        <dl class="ia-datos">
+          <div><dt>Proveedor</dt><dd>Google Gemini (API REST)</dd></div>
+          <div><dt>Clave (GEMINI_API_KEY)</dt><dd id="estadoClave">Cargando...</dd></div>
+          <div><dt>Modelo (IA_MODELO)</dt><dd id="estadoModelo">—</dd></div>
+          <div><dt>Modelo alterno (IA_MODELO_ALTERNO)</dt><dd id="estadoAlterno">—</dd></div>
+          <div><dt>Temperatura</dt><dd>0,4 al generar contenido · 0,7 en el tutor y simulaciones</dd></div>
+        </dl>
+        <div class="ia-acciones">
+          <button type="button" id="btnProbar" class="btn btn--acento">Probar conexión</button>
+          <button type="button" id="btnModelos" class="btn btn--secundario">Ver modelos de mi clave</button>
+        </div>
+      </section>
+
+      <div id="resultadoPrueba" role="status" aria-live="polite"></div>
+
+      <section id="seccionModelos" class="tarjeta" hidden aria-labelledby="tituloModelos">
+        <h2 id="tituloModelos" class="ia-seccion-titulo">Modelos disponibles para la clave del servidor</h2>
+        <p id="estadoModelosConfigurados" class="ia-ayuda"></p>
+        <ul id="listaDisponibles" class="ia-modelos"></ul>
+      </section>
+
+      <section class="tarjeta" aria-labelledby="tituloCambiar">
+        <h2 id="tituloCambiar" class="ia-seccion-titulo">Cómo cambiar la clave o el modelo</h2>
+        <p class="ia-ayuda">Por seguridad, la clave no se guarda ni se muestra en el navegador: se configura en el archivo <code>.env</code> del servidor (que no se sube al repositorio).</p>
+        <ol class="ia-pasos">
+          <li>Abre el archivo <code>.env</code> en la carpeta del proyecto.</li>
+          <li>Edita <code>GEMINI_API_KEY=</code> (clave de Google AI Studio), <code>IA_MODELO=</code> y, si quieres un respaldo, <code>IA_MODELO_ALTERNO=</code>. Usa «Ver modelos de mi clave» para elegir un nombre válido.</li>
+          <li>Reinicia el servidor (<code>npm start</code>) y pulsa «Probar conexión».</li>
+        </ol>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="/js/modulos/admin-ia.js"></script>
+</body>
+</html>

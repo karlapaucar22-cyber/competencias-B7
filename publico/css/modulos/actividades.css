@@ -1,0 +1,94 @@
+/* publico/css/modulos/actividades.css */
+/* Estilos para el catálogo de actividades y juegos educativos */
+
+.actividades-app {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-l);
+  margin-top: var(--espacio-m);
+  margin-bottom: var(--espacio-2xl);
+}
+
+.actividades-app__encabezado {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+}
+
+.actividades-app__titulo {
+  font-size: var(--tamano-2xl);
+  font-weight: var(--peso-negrita);
+  color: var(--color-primario);
+  margin: 0;
+}
+
+.actividades-app__subtitulo {
+  font-size: var(--tamano-s);
+  color: var(--color-texto-suave);
+  max-width: 680px;
+  margin: 0;
+  line-height: var(--linea-comoda);
+}
+
+.actividades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--espacio-l);
+}
+
+.actividad-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--espacio-l);
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-l);
+  box-shadow: var(--sombra-s);
+  transition: var(--transicion);
+  gap: var(--espacio-m);
+}
+
+.actividad-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-primario);
+  box-shadow: var(--sombra-m);
+}
+
+.actividad-card__icono {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radio-m);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--tamano-2xl);
+  background-color: var(--color-fondo);
+  color: var(--color-primario);
+}
+
+.actividad-card__cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+  flex: 1;
+}
+
+.actividad-card__titulo {
+  font-size: var(--tamano-l);
+  font-weight: var(--peso-negrita);
+  color: var(--color-primario);
+  margin: 0;
+}
+
+.actividad-card__descripcion {
+  font-size: var(--tamano-s);
+  color: var(--color-texto);
+  line-height: var(--linea-comoda);
+  margin: 0;
+}
+
+.actividad-card__pie {
+  margin-top: auto;
+  padding-top: var(--espacio-s);
+  border-top: 1px solid var(--color-borde);
+}

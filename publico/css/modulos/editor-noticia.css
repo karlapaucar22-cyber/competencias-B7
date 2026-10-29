@@ -1,0 +1,115 @@
+/* publico/css/modulos/editor-noticia.css */
+/* Estilos para el editor de noticias */
+
+.editor-noticia-volver {
+  margin-bottom: var(--espacio-s);
+}
+
+.editor-noticia-cabecera {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+  margin-bottom: var(--espacio-l);
+  padding-bottom: var(--espacio-m);
+  border-bottom: 1px solid var(--color-borde);
+}
+
+@media (min-width: 600px) {
+  .editor-noticia-cabecera {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.editor-noticia-cabecera h1 {
+  font-size: var(--tamano-xl);
+  font-weight: var(--peso-negrita);
+  color: var(--color-primario);
+  margin: 0;
+}
+
+.editor-noticia-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+}
+
+.editor-noticia-fila {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+}
+
+@media (min-width: 640px) {
+  .editor-noticia-fila {
+    flex-direction: row;
+  }
+}
+
+.campo-etiqueta-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--espacio-xs);
+}
+
+.meta-contador {
+  font-size: var(--tamano-xs);
+  color: var(--color-texto-suave);
+}
+
+.input-con-boton {
+  display: flex;
+  gap: var(--espacio-xs);
+}
+
+.input-con-boton input {
+  flex: 1;
+}
+
+.imagen-previa-caja {
+  margin-top: var(--espacio-s);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-m);
+  overflow: hidden;
+  max-width: 400px;
+  background-color: var(--color-fondo);
+}
+
+.imagen-previa-caja img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.campo-casilla {
+  margin: var(--espacio-s) 0;
+}
+
+.casilla-etiqueta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espacio-s);
+  cursor: pointer;
+  font-size: var(--tamano-s);
+  color: var(--color-texto);
+}
+
+.casilla-etiqueta input[type="checkbox"] {
+  min-height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.resumen-caja-preview {
+  margin-top: var(--espacio-s);
+  padding: var(--espacio-m);
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-m);
+  font-size: var(--tamano-s);
+  line-height: var(--linea-base);
+}

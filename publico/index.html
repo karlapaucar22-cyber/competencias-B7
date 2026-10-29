@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inicio · NeuroRitmo Digital</title>
+  <meta name="description" content="NeuroRitmo Digital: Misión Cerebro Sonoro. Aventura de aprendizaje gamificada de la UNEMI sobre atención, memoria y autorregulación con música, guiada por Neuri.">
+  <meta name="application-name" content="NeuroRitmo Digital">
+  <meta name="theme-color" content="#0B3850">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/componentes.css">
+  <link rel="stylesheet" href="/css/modulos/neuroritmo.css">
+</head>
+<body>
+  <div id="plantilla"></div>
+  <main id="contenido" class="contenedor neuro"
+        data-personaje="neuri"
+        data-avatar="¡Hola! Soy Neuri, tu guía en NeuroRitmo Digital. Te acompaño por las tres estaciones del Centro de Estudio Sonoro. La voz conserva tu preferencia; puedes activarla, pausarla o silenciarla cuando lo necesites.">
+    <nav class="neuro__navegacion" aria-label="Ruta de NeuroRitmo">
+      <ol class="ruta-pasos" id="ruta-pasos"></ol>
+    </nav>
+
+    <p id="neuro-estado" class="sr-only" role="status"></p>
+
+    <section id="vista" class="neuro__vista" aria-live="off">
+      <div class="tarjeta neuro__cargando">
+        <div class="cargando cargando--activo" aria-hidden="true"></div>
+        <p>Cargando NeuroRitmo Digital…</p>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="/js/modulos/neuroritmo.js"></script>
+</body>
+</html>

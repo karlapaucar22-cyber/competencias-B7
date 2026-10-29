@@ -1,0 +1,16 @@
+[
+  {
+    "id": "not_000001",
+    "fecha": "2026-10-25T08:00:00.000Z",
+    "titulo": "Lanzamiento de NeuroRitmo: Misión Cerebro Sonoro en UNEMI",
+    "resumen": "Presentamos la colección de recursos educativos abiertos y rutas gamificadas de neuroeducación y desarrollo cognitivo musical para estudiantes de posgrado.",
+    "cuerpo": "Nos complace anunciar el despliegue de **NeuroRitmo: Misión Cerebro Sonoro**, la innovadora colección de recursos educativos abiertos diseñada para la Maestría en Educación de la UNEMI.\n\nEsta iniciativa integra la neurociencia aplicada, la música y las tecnologías digitales interactivas para potenciar el aprendizaje significativo y las funciones ejecutivas.\n\n### Ejes fundamentales del proyecto:\n- *Neuroeducación y Ritmo*: Comprensión del procesamiento auditivo en la corteza cerebral, memoria de trabajo y control inhibitorio.\n- *Canciones con Sincronización LRC*: Música pedagógica con seguimiento rítmico de letra en tiempo real para afianzar conceptos clave.\n- *Ruta Gamificada de Aprendizaje*: Desafíos interactivos, misiones conceptuales, insignias coleccionables y diplomas de certificación.\n- *Competencias Digitales (DigCompEdu)*: Recursos educativos digitales estructurados bajo estándares internacionales de calidad pedagógica.\n\n¡Invitamos a todos los estudiantes y docentes a explorar las unidades de estudio, disfrutar de las canciones formativas y participar en los retos interactivos!",
+    "imagen": "/recursos/subidas/neuroritmo-mision-cerebro-sonoro.png",
+    "categoria": "Académica",
+    "temaId": "tem_000001",
+    "destacada": true,
+    "estado": "publicado",
+    "autorId": "usu_000002",
+    "fechaPublicacion": "2026-10-25T08:00:00.000Z"
+  }
+]

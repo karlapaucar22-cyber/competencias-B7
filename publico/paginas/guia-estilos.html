@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía de estilos y componentes · NeuroRitmo Digital</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/componentes.css">
+</head>
+<body>
+  <!-- Encabezado -->
+  <header class="encabezado">
+    <a class="encabezado__marca" href="/index.html" title="Volver a NeuroRitmo Digital">
+      <span class="encabezado__dot" aria-hidden="true"></span>
+      <span>NeuroRitmo Digital</span>
+      <span class="sr-only">: volver al Inicio</span>
+    </a>
+    <div class="fila">
+      <span class="insignia insignia--primario">Design System NeuroRitmo</span>
+      <button type="button" class="menu-toggle" id="btnToggleMenu" aria-label="Abrir menú de navegación">☰</button>
+    </div>
+  </header>
+
+  <div class="menu-layout">
+    <!-- Menú lateral navegable -->
+    <aside class="menu" id="menuLateral" aria-label="Menú principal">
+      <div class="menu__grupo">
+        <span class="menu__titulo-grupo">Fundamentos</span>
+        <a href="#colores" class="menu__enlace activo">01 · Colores y tokens</a>
+        <a href="#tipografia" class="menu__enlace">02 · Tipografía</a>
+        <a href="#botones" class="menu__enlace">03 · Botones</a>
+        <a href="#formularios" class="menu__enlace">04 · Formularios</a>
+      </div>
+      <div class="menu__grupo">
+        <span class="menu__titulo-grupo">Componentes UI</span>
+        <a href="#alertas" class="menu__enlace">05 · Alertas</a>
+        <a href="#tarjetas" class="menu__enlace">06 · Tarjetas</a>
+        <a href="#tablas" class="menu__enlace">07 · Tablas</a>
+        <a href="#insignias" class="menu__enlace">08 · Insignias y progreso</a>
+        <a href="#modales" class="menu__enlace">09 · Modales y avisos</a>
+        <a href="#vacio" class="menu__enlace">10 · Estado vacío</a>
+      </div>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="contenedor" style="padding-top: var(--espacio-xl); padding-bottom: var(--espacio-2xl);">
+      <div class="pila" style="gap: var(--espacio-2xl);">
+        
+        <!-- Título principal -->
+        <section>
+          <h1>Guía de Estilos y Componentes</h1>
+          <p style="color: var(--color-texto-suave); max-width: 800px;">
+            Design System global NeuroRitmo (design_system/design-system-neuroritmo.md), aplicado a toda la plataforma. Construido con HTML semántico, CSS moderno y tokens centralizados, con contraste mínimo WCAG AA y accesibilidad desde 360 px.
+          </p>
+        </section>
+
+        <!-- 1. Colores y Tokens -->
+        <section id="colores" class="pila">
+          <h2>01 · Paleta cromática NeuroRitmo</h2>
+          <div class="grid-auto">
+            <div class="tarjeta">
+              <div style="height: 60px; background-color: var(--color-primario); border-radius: var(--radio-m); margin-bottom: var(--espacio-s);"></div>
+              <h3 class="tarjeta__titulo">Azul petróleo</h3>
+              <p class="tarjeta__subtitulo"><code>--color-primario · --nr-petroleo: #0B3850</code></p>
+              <small>Títulos y superficies oscuras · blanco 13,6:1 (AAA)</small>
+            </div>
+            <div class="tarjeta">
+              <div style="height: 60px; background-color: var(--color-accion); border-radius: var(--radio-m); margin-bottom: var(--espacio-s);"></div>
+              <h3 class="tarjeta__titulo">Turquesa</h3>
+              <p class="tarjeta__subtitulo"><code>--nr-turquesa: #12A6A5 · --color-accion: #087D83</code></p>
+              <small>Botones, enlaces y opción activa · blanco 4,9:1 (AA)</small>
+            </div>
+            <div class="tarjeta">
+              <div style="height: 60px; background-color: var(--nr-verde); border-radius: var(--radio-m); margin-bottom: var(--espacio-s);"></div>
+              <h3 class="tarjeta__titulo">Verde menta</h3>
+              <p class="tarjeta__subtitulo"><code>--nr-verde: #41AA79 · --color-exito: #217A52</code></p>
+              <small>Progreso y estados positivos</small>
+            </div>
+            <div class="tarjeta">
+              <div style="height: 60px; background-color: var(--color-acento); border-radius: var(--radio-m); margin-bottom: var(--espacio-s);"></div>
+              <h3 class="tarjeta__titulo">Amarillo</h3>
+              <p class="tarjeta__subtitulo"><code>--color-acento · --nr-amarillo: #FFBA24</code></p>
+              <small>Puntos, insignias y certificados · texto petróleo 7,3:1</small>
+            </div>
+            <div class="tarjeta">
+              <div style="height: 60px; background-color: var(--nr-coral); border-radius: var(--radio-m); margin-bottom: var(--espacio-s);"></div>
+              <h3 class="tarjeta__titulo">Coral</h3>
+              <p class="tarjeta__subtitulo"><code>--nr-coral: #F57A71 · --color-error: #A8392F</code></p>
+              <small>Reintentos y acciones que requieren atención</small>
+            </div>
+            <div class="tarjeta">
+              <div style="height: 60px; background-color: var(--nr-celeste); border-radius: var(--radio-m); margin-bottom: var(--espacio-s);"></div>
+              <h3 class="tarjeta__titulo">Celeste claro</h3>
+              <p class="tarjeta__subtitulo"><code>--nr-celeste: #EAF8FD</code></p>
+              <small>Fondos de instrucciones, tablas y retroalimentación</small>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. Tipografía -->
+        <section id="tipografia" class="pila">
+          <h2>02 · Tipografía y jerarquía</h2>
+          <div class="tarjeta pila">
+            <div>
+              <h1>Título H1 · Innovación y Competencias</h1>
+              <h2>Título H2 · Plataforma Digital Universitaria</h2>
+              <h3>Título H3 · Asignaturas y Módulos</h3>
+              <h4>Título H4 · Resultados de Aprendizaje</h4>
+            </div>
+            <hr style="border: 0; border-top: 1px solid var(--color-borde);">
+            <p>
+              Texto de párrafo estándar en <strong>Poppins</strong>. Las competencias digitales integran conocimientos teóricos, habilidades operativas y destrezas comunicativas para el aprendizaje continuo.
+            </p>
+            <p>
+              <a href="#tipografia">Enlace con foco visible interactivo</a> y texto suave <small style="color: var(--color-texto-suave);">(Metadatos y notas complementarias)</small>.
+            </p>
+          </div>
+        </section>
+
+        <!-- 3. Botones -->
+        <section id="botones" class="pila">
+          <h2>03 · Botones (.btn)</h2>
+          <div class="tarjeta pila">
+            <div class="fila">
+              <button type="button" class="btn btn--primario">Botón Primario</button>
+              <button type="button" class="btn btn--secundario">Botón Secundario</button>
+              <button type="button" class="btn btn--acento">Destacado (AA)</button>
+              <button type="button" class="btn btn--peligro">Botón Peligro</button>
+              <button type="button" class="btn btn--texto">Botón Texto</button>
+            </div>
+            <div class="fila">
+              <button type="button" class="btn btn--primario btn--pequeno">Primario Pequeño</button>
+              <button type="button" class="btn btn--secundario btn--pequeno">Secundario Pequeño</button>
+              <button type="button" class="btn btn--primario" disabled>Deshabilitado</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. Formularios -->
+        <section id="formularios" class="pila">
+          <h2>04 · Campos de formulario (.campo)</h2>
+          <div class="tarjeta">
+            <form id="formularioDemostracion" class="pila" onsubmit="event.preventDefault();">
+              <div class="grid-auto">
+                <div class="campo">
+                  <label for="campoNombre">Nombres completos</label>
+                  <input type="text" id="campoNombre" placeholder="Ej. Juan Pérez" required>
+                </div>
+                <div class="campo">
+                  <label for="campoRol">Rol en la plataforma</label>
+                  <select id="campoRol" required>
+                    <option value="">Seleccione un rol...</option>
+                    <option value="estudiante">Estudiante</option>
+                    <option value="docente">Docente</option>
+                    <option value="admin">Administrador</option>
+                  </select>
+                </div>
+              </div>
+              <div class="campo">
+                <label for="campoMensaje">Observaciones</label>
+                <textarea id="campoMensaje" placeholder="Escribe aquí tu consulta o comentario..."></textarea>
+                <span class="campo__error">Mensaje de validación o ayuda informativa</span>
+              </div>
+              <div>
+                <button type="submit" class="btn btn--primario">Guardar información</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- 5. Alertas -->
+        <section id="alertas" class="pila">
+          <h2>05 · Alertas de estado (.alerta)</h2>
+          <div class="alerta alerta--info" role="status">
+            <strong>Información académica</strong>
+            <span>El periodo de postulaciones y exámenes se encuentra activo en el calendario.</span>
+          </div>
+          <div class="alerta alerta--exito" role="status">
+            <strong>Operación exitosa</strong>
+            <span>Los cambios en tu perfil han sido almacenados de forma segura.</span>
+          </div>
+          <div class="alerta alerta--advertencia" role="status">
+            <strong>Advertencia de vencimiento</strong>
+            <span>Tienes tareas pendientes con fecha límite para esta semana.</span>
+          </div>
+          <div class="alerta alerta--error" role="alert">
+            <strong>Error de validación</strong>
+            <span>No se pudo conectar con el servidor. Por favor verifica tus credenciales.</span>
+          </div>
+        </section>
+
+        <!-- 6. Tarjetas -->
+        <section id="tarjetas" class="pila">
+          <h2>06 · Tarjetas (.tarjeta)</h2>
+          <div class="grid-auto">
+            <article class="tarjeta">
+              <span class="insignia insignia--primario" style="margin-bottom: var(--espacio-s);">Módulo 1</span>
+              <h3 class="tarjeta__titulo">Alfabetización Digital</h3>
+              <p class="tarjeta__cuerpo">Búsqueda, selección crítica y almacenamiento de información en entornos académicos.</p>
+              <div class="tarjeta__pie">
+                <button type="button" class="btn btn--secundario btn--pequeno">Ver detalles</button>
+                <button type="button" class="btn btn--primario btn--pequeno">Iniciar</button>
+              </div>
+            </article>
+            <article class="tarjeta">
+              <span class="insignia insignia--acento" style="margin-bottom: var(--espacio-s);">Módulo 2</span>
+              <h3 class="tarjeta__titulo">Estrategias Tecnológicas</h3>
+              <p class="tarjeta__cuerpo">Diseño de contenidos formativos interactivos y evaluación mediante plataformas LMS.</p>
+              <div class="tarjeta__pie">
+                <button type="button" class="btn btn--secundario btn--pequeno">Ver detalles</button>
+                <button type="button" class="btn btn--primario btn--pequeno">Iniciar</button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 7. Tablas -->
+        <section id="tablas" class="pila">
+          <h2>07 · Tablas responsivas (.tabla)</h2>
+          <div class="tabla-contenedor">
+            <table class="tabla">
+              <thead>
+                <tr>
+                  <th>Código</th>
+                  <th>Asignatura</th>
+                  <th>Nivel</th>
+                  <th>Estado</th>
+                  <th>Puntaje</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>CD-001</code></td>
+                  <td>Competencias Digitales</td>
+                  <td>Básico</td>
+                  <td><span class="insignia insignia--primario">Aprobado</span></td>
+                  <td><strong>95 / 100</strong></td>
+                </tr>
+                <tr>
+                  <td><code>CD-002</code></td>
+                  <td>Estrategias Tecnológicas</td>
+                  <td>Intermedio</td>
+                  <td><span class="insignia insignia--acento">En progreso</span></td>
+                  <td><strong>82 / 100</strong></td>
+                </tr>
+                <tr>
+                  <td><code>CD-003</code></td>
+                  <td>Seguridad y Ética Digital</td>
+                  <td>Avanzado</td>
+                  <td><span class="insignia">Pendiente</span></td>
+                  <td><strong>—</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- 8. Insignias, Chips y Progreso -->
+        <section id="insignias" class="pila">
+          <h2>08 · Insignias, Chips y Progreso</h2>
+          <div class="tarjeta pila">
+            <div class="fila">
+              <span class="insignia">Por defecto</span>
+              <span class="insignia insignia--primario">Estudiante activo</span>
+              <span class="insignia insignia--acento">Medalla de oro</span>
+              <span class="chip">Tecnología</span>
+              <span class="chip">Pedagogía</span>
+              <span class="chip">E-learning</span>
+            </div>
+            <div class="pila" style="gap: var(--espacio-xs); margin-top: var(--espacio-m);">
+              <label for="barraProgreso" style="font-weight: var(--peso-seminegrita); font-size: var(--tamano-s); color: var(--color-primario);">
+                Progreso general del curso (75%)
+              </label>
+              <div id="barraProgreso" class="progreso" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                <span style="width: 75%;"></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 9. Modales y Avisos interactivos -->
+        <section id="modales" class="pila">
+          <h2>09 · Diálogos Modales y Avisos (Integrado con ui.js)</h2>
+          <div class="tarjeta pila">
+            <p>Prueba los componentes interactivos accesibles integrados con el módulo <code>/js/nucleo/ui.js</code>:</p>
+            <div class="fila">
+              <button type="button" class="btn btn--primario" id="btnProbarAviso">
+                Mostrar Toast (aviso)
+              </button>
+              <button type="button" class="btn btn--secundario" id="btnProbarModal">
+                Abrir Modal accesible
+              </button>
+              <button type="button" class="btn btn--peligro" id="btnProbarConfirmar">
+                Diálogo Confirmar
+              </button>
+              <button type="button" class="btn btn--acento" id="btnProbarCargando">
+                Simular Indicador .cargando
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 10. Estado vacío -->
+        <section id="vacio" class="pila">
+          <h2>10 · Estado sin datos (.vacio)</h2>
+          <div class="vacio">
+            <div class="vacio__icono" aria-hidden="true">📭</div>
+            <h3 class="vacio__titulo">No hay actividades disponibles</h3>
+            <p class="vacio__texto">Actualmente no tienes tareas asignadas en esta unidad. Vuelve a consultar más tarde o contacta a tu tutor.</p>
+            <button type="button" class="btn btn--secundario btn--pequeno">Actualizar lista</button>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Pie de página institucional -->
+  <footer class="pie">
+    <div class="contenedor fila" style="justify-content: space-between;">
+      <div>
+        <strong>UNEMI · Universidad Estatal de Milagro</strong>
+        <p style="margin: 0; color: var(--nr-celeste); font-size: var(--tamano-xs);">
+          NeuroRitmo Digital · Maestría en Educación
+        </p>
+      </div>
+      <div>
+        <a href="https://www.unemi.edu.ec/" target="_blank" rel="noreferrer">unemi.edu.ec ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lógica de demostración interactiva con ui.js -->
+  <script type="module">
+    import { aviso, modal, confirmar, cargando } from '/js/nucleo/ui.js';
+
+    // Menú móvil
+    const btnToggle = document.getElementById('btnToggleMenu');
+    const menuLateral = document.getElementById('menuLateral');
+    btnToggle?.addEventListener('click', () => {
+      menuLateral.classList.toggle('abierto');
+    });
+
+    // Probar avisos (toast)
+    document.getElementById('btnProbarAviso')?.addEventListener('click', () => {
+      aviso('¡Notificación de éxito! Los cambios fueron guardados.', 'exito');
+    });
+
+    // Probar modal accesible
+    document.getElementById('btnProbarModal')?.addEventListener('click', async () => {
+      const respuesta = await modal({
+        titulo: 'Detalle de la Actividad',
+        contenido: '<p>Este diálogo cuenta con <strong>role="dialog"</strong>, gestión de foco atrapado y se cierra al presionar la tecla <code>Escape</code> o hacer clic fuera.</p>',
+        acciones: [
+          { texto: 'Cancelar', valor: null, clase: 'btn btn--secundario' },
+          { texto: 'Aceptar', valor: 'ok', clase: 'btn btn--primario' }
+        ]
+      });
+      if (respuesta) {
+        aviso(`Acción confirmada con valor: ${respuesta}`, 'info');
+      }
+    });
+
+    // Probar confirmar
+    document.getElementById('btnProbarConfirmar')?.addEventListener('click', async () => {
+      const acepto = await confirmar('¿Estás seguro de que deseas reiniciar los intentos del cuestionario?');
+      if (acepto) {
+        aviso('Operación confirmada por el usuario.', 'exito');
+      } else {
+        aviso('Operación cancelada.', 'info');
+      }
+    });
+
+    // Probar indicador de carga
+    document.getElementById('btnProbarCargando')?.addEventListener('click', () => {
+      cargando(true);
+      setTimeout(() => {
+        cargando(false);
+        aviso('Proceso en segundo plano finalizado.', 'exito');
+      }, 1500);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+{
+  "usuarios": {
+    "leer": [
+      "admin"
+    ],
+    "escribir": [
+      "admin"
+    ]
+  },
+  "sesiones": {
+    "leer": [
+      "servidor"
+    ],
+    "escribir": [
+      "servidor"
+    ]
+  },
+  "asignaturas": {
+    "leer": [
+      "sesion"
+    ],
+    "escribir": [
+      "admin"
+    ]
+  },
+  "distributivo": {
+    "leer": [
+      "sesion"
+    ],
+    "escribir": [
+      "admin"
+    ]
+  },
+  "unidades": {
+    "leer": [
+      "sesion"
+    ],
+    "escribir": [
+      "docente",
+      "admin"
+    ]
+  },
+  "temas": {
+    "leer": [
+      "sesion"
+    ],
+    "escribir": [
+      "docente",
+      "admin"
+    ]
+  },
+  "glosario": {
+    "leer": [
+      "sesion"
+    ],
+    "escribir": [
+      "docente",
+      "admin"
+    ]
+  },
+  "progreso-temas": {
+    "leer": [
+      "propio",
+      "docente",
+      "admin"
+    ],
+    "escribir": [
+      "estudiante"
+    ]
+  },
+  "noticias": {
+    "leer": [
+      "sesion"
+    ],
+    "escribir": [
+      "docente",
+      "admin"
+    ]
+  },
+  "lecturas-noticias": {
+    "leer": [
+      "propio"
+    ],
+    "escribir": [
+      "sesion"
+    ]
+  },
+  "canciones": {
+    "leer": [
+      "sesion"
+    ],
+    "escribir": [
+      "docente",
+      "admin"
+    ]
+  },
+  "intentos": {
+    "leer": [
+      "propio",
+      "docente",
+      "admin"
+    ],
+    "escribir": [
+      "servidor"
+    ]
+  },
+  "logros": {
+    "leer": [
+      "propio",
+      "docente",
+      "admin"
+    ],
+    "escribir": [
+      "servidor"
+    ]
+  },
+  "insignias": {
+    "leer": [
+      "sesion"
+    ],
+    "escribir": [
+      "admin"
+    ]
+  },
+  "preguntas": {
+    "leer": [
+      "docente",
+      "admin"
+    ],
+    "escribir": [
+      "docente",
+      "admin"
+    ]
+  },
+  "quiz-sesiones": {
+    "leer": [
+      "servidor"
+    ],
+    "escribir": [
+      "servidor"
+    ]
+  },
+  "consultas-tutor": {
+    "leer": [
+      "servidor"
+    ],
+    "escribir": [
+      "servidor"
+    ]
+  },
+  "certificados": {
+    "leer": [
+      "propio",
+      "admin"
+    ],
+    "escribir": [
+      "servidor"
+    ]
+  },
+  "notificaciones": {
+    "leer": [
+      "propio"
+    ],
+    "escribir": [
+      "servidor"
+    ]
+  },
+  "alertas": {
+    "leer": [
+      "docente",
+      "admin"
+    ],
+    "escribir": [
+      "docente",
+      "admin"
+    ]
+  },
+  "foros-hilos": {
+    "leer": [
+      "sesion"
+    ],
+    "escribir": [
+      "sesion"
+    ]
+  },
+  "foros-respuestas": {
+    "leer": [
+      "sesion"
+    ],
+    "escribir": [
+      "sesion"
+    ]
+  },
+  "reportes": {
+    "leer": [
+      "admin"
+    ],
+    "escribir": [
+      "sesion"
+    ]
+  },
+  "agenda": {
+    "leer": [
+      "sesion"
+    ],
+    "escribir": [
+      "sesion"
+    ]
+  },
+  "conversaciones": {
+    "leer": [
+      "servidor"
+    ],
+    "escribir": [
+      "servidor"
+    ]
+  },
+  "mensajes": {
+    "leer": [
+      "servidor"
+    ],
+    "escribir": [
+      "servidor"
+    ]
+  },
+  "bloqueos": {
+    "leer": [
+      "servidor"
+    ],
+    "escribir": [
+      "servidor"
+    ]
+  },
+  "simulaciones": {
+    "leer": [
+      "sesion"
+    ],
+    "escribir": [
+      "docente",
+      "admin"
+    ]
+  },
+  "neuroritmo-partidas": {
+    "leer": [
+      "servidor"
+    ],
+    "escribir": [
+      "servidor"
+    ]
+  },
+  "neuroritmo-entregas": {
+    "leer": [
+      "servidor"
+    ],
+    "escribir": [
+      "servidor"
+    ]
+  },
+  "neuroritmo-borradores": {
+    "leer": [
+      "servidor"
+    ],
+    "escribir": [
+      "servidor"
+    ]
+  },
+  "neuroritmo-plazos": {
+    "leer": [
+      "servidor"
+    ],
+    "escribir": [
+      "servidor"
+    ]
+  },
+  "autodiagnosticos-musicales": {
+    "leer": [
+      "servidor"
+    ],
+    "escribir": [
+      "servidor"
+    ]
+  }
+}

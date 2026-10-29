@@ -1,0 +1,134 @@
+/* publico/css/modulos/distributivo.css */
+/* Estilos específicos para la gestión del distributivo académico */
+
+.distributivo-cabecera {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+  margin-bottom: var(--espacio-l);
+}
+
+@media (min-width: 600px) {
+  .distributivo-cabecera {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.distributivo-filtros {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+  margin-bottom: var(--espacio-l);
+}
+
+@media (min-width: 640px) {
+  .distributivo-filtros {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .distributivo-buscador {
+    flex: 2;
+  }
+
+  .distributivo-filtro-asig,
+  .distributivo-filtro-periodo {
+    flex: 1;
+  }
+}
+
+.distributivo-docente-celda {
+  display: flex;
+  flex-direction: column;
+}
+
+.distributivo-docente-nombre {
+  font-weight: var(--peso-seminegrita);
+  color: var(--color-primario);
+}
+
+.distributivo-docente-correo {
+  font-size: var(--tamano-xs);
+  color: var(--color-texto-suave);
+}
+
+/* Modal: Selector de estudiantes */
+.estudiantes-selector {
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-m);
+  background-color: var(--color-superficie);
+  padding: var(--espacio-s);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
+}
+
+.estudiantes-selector__cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espacio-s);
+  flex-wrap: wrap;
+}
+
+.estudiantes-selector__contador {
+  font-size: var(--tamano-xs);
+  font-weight: var(--peso-negrita);
+  color: var(--color-primario);
+  background-color: var(--color-fondo);
+  padding: var(--espacio-xs) var(--espacio-s);
+  border-radius: var(--radio-completo);
+  border: 1px solid var(--color-borde);
+}
+
+.estudiantes-selector__acciones {
+  display: flex;
+  gap: var(--espacio-xs);
+}
+
+.estudiantes-lista {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-s);
+  padding: var(--espacio-xs);
+  background-color: var(--color-fondo);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.estudiante-item {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-s);
+  padding: var(--espacio-xs) var(--espacio-s);
+  border-radius: var(--radio-s);
+  cursor: pointer;
+  user-select: none;
+  font-size: var(--tamano-s);
+  transition: var(--transicion);
+}
+
+.estudiante-item:hover {
+  background-color: var(--color-superficie);
+}
+
+.estudiante-item input[type="checkbox"] {
+  min-height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.estudiante-item__nombre {
+  font-weight: var(--peso-medio);
+  color: var(--color-texto);
+}
+
+.estudiante-item__correo {
+  font-size: var(--tamano-xs);
+  color: var(--color-texto-suave);
+  margin-left: var(--espacio-xs);
+}

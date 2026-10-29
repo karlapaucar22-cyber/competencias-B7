@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Banco de preguntas · NeuroRitmo Digital</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/componentes.css">
+  <link rel="stylesheet" href="/css/modulos/banco-preguntas.css">
+</head>
+<body>
+  <div id="plantilla"></div>
+  <main id="contenido" class="contenedor">
+    <div class="banco-app">
+      <header class="banco-encabezado">
+        <h1 class="banco-titulo">Banco de preguntas</h1>
+        <p class="banco-subtitulo">Preguntas del quiz por tema y nivel cognitivo (taxonomía de Bloom). Los estudiantes no ven esta lista.</p>
+      </header>
+
+      <div class="campo banco-tema">
+        <label for="selectorTema">Tema</label>
+        <select id="selectorTema">
+          <option value="">Cargando temas...</option>
+        </select>
+      </div>
+
+      <div id="bancoVacio" class="vacio" hidden>
+        <div class="vacio__icono" aria-hidden="true">❓</div>
+        <h2 class="vacio__titulo">Sin temas disponibles</h2>
+        <p class="vacio__texto">No tienes temas en asignaturas que puedas editar.</p>
+      </div>
+
+      <section id="bancoContenido" hidden>
+        <div class="pestanas" role="tablist" aria-label="Niveles del quiz" id="pestanasNivel"></div>
+
+        <div id="panelNivel" class="banco-panel" role="tabpanel" tabindex="0">
+          <div id="avisoMinimo" class="alerta alerta--advertencia" role="status" hidden></div>
+
+          <div class="banco-acciones">
+            <button type="button" id="btnNueva" class="btn btn--primario">+ Nueva pregunta</button>
+            <div class="banco-ia">
+              <label for="cantidadIa">Cantidad</label>
+              <input type="number" id="cantidadIa" min="5" max="15" value="5" inputmode="numeric">
+              <button type="button" id="btnGenerar" class="btn btn--acento">Generar con IA</button>
+            </div>
+          </div>
+
+          <section id="seccionPropuestas" class="banco-propuestas" hidden aria-labelledby="tituloPropuestas">
+            <div class="banco-propuestas__cabecera">
+              <h2 id="tituloPropuestas" class="banco-seccion-titulo">Propuestas de la IA</h2>
+              <div class="banco-propuestas__acciones">
+                <button type="button" id="btnAprobarTodas" class="btn btn--primario btn--sm">Aprobar todas</button>
+                <button type="button" id="btnDescartarTodas" class="btn btn--secundario btn--sm">Descartar todas</button>
+              </div>
+            </div>
+            <p class="banco-nota">Revisa cada propuesta: puedes aprobarla tal cual, editarla antes de guardarla o descartarla.</p>
+            <ul id="listaPropuestas" class="banco-lista"></ul>
+          </section>
+
+          <h2 class="banco-seccion-titulo" id="tituloLista">Preguntas guardadas</h2>
+          <p id="listaVacia" class="banco-nota" hidden>Todavía no hay preguntas en este nivel.</p>
+          <ul id="listaPreguntas" class="banco-lista" aria-labelledby="tituloLista"></ul>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="/js/modulos/banco-preguntas.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Verificar certificado · NeuroRitmo Digital</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/componentes.css">
+  <link rel="stylesheet" href="/css/modulos/verificar.css">
+</head>
+<body>
+  <div id="plantilla"></div>
+  <main id="contenido" class="contenedor">
+    <div class="verificar-app">
+      <header>
+        <h1 class="verificar-titulo">Verificar certificado</h1>
+        <p class="verificar-subtitulo">Comprueba si un diploma o certificado fue emitido por la plataforma. Escribe el código que aparece en el documento.</p>
+      </header>
+
+      <form id="formVerificar" class="tarjeta verificar-form" novalidate>
+        <div class="campo">
+          <label for="codigo">Código del certificado</label>
+          <input type="text" id="codigo" name="codigo" placeholder="EE-2026-ABC123" autocomplete="off" spellcheck="false"
+                 maxlength="20" aria-describedby="ayudaCodigo errorCodigo">
+          <span id="ayudaCodigo" class="verificar-ayuda">Formato: EE-año-6 letras o números.</span>
+          <span id="errorCodigo" class="campo__error" hidden></span>
+        </div>
+        <button type="submit" class="btn btn--primario" id="btnVerificar">Verificar</button>
+      </form>
+
+      <div id="resultado" role="status" aria-live="polite"></div>
+
+      <section id="misCertificados" class="tarjeta verificar-mios" hidden aria-labelledby="tituloMios">
+        <h2 id="tituloMios" class="verificar-mios__titulo">Tus certificados</h2>
+        <p class="verificar-ayuda">Pulsa uno para verificarlo con su código.</p>
+        <ul id="listaMios" class="verificar-mios__lista"></ul>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="/js/modulos/verificar.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Administración de Asignaturas</title>
+<link rel="stylesheet" href="/css/tokens.css"><link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/componentes.css">
+<link rel="stylesheet" href="/css/modulos/admin-asignaturas.css"></head>
+<body><div id="plantilla"></div><main id="contenido" class="contenedor">
+  <header class="asignaturas-cabecera">
+    <div>
+      <h1>Administración de Asignaturas</h1>
+      <p class="tarjeta__subtitulo">Gestiona el catálogo de asignaturas académicas y sus niveles de formación</p>
+    </div>
+    <div>
+      <button type="button" id="btn-nueva-asignatura" class="btn btn--primario">
+        + Nueva Asignatura
+      </button>
+    </div>
+  </header>
+
+  <section class="asignaturas-filtros" aria-label="Filtros de búsqueda de asignaturas">
+    <div class="campo asignaturas-buscador" style="margin-bottom: 0;">
+      <label for="buscar-asignatura" class="sr-only">Buscar por nombre o descripción</label>
+      <input type="search" id="buscar-asignatura" placeholder="Buscar por nombre o descripción...">
+    </div>
+
+    <div class="campo asignaturas-filtro-nivel" style="margin-bottom: 0;">
+      <label for="filtro-nivel" class="sr-only">Filtrar por nivel</label>
+      <select id="filtro-nivel">
+        <option value="">Todos los niveles</option>
+      </select>
+    </div>
+  </section>
+
+  <div id="grid-asignaturas" class="asignaturas-grid" aria-live="polite">
+    <div class="asignaturas-cargando">
+      <div class="cargando cargando--activo" style="position: static; height: 60px;"></div>
+      <p>Cargando asignaturas...</p>
+    </div>
+  </div>
+</main>
+<script type="module" src="/js/modulos/admin-asignaturas.js"></script></body></html>

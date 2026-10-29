@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agenda · NeuroRitmo Digital</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/componentes.css">
+  <link rel="stylesheet" href="/css/modulos/agenda.css">
+</head>
+<body>
+  <div id="plantilla"></div>
+  <main id="contenido" class="contenedor">
+    <div class="agenda-app">
+      <header class="agenda-encabezado">
+        <div>
+          <h1 class="agenda-titulo">Agenda</h1>
+          <p class="agenda-subtitulo">Tus tareas, reuniones, fechas límite y recordatorios en un solo lugar.</p>
+        </div>
+        <button type="button" id="btnNuevoEvento" class="btn btn--primario">＋ Nuevo evento</button>
+      </header>
+
+      <section class="tarjeta agenda-contexto" aria-labelledby="agendaAcademicaTitulo">
+        <div class="tarjeta__cuerpo">
+          <h2 id="agendaAcademicaTitulo" class="tarjeta__titulo">Calendario académico NeuroRitmo</h2>
+          <p><strong>Inicio:</strong> miércoles 4 de noviembre de 2026.</p>
+          <p><strong>Zona horaria:</strong> Ecuador continental · America/Guayaquil (UTC−5).</p>
+          <p>Los hitos posteriores se presentan como propuestas editables y requieren confirmación docente.</p>
+        </div>
+      </section>
+
+      <ul class="agenda-leyenda" id="leyenda" aria-label="Colores por tipo de evento"></ul>
+
+      <div class="pestanas" role="tablist" aria-label="Vistas de la agenda">
+        <button type="button" role="tab" id="pestanaCalendario" class="pestanas__boton" aria-selected="true" aria-controls="panelCalendario">Calendario</button>
+        <button type="button" role="tab" id="pestanaSemana" class="pestanas__boton" aria-selected="false" aria-controls="panelSemana" tabindex="-1">
+          <span>Mi semana</span>
+          <span id="contadorVencidos" class="pestanas__contador pestanas__contador--bajo" hidden></span>
+        </button>
+      </div>
+
+      <p id="agendaEstado" class="agenda-nota" role="status">Cargando agenda...</p>
+
+      <section id="panelCalendario" class="agenda-panel" role="tabpanel" aria-labelledby="pestanaCalendario">
+        <div id="calendario" class="agenda-calendario"></div>
+      </section>
+
+      <section id="panelSemana" class="agenda-panel" role="tabpanel" aria-labelledby="pestanaSemana" tabindex="0" hidden>
+        <h2 class="agenda-seccion">Próximos 7 días</h2>
+        <div id="miSemana" class="agenda-semana"></div>
+        <div id="semanaVacia" class="vacio" hidden>
+          <div class="vacio__icono" aria-hidden="true">🗓️</div>
+          <h3 class="vacio__titulo">Nada programado</h3>
+          <p class="vacio__texto">No tienes eventos en los próximos 7 días ni pendientes vencidos.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.15/locales/es.global.min.js"></script>
+  <script type="module" src="/js/modulos/agenda.js"></script>
+</body>
+</html>

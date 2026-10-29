@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Encuentra la pareja · NeuroRitmo Digital</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/componentes.css">
+  <link rel="stylesheet" href="/css/modulos/pareja.css">
+</head>
+<body>
+  <div id="plantilla"></div>
+  <main id="contenido" class="contenedor" data-avatar="Voltea dos tarjetas y une cada concepto con su definición. ¡Encuentra todas las parejas con pocos errores!">
+    <div class="pareja-app">
+      <nav class="migas-pan" aria-label="Navegación">
+        <ol>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/paginas/actividades.html">Actividades</a></li>
+          <li aria-current="page">Encuentra la pareja</li>
+        </ol>
+      </nav>
+
+      <header class="pareja-encabezado">
+        <div>
+          <h1 class="pareja-titulo">Encuentra la pareja</h1>
+          <p class="pareja-subtitulo">Voltea dos tarjetas y relaciona cada concepto con su definición.</p>
+        </div>
+        <div class="pareja-tema">
+          <span class="insignia insignia--primario" id="insigniaTema">Cargando tema...</span>
+          <button type="button" id="btnCambiarTema" class="btn btn--secundario btn--sm">Cambiar tema</button>
+        </div>
+      </header>
+
+      <p id="parejaCargando" class="tarjeta pareja-mensaje">Cargando términos del tema...</p>
+
+      <div id="parejaVacio" class="vacio" hidden>
+        <div class="vacio__icono" aria-hidden="true">🃏</div>
+        <h2 class="vacio__titulo">No hay suficientes términos</h2>
+        <p class="vacio__texto">Este tema necesita al menos 4 términos en el glosario para jugar.</p>
+        <div class="pareja-acciones">
+          <a href="/paginas/actividades.html" id="enlaceTema" class="btn btn--primario">Ir al tema</a>
+          <a href="/paginas/actividades.html" class="btn btn--secundario">Otras actividades</a>
+        </div>
+      </div>
+
+      <section id="parejaJuego" class="pareja-juego" hidden aria-label="Tablero del juego">
+        <div class="pareja-controles">
+          <fieldset class="pareja-dificultad">
+            <legend>Dificultad</legend>
+            <label><input type="radio" name="dificultad" value="6" checked> 6 parejas</label>
+            <label><input type="radio" name="dificultad" value="8"> 8 parejas</label>
+            <label><input type="radio" name="dificultad" value="10"> 10 parejas</label>
+          </fieldset>
+
+          <dl class="pareja-estadisticas">
+            <div><dt>Parejas</dt><dd id="datoParejas">0/0</dd></div>
+            <div><dt>Intentos</dt><dd id="datoIntentos">0</dd></div>
+            <div><dt>Tiempo</dt><dd id="datoTiempo">0:00</dd></div>
+          </dl>
+        </div>
+
+        <p id="avisoDisponibles" class="pareja-nota" hidden></p>
+        <p class="sr-only">Usa Tab para recorrer las tarjetas y Enter o Espacio para voltearlas.</p>
+
+        <div id="tablero" class="pareja-tablero"></div>
+        <div id="contenedorRetro" class="pareja-retro"></div>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="/js/modulos/pareja.js"></script>
+</body>
+</html>

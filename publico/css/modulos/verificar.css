@@ -1,0 +1,125 @@
+/* publico/css/modulos/verificar.css · Verificación pública de certificados */
+
+.verificar-app {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+  max-width: 40rem;
+}
+
+.verificar-titulo {
+  font-size: var(--tamano-2xl);
+  font-weight: var(--peso-negrita);
+  margin: 0 0 var(--espacio-xs);
+}
+
+.verificar-subtitulo,
+.verificar-ayuda {
+  color: var(--color-texto-suave);
+  margin: 0;
+}
+
+.verificar-ayuda {
+  font-size: var(--tamano-xs);
+}
+
+.verificar-form #codigo {
+  font-family: monospace;
+  font-size: var(--tamano-l);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.verificar-resultado {
+  display: flex;
+  gap: var(--espacio-m);
+  align-items: flex-start;
+}
+
+.verificar-resultado__icono {
+  font-size: var(--tamano-2xl);
+  line-height: 1;
+}
+
+.verificar-resultado__datos {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--espacio-xs) var(--espacio-m);
+  margin: var(--espacio-s) 0 0;
+}
+
+.verificar-resultado__datos dt {
+  font-weight: var(--peso-seminegrita);
+}
+
+.verificar-resultado__datos dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Certificados del estudiante con sesión */
+.verificar-mios {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
+}
+
+.verificar-mios__titulo {
+  margin: 0;
+  font-size: var(--tamano-l);
+  color: var(--color-primario);
+}
+
+.verificar-mios__lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.verificar-mios__boton {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  width: 100%;
+  min-height: 44px;
+  padding: var(--espacio-s) var(--espacio-m);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-m);
+  background-color: var(--color-superficie);
+  color: var(--color-texto);
+  font-family: inherit;
+  font-size: var(--tamano-s);
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transicion);
+}
+
+.verificar-mios__boton:hover,
+.verificar-mios__boton[aria-current="true"] {
+  border-color: var(--color-primario);
+}
+
+.verificar-mios__boton:focus-visible {
+  outline: 3px solid var(--color-info);
+  outline-offset: 2px;
+}
+
+.verificar-mios__codigo {
+  font-family: monospace;
+  font-weight: var(--peso-negrita);
+  color: var(--color-primario);
+}
+
+@media (max-width: 479.98px) {
+  .verificar-resultado__datos {
+    grid-template-columns: 1fr;
+  }
+
+  .verificar-resultado__datos dd {
+    margin-bottom: var(--espacio-xs);
+  }
+}

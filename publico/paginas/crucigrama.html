@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crucigrama · NeuroRitmo Digital</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/componentes.css">
+  <link rel="stylesheet" href="/css/modulos/crucigrama.css">
+</head>
+<body>
+  <div id="plantilla"></div>
+  <main id="contenido" class="contenedor" data-avatar="Lee cada pista y escribe la palabra en sus casillas. Puedes moverte con las flechas del teclado.">
+    <div class="cruci-app">
+      <nav class="migas-pan" aria-label="Navegación">
+        <ol>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/paginas/actividades.html">Actividades</a></li>
+          <li aria-current="page">Crucigrama</li>
+        </ol>
+      </nav>
+
+      <header class="cruci-encabezado">
+        <div>
+          <h1 class="cruci-titulo">Crucigrama</h1>
+          <p class="cruci-subtitulo">Completa las palabras del tema con ayuda de sus pistas.</p>
+        </div>
+        <div class="cruci-tema">
+          <span class="insignia insignia--primario" id="insigniaTema">Cargando tema...</span>
+          <button type="button" id="btnCambiarTema" class="btn btn--secundario btn--sm">Cambiar tema</button>
+        </div>
+      </header>
+
+      <p id="cruciCargando" class="tarjeta cruci-mensaje">Preparando el crucigrama...</p>
+
+      <div id="cruciVacio" class="vacio" hidden>
+        <div class="vacio__icono" aria-hidden="true">✏️</div>
+        <h2 class="vacio__titulo">No hay suficientes palabras</h2>
+        <p class="vacio__texto">Este tema necesita al menos 3 términos de una sola palabra (3 a 12 letras) en el glosario.</p>
+        <div class="cruci-acciones">
+          <a href="/paginas/actividades.html" id="enlaceTema" class="btn btn--primario">Ir al tema</a>
+          <a href="/paginas/actividades.html" class="btn btn--secundario">Otras actividades</a>
+        </div>
+      </div>
+
+      <section id="cruciJuego" class="cruci-juego" hidden aria-label="Crucigrama">
+        <div class="cruci-barra">
+          <dl class="cruci-estadisticas">
+            <div><dt>Correctas</dt><dd id="datoCorrectas">0/0</dd></div>
+            <div><dt>Tiempo</dt><dd id="datoTiempo">0:00</dd></div>
+          </dl>
+          <div class="cruci-acciones">
+            <button type="button" id="btnComprobar" class="btn btn--primario">Comprobar palabra</button>
+            <button type="button" id="btnRevelar" class="btn btn--secundario">Revelar letra (3)</button>
+            <button type="button" id="btnTerminar" class="btn btn--acento">Terminar</button>
+          </div>
+        </div>
+
+        <p id="pistaActual" class="cruci-pista-actual" aria-live="polite"></p>
+        <p class="sr-only" id="ayudaCruci">
+          Escribe una letra por casilla. Las flechas mueven entre casillas, Retroceso borra,
+          la barra espaciadora o el doble clic cambian entre horizontal y vertical, y Enter comprueba la palabra.
+        </p>
+
+        <div class="cruci-area">
+          <div class="cruci-grilla-contenedor">
+            <div id="grilla" class="cruci-grilla" aria-describedby="ayudaCruci"></div>
+          </div>
+          <div class="cruci-pistas">
+            <section aria-labelledby="tituloHorizontales">
+              <h2 id="tituloHorizontales" class="cruci-pistas__titulo">Horizontales</h2>
+              <ol id="pistasHorizontales" class="cruci-pistas__lista"></ol>
+            </section>
+            <section aria-labelledby="tituloVerticales">
+              <h2 id="tituloVerticales" class="cruci-pistas__titulo">Verticales</h2>
+              <ol id="pistasVerticales" class="cruci-pistas__lista"></ol>
+            </section>
+          </div>
+        </div>
+
+        <div id="contenedorRetro" class="cruci-retro"></div>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="/js/modulos/crucigrama.js"></script>
+</body>
+</html>

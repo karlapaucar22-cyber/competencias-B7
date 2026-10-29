@@ -1,0 +1,102 @@
+/* publico/css/modulos/admin-asignaturas.css */
+/* Estilos específicos para la administración de asignaturas */
+
+.asignaturas-cabecera {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+  margin-bottom: var(--espacio-l);
+}
+
+@media (min-width: 600px) {
+  .asignaturas-cabecera {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.asignaturas-filtros {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+  margin-bottom: var(--espacio-xl);
+}
+
+@media (min-width: 600px) {
+  .asignaturas-filtros {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .asignaturas-buscador {
+    flex: 1;
+  }
+
+  .asignaturas-filtro-nivel {
+    width: 240px;
+  }
+}
+
+.asignaturas-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espacio-l);
+}
+
+@media (min-width: 640px) {
+  .asignaturas-grid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+}
+
+.asignatura-tarjeta {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.asignatura-tarjeta__encabezado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espacio-s);
+  margin-bottom: var(--espacio-s);
+}
+
+.asignatura-tarjeta__titulo {
+  font-size: var(--tamano-l);
+  font-weight: var(--peso-negrita);
+  color: var(--color-primario);
+  margin: 0 0 var(--espacio-s) 0;
+  line-height: var(--linea-apretada);
+}
+
+.asignatura-tarjeta__descripcion {
+  font-size: var(--tamano-s);
+  color: var(--color-texto);
+  line-height: var(--linea-base);
+  margin: 0 0 var(--espacio-m) 0;
+  flex-grow: 1;
+}
+
+.asignatura-tarjeta__meta {
+  font-size: var(--tamano-xs);
+  color: var(--color-texto-suave);
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-xs);
+  margin-bottom: var(--espacio-m);
+}
+
+.asignaturas-vacio,
+.asignaturas-cargando {
+  text-align: center;
+  padding: var(--espacio-xxl) var(--espacio-m);
+  background-color: var(--color-superficie);
+  border: 1px dashed var(--color-borde);
+  border-radius: var(--radio-l);
+  grid-column: 1 / -1;
+  color: var(--color-texto-suave);
+}

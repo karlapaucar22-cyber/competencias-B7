@@ -1,0 +1,8 @@
+{
+  "nombrePlataforma": "NeuroRitmo Digital",
+  "maxSubidaMB": 10,
+  "limiteIADiario": 30,
+  "limiteTutorDiario": 40,
+  "chatEntreEstudiantes": true,
+  "alertasAdmin": false
+}

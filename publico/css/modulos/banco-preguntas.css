@@ -1,0 +1,231 @@
+/* publico/css/modulos/banco-preguntas.css · Banco de preguntas */
+
+.banco-app {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+}
+
+.banco-encabezado {
+  border-bottom: 1px solid var(--color-borde);
+  padding-bottom: var(--espacio-m);
+}
+
+.banco-titulo {
+  font-size: var(--tamano-2xl);
+  font-weight: var(--peso-negrita);
+  margin: 0 0 var(--espacio-xs);
+}
+
+.banco-subtitulo,
+.banco-nota {
+  color: var(--color-texto-suave);
+  margin: 0;
+}
+
+.banco-nota {
+  font-size: var(--tamano-s);
+}
+
+.banco-tema {
+  max-width: 40rem;
+  margin-bottom: 0;
+}
+
+.banco-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+  padding-top: var(--espacio-m);
+}
+
+.banco-panel:focus-visible {
+  outline: 3px solid var(--color-info);
+  outline-offset: 2px;
+}
+
+/* Acciones: nueva pregunta y generación con IA */
+.banco-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--espacio-s);
+}
+
+.banco-ia {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espacio-s);
+}
+
+.banco-ia label {
+  font-size: var(--tamano-s);
+  font-weight: var(--peso-seminegrita);
+}
+
+.banco-ia input {
+  width: 5rem;
+  min-height: 44px;
+  padding: var(--espacio-s);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-m);
+  font-family: inherit;
+  font-size: var(--tamano-m);
+}
+
+.banco-seccion-titulo {
+  font-size: var(--tamano-l);
+  margin: 0;
+}
+
+/* Propuestas de la IA */
+.banco-propuestas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
+  padding: var(--espacio-m);
+  border: 2px dashed var(--color-acento);
+  border-radius: var(--radio-l);
+  background-color: var(--color-fondo);
+}
+
+.banco-propuestas__cabecera,
+.banco-propuestas__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--espacio-s);
+}
+
+/* Lista de preguntas */
+.banco-lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.banco-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
+  padding: var(--espacio-m);
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-m);
+  box-shadow: var(--sombra-1);
+}
+
+@media (min-width: 768px) {
+  .banco-item {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+.banco-item__cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+  min-width: 0;
+}
+
+.banco-item__enunciado {
+  margin: 0;
+  font-weight: var(--peso-medio);
+  overflow-wrap: anywhere;
+}
+
+.banco-item__respuesta {
+  margin: 0;
+  font-size: var(--tamano-s);
+  color: var(--color-texto-suave);
+}
+
+.banco-item__etiquetas,
+.banco-item__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-xs);
+}
+
+.banco-item__acciones {
+  flex: 0 0 auto;
+}
+
+.banco-estado--borrador {
+  color: var(--color-texto-suave);
+  border-style: dashed;
+}
+
+.banco-item__error {
+  margin: 0;
+  font-size: var(--tamano-s);
+  color: var(--color-error);
+}
+
+/* Formulario del modal */
+.banco-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.banco-form fieldset {
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-m);
+  padding: var(--espacio-s) var(--espacio-m);
+  margin: 0 0 var(--espacio-m);
+}
+
+.banco-form legend {
+  font-size: var(--tamano-s);
+  font-weight: var(--peso-seminegrita);
+  color: var(--color-primario);
+  padding: 0 var(--espacio-xs);
+}
+
+.banco-opcion {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-s);
+  margin-bottom: var(--espacio-s);
+}
+
+.banco-opcion input[type="text"] {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 44px;
+  padding: var(--espacio-s) var(--espacio-m);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-m);
+  font-family: inherit;
+  font-size: var(--tamano-m);
+}
+
+.banco-opcion input[type="radio"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: 0 0 auto;
+}
+
+.banco-vf {
+  display: flex;
+  gap: var(--espacio-l);
+}
+
+.banco-vf label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espacio-xs);
+}
+
+.banco-form__errores {
+  margin: 0 0 var(--espacio-s);
+  padding-left: var(--espacio-l);
+}

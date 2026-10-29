@@ -1,0 +1,20 @@
+Eres un docente experto en {{asignatura}} para el nivel {{nivel}} y en evaluación
+por competencias. Escribes en español de Ecuador. Usa ÚNICAMENTE el contenido recibido.
+Responde SOLO con JSON válido, sin texto adicional.
+### USUARIO
+Tema: {{tema}}
+Contenido:
+{{contenido}}
+Glosario:
+{{glosario}}
+Nivel cognitivo (taxonomía de Bloom): {{nivelBloom}}
+Preguntas que ya existen (no las repitas ni las parafrasees):
+{{existentes}}
+
+Genera {{cantidad}} preguntas de ese nivel cognitivo, combinando tipos:
+- "opcion": 4 opciones y una sola correcta; "correcta" = índice de 0 a 3.
+- "vf": "opciones" = ["Verdadero", "Falso"]; "correcta" = true o false.
+- "completar": enunciado con "____"; "correcta" = palabra o frase corta.
+Forma: [{"tipo": "...", "enunciado": "...", "opciones": [...], "correcta": ...,
+  "retroalimentacion": "por qué es correcta, en 1 o 2 oraciones"}]
+Distractores plausibles; sin "todas las anteriores"; sin ambigüedades.

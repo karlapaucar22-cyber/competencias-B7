@@ -1,0 +1,1759 @@
+/* publico/css/modulos/neuroritmo.css */
+/* NeuroRitmo: Misión Cerebro Sonoro. Componentes propios del módulo; los colores, botones, tarjetas y
+   progreso vienen del Design System global (tokens.css, base.css y componentes.css). */
+
+@property --nr-avance {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+/* ---------- Página y estructura ---------- */
+
+.neuro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+  color: var(--nr-texto);
+}
+
+.neuro__navegacion {
+  overflow-x: auto;
+  padding-block: var(--espacio-xs);
+}
+
+/* En pantallas pequeñas la ruta se desliza en una fila en lugar de partirse */
+@media (max-width: 760px) {
+  .neuro__navegacion .ruta-pasos { flex-wrap: nowrap; }
+  .neuro__navegacion .ruta-pasos__enlace { white-space: nowrap; }
+}
+
+.neuro__vista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+}
+
+.neuro__vista > .tarjeta,
+.neuro__vista > section {
+  margin: 0;
+}
+
+
+.neuro-titulo,
+.neuro h1 {
+  margin: 0;
+  color: var(--nr-petroleo);
+  font-size: var(--tamano-xl);
+  line-height: var(--interlineado-ajustado);
+}
+
+.neuro .tarjeta__titulo {
+  color: var(--nr-petroleo);
+}
+
+.neuro h1:focus-visible,
+.neuro h2:focus-visible {
+  outline: 3px solid var(--nr-amarillo);
+  outline-offset: 4px;
+}
+
+.neuro-subtitulo {
+  margin: var(--espacio-s) 0;
+  font-size: var(--tamano-m);
+  color: var(--nr-petroleo);
+}
+
+.neuro-nota {
+  margin: var(--espacio-xs) 0;
+  font-size: var(--tamano-s);
+  color: var(--nr-texto-suave);
+}
+
+.neuro-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-s);
+  align-items: center;
+  margin: var(--espacio-s) 0 0;
+}
+
+/* ---------- Botones (píldora; texto blanco solo sobre turquesa oscuro) ---------- */
+.neuro .btn {
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+}
+
+
+.neuro-btn-grande {
+  padding: var(--espacio-m) var(--espacio-xl);
+  font-size: var(--tamano-l);
+  box-shadow: var(--nr-sombra-alta);
+}
+
+/* ---------- Neuri con globo de diálogo ---------- */
+.neuri-dialogo {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-m);
+}
+
+.neuri-dialogo__figura .neuri-figura {
+  width: 4.5rem;
+}
+
+.neuri-dialogo__globo {
+  position: relative;
+  flex: 1;
+  margin: 0;
+  padding: var(--espacio-s) var(--espacio-m);
+  background-color: var(--color-superficie);
+  border: 2px solid var(--nr-borde);
+  border-radius: var(--nr-radio);
+  box-shadow: var(--nr-sombra);
+  line-height: var(--interlineado-base);
+}
+
+.neuri-dialogo__globo::before {
+  content: "";
+  position: absolute;
+  left: calc(-1 * var(--espacio-s));
+  top: 50%;
+  width: var(--espacio-m);
+  height: var(--espacio-m);
+  background-color: var(--color-superficie);
+  border-left: 2px solid var(--nr-borde);
+  border-bottom: 2px solid var(--nr-borde);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.neuri-dialogo__globo strong {
+  color: var(--nr-turquesa-oscuro);
+}
+
+.neuri-dialogo--celebrando .neuri-dialogo__globo {
+  border-color: var(--nr-verde);
+  background-color: var(--nr-menta);
+}
+
+.neuri-dialogo--celebrando .neuri-dialogo__globo::before {
+  border-color: var(--nr-verde);
+  background-color: var(--nr-menta);
+}
+
+.neuri-dialogo--animando .neuri-dialogo__globo {
+  border-color: var(--nr-amarillo);
+  background-color: var(--nr-amarillo-suave);
+}
+
+.neuri-dialogo--animando .neuri-dialogo__globo::before {
+  border-color: var(--nr-amarillo);
+  background-color: var(--nr-amarillo-suave);
+}
+
+/* ---------- 1. Bienvenida ---------- */
+.neuro-portada {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  gap: var(--espacio-l);
+  align-items: center;
+  overflow: hidden;
+  padding: var(--espacio-xl);
+  border: 1px solid var(--nr-borde);
+  border-bottom: 4px solid var(--nr-turquesa);
+  border-radius: var(--nr-radio);
+  background: linear-gradient(130deg, var(--nr-celeste) 0%, var(--nr-menta) 100%);
+  box-shadow: var(--nr-sombra);
+}
+
+.neuro-portada__notas span {
+  position: absolute;
+  font-size: var(--tamano-2xl);
+  color: var(--nr-turquesa);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.neuro-portada__notas span:nth-child(1) { top: 8%; left: 46%; }
+.neuro-portada__notas span:nth-child(2) { top: 70%; left: 52%; color: var(--nr-coral); }
+.neuro-portada__notas span:nth-child(3) { top: 14%; right: 6%; color: var(--nr-amarillo); opacity: 0.6; }
+.neuro-portada__notas span:nth-child(4) { bottom: 8%; right: 30%; color: var(--nr-verde); }
+.neuro-portada__notas span:nth-child(5) { top: 40%; left: 3%; }
+
+.neuro-portada__texto {
+  position: relative;
+  flex: 1 1 20rem;
+  min-width: 0;
+}
+
+.neuro-portada__antetitulo,
+.neuro-mini__estacion {
+  margin: 0 0 var(--espacio-xs);
+  font-size: var(--tamano-xs);
+  font-weight: var(--peso-extranegrita);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--nr-turquesa-oscuro);
+}
+
+/* Sobre el degradado celeste→menta de la portada el turquesa oscuro baja a 4,3:1; el azul da 5,3:1 (AA) */
+.neuro-portada__antetitulo {
+  color: var(--nr-azul);
+}
+
+.neuro-portada h1 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+  margin: var(--espacio-xs) 0 var(--espacio-m);
+}
+
+.neuro-portada__marca {
+  font-size: clamp(var(--tamano-2xl), 7vw, 3.5rem);
+  font-weight: var(--peso-extranegrita);
+  line-height: 1;
+  color: var(--nr-petroleo);
+}
+
+.neuro-portada__lema {
+  font-size: var(--tamano-l);
+  color: var(--nr-turquesa-oscuro);
+}
+
+.neuro-portada__intro {
+  max-width: 40rem;
+  line-height: var(--interlineado-base);
+}
+
+.neuro-portada__datos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-s);
+  margin: var(--espacio-m) 0;
+  padding: 0;
+  list-style: none;
+}
+
+.neuro-portada__datos li {
+  padding: var(--espacio-xs) var(--espacio-m);
+  border: 1px solid var(--nr-borde);
+  border-radius: var(--radio-completo);
+  background-color: var(--color-superficie);
+  font-size: var(--tamano-s);
+  font-weight: var(--peso-seminegrita);
+  color: var(--nr-petroleo);
+}
+
+.neuro-portada__figura {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacio-s);
+  flex: 0 1 15rem;
+  margin-inline: auto;
+}
+
+.neuro-portada__figura .neuri-figura {
+  width: 11rem;
+  filter: var(--nr-sombra-figura);
+}
+
+.neuro-portada__globo {
+  margin: 0;
+  padding: var(--espacio-s) var(--espacio-m);
+  border-radius: var(--nr-radio);
+  background-color: var(--color-superficie);
+  box-shadow: var(--nr-sombra);
+  font-size: var(--tamano-s);
+  text-align: center;
+}
+
+.neuro-objetivo {
+  display: flex;
+  gap: var(--espacio-m);
+  align-items: flex-start;
+  background-color: var(--nr-amarillo-suave);
+  border-left: 5px solid var(--nr-amarillo);
+}
+
+.neuro-objetivo p {
+  margin: 0;
+}
+
+.neuro-objetivo__icono {
+  font-size: var(--tamano-2xl);
+  line-height: 1;
+}
+
+.neuro-lista-recursos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: var(--espacio-s);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.neuro-lista-recursos li {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+  padding: var(--espacio-m);
+  border: 1px solid var(--nr-borde);
+  border-radius: var(--nr-radio);
+  background-color: var(--nr-celeste);
+}
+
+.neuro-lista-recursos__icono {
+  font-size: var(--tamano-xl);
+}
+
+.neuro-lista-recursos a,
+.neuro-recurso {
+  color: var(--nr-turquesa-oscuro);
+  font-weight: var(--peso-seminegrita);
+}
+
+/* ---------- 2. Instrucciones ---------- */
+.neuro-reglas {
+  display: grid;
+  gap: var(--espacio-s);
+  padding-left: var(--espacio-l);
+}
+
+.neuro-reglas--tarjetas {
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.neuro-regla {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
+  padding: var(--espacio-m);
+  border: 1px solid var(--nr-borde);
+  border-radius: var(--nr-radio);
+  background-color: var(--color-superficie);
+  box-shadow: var(--nr-sombra);
+}
+
+.neuro-regla:nth-child(1) { border-top: 5px solid var(--nr-turquesa); }
+.neuro-regla:nth-child(2) { border-top: 5px solid var(--nr-verde); }
+.neuro-regla:nth-child(3) { border-top: 5px solid var(--nr-amarillo); }
+.neuro-regla:nth-child(4) { border-top: 5px solid var(--nr-coral); }
+
+.neuro-regla__icono {
+  font-size: var(--tamano-2xl);
+}
+
+/* ---------- Progreso con marca (240/300 o 70/100) ---------- */
+.neuro-progreso__cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--espacio-s);
+  font-size: var(--tamano-s);
+  color: var(--nr-petroleo);
+}
+
+.neuro .progreso {
+  position: relative;
+  height: 14px;
+  overflow: visible;
+  background-color: var(--nr-pista);
+  border-color: var(--nr-borde);
+}
+
+.neuro-progreso__marca {
+  position: absolute;
+  top: calc(-1 * var(--espacio-xs));
+  bottom: calc(-1 * var(--espacio-xs));
+  width: 4px;
+  background-color: var(--nr-amarillo);
+  border: 1px solid var(--nr-petroleo);
+  border-radius: var(--radio-s);
+}
+
+/* ---------- Insignias como medallas ---------- */
+.neuro-insignias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-s);
+  margin: var(--espacio-s) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.neuro-medalla {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espacio-s);
+  padding: var(--espacio-xs) var(--espacio-m) var(--espacio-xs) var(--espacio-xs);
+  border: 2px solid var(--nr-amarillo);
+  border-radius: var(--radio-completo);
+  background-color: var(--nr-amarillo-suave);
+  font-size: var(--tamano-s);
+  font-weight: var(--peso-negrita);
+  color: var(--nr-petroleo);
+}
+
+.neuro-medalla__icono {
+  display: inline-grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--radio-completo);
+  background-color: var(--nr-amarillo);
+  font-size: var(--tamano-l);
+}
+
+/* ---------- 3. Mapa de misiones ---------- */
+.neuro-rejilla {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espacio-m);
+}
+
+@media (min-width: 640px) {
+  .neuro-rejilla { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.neuro-mini {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+  margin: 0;
+  border-top: 6px solid var(--nr-mision-1);
+}
+
+.neuro-mini--m2 { border-top-color: var(--nr-mision-2); }
+.neuro-mini--m3 { border-top-color: var(--nr-mision-3); }
+
+.neuro-mapa {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espacio-xl);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 960px) {
+  .neuro-mapa { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.neuro-mision {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--nr-borde);
+  border-radius: var(--nr-radio);
+  background-color: var(--color-superficie);
+  box-shadow: var(--nr-sombra);
+}
+
+/* Conexión entre estaciones: flecha hacia abajo en móvil y hacia la derecha en escritorio */
+.neuro-mision:not(:last-child)::after {
+  content: "↓";
+  position: absolute;
+  left: 50%;
+  bottom: calc(-1 * var(--espacio-xl));
+  transform: translateX(-50%);
+  display: grid;
+  place-items: center;
+  width: var(--espacio-xl);
+  height: var(--espacio-xl);
+  color: var(--nr-turquesa-oscuro);
+  font-weight: var(--peso-negrita);
+}
+
+@media (min-width: 960px) {
+  .neuro-mision:not(:last-child)::after {
+    content: "→";
+    left: auto;
+    right: calc(-1 * var(--espacio-xl));
+    bottom: auto;
+    top: 2.75rem;
+    transform: none;
+  }
+}
+
+.neuro-mision__cabecera {
+  display: flex;
+  gap: var(--espacio-s);
+  align-items: center;
+  padding: var(--espacio-m);
+  border-radius: var(--nr-radio) var(--nr-radio) 0 0;
+  background-color: var(--nr-mision-1);
+  color: var(--color-texto-inverso);
+}
+
+.neuro-mision--m2 .neuro-mision__cabecera { background-color: var(--nr-mision-2); }
+.neuro-mision--m3 .neuro-mision__cabecera { background-color: var(--nr-mision-3); }
+.neuro-mision--bloqueada .neuro-mision__cabecera { background-color: var(--nr-texto-suave); }
+
+.neuro-mision__icono {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radio-completo);
+  background-color: var(--color-superficie);
+  font-size: var(--tamano-xl);
+}
+
+.neuro-mision__estacion {
+  margin: 0;
+  font-size: var(--tamano-xs);
+  font-weight: var(--peso-negrita);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.neuro-mision__titulo {
+  margin: 0;
+  font-size: var(--tamano-l);
+  color: var(--color-texto-inverso);
+  line-height: var(--interlineado-ajustado);
+}
+
+.neuro-mision__cuerpo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--espacio-s);
+  padding: var(--espacio-m);
+}
+
+.neuro-mision__cuerpo .btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.neuro-mision__etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-xs);
+  margin: 0;
+}
+
+.neuro-pildora {
+  display: inline-flex;
+  gap: var(--espacio-xs);
+  padding: var(--espacio-xs) var(--espacio-s);
+  border-radius: var(--radio-completo);
+  background-color: var(--nr-menta);
+  font-size: var(--tamano-xs);
+  font-weight: var(--peso-negrita);
+  color: var(--nr-verde-texto);
+}
+
+.neuro-pildora--bloqueada { background-color: var(--color-fondo); color: var(--nr-texto-suave); }
+.neuro-pildora--abierta { background-color: var(--nr-celeste); color: var(--nr-petroleo); }
+.neuro-pildora--pendiente,
+.neuro-pildora--devuelta { background-color: var(--nr-amarillo-suave); color: var(--nr-petroleo); }
+
+.neuro-mision__puntaje {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--espacio-s);
+  font-size: var(--tamano-s);
+}
+
+.neuro-mision__enlaces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-xs);
+  margin: 0;
+}
+
+.neuro-mision__candado {
+  margin: auto 0 0;
+  padding: var(--espacio-s);
+  border-radius: var(--radio-m);
+  background-color: var(--color-fondo);
+  font-size: var(--tamano-s);
+  color: var(--nr-texto-suave);
+}
+
+.neuro-mision--bloqueada {
+  background-color: var(--nr-fondo);
+}
+
+.neuro-mision--aprobada {
+  border-color: var(--nr-verde);
+}
+
+.neuro-mision__nueva {
+  margin: 0;
+  padding: var(--espacio-xs) var(--espacio-s);
+  border-radius: var(--radio-m);
+  background-color: var(--nr-amarillo);
+  font-weight: var(--peso-negrita);
+  color: var(--nr-petroleo);
+}
+
+/* ---------- 4. Actividades ---------- */
+.neuro-mision-cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-m);
+  align-items: center;
+  padding: var(--espacio-m);
+  border-radius: var(--nr-radio);
+  background-color: var(--color-superficie);
+  border: 1px solid var(--nr-borde);
+  border-left: 8px solid var(--nr-mision-1);
+  box-shadow: var(--nr-sombra);
+}
+
+.neuro-mision-cabecera--m2 { border-left-color: var(--nr-mision-2); }
+.neuro-mision-cabecera--m3 { border-left-color: var(--nr-mision-3); }
+
+.neuro-mision-cabecera .neuro-mision__icono {
+  background-color: var(--nr-celeste);
+}
+
+.neuro-mision-cabecera__texto {
+  flex: 1 1 12rem;
+  min-width: 0;
+}
+
+.neuro-paso {
+  margin: 0;
+  font-size: var(--tamano-s);
+  font-weight: var(--peso-seminegrita);
+  color: var(--nr-petroleo);
+}
+
+.neuro-narrativa {
+  background-color: var(--nr-celeste);
+  border-left: 5px solid var(--nr-turquesa);
+}
+
+.neuro-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.neuro-items__item {
+  padding: var(--espacio-xs) var(--espacio-s);
+  border: 2px solid var(--nr-borde);
+  border-radius: var(--radio-completo);
+  font-size: var(--tamano-xs);
+  font-weight: var(--peso-seminegrita);
+  background-color: var(--color-superficie);
+}
+
+.neuro-items__item--completo { border-color: var(--nr-verde); background-color: var(--nr-menta); }
+.neuro-items__item--parcial { border-color: var(--nr-amarillo); background-color: var(--nr-amarillo-suave); }
+.neuro-items__item--sin-puntos { border-color: var(--nr-coral); background-color: var(--nr-coral-suave); }
+
+.neuro-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+}
+
+.neuro-item__cabecera {
+  display: flex;
+  gap: var(--espacio-m);
+  align-items: center;
+}
+
+.neuro-item__cabecera .tarjeta__titulo {
+  margin: 0;
+}
+
+.neuro-item__icono {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radio-l);
+  background: linear-gradient(135deg, var(--nr-celeste), var(--nr-menta));
+  font-size: var(--tamano-xl);
+}
+
+.neuro-situacion {
+  margin: 0;
+  padding: var(--espacio-m);
+  background-color: var(--nr-celeste);
+  border-radius: var(--radio-l);
+  line-height: var(--interlineado-base);
+}
+
+.neuro-situacion__etiqueta {
+  display: block;
+  margin-bottom: var(--espacio-xs);
+  font-size: var(--tamano-xs);
+  font-weight: var(--peso-extranegrita);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--nr-turquesa-oscuro);
+}
+
+.neuro-opciones {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
+  margin: 0;
+  padding: var(--espacio-s) var(--espacio-m) var(--espacio-m);
+  border: 1px solid var(--nr-borde);
+  border-radius: var(--radio-l);
+}
+
+.neuro-opciones legend {
+  padding: 0 var(--espacio-xs);
+  font-weight: var(--peso-negrita);
+  color: var(--nr-petroleo);
+}
+
+.neuro-opciones__grupo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-s);
+}
+
+.neuro-opcion {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espacio-s);
+  min-height: 2.75rem;
+  padding: var(--espacio-s) var(--espacio-m);
+  border: 2px solid var(--nr-borde);
+  border-radius: var(--radio-l);
+  background-color: var(--color-superficie);
+  cursor: pointer;
+}
+
+.neuro-opcion--bloque {
+  width: 100%;
+}
+
+.neuro-opcion:hover:not(:has(input:disabled)) {
+  border-color: var(--nr-turquesa);
+  background-color: var(--nr-celeste);
+}
+
+.neuro-opcion:has(input:checked) {
+  border-color: var(--nr-turquesa-oscuro);
+  background-color: var(--nr-menta);
+  font-weight: var(--peso-seminegrita);
+}
+
+.neuro-opcion:has(input:focus-visible) {
+  outline: 3px solid var(--nr-amarillo);
+  outline-offset: 2px;
+}
+
+.neuro-opcion:has(input:disabled) {
+  cursor: default;
+}
+
+.neuro-opcion input {
+  margin-top: var(--espacio-xs);
+  accent-color: var(--nr-turquesa-oscuro);
+}
+
+.neuro-campo-texto {
+  margin-top: var(--espacio-m);
+  padding: var(--espacio-m);
+  border: 1px solid var(--nr-borde);
+  border-radius: var(--radio-l);
+  background-color: var(--nr-fondo);
+}
+
+.neuro-campo-texto label {
+  display: block;
+  font-weight: var(--peso-seminegrita);
+  color: var(--nr-petroleo);
+  margin-bottom: var(--espacio-xs);
+}
+
+.neuro-campo-texto textarea {
+  width: 100%;
+  padding: var(--espacio-s);
+  border: 1.5px solid var(--nr-borde);
+  border-radius: var(--radio-m);
+  background-color: var(--color-superficie);
+  font-family: inherit;
+  font-size: var(--tamano-s);
+  line-height: var(--interlineado-base);
+  resize: vertical;
+}
+
+.neuro-campo-texto textarea:focus-visible {
+  outline: 3px solid var(--nr-amarillo);
+  outline-offset: 2px;
+}
+
+.neuro-retro-recursos-accion {
+  margin-top: var(--espacio-m);
+  display: flex;
+  gap: var(--espacio-s);
+  flex-wrap: wrap;
+}
+
+.neuro-recurso--tema {
+  font-weight: var(--peso-seminegrita);
+  color: var(--nr-turquesa-oscuro);
+}
+
+/* Retroalimentación: verde acierto, amarillo parcial, coral para revisar (con icono y texto) */
+.neuro .retro {
+  border-radius: var(--radio-l);
+}
+
+.neuro .neuro-retro--completo {
+  background-color: var(--nr-menta);
+  border-left: 6px solid var(--nr-verde);
+}
+
+.neuro .neuro-retro--parcial {
+  background-color: var(--nr-amarillo-suave);
+  border-left: 6px solid var(--nr-amarillo);
+}
+
+.neuro .neuro-retro--sin-puntos {
+  background-color: var(--nr-coral-suave);
+  border-left: 6px solid var(--nr-coral);
+}
+
+.neuro .neuro-retro--completo .retro__icono { background-color: var(--nr-verde-oscuro); color: var(--color-texto-inverso); }
+.neuro .neuro-retro--parcial .retro__icono { background-color: var(--nr-amarillo); color: var(--nr-petroleo); }
+.neuro .neuro-retro--sin-puntos .retro__icono { background-color: var(--nr-coral-oscuro); color: var(--color-texto-inverso); }
+
+.neuro .retro__titulo {
+  color: var(--nr-petroleo);
+}
+
+/* Simulador «Sala de estudio sonora» */
+.neuro-simulacion {
+  padding: var(--espacio-m);
+  border: 1px solid var(--nr-borde);
+  border-radius: var(--radio-l);
+  background-color: var(--color-superficie);
+}
+
+.neuro-simulacion__titulo {
+  margin: 0 0 var(--espacio-xs);
+}
+
+.neuro-simulacion__registro {
+  display: grid;
+  gap: var(--espacio-xs);
+  margin: var(--espacio-m) 0;
+}
+
+.neuro-simulacion__registro div {
+  padding: var(--espacio-s);
+  border-left: 3px solid var(--nr-turquesa);
+  background-color: var(--nr-celeste);
+}
+
+.neuro-simulacion__registro dt {
+  font-weight: var(--peso-negrita);
+  color: var(--nr-petroleo);
+}
+
+.neuro-simulacion__registro dd {
+  margin: var(--espacio-xxs) 0 0;
+}
+
+.neuro-medidor {
+  display: flex;
+  gap: var(--espacio-xs);
+}
+
+.neuro-medidor__barra {
+  flex: 1;
+  height: 12px;
+  border-radius: var(--radio-completo);
+  background-color: var(--color-fondo);
+  border: 1px solid var(--nr-borde);
+}
+
+.neuro-simulacion--favorable .neuro-medidor__barra--activa { background-color: var(--nr-verde); }
+.neuro-simulacion--neutro .neuro-medidor__barra--activa { background-color: var(--nr-amarillo); }
+.neuro-simulacion--desfavorable .neuro-medidor__barra--activa { background-color: var(--nr-coral); }
+
+/* Juego de parejas */
+.neuro-parejas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--espacio-s);
+}
+
+@media (min-width: 720px) {
+  .neuro-parejas { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+.neuro-carta {
+  min-height: 6.5rem;
+  padding: var(--espacio-s);
+  border: 2px solid var(--nr-turquesa-oscuro);
+  border-radius: var(--radio-l);
+  background: linear-gradient(135deg, var(--nr-turquesa-oscuro), var(--nr-petroleo));
+  color: var(--color-texto-inverso);
+  font: inherit;
+  font-size: var(--tamano-s);
+  cursor: pointer;
+}
+
+.neuro-carta__reverso {
+  font-size: var(--tamano-2xl);
+  font-weight: var(--peso-negrita);
+}
+
+.neuro-carta--abierta {
+  background: var(--color-superficie);
+  color: var(--nr-texto);
+}
+
+.neuro-carta--hecha {
+  border-color: var(--nr-verde);
+  background: var(--nr-menta);
+  color: var(--nr-texto);
+  cursor: default;
+}
+
+.neuro-carta:focus-visible {
+  outline: 3px solid var(--nr-amarillo);
+  outline-offset: 2px;
+}
+
+.neuro-parejas-resueltas {
+  display: grid;
+  gap: var(--espacio-xs);
+  padding-left: var(--espacio-l);
+}
+
+.neuro-parejas__explicaciones {
+  margin-top: var(--espacio-m);
+  padding: var(--espacio-m);
+  border-left: 3px solid var(--nr-verde);
+  background-color: var(--nr-menta);
+}
+
+.neuro-parejas__explicaciones h3 {
+  margin-top: 0;
+  color: var(--nr-petroleo);
+  font-size: var(--tamano-s);
+}
+
+.neuro-parejas__explicaciones ul:empty::after {
+  content: "La explicación de cada concepto aparecerá al formar su pareja.";
+  color: var(--nr-texto-suave);
+}
+
+/* Canción con palabras faltantes y reproductor HTML5 */
+.neuro-cancion-bloque {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+}
+
+.neuro-reproductor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
+  background: var(--color-superficie);
+  border: 1px solid var(--nr-borde);
+  border-radius: var(--radio-l);
+  padding: var(--espacio-m);
+}
+
+.neuro-reproductor__cabecera {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-s);
+}
+
+.neuro-reproductor__icono {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radio-m);
+  background: linear-gradient(135deg, var(--nr-turquesa), var(--nr-menta));
+  font-size: var(--tamano-l);
+}
+
+.neuro-reproductor__titulo {
+  margin: 0;
+  font-size: var(--tamano-m);
+  color: var(--nr-petroleo);
+}
+
+.neuro-cancion__aviso-audio {
+  margin: var(--espacio-xs) 0;
+  padding: var(--espacio-s) var(--espacio-m);
+  border-radius: var(--radio-m);
+  background-color: var(--nr-celeste);
+  border: 1px solid var(--nr-turquesa);
+  color: var(--nr-petroleo);
+  font-size: var(--tamano-s);
+  line-height: var(--interlineado-base);
+}
+
+.neuro-cancion__aviso-audio p {
+  margin: 0;
+}
+
+.neuro-reproductor__audio-caja {
+  margin: var(--espacio-xs) 0;
+}
+
+.neuro-reproductor__audio {
+  width: 100%;
+  max-width: 480px;
+  height: 40px;
+}
+
+.neuro-reproductor__controles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-xs);
+  align-items: center;
+}
+
+.neuro-transcripcion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
+  background: var(--color-superficie);
+  border: 1px solid var(--nr-borde);
+  border-radius: var(--radio-l);
+  padding: var(--espacio-m);
+}
+
+.neuro-transcripcion__cabecera {
+  margin-bottom: var(--espacio-xs);
+}
+
+.neuro-transcripcion__titulo {
+  margin: 0 0 var(--espacio-xxs);
+  font-size: var(--tamano-m);
+  color: var(--nr-petroleo);
+}
+
+.neuro-cancion {
+  padding: var(--espacio-m);
+  border-radius: var(--radio-l);
+  background: linear-gradient(135deg, var(--nr-lila), var(--nr-celeste));
+  border: 1px solid var(--nr-turquesa);
+}
+
+.neuro-cancion__linea {
+  margin: 0 0 var(--espacio-s);
+  line-height: 2.1;
+  font-size: var(--tamano-base);
+  color: var(--nr-petroleo);
+}
+
+.neuro-cancion__linea:last-child {
+  margin-bottom: 0;
+}
+
+.neuro-hueco-contenedor {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espacio-xxs);
+  white-space: nowrap;
+}
+
+.neuro-hueco {
+  min-height: 2.25rem;
+  margin: 0 var(--espacio-xxs);
+  padding: 0 var(--espacio-xs);
+  font: inherit;
+  font-style: normal;
+  font-weight: var(--peso-seminegrita);
+  border: 2px solid var(--nr-turquesa-oscuro);
+  border-radius: var(--radio-m);
+  background-color: var(--color-superficie);
+  color: var(--nr-petroleo);
+  cursor: pointer;
+}
+
+.neuro-hueco:focus-visible {
+  outline: 3px solid var(--nr-amarillo);
+  outline-offset: 2px;
+}
+
+.neuro-hueco--bien {
+  border-color: var(--nr-verde-oscuro);
+  background-color: var(--nr-menta);
+  color: var(--nr-petroleo);
+}
+
+.neuro-hueco--mal {
+  border-color: var(--nr-coral-oscuro);
+  background-color: var(--nr-coral-suave);
+  color: var(--nr-petroleo);
+}
+
+.neuro-hueco__marca {
+  font-style: normal;
+  font-weight: var(--peso-negrita);
+  font-size: var(--tamano-s);
+  padding: var(--espacio-xxs) var(--espacio-xs);
+  border-radius: var(--radio-s);
+  margin-left: var(--espacio-xxs);
+}
+
+.neuro-hueco__marca--ok {
+  color: var(--nr-verde-oscuro);
+  background-color: var(--nr-menta);
+}
+
+.neuro-hueco__marca--error {
+  color: var(--nr-coral-oscuro);
+  background-color: var(--nr-coral-suave);
+}
+
+/* Desglose y resultado palabra a palabra */
+.neuro-cancion-resultado {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
+  padding: var(--espacio-m);
+  background: var(--color-superficie);
+  border: 2px solid var(--nr-turquesa);
+  border-radius: var(--radio-l);
+}
+
+.neuro-cancion-resultado__titulo {
+  margin: 0;
+  font-size: var(--tamano-m);
+  color: var(--nr-petroleo);
+}
+
+.neuro-cancion-conteo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-xs);
+  margin-bottom: var(--espacio-xs);
+}
+
+.neuro-cancion-desglose {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+}
+
+.neuro-cancion-desglose__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espacio-s);
+  padding: var(--espacio-s);
+  border-radius: var(--radio-m);
+  border-left: 4px solid var(--nr-turquesa);
+  background-color: var(--nr-fondo);
+}
+
+.neuro-cancion-desglose__item--ok {
+  border-left-color: var(--nr-verde-oscuro);
+  background-color: var(--nr-menta);
+}
+
+.neuro-cancion-desglose__item--error {
+  border-left-color: var(--nr-coral-oscuro);
+  background-color: var(--nr-coral-suave);
+}
+
+.neuro-cancion-desglose__icono {
+  font-weight: var(--peso-negrita);
+  font-size: var(--tamano-m);
+  line-height: 1.2;
+}
+
+.neuro-cancion-desglose__contenido {
+  flex: 1;
+}
+
+.neuro-cancion-desglose__linea {
+  margin: 0 0 var(--espacio-xxs);
+  color: var(--nr-petroleo);
+}
+
+.neuro-cancion-pista-recuperacion {
+  margin-top: var(--espacio-xs);
+  padding: var(--espacio-m);
+  border-radius: var(--radio-m);
+  background-color: var(--nr-amarillo-suave);
+  border-left: 4px solid var(--nr-amarillo);
+  color: var(--nr-petroleo);
+  font-size: var(--tamano-s);
+}
+
+.neuro-cancion-pista-recuperacion__titulo {
+  margin: 0 0 var(--espacio-xxs);
+  font-size: var(--tamano-s);
+  font-weight: var(--peso-negrita);
+  color: var(--nr-petroleo);
+}
+
+.neuro-cancion-pista-recuperacion p {
+  margin: 0;
+  line-height: var(--interlineado-base);
+}
+
+/* Pistas y Neuri (IA) */
+.neuro-ayuda {
+  padding-top: var(--espacio-m);
+  border-top: 2px dashed var(--nr-borde);
+}
+
+.neuro-ayuda__salida {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
+  margin-top: var(--espacio-s);
+}
+
+.neuro-pista {
+  padding: var(--espacio-s) var(--espacio-m);
+  border-left: 5px solid var(--nr-amarillo);
+  border-radius: var(--radio-m);
+  background-color: var(--nr-amarillo-suave);
+}
+
+.neuro-pista p {
+  margin: 0;
+}
+
+.neuro-pista--ia {
+  border-left-color: var(--nr-turquesa);
+  background-color: var(--nr-celeste);
+}
+
+/* Misión 3: diseñador de microactividad */
+.neuro-diseno {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+}
+
+.neuro-diseno__navegacion {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-xs);
+  position: sticky;
+  top: var(--espacio-xs);
+  z-index: 2;
+}
+
+.neuro-diseno__navegacion [data-ir-bloque] {
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  padding: var(--espacio-xs) var(--espacio-s);
+  border-radius: var(--radio-completo);
+  background-color: var(--nr-celeste);
+}
+
+.neuro-bloque { scroll-margin-top: 6rem; }
+
+.neuro-bloque {
+  margin: 0;
+  border-top: 6px solid var(--nr-mision-3);
+}
+
+.neuro-bloque:nth-of-type(2) { border-top-color: var(--nr-turquesa); }
+.neuro-bloque:nth-of-type(3) { border-top-color: var(--nr-amarillo); }
+.neuro-bloque:nth-of-type(4) { border-top-color: var(--nr-coral); }
+
+.neuro-bloque legend {
+  float: left;
+  width: 100%;
+  margin-bottom: var(--espacio-s);
+}
+
+.neuro-bloque legend + * {
+  clear: both;
+}
+
+.neuro-bloque textarea {
+  width: 100%;
+}
+
+.neuro-campos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: var(--espacio-s);
+}
+
+.neuro-secuencia {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espacio-m);
+}
+
+@media (min-width: 768px) {
+  .neuro-secuencia { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.neuro-lista-bloques {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ol.neuro-lista-bloques {
+  counter-reset: bloque;
+}
+
+ol.neuro-lista-bloques > .neuro-bloque-item::before {
+  counter-increment: bloque;
+  content: counter(bloque);
+  display: inline-grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: var(--radio-completo);
+  background-color: var(--nr-turquesa-oscuro);
+  font-weight: var(--peso-negrita);
+  color: var(--color-texto-inverso);
+}
+
+.neuro-bloque-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-xs);
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--espacio-s);
+  border: 1px solid var(--nr-borde);
+  border-radius: var(--radio-l);
+  background-color: var(--nr-celeste);
+}
+
+.neuro-bloque-item > span:first-of-type {
+  flex: 1 1 10rem;
+}
+
+.neuro-bloque-item__botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-xs);
+}
+
+.neuro-cotejo {
+  display: grid;
+  gap: var(--espacio-xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.neuro-cotejo__item {
+  display: flex;
+  gap: var(--espacio-s);
+  padding: var(--espacio-xs) var(--espacio-s);
+  border-radius: var(--radio-m);
+  color: var(--nr-texto-suave);
+}
+
+.neuro-cotejo__item--ok {
+  background-color: var(--nr-menta);
+  color: var(--nr-verde-texto);
+  font-weight: var(--peso-seminegrita);
+}
+
+.neuro-resumen-diseno {
+  display: grid;
+  gap: var(--espacio-xs);
+  margin: 0;
+}
+
+.neuro-resumen-diseno dt {
+  font-weight: var(--peso-negrita);
+  color: var(--nr-petroleo);
+}
+
+.neuro-resumen-diseno dd {
+  margin: 0 0 var(--espacio-s);
+}
+
+/* ---------- 5. Retroalimentación de cierre ---------- */
+.neuro-cierre {
+  border-top: 6px solid var(--nr-coral);
+}
+
+.neuro-cierre--aprobada {
+  border-top-color: var(--nr-verde);
+}
+
+.neuro-cierre__encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-m);
+  align-items: center;
+}
+
+.neuro-cierre__puntaje {
+  margin: 0;
+  font-size: var(--tamano-m);
+}
+
+.neuro-cierre__puntaje strong {
+  display: block;
+  font-size: var(--tamano-2xl);
+  color: var(--nr-petroleo);
+}
+
+.neuro-conceptos {
+  display: grid;
+  gap: var(--espacio-xs);
+  padding: 0;
+  list-style: none;
+}
+
+.neuro-conceptos__item {
+  display: flex;
+  gap: var(--espacio-s);
+  padding: var(--espacio-xs) var(--espacio-s);
+  border-radius: var(--radio-m);
+  background-color: var(--nr-fondo);
+}
+
+/* Medidor circular de puntaje */
+.neuro-medidor-circular {
+  --nr-avance: var(--valor);
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 6.5rem;
+  aspect-ratio: 1;
+  border-radius: var(--radio-completo);
+  background:
+    radial-gradient(closest-side, var(--color-superficie) 76%, transparent 77% 100%),
+    conic-gradient(var(--nr-turquesa) 0, var(--nr-verde) calc(var(--nr-avance) * 1%), var(--nr-pista) 0);
+}
+
+.neuro-medidor-circular__valor {
+  font-size: var(--tamano-xl);
+  font-weight: var(--peso-extranegrita);
+  color: var(--nr-petroleo);
+}
+
+.neuro-medidor-circular__valor small {
+  font-size: var(--tamano-xs);
+  color: var(--nr-texto-suave);
+}
+
+/* ---------- 6. Resultados ---------- */
+.neuro-medidores {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: var(--espacio-m);
+}
+
+.neuro-medidores__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacio-xs);
+  text-align: center;
+}
+
+.neuro-medidores__titulo {
+  margin: var(--espacio-xs) 0 0;
+  font-weight: var(--peso-negrita);
+  color: var(--nr-petroleo);
+}
+
+.neuro-certificado {
+  position: relative;
+  background: linear-gradient(135deg, var(--color-superficie) 55%, var(--nr-amarillo-suave));
+  border-top: 6px solid var(--nr-amarillo);
+}
+
+.neuro-certificado__icono {
+  position: absolute;
+  top: var(--espacio-m);
+  right: var(--espacio-m);
+  font-size: var(--tamano-3xl);
+  opacity: 0.35;
+}
+
+.neuro-certificado--listo .neuro-certificado__icono {
+  opacity: 1;
+}
+
+.neuro-grupo {
+  max-width: 28rem;
+}
+
+.neuro-barras {
+  display: grid;
+  gap: var(--espacio-s);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.neuro-barras__fila {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espacio-xs);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .neuro-barras__fila { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) 3.5rem; }
+}
+
+.neuro-barras__fila .progreso {
+  margin: 0;
+}
+
+.neuro-entrega {
+  padding: var(--espacio-m) 0;
+  border-top: 1px solid var(--color-borde);
+}
+
+.neuro-rubrica fieldset {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: var(--espacio-s);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-m);
+}
+
+/* ---------- Microinteracciones (solo si el usuario no pidió reducir el movimiento) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .neuro__vista--entrando > * {
+    animation: neuro-entrar 0.4s ease-out both;
+  }
+
+  .neuro__vista--entrando > *:nth-child(2) { animation-delay: 0.05s; }
+  .neuro__vista--entrando > *:nth-child(3) { animation-delay: 0.1s; }
+  .neuro__vista--entrando > *:nth-child(n + 4) { animation-delay: 0.15s; }
+
+  .neuro-mision,
+  .neuro-regla,
+  .neuro-lista-recursos li,
+  .neuro-medidores__item {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .neuro-mision:not(.neuro-mision--bloqueada):hover,
+  .neuro-regla:hover,
+  .neuro-lista-recursos li:hover,
+  .neuro-medidores__item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--nr-sombra-alta);
+  }
+
+  .neuro-medidor-circular {
+    animation: neuro-llenar 1.1s ease-out both;
+  }
+
+  .neuro-medalla {
+    animation: neuro-aparecer 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+
+  .neuro-medalla:nth-child(2) { animation-delay: 0.1s; }
+  .neuro-medalla:nth-child(3) { animation-delay: 0.2s; }
+  .neuro-medalla:nth-child(n + 4) { animation-delay: 0.3s; }
+
+  .neuro-mision--recien {
+    animation: neuro-brillo 1.2s ease-in-out 3;
+  }
+
+  .neuro-mision--recien .neuro-mision__icono {
+    animation: neuro-aparecer 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+
+  .neuro-opcion:has(input:checked) {
+    animation: neuro-pulso 0.25s ease-out;
+  }
+
+  .neuro .retro,
+  .neuro-pista,
+  .neuro-simulacion {
+    animation: neuro-entrar 0.35s ease-out both;
+  }
+
+  .neuro-carta {
+    transition: transform 0.25s ease, background-color 0.25s ease;
+  }
+
+  .neuro-carta--abierta {
+    animation: neuro-voltear 0.3s ease-out;
+  }
+
+  .neuro-carta--hecha {
+    animation: neuro-pulso 0.35s ease-out;
+  }
+
+  .neuri-dialogo__figura .neuri-figura {
+    animation: avatar-flotar 3.5s ease-in-out infinite;
+  }
+
+  .neuri-dialogo--celebrando .neuri-dialogo__figura .neuri-figura {
+    animation: avatar-saltar 0.7s ease-in-out 4;
+  }
+
+  .neuri-dialogo--animando .neuri-dialogo__figura .neuri-figura {
+    animation: neuro-balanceo 1.6s ease-in-out 2;
+  }
+
+  .neuro-portada__notas span {
+    animation: neuro-nota 6s ease-in-out infinite;
+  }
+
+  .neuro-portada__notas span:nth-child(2) { animation-delay: 1s; }
+  .neuro-portada__notas span:nth-child(3) { animation-delay: 2s; }
+  .neuro-portada__notas span:nth-child(4) { animation-delay: 3s; }
+  .neuro-portada__notas span:nth-child(5) { animation-delay: 4s; }
+}
+
+@keyframes neuro-entrar { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes neuro-llenar { from { --nr-avance: 0; } }
+@keyframes neuro-aparecer { from { opacity: 0; transform: scale(0.4); } to { opacity: 1; transform: scale(1); } }
+@keyframes neuro-pulso { 50% { transform: scale(1.02); } }
+@keyframes neuro-voltear { from { transform: rotateY(90deg); } to { transform: rotateY(0); } }
+@keyframes neuro-brillo { 50% { box-shadow: 0 0 0 6px var(--nr-amarillo), var(--nr-sombra-alta); } }
+@keyframes neuro-balanceo { 25% { transform: rotate(-6deg); } 75% { transform: rotate(6deg); } }
+@keyframes neuro-nota { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px) rotate(8deg); } }
+
+/* ---------- Pantallas pequeñas ---------- */
+@media (max-width: 480px) {
+  .neuro-portada { padding: var(--espacio-m); }
+  .neuro-portada__figura .neuri-figura { width: 8rem; }
+  .neuro-titulo, .neuro h1 { font-size: var(--tamano-l); }
+  .neuri-dialogo__figura .neuri-figura { width: 3.25rem; }
+  .neuro-btn-grande { width: 100%; }
+  .neuro-medidor-circular { width: 5.5rem; }
+  .neuro-diseno__navegacion { position: static; }
+  .neuro-diseno__navegacion [data-ir-bloque] { flex: 1 1 9rem; }
+}
+
+/* ---------- Secuencia del storyboard: Anterior / Siguiente ---------- */
+.neuro-secuencia {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: var(--espacio-s);
+  align-items: center;
+  margin-top: var(--espacio-s);
+  padding-top: var(--espacio-m);
+  border-top: 2px dashed var(--nr-borde);
+}
+
+.neuro-secuencia__anterior { justify-self: start; }
+.neuro-secuencia__siguiente { justify-self: end; }
+
+.neuro-secuencia__posicion {
+  font-size: var(--tamano-s);
+  font-weight: var(--peso-seminegrita);
+  color: var(--nr-texto-suave);
+  text-align: center;
+}
+
+@media (max-width: 560px) {
+  .neuro-secuencia { grid-template-columns: 1fr; }
+  .neuro-secuencia__posicion { order: -1; }
+  .neuro-secuencia__anterior,
+  .neuro-secuencia__siguiente { justify-self: stretch; }
+}
+
+/* ---------- Instrucciones: «Antes de empezar» ---------- */
+.neuro-antes {
+  border-left: 5px solid var(--nr-turquesa);
+}
+
+.neuro-antes__datos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: var(--espacio-m);
+  margin: 0;
+}
+
+.neuro-antes__datos dt {
+  font-weight: var(--peso-negrita);
+  color: var(--nr-petroleo);
+}
+
+.neuro-antes__datos dd {
+  margin: var(--espacio-xs) 0 0;
+  color: var(--nr-texto);
+}
+
+/* ---------- Progreso: insignia de cada misión ---------- */
+.neuro-progreso-misiones .neuro-medidores__titulo {
+  margin: 0;
+  font-size: var(--tamano-m);
+  line-height: var(--interlineado-ajustado);
+}
+
+.neuro-progreso-misiones .neuro-mision__barra {
+  width: 100%;
+}
+
+.neuro-progreso-insignia {
+  margin: 0;
+  padding: var(--espacio-xs) var(--espacio-s);
+  border-radius: var(--radio-completo);
+  background-color: var(--color-fondo);
+  font-size: var(--tamano-s);
+  font-weight: var(--peso-seminegrita);
+  color: var(--nr-texto-suave);
+}
+
+.neuro-progreso-insignia--obtenida {
+  background-color: var(--nr-amarillo-suave);
+  color: var(--nr-petroleo);
+}
+
+/* Retroalimentación inmediata por ítem: concepto, error a revisar, ampliación y recurso */
+.neuro-retro-detalle {
+  display: grid;
+  gap: var(--espacio-xs);
+  margin: var(--espacio-s) 0 0;
+  font-size: var(--tamano-s);
+}
+
+.neuro-retro-detalle dt {
+  font-weight: var(--peso-seminegrita);
+}
+
+.neuro-retro-detalle dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Versiones enviadas de la Misión 3 (NR-05.2) */
+.neuro-version {
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-m);
+  padding: var(--espacio-s);
+  margin-block: var(--espacio-s);
+  overflow-wrap: anywhere;
+}
+
+.neuro-version summary {
+  cursor: pointer;
+  font-weight: var(--peso-seminegrita);
+}

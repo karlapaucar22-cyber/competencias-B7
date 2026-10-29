@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Foros · NeuroRitmo Digital</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/componentes.css">
+  <link rel="stylesheet" href="/css/modulos/foros.css">
+</head>
+<body>
+  <div id="plantilla"></div>
+  <main id="contenido" class="contenedor">
+    <div class="foros-app">
+      <header class="foros-encabezado">
+        <div>
+          <h1 class="foros-titulo">Foros</h1>
+          <p class="foros-subtitulo">Pregunta, comparte y aprende con tu grupo. Cada respuesta suma puntos.</p>
+        </div>
+        <button type="button" id="btnNuevoHilo" class="btn btn--primario" disabled>+ Nuevo hilo</button>
+      </header>
+
+      <div class="foros-filtros">
+        <div class="campo">
+          <label for="selectorAsignatura">Asignatura</label>
+          <select id="selectorAsignatura"><option value="">Cargando...</option></select>
+        </div>
+        <div class="campo">
+          <label for="selectorTema">Tema (opcional)</label>
+          <select id="selectorTema"><option value="">Todos los temas</option></select>
+        </div>
+      </div>
+
+      <p id="forosEstado" class="foros-nota" role="status"></p>
+      <ul id="listaHilos" class="foros-lista"></ul>
+
+      <div id="forosVacio" class="vacio" hidden>
+        <div class="vacio__icono" aria-hidden="true">💬</div>
+        <h2 class="vacio__titulo" id="vacioTitulo">Aún no hay hilos</h2>
+        <p class="vacio__texto" id="vacioTexto">Sé la primera persona en iniciar una conversación.</p>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="/js/modulos/foros.js"></script>
+</body>
+</html>

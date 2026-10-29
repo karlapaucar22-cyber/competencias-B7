@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Canciones Educativas · NeuroRitmo Digital</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/componentes.css">
+  <link rel="stylesheet" href="/css/modulos/canciones.css">
+</head>
+<body>
+  <div id="plantilla"></div>
+  <main id="contenido" class="contenedor">
+    <div class="canciones-app">
+      <nav class="migas-pan" aria-label="Navegación">
+        <ol>
+          <li><a href="/index.html">Inicio</a></li>
+          <li aria-current="page">Canciones educativas</li>
+        </ol>
+      </nav>
+
+      <!-- Encabezado del módulo -->
+      <div class="canciones-app__encabezado">
+        <div>
+          <h1 class="canciones-app__titulo">Canciones Educativas</h1>
+          <p class="canciones-app__subtitulo">
+            Explora canciones didácticas con audio de alta fidelidad, letra sincronizada en tiempo real y recursos nemotécnicos para potenciar tu desarrollo cognitivo musical.
+          </p>
+        </div>
+        <div id="zonaAccionDocente" style="display: none;">
+          <a href="/paginas/editor-cancion.html" class="btn btn--primario">
+            + Nueva canción
+          </a>
+        </div>
+      </div>
+
+      <!-- Barra de Filtros -->
+      <section class="tarjeta canciones-filtros" aria-label="Filtros de búsqueda">
+        <div class="canciones-filtros__rejilla">
+          <div class="campo">
+            <label for="filtroAsignatura" class="campo__etiqueta">Asignatura:</label>
+            <select id="filtroAsignatura" class="campo__control">
+              <option value="">Todas las asignaturas</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="filtroTema" class="campo__etiqueta">Tema pedagógico:</label>
+            <select id="filtroTema" class="campo__control">
+              <option value="">Todos los temas</option>
+            </select>
+          </div>
+
+          <div class="campo canciones-filtros__busqueda">
+            <label for="filtroTexto" class="campo__etiqueta">Buscar por título o autor:</label>
+            <input type="search" id="filtroTexto" class="campo__control" placeholder="Escribe para filtrar...">
+          </div>
+        </div>
+      </section>
+
+      <!-- Estado cargando -->
+      <div id="estadoCargando" class="tarjeta" style="text-align: center; padding: var(--espacio-xl);">
+        <p>Cargando repertorio de canciones...</p>
+      </div>
+
+      <!-- Contenedor Principal: Lista y Reproductor -->
+      <div id="panelPrincipalCanciones" class="canciones-layout" style="display: none;">
+        
+        <!-- Columna Izquierda: Lista de Canciones -->
+        <section class="canciones-lista-seccion" aria-label="Listado de canciones disponibles">
+          <div class="canciones-lista-encabezado">
+            <h2 class="canciones-seccion-titulo" id="contadorCanciones">Repertorio</h2>
+          </div>
+          <div id="contenedorListaCanciones" class="canciones-tarjetas-grid">
+            <!-- Rellenado dinámicamente -->
+          </div>
+          <div id="sinCanciones" class="vacio" style="display: none;">
+            <div class="vacio__icono">🎵</div>
+            <h3 class="vacio__titulo">No se encontraron canciones</h3>
+            <p class="vacio__texto">No hay canciones disponibles que coincidan con los filtros seleccionados.</p>
+          </div>
+        </section>
+
+        <!-- Columna Derecha: Reproductor Propio y Panel de Letra -->
+        <section class="canciones-reproductor-seccion" aria-label="Reproductor y letra interactiva">
+          <!-- Audio nativo oculto -->
+          <audio id="audioNativo" preload="metadata"></audio>
+
+          <div class="tarjeta reproductor-card" id="tarjetaReproductor">
+            <!-- Mensaje cuando no hay canción activa -->
+            <div id="reproductorVacio" class="reproductor-card__placeholder">
+              <div class="reproductor-card__placeholder-icono">🎧</div>
+              <h3>Selecciona una canción</h3>
+              <p>Haz clic en "Escuchar" en cualquiera de las canciones del catálogo para iniciar la reproducción y seguir su letra sincronizada.</p>
+            </div>
+
+            <!-- Interfaz activa del reproductor -->
+            <div id="reproductorActivo" style="display: none;">
+              <!-- Cabecera de la canción en reproducción -->
+              <div class="reproductor-meta">
+                <div class="reproductor-meta__datos">
+                  <span class="insignia insignia--primario" id="cancionTemaBadge">Tema</span>
+                  <h3 class="reproductor-meta__titulo" id="cancionTitulo">Título de la canción</h3>
+                  <div class="reproductor-meta__detalles">
+                    <span id="cancionAutoria">Autor: -</span>
+                    <span>•</span>
+                    <span class="insignia insignia--secundario" id="cancionLicencia">Licencia</span>
+                  </div>
+                </div>
+                <div id="btnEditarCancionActiva" style="display: none;">
+                  <a href="#" id="enlaceEditarCancion" class="btn btn--secundario btn--sm">✏ Editar</a>
+                </div>
+              </div>
+
+              <!-- Controles personalizados del reproductor -->
+              <div class="reproductor-controles">
+                <!-- Barra de progreso con tiempos -->
+                <div class="reproductor-barra-fila">
+                  <span id="tiempoActual" class="reproductor-tiempo">00:00</span>
+                  <input type="range" id="barraProgreso" class="reproductor-slider" min="0" max="100" value="0" step="0.1" aria-label="Progreso de reproducción">
+                  <span id="tiempoTotal" class="reproductor-tiempo">00:00</span>
+                </div>
+
+                <!-- Botonera central y volumen -->
+                <div class="reproductor-botones-fila">
+                  <div class="reproductor-botones-principales">
+                    <button type="button" id="btnRetroceder10" class="btn btn--secundario btn--icono" aria-label="Retroceder 10 segundos" title="Retroceder 10s">
+                      ⏪ 10s
+                    </button>
+                    <button type="button" id="btnPlayPause" class="btn btn--primario reproductor-btn-play" aria-label="Reproducir">
+                      <span id="iconoPlayPause">▶</span>
+                    </button>
+                    <button type="button" id="btnAdelantar10" class="btn btn--secundario btn--icono" aria-label="Adelantar 10 segundos" title="Adelantar 10s">
+                      10s ⏩
+                    </button>
+                  </div>
+
+                  <!-- Control de volumen -->
+                  <div class="reproductor-volumen-bloque">
+                    <button type="button" id="btnMute" class="btn btn--secundario btn--icono" aria-label="Silenciar sonido" title="Silenciar">
+                      <span id="iconoVolumen">🔊</span>
+                    </button>
+                    <input type="range" id="barraVolumen" class="reproductor-slider-volumen" min="0" max="1" value="1" step="0.05" aria-label="Volumen">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Panel de Letra -->
+              <div class="reproductor-letra-panel">
+                <div class="reproductor-letra-cabecera">
+                  <h4 class="reproductor-letra-titulo">Letra</h4>
+                  <div class="reproductor-letra-modo">
+                    <span id="badgeModoLetra" class="insignia insignia--exito">LRC Sincronizado</span>
+                  </div>
+                </div>
+
+                <!-- Contenedor scrollable de letra -->
+                <div id="cajaLetra" class="reproductor-letra-caja" tabindex="0" role="region" aria-label="Letra de la canción">
+                  <!-- Se insertan los renglones o texto plano -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+  <script type="module" src="/js/modulos/canciones.js"></script>
+</body>
+</html>

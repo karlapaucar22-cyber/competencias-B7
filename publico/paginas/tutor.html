@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pregúntale a Neuri · NeuroRitmo Digital</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/componentes.css">
+  <link rel="stylesheet" href="/css/modulos/tutor.css">
+</head>
+<body>
+  <div id="plantilla"></div>
+  <main id="contenido" class="contenedor" data-personaje="neuri" data-avatar="Cuéntame tu duda sobre el tema. Te guiaré con preguntas para que llegues tú a la respuesta.">
+    <p id="tutorEstado" class="tutor-pagina__nota" role="status">Cargando el tema...</p>
+
+    <div id="tutorApp" class="tutor-pagina" hidden>
+      <header class="tutor-pagina__encabezado">
+        <span class="tutor-pagina__avatar" aria-hidden="true">🧠</span>
+        <div class="tutor-pagina__identidad">
+          <p class="tutor-pagina__eyebrow">Pregúntale a Neuri · tutor de IA que te guía con preguntas</p>
+          <h1 id="tutorTema" class="tutor-pagina__titulo"></h1>
+          <p id="tutorAsignatura" class="tutor-pagina__nota"></p>
+        </div>
+        <div class="tutor-pagina__acciones">
+          <a id="enlaceTema" class="btn btn--texto btn--sm" href="#">← Volver al tema</a>
+          <button type="button" id="btnCambiarTema" class="btn btn--texto btn--sm">Cambiar tema</button>
+          <button type="button" id="btnNueva" class="btn btn--secundario btn--sm">↺ Nueva conversación</button>
+        </div>
+      </header>
+
+      <section class="tutor-pagina__chat" aria-labelledby="tituloChat">
+        <h2 id="tituloChat" class="sr-only">Conversación con el tutor</h2>
+        <div id="mensajes" class="tutor__mensajes tutor-pagina__mensajes" role="log" aria-live="polite" aria-relevant="additions" tabindex="0" aria-label="Mensajes de la conversación"></div>
+
+        <div id="sugerencias" class="tutor__sugerencias tutor-pagina__sugerencias" role="group" aria-label="Preguntas guía para empezar"></div>
+
+        <form id="formTutor" class="tutor__form tutor-pagina__form" novalidate>
+          <label for="entrada" class="sr-only">Mensaje para el tutor (Enter envía, Mayúsculas + Enter hace un salto de línea)</label>
+          <textarea id="entrada" class="tutor__entrada" rows="1" maxlength="1000" placeholder="Escribe tu duda o tu respuesta…" aria-describedby="pieTutor"></textarea>
+          <button type="submit" id="btnEnviar" class="btn btn--primario tutor__enviar" aria-label="Enviar mensaje">➤</button>
+        </form>
+        <p id="pieTutor" class="tutor__pie">Respuestas generadas por IA: contrástalas con el material del curso. Enter envía · Mayús + Enter, nueva línea.</p>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="/js/modulos/tutor.js"></script>
+</body>
+</html>

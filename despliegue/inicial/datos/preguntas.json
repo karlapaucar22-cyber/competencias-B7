@@ -1,0 +1,757 @@
+[
+  {
+    "tipo": "opcion",
+    "enunciado": "¿Qué función ejecutiva se ve principalmente afectada por la interferencia de la música con letra durante la lectura comprensiva de textos académicos?",
+    "retroalimentacion": "Las letras de las canciones compiten con las vías lingüísticas del bucle fonológico y requieren del control inhibitorio para gestionar la interferencia cognitiva.",
+    "opciones": [
+      "El bucle fonológico de la memoria de trabajo y el control inhibitorio",
+      "La transducción mecánica del oído interno en señales bioeléctricas",
+      "El procesamiento auditivo primario exclusivo del lóbulo occipital",
+      "La modulación de la frecuencia en hercios por el tálamo"
+    ],
+    "correcta": 0,
+    "temaId": "tem_000001",
+    "nivel": 1,
+    "origen": "ia",
+    "estado": "aprobado",
+    "id": "pre_000001",
+    "fecha": "2026-10-25T15:31:47.747Z"
+  },
+  {
+    "tipo": "vf",
+    "enunciado": "Asumir que escuchar música produce mejoras universales de concentración en cualquier persona constituye un error frecuente en neuroeducación y desarrollo cognitivo musical.",
+    "retroalimentacion": "Es un error común asumir mejoras universales, ya que la música con letra puede interferir negativamente en tareas de lectura comprensiva.",
+    "opciones": [
+      "Verdadero",
+      "Falso"
+    ],
+    "correcta": true,
+    "estado": "aprobado",
+    "temaId": "tem_000001",
+    "nivel": 1,
+    "origen": "ia",
+    "id": "pre_000002",
+    "fecha": "2026-10-25T15:31:52.642Z"
+  },
+  {
+    "tipo": "completar",
+    "enunciado": "La capa externa de sustancia gris cerebral donde ocurren los procesos cognitivos superiores y el procesamiento auditivo avanzado se denomina ____.",
+    "retroalimentacion": "El córtex o corteza cerebral es la estructura fundamental para los procesos cognitivos superiores y el procesamiento auditivo avanzado relacionados con la neuroeducación.",
+    "opciones": [],
+    "correcta": "cortex",
+    "estado": "aprobado",
+    "temaId": "tem_000001",
+    "nivel": 1,
+    "origen": "ia",
+    "id": "pre_000003",
+    "fecha": "2026-10-25T15:31:56.842Z"
+  },
+  {
+    "tipo": "opcion",
+    "enunciado": "Según el contenido, ¿cuál es el rol del control inhibitorio en relación con el procesamiento auditivo?",
+    "retroalimentacion": "La inhibición es la función ejecutiva encargada de suprimir respuestas automáticas y cancelar la atención hacia los distractores auditivos ambientales.",
+    "opciones": [
+      "Suprimir respuestas automáticas y cancelar la atención hacia estímulos competitivos y distractores del entorno",
+      "Codificar, almacenar y recuperar representaciones acústicas de patrones melódicos complejos",
+      "Transmitir información mediante impulsos electroquímicos a lo largo de la sinapsis neuronal",
+      "Actuar como núcleo subcortical de relevo sensorial exclusivamente para la frecuencia y el timbre"
+    ],
+    "correcta": 0,
+    "estado": "aprobado",
+    "temaId": "tem_000001",
+    "nivel": 1,
+    "origen": "ia",
+    "id": "pre_000004",
+    "fecha": "2026-10-25T15:31:59.876Z"
+  },
+  {
+    "id": "pre_000005",
+    "temaId": "tem_000014",
+    "nivel": 1,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "Antes de leer un artículo académico denso, ¿qué decisión formula una hipótesis comprobable sobre el sonido?",
+    "opciones": [
+      "Comparar silencio con música instrumental suave y registrar comprensión",
+      "Elegir siempre la canción favorita",
+      "Usar música con letra porque motiva",
+      "Cambiar de canción durante cada párrafo"
+    ],
+    "correcta": 0,
+    "pistas": [
+      "Busca una opción que permita comparar.",
+      "Una preferencia no sustituye la comprobación.",
+      "Piensa en una condición base y un indicador."
+    ],
+    "retroalimentacion": "Una hipótesis prudente compara condiciones y registra un indicador de comprensión; no convierte una preferencia musical en regla.",
+    "fecha": "2026-10-28T08:00:05.000Z"
+  },
+  {
+    "id": "pre_000006",
+    "temaId": "tem_000014",
+    "nivel": 1,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "¿Por qué una canción con letra puede competir con una lectura comprensiva?",
+    "opciones": [
+      "Porque elimina la memoria de largo plazo",
+      "Porque la letra también exige procesamiento verbal",
+      "Porque todo ritmo bloquea la atención",
+      "Porque el silencio impide comprender"
+    ],
+    "correcta": 1,
+    "pistas": [
+      "Compara lo que procesa la lectura con lo que procesa la letra.",
+      "Ambas contienen lenguaje.",
+      "La competencia ocurre en la demanda verbal."
+    ],
+    "retroalimentacion": "La letra también es lenguaje y puede competir con el procesamiento verbal requerido por la lectura.",
+    "fecha": "2026-10-28T08:00:06.000Z"
+  },
+  {
+    "id": "pre_000007",
+    "temaId": "tem_000014",
+    "nivel": 1,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "Mientras una persona conserva un resultado parcial y lo usa en el siguiente paso de un cálculo, ¿qué función interviene principalmente?",
+    "opciones": [
+      "Consolidación",
+      "Regulación emocional",
+      "Memoria de trabajo",
+      "Pista de recuperación"
+    ],
+    "correcta": 2,
+    "pistas": [
+      "La información se mantiene solo mientras se usa.",
+      "No se trata de almacenarla durante días.",
+      "Piensa en mantener y manipular información por segundos."
+    ],
+    "retroalimentacion": "La memoria de trabajo mantiene y manipula información durante un intervalo breve mientras se realiza la tarea.",
+    "fecha": "2026-10-28T08:00:07.000Z"
+  },
+  {
+    "id": "pre_000008",
+    "temaId": "tem_000014",
+    "nivel": 1,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "Un estudiante ignora una conversación cercana para continuar con su tarea. ¿Qué función ejecutiva describe mejor esa acción?",
+    "opciones": [
+      "Codificación",
+      "Recuperación",
+      "Consolidación",
+      "Control inhibitorio"
+    ],
+    "correcta": 3,
+    "pistas": [
+      "La acción consiste en apartar un distractor.",
+      "No está intentando recordar información.",
+      "Busca la función que frena respuestas no útiles."
+    ],
+    "retroalimentacion": "El control inhibitorio ayuda a apartar estímulos o respuestas que no sirven a la meta actual.",
+    "fecha": "2026-10-28T08:00:08.000Z"
+  },
+  {
+    "id": "pre_000009",
+    "temaId": "tem_000014",
+    "nivel": 1,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "¿Qué describe mejor la atención sostenida durante el estudio?",
+    "opciones": [
+      "Mantener el foco durante la tarea",
+      "Guardar información durante meses",
+      "Reducir siempre el estrés",
+      "Recordar gracias a una melodía"
+    ],
+    "correcta": 0,
+    "pistas": [
+      "Piensa en la continuidad del foco.",
+      "No es una fase de la memoria.",
+      "La clave es sostener la meta durante la actividad."
+    ],
+    "retroalimentacion": "La atención sostenida permite mantener el foco durante la realización de una tarea.",
+    "fecha": "2026-10-28T08:00:09.000Z"
+  },
+  {
+    "id": "pre_000010",
+    "temaId": "tem_000014",
+    "nivel": 1,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "Para ordenar referencias bibliográficas, una tarea mecánica, ¿qué elección es más prudente?",
+    "opciones": [
+      "Afirmar que la música mejora el resultado",
+      "Probar música instrumental suave o silencio y comparar errores",
+      "Usar obligatoriamente una canción con letra",
+      "Evitar registrar el desempeño"
+    ],
+    "correcta": 1,
+    "pistas": [
+      "La demanda verbal es menor, pero el efecto debe comprobarse.",
+      "Busca una opción reversible.",
+      "Un conteo de errores permite comparar."
+    ],
+    "retroalimentacion": "En una tarea mecánica puede probarse una condición sonora, pero su utilidad debe comprobarse y no asumirse.",
+    "fecha": "2026-10-28T08:00:10.000Z"
+  },
+  {
+    "id": "pre_000011",
+    "temaId": "tem_000014",
+    "nivel": 1,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "Antes de repasar para una evaluación con estrés alto, ¿qué proceso conviene distinguir del aprendizaje del contenido?",
+    "opciones": [
+      "La escritura de referencias",
+      "La consolidación automática",
+      "La regulación de la activación",
+      "La memorización universal por ritmo"
+    ],
+    "correcta": 2,
+    "pistas": [
+      "El caso menciona tensión elevada.",
+      "Primero identifica qué necesita regularse.",
+      "Regular energía o tensión no equivale a aprender contenido."
+    ],
+    "retroalimentacion": "La regulación de la activación busca ajustar tensión o energía; debe distinguirse del aprendizaje y repaso del contenido.",
+    "fecha": "2026-10-28T08:00:11.000Z"
+  },
+  {
+    "id": "pre_000012",
+    "temaId": "tem_000014",
+    "nivel": 1,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "Dos estudiantes reaccionan de manera distinta ante la misma música de fondo. ¿Qué conclusión corresponde a NeuroRitmo?",
+    "opciones": [
+      "Uno de ellos respondió incorrectamente",
+      "La música funciona igual si el volumen es bajo",
+      "La diferencia desaparece al repetir",
+      "Las respuestas varían entre personas y tareas"
+    ],
+    "correcta": 3,
+    "pistas": [
+      "No busques una regla universal.",
+      "Considera a la persona y el contexto.",
+      "La misma condición puede producir respuestas diferentes."
+    ],
+    "retroalimentacion": "Las diferencias individuales y la demanda de la tarea impiden generalizar el efecto de una condición sonora.",
+    "fecha": "2026-10-28T08:00:12.000Z"
+  },
+  {
+    "id": "pre_000013",
+    "temaId": "tem_000014",
+    "nivel": 1,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "¿Qué indicador permite comprobar mejor la comprensión después de una lectura?",
+    "opciones": [
+      "Explicar las ideas principales sin mirar",
+      "Decir si la canción fue agradable",
+      "Anotar el nombre del intérprete",
+      "Subir el volumen al finalizar"
+    ],
+    "correcta": 0,
+    "pistas": [
+      "El indicador debe corresponder a comprender.",
+      "Una emoción agradable no demuestra aprendizaje.",
+      "Busca una evidencia producida sin apoyo."
+    ],
+    "retroalimentacion": "Explicar las ideas principales sin mirar aporta evidencia de comprensión y recuperación del contenido.",
+    "fecha": "2026-10-28T08:00:13.000Z"
+  },
+  {
+    "id": "pre_000014",
+    "temaId": "tem_000014",
+    "nivel": 1,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "¿Cuál es el alcance correcto del simulador de condiciones sonoras de Misión 1?",
+    "opciones": [
+      "Predice la música ideal de cada persona",
+      "Es educativo y ayuda a formular hipótesis, no predicciones individuales",
+      "Garantiza mejoras si se elige volumen bajo",
+      "Diagnostica dificultades de atención"
+    ],
+    "correcta": 1,
+    "pistas": [
+      "Distingue aprendizaje de diagnóstico.",
+      "El resultado del simulador no conoce toda la respuesta individual.",
+      "Busca una herramienta para razonar y comparar."
+    ],
+    "retroalimentacion": "El simulador es educativo: permite ensayar decisiones e hipótesis, pero no predice el efecto individual.",
+    "fecha": "2026-10-28T08:00:14.000Z"
+  },
+  {
+    "id": "pre_000015",
+    "temaId": "tem_000014",
+    "nivel": 2,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "Relacionar una fórmula nueva con un ejemplo propio corresponde principalmente a:",
+    "opciones": [
+      "Codificación",
+      "Recuperación",
+      "Control inhibitorio",
+      "Autorregulación"
+    ],
+    "correcta": 0,
+    "pistas": [
+      "Ocurre al procesar información nueva.",
+      "Se está dando significado al contenido.",
+      "Es el procesamiento inicial para guardarlo."
+    ],
+    "retroalimentacion": "La codificación procesa la información nueva y la relaciona con significado para poder guardarla.",
+    "fecha": "2026-10-28T08:00:15.000Z"
+  },
+  {
+    "id": "pre_000016",
+    "temaId": "tem_000014",
+    "nivel": 2,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "¿Qué proceso estabiliza lo aprendido con el paso del tiempo y el descanso?",
+    "opciones": [
+      "Atención selectiva",
+      "Consolidación",
+      "Pausa sonora",
+      "Control inhibitorio"
+    ],
+    "correcta": 1,
+    "pistas": [
+      "No ocurre solo durante el primer contacto.",
+      "Piensa en la estabilización posterior.",
+      "El tiempo y el descanso son claves."
+    ],
+    "retroalimentacion": "La consolidación es el proceso por el cual lo aprendido se estabiliza en la memoria con el tiempo y el descanso.",
+    "fecha": "2026-10-28T08:00:16.000Z"
+  },
+  {
+    "id": "pre_000017",
+    "temaId": "tem_000014",
+    "nivel": 2,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "Escribir los pasos de un proceso sin mirar los apuntes es una práctica de:",
+    "opciones": [
+      "Relectura",
+      "Codificación inicial",
+      "Recuperación",
+      "Escucha pasiva"
+    ],
+    "correcta": 2,
+    "pistas": [
+      "La información se trae a la mente.",
+      "No hay apuntes visibles.",
+      "Después puede compararse con el original."
+    ],
+    "retroalimentacion": "Recuperar consiste en evocar la información sin tenerla delante y luego comprobarla.",
+    "fecha": "2026-10-28T08:00:17.000Z"
+  },
+  {
+    "id": "pre_000018",
+    "temaId": "tem_000014",
+    "nivel": 2,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "Repasar el lunes, el jueves y la semana siguiente ejemplifica:",
+    "opciones": [
+      "Una pausa sonora",
+      "Atención sostenida",
+      "Práctica concentrada",
+      "Repetición espaciada"
+    ],
+    "correcta": 3,
+    "pistas": [
+      "Observa cómo se distribuyen los repasos.",
+      "No se concentran en una noche.",
+      "La práctica se reparte en el tiempo."
+    ],
+    "retroalimentacion": "La repetición espaciada distribuye los repasos en varios momentos en lugar de concentrarlos.",
+    "fecha": "2026-10-28T08:00:18.000Z"
+  },
+  {
+    "id": "pre_000019",
+    "temaId": "tem_000014",
+    "nivel": 2,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "En Misión 2, una melodía asociada al orden de varios conceptos puede funcionar como:",
+    "opciones": [
+      "Pista de recuperación",
+      "Prueba automática de comprensión",
+      "Sustituto de la explicación",
+      "Intervalo universal de repaso"
+    ],
+    "correcta": 0,
+    "pistas": [
+      "La melodía ayuda a encontrar un recuerdo.",
+      "No demuestra que se entienda el significado.",
+      "Piensa en un estímulo asociado a lo aprendido."
+    ],
+    "retroalimentacion": "Una melodía puede actuar como pista de recuperación del orden, pero no reemplaza la comprensión.",
+    "fecha": "2026-10-28T08:00:19.000Z"
+  },
+  {
+    "id": "pre_000020",
+    "temaId": "tem_000014",
+    "nivel": 2,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "Un estudiante canta en orden tres conceptos, pero no puede explicarlos. ¿Qué diagnóstico es más adecuado?",
+    "opciones": [
+      "La melodía demuestra comprensión completa",
+      "Recuerda la secuencia, pero falta codificar significado",
+      "Necesita aumentar el volumen",
+      "La memoria de trabajo dejó de funcionar"
+    ],
+    "correcta": 1,
+    "pistas": [
+      "Separa recordar el orden de explicar.",
+      "¿Qué evidencia sí existe y cuál falta?",
+      "La dificultad está en el significado de cada concepto."
+    ],
+    "retroalimentacion": "Recordar una secuencia no demuestra comprenderla; hace falta trabajar y comprobar el significado de cada concepto.",
+    "fecha": "2026-10-28T08:00:20.000Z"
+  },
+  {
+    "id": "pre_000021",
+    "temaId": "tem_000014",
+    "nivel": 2,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "¿Qué secuencia usa responsablemente un ritmo para aprender tres conceptos?",
+    "opciones": [
+      "Ritmo continuo y luego exposición extensa",
+      "Memorizar nombres y omitir significados",
+      "Explicar, practicar con ritmo y recuperar después sin apoyo",
+      "Escuchar una canción y asumir comprensión"
+    ],
+    "correcta": 2,
+    "pistas": [
+      "El apoyo sonoro no debe ser la comprobación final.",
+      "Primero se construye significado.",
+      "Al final se recupera sin la pista."
+    ],
+    "retroalimentacion": "La secuencia defendible comprende primero, usa el ritmo como apoyo y comprueba después sin ese apoyo.",
+    "fecha": "2026-10-28T08:00:21.000Z"
+  },
+  {
+    "id": "pre_000022",
+    "temaId": "tem_000014",
+    "nivel": 2,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "¿Qué diferencia principal existe entre releer y practicar recuperación?",
+    "opciones": [
+      "Releer siempre produce más aprendizaje",
+      "Recuperar requiere música",
+      "No existe diferencia",
+      "Recuperar intenta evocar sin mirar"
+    ],
+    "correcta": 3,
+    "pistas": [
+      "Observa si la información está visible.",
+      "La relectura mantiene el texto delante.",
+      "La recuperación exige producir el recuerdo."
+    ],
+    "retroalimentacion": "La práctica de recuperación exige evocar sin mirar; releer mantiene la información disponible.",
+    "fecha": "2026-10-28T08:00:22.000Z"
+  },
+  {
+    "id": "pre_000023",
+    "temaId": "tem_000014",
+    "nivel": 2,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "¿Cuál afirmación sobre el intervalo de repaso es coherente con la Tarea 3?",
+    "opciones": [
+      "Depende de cuánto tiempo se necesite recordar",
+      "Siempre debe ser de un día",
+      "Es igual para toda materia",
+      "La música determina el intervalo"
+    ],
+    "correcta": 0,
+    "pistas": [
+      "Evita una regla universal.",
+      "Considera la duración deseada del recuerdo.",
+      "El intervalo se ajusta al objetivo."
+    ],
+    "retroalimentacion": "El intervalo de repaso no es universal; depende, entre otros factores, de cuánto tiempo se necesita conservar lo aprendido.",
+    "fecha": "2026-10-28T08:00:23.000Z"
+  },
+  {
+    "id": "pre_000024",
+    "temaId": "tem_000014",
+    "nivel": 2,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "Después de usar una melodía para recordar conceptos, ¿qué comprobación aporta evidencia de comprensión?",
+    "opciones": [
+      "Repetir la melodía más rápido",
+      "Explicar cada concepto y aplicarlo a un ejemplo nuevo",
+      "Decir si el ritmo agrada",
+      "Escuchar la canción completa"
+    ],
+    "correcta": 1,
+    "pistas": [
+      "La comprobación debe ir más allá del orden.",
+      "Busca explicación y aplicación.",
+      "El gusto musical no evidencia comprensión."
+    ],
+    "retroalimentacion": "Explicar y aplicar los conceptos demuestra algo distinto de recordar sus nombres en orden.",
+    "fecha": "2026-10-28T08:00:24.000Z"
+  },
+  {
+    "id": "pre_000025",
+    "temaId": "tem_000014",
+    "nivel": 3,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "¿Qué duración debe tener la microactividad propuesta en Misión 3?",
+    "opciones": [
+      "5 a 10 minutos",
+      "Exactamente 20 minutos",
+      "Una jornada completa",
+      "Menos de un minuto"
+    ],
+    "correcta": 0,
+    "pistas": [
+      "Es una actividad breve.",
+      "Revisa el rango de Misión 3.",
+      "Debe caber al final de una jornada cansada."
+    ],
+    "retroalimentacion": "La microactividad de Misión 3 se diseña para durar entre 5 y 10 minutos.",
+    "fecha": "2026-10-28T08:00:25.000Z"
+  },
+  {
+    "id": "pre_000026",
+    "temaId": "tem_000014",
+    "nivel": 3,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "¿Cuál es un objetivo observable para una microactividad?",
+    "opciones": [
+      "Que el grupo disfrute mucho",
+      "Que cada estudiante explique tres conceptos con sus palabras",
+      "Que la música mejore el cerebro",
+      "Que todos prefieran la misma canción"
+    ],
+    "correcta": 1,
+    "pistas": [
+      "El docente debe poder observar la conducta.",
+      "Evita verbos vagos.",
+      "Busca una producción concreta del estudiante."
+    ],
+    "retroalimentacion": "Explicar conceptos con palabras propias es una conducta observable y alineada con el aprendizaje.",
+    "fecha": "2026-10-28T08:00:26.000Z"
+  },
+  {
+    "id": "pre_000027",
+    "temaId": "tem_000014",
+    "nivel": 3,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "En el bloque de recurso sonoro de Misión 3, ¿qué opción también es válida?",
+    "opciones": [
+      "Solo canciones con letra",
+      "Solo música instrumental",
+      "El silencio, si se justifica según la tarea",
+      "Cualquier audio a volumen alto"
+    ],
+    "correcta": 2,
+    "pistas": [
+      "Un recurso no tiene que producir sonido.",
+      "La elección depende de la tarea.",
+      "Busca la alternativa que también reduce estímulos."
+    ],
+    "retroalimentacion": "El silencio es una opción válida cuando se justifica según la demanda de la tarea y la respuesta del grupo.",
+    "fecha": "2026-10-28T08:00:27.000Z"
+  },
+  {
+    "id": "pre_000028",
+    "temaId": "tem_000014",
+    "nivel": 3,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "Un grupo llega cansado y con tensión alta. ¿Qué decisión es más prudente antes del repaso verbal?",
+    "opciones": [
+      "Mantener música con letra todo el tiempo",
+      "Asumir que una canción relajará a todos",
+      "Eliminar la comprobación",
+      "Probar una pausa breve y observar tensión antes de continuar"
+    ],
+    "correcta": 3,
+    "pistas": [
+      "La regulación se comprueba, no se supone.",
+      "Evita añadir otra tarea verbal.",
+      "Busca una intervención breve con indicador."
+    ],
+    "retroalimentacion": "Una pausa breve puede probarse como transición y revisarse con tensión percibida antes de continuar el aprendizaje.",
+    "fecha": "2026-10-28T08:00:28.000Z"
+  },
+  {
+    "id": "pre_000029",
+    "temaId": "tem_000014",
+    "nivel": 3,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "¿Qué combinación comprueba aprendizaje y autorregulación en una microactividad?",
+    "opciones": [
+      "Explicación sin mirar y concentración percibida de 1 a 5",
+      "Título de la canción y nombre del artista",
+      "Volumen utilizado y duración del audio",
+      "Número de aplausos y canción favorita"
+    ],
+    "correcta": 0,
+    "pistas": [
+      "Se necesitan dos tipos de evidencia.",
+      "Una debe mostrar aprendizaje.",
+      "La otra puede registrar la experiencia de regulación."
+    ],
+    "retroalimentacion": "Explicar sin mirar evidencia aprendizaje; una escala personal permite registrar la autorregulación de forma orientativa.",
+    "fecha": "2026-10-28T08:00:29.000Z"
+  },
+  {
+    "id": "pre_000030",
+    "temaId": "tem_000014",
+    "nivel": 3,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "¿Qué cuatro bloques debe incluir el diseño de Misión 3?",
+    "opciones": [
+      "Canción, artista, género y gusto",
+      "Objetivo, recurso o silencio, secuencia y comprobación",
+      "Lectura, examen, recreo y diploma",
+      "Inicio, música continua, baile y cierre"
+    ],
+    "correcta": 1,
+    "pistas": [
+      "El diseño comienza con una meta.",
+      "Incluye decisiones, pasos y evidencia final.",
+      "El recurso sonoro puede ser silencio."
+    ],
+    "retroalimentacion": "Misión 3 organiza objetivo, recurso sonoro o silencio, instrucciones y secuencia, y comprobación del aprendizaje y autorregulación.",
+    "fecha": "2026-10-28T08:00:30.000Z"
+  },
+  {
+    "id": "pre_000031",
+    "temaId": "tem_000014",
+    "nivel": 3,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "¿Por qué una microactividad debe ofrecer alternativas o ajustes individuales?",
+    "opciones": [
+      "Porque todos aprenden igual",
+      "Porque el docente no necesita objetivo",
+      "Porque las respuestas al sonido varían entre personas",
+      "Porque el silencio siempre perjudica"
+    ],
+    "correcta": 2,
+    "pistas": [
+      "Recuerda las diferencias individuales.",
+      "La misma música no produce una respuesta única.",
+      "Una alternativa permite ajustar la condición."
+    ],
+    "retroalimentacion": "Las respuestas emocionales y cognitivas al sonido varían; ofrecer alternativas evita imponer una regla general.",
+    "fecha": "2026-10-28T08:00:31.000Z"
+  },
+  {
+    "id": "pre_000032",
+    "temaId": "tem_000014",
+    "nivel": 3,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "¿Cuál afirmación debe evitarse al justificar una microactividad musical?",
+    "opciones": [
+      "La condición se comprobará",
+      "El volumen será bajo",
+      "Habrá opción de silencio",
+      "La música siempre mejora la concentración"
+    ],
+    "correcta": 3,
+    "pistas": [
+      "Busca una afirmación absoluta.",
+      "La evidencia de Tarea 3 no permite generalizar.",
+      "El efecto depende de tarea y persona."
+    ],
+    "retroalimentacion": "NeuroRitmo evita afirmar mejoras universales; la condición sonora se formula como una hipótesis comprobable.",
+    "fecha": "2026-10-28T08:00:32.000Z"
+  },
+  {
+    "id": "pre_000033",
+    "temaId": "tem_000014",
+    "nivel": 3,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "¿Qué paso debe cerrar una secuencia que practicó conceptos con un ritmo?",
+    "opciones": [
+      "Recuperar y explicar sin apoyo",
+      "Repetir el ritmo indefinidamente",
+      "Cambiar a una canción con letra",
+      "Preguntar únicamente si gustó"
+    ],
+    "correcta": 0,
+    "pistas": [
+      "El cierre debe comprobar aprendizaje.",
+      "Retira la pista usada durante la práctica.",
+      "Pide producir el contenido con palabras propias."
+    ],
+    "retroalimentacion": "La recuperación sin apoyo permite comprobar si el estudiante puede explicar los conceptos más allá del ritmo.",
+    "fecha": "2026-10-28T08:00:33.000Z"
+  },
+  {
+    "id": "pre_000034",
+    "temaId": "tem_000014",
+    "nivel": 3,
+    "tipo": "opcion",
+    "estado": "aprobado",
+    "origen": "docente",
+    "enunciado": "¿Qué elementos sostienen mejor la justificación pedagógica de una microactividad NeuroRitmo?",
+    "opciones": [
+      "Popularidad, género y artista",
+      "Atención, recuperación, emoción y diferencias individuales",
+      "Duración de la canción solamente",
+      "Preferencia del docente y volumen alto"
+    ],
+    "correcta": 1,
+    "pistas": [
+      "Integra procesos cognitivos y emocionales.",
+      "Incluye la diversidad del grupo.",
+      "La justificación va más allá del gusto musical."
+    ],
+    "retroalimentacion": "La justificación relaciona atención, recuperación, emoción y diferencias individuales con decisiones y evidencias observables.",
+    "fecha": "2026-10-28T08:00:34.000Z"
+  }
+]

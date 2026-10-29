@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: neuroritmo-digital
+    runtime: node
+    plan: free
+    autoDeploy: true
+    buildCommand: npm ci
+    startCommand: bash despliegue/render-inicio.sh
+    healthCheckPath: /index.html
+    envVars:
+      - key: NODE_VERSION
+        value: 20.18.0
+      - key: IA_PROVEEDOR
+        value: gemini
+      - key: IA_MODELO
+        value: gemini-3.5-flash-lite
+      - key: GEMINI_API_KEY
+        sync: false

@@ -1,0 +1,206 @@
+[
+  {
+    "id": "explorador",
+    "nombre": "Explorador",
+    "icono": "🧭",
+    "descripcion": "Revisa 5 temas",
+    "condicion": {
+      "tipo": "conteo",
+      "actividad": "tema-revisado",
+      "minimo": 5
+    }
+  },
+  {
+    "id": "memoria",
+    "nombre": "Memoria de elefante",
+    "icono": "🐘",
+    "descripcion": "Completa 5 juegos de Encuentra la pareja",
+    "condicion": {
+      "tipo": "conteo",
+      "actividad": "pareja",
+      "minimo": 5
+    }
+  },
+  {
+    "id": "palabra-perfecta",
+    "nombre": "Palabra perfecta",
+    "icono": "🎯",
+    "descripcion": "Gana el ahorcado sin errores",
+    "condicion": {
+      "tipo": "sinErrores",
+      "actividad": "ahorcado"
+    }
+  },
+  {
+    "id": "ojo-aguila",
+    "nombre": "Ojo de águila",
+    "icono": "🦅",
+    "descripcion": "Encuentra todas las palabras de una sopa de letras",
+    "condicion": {
+      "tipo": "sinErrores",
+      "actividad": "sopa-letras"
+    }
+  },
+  {
+    "id": "mente-cruzada",
+    "nombre": "Mente cruzada",
+    "icono": "✏️",
+    "descripcion": "Completa 3 crucigramas",
+    "condicion": {
+      "tipo": "conteo",
+      "actividad": "crucigrama",
+      "minimo": 3
+    }
+  },
+  {
+    "id": "nivel-1",
+    "nombre": "Nivel 1 · Recordar",
+    "icono": "🔹",
+    "descripcion": "Aprueba el nivel 1 del quiz",
+    "condicion": {
+      "tipo": "nivelQuiz",
+      "nivel": 1
+    }
+  },
+  {
+    "id": "nivel-2",
+    "nombre": "Nivel 2 · Comprender",
+    "icono": "🔷",
+    "descripcion": "Aprueba el nivel 2 del quiz",
+    "condicion": {
+      "tipo": "nivelQuiz",
+      "nivel": 2
+    }
+  },
+  {
+    "id": "nivel-3",
+    "nombre": "Nivel 3 · Aplicar",
+    "icono": "⭐",
+    "descripcion": "Aprueba el nivel 3 del quiz",
+    "condicion": {
+      "tipo": "nivelQuiz",
+      "nivel": 3
+    }
+  },
+  {
+    "id": "nivel-4",
+    "nombre": "Nivel 4 · Analizar",
+    "icono": "🌟",
+    "descripcion": "Aprueba el nivel 4 del quiz",
+    "condicion": {
+      "tipo": "nivelQuiz",
+      "nivel": 4
+    }
+  },
+  {
+    "id": "nivel-5",
+    "nombre": "Nivel 5 · Evaluar",
+    "icono": "🏆",
+    "descripcion": "Aprueba el nivel 5 del quiz",
+    "condicion": {
+      "tipo": "nivelQuiz",
+      "nivel": 5
+    }
+  },
+  {
+    "id": "en-la-practica",
+    "nombre": "En la práctica",
+    "icono": "🎭",
+    "descripcion": "Completa una simulación",
+    "condicion": {
+      "tipo": "conteo",
+      "actividad": "simulacion",
+      "minimo": 1
+    }
+  },
+  {
+    "id": "voz-del-grupo",
+    "nombre": "Voz del grupo",
+    "icono": "💬",
+    "descripcion": "Publica 10 respuestas en los foros",
+    "condicion": {
+      "tipo": "conteo",
+      "actividad": "foro",
+      "minimo": 10
+    }
+  },
+  {
+    "id": "constante",
+    "nombre": "Constante",
+    "icono": "🔥",
+    "descripcion": "Realiza actividades 7 días seguidos",
+    "condicion": {
+      "tipo": "racha",
+      "dias": 7
+    }
+  },
+  {
+    "id": "centenario",
+    "nombre": "Centenario",
+    "icono": "💯",
+    "descripcion": "Alcanza 100 puntos",
+    "condicion": {
+      "tipo": "puntos",
+      "minimo": 100
+    }
+  },
+  {
+    "id": "observador-atencional",
+    "nombre": "Observador atencional",
+    "descripcion": "Superaste la Misión 1 de NeuroRitmo (Detectives de la atención) con 70/100 o más.",
+    "icono": "🔎",
+    "grupo": "neuroritmo",
+    "condicion": {
+      "tipo": "mision",
+      "mision": "m1",
+      "minimo": 70
+    }
+  },
+  {
+    "id": "guardian-memoria",
+    "nombre": "Guardián de la memoria",
+    "descripcion": "Superaste la Misión 2 de NeuroRitmo (Laboratorio de la memoria) con 70/100 o más.",
+    "icono": "🧠",
+    "grupo": "neuroritmo",
+    "condicion": {
+      "tipo": "mision",
+      "mision": "m2",
+      "minimo": 70
+    }
+  },
+  {
+    "id": "disenador-neuroritmico",
+    "nombre": "Diseñador NeuroRítmico",
+    "descripcion": "Tu docente validó tu microactividad de la Misión 3 con 70/100 o más.",
+    "icono": "🎼",
+    "grupo": "neuroritmo",
+    "condicion": {
+      "tipo": "mision",
+      "mision": "m3",
+      "minimo": 70
+    }
+  },
+  {
+    "id": "mente-en-ajuste",
+    "nombre": "Mente en ajuste",
+    "descripcion": "Mejoraste al menos 15 puntos en un reintento de una misión de NeuroRitmo tras revisar la retroalimentación.",
+    "icono": "🔄",
+    "grupo": "neuroritmo",
+    "condicion": {
+      "tipo": "mejora",
+      "actividad": "neuroritmo",
+      "minimo": 15
+    }
+  },
+  {
+    "id": "eco-colaborativo",
+    "nombre": "Eco colaborativo",
+    "descripcion": "Compartiste una microactividad y comentaste la propuesta de otra persona en la Galería NeuroRitmo.",
+    "icono": "🎧",
+    "grupo": "neuroritmo",
+    "condicion": {
+      "tipo": "aporteForo",
+      "temaId": "tem_000005"
+    }
+  }
+]

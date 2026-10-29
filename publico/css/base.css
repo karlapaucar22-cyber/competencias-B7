@@ -1,0 +1,627 @@
+/* publico/css/base.css */
+/* Reset ligero, tipografía, enlaces y estructura global con la identidad NeuroRitmo */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* Reset ligero */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-fondo);
+  background-image: linear-gradient(180deg, var(--nr-celeste) 0, var(--color-fondo) 28rem);
+  background-repeat: no-repeat;
+  color: var(--color-texto);
+  font-family: var(--fuente-base);
+  font-size: var(--tamano-m);
+  line-height: var(--interlineado-base);
+  font-weight: var(--peso-regular);
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+/* Tipografía */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--fuente-titulos);
+  color: var(--color-primario);
+  line-height: var(--interlineado-ajustado);
+  font-weight: var(--peso-negrita);
+  margin-bottom: var(--espacio-m);
+}
+
+h1 {
+  font-size: var(--tamano-3xl);
+  font-weight: var(--peso-extranegrita);
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: var(--tamano-2xl);
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-size: var(--tamano-xl);
+}
+
+h4 {
+  font-size: var(--tamano-l);
+}
+
+h5,
+h6 {
+  font-size: var(--tamano-m);
+}
+
+p {
+  margin-bottom: var(--espacio-m);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+small {
+  font-size: var(--tamano-s);
+}
+
+/* Enlaces */
+a {
+  color: var(--color-info);
+  text-decoration: none;
+  transition: var(--transicion);
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--color-primario);
+}
+
+/* Foco visible accesible (amarillo con borde petróleo: visible sobre fondos claros y oscuros) */
+:focus-visible {
+  outline: 3px solid var(--color-foco);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px var(--color-primario);
+}
+
+::selection {
+  background-color: var(--nr-amarillo);
+  color: var(--color-primario);
+}
+
+/* Contenedor principal */
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho-maximo);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--espacio-m);
+  padding-right: var(--espacio-m);
+}
+
+@media (min-width: 768px) {
+  .contenedor {
+    padding-left: var(--espacio-l);
+    padding-right: var(--espacio-l);
+  }
+}
+
+/* Pila vertical (columna con separación uniforme) */
+.pila {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+}
+
+/* Fila horizontal flexible */
+.fila {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espacio-m);
+}
+
+/* Cuadrícula adaptable automática */
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--espacio-l);
+}
+
+/* Utilidad oculto */
+.oculto {
+  display: none !important;
+}
+
+/* El atributo hidden siempre oculta, aunque una clase defina display */
+[hidden] {
+  display: none !important;
+}
+
+/* Utilidad accesible exclusiva para lectores de pantalla */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   Estructura de la aplicación (encabezado arriba, menú a la izquierda, contenido)
+   ========================================================================== */
+#plantilla {
+  display: contents;
+}
+
+body {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  grid-template-columns: var(--ancho-menu-lateral) minmax(0, 1fr);
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  transition: grid-template-columns 0.2s ease;
+}
+
+/* Encabezado: superficie clara con línea de color NeuroRitmo */
+.encabezado-app {
+  grid-area: header;
+  background-color: var(--color-superficie-translucida);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-borde);
+  box-shadow: var(--sombra-1);
+  padding: var(--espacio-s) var(--espacio-l);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+}
+
+.encabezado-app::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--nr-turquesa), var(--nr-verde), var(--nr-amarillo), var(--nr-coral));
+}
+
+.encabezado-app__marca {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-s);
+  min-width: 0;
+}
+
+/* Logotipo: nota musical sobre un círculo turquesa-verde */
+.encabezado-app__dot {
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radio-m);
+  background: linear-gradient(135deg, var(--nr-turquesa-oscuro), var(--nr-verde-oscuro));
+  box-shadow: var(--sombra-1);
+}
+
+.encabezado-app__dot::after {
+  content: "♪";
+  color: var(--color-texto-inverso);
+  font-size: var(--tamano-l);
+  font-weight: var(--peso-negrita);
+  line-height: 1;
+}
+
+.encabezado-app__nombre {
+  font-weight: var(--peso-extranegrita);
+  color: var(--color-primario);
+  font-size: var(--tamano-m);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+
+.encabezado-app__nombre:hover {
+  text-decoration: none;
+  color: var(--color-accion);
+}
+
+.encabezado-app__separador {
+  color: var(--color-texto-suave);
+  font-weight: var(--peso-regular);
+}
+
+.encabezado-app__titulo {
+  padding: var(--espacio-xs) var(--espacio-s);
+  border-radius: var(--radio-completo);
+  background-color: var(--nr-celeste);
+  font-size: var(--tamano-s);
+  color: var(--color-primario);
+  font-weight: var(--peso-seminegrita);
+}
+
+.encabezado-app__derecha {
+  align-items: center;
+  gap: var(--espacio-s);
+}
+
+/* Pantallas pequeñas: el encabezado pasa a dos líneas en lugar de desbordar */
+@media (max-width: 639.98px) {
+  .encabezado-app {
+    flex-wrap: wrap;
+    gap: var(--espacio-xs) var(--espacio-s);
+    padding: var(--espacio-s) var(--espacio-m);
+  }
+
+  .encabezado-app > .fila {
+    flex-wrap: nowrap;
+    margin-left: auto;
+    min-width: 0;
+  }
+
+  .encabezado-app__separador,
+  .encabezado-app__titulo,
+  .encabezado-app__usuario .chip {
+    display: none;
+  }
+}
+
+/* Menú lateral: superficie clara, secciones con título y opción activa en píldora turquesa */
+.menu-lateral {
+  grid-area: sidebar;
+  background-color: var(--color-superficie);
+  color: var(--color-texto);
+  padding: var(--espacio-l) var(--espacio-m);
+  border-right: 1px solid var(--color-borde);
+  min-height: 100%;
+  transition: padding 0.2s ease, width 0.2s ease;
+}
+
+.menu-lateral__cerrar {
+  display: none;
+  margin-left: auto;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-m);
+  background-color: var(--nr-celeste);
+  color: var(--color-primario);
+  font-size: var(--tamano-l);
+  cursor: pointer;
+}
+
+.menu-lateral__controles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espacio-xs);
+  margin-bottom: var(--espacio-s);
+}
+
+.menu-lateral__fijar {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espacio-xs);
+  min-height: 44px;
+  padding: var(--espacio-xs) var(--espacio-s);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-m);
+  background-color: var(--color-superficie);
+  color: var(--color-primario);
+  cursor: pointer;
+  font-size: var(--tamano-s);
+  font-weight: var(--peso-medio);
+}
+
+.menu-lateral__fijar[aria-pressed="true"] {
+  background-color: var(--nr-celeste);
+  border-color: var(--color-accion);
+}
+
+.menu-lateral__nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+  position: sticky;
+  top: 88px;
+}
+
+.menu-lateral__grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.menu-lateral__grupo + .menu-lateral__grupo {
+  padding-top: var(--espacio-m);
+  border-top: 1px dashed var(--color-borde);
+}
+
+.menu-lateral__titulo-grupo {
+  margin: 0 0 var(--espacio-xs) var(--espacio-s);
+  font-size: var(--tamano-xs);
+  font-weight: var(--peso-extranegrita);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accion);
+}
+
+.menu-lateral__enlace {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-s);
+  color: var(--color-primario);
+  padding: var(--espacio-s) var(--espacio-m) var(--espacio-s) var(--espacio-s);
+  border-radius: var(--radio-completo);
+  font-size: var(--tamano-s);
+  font-weight: var(--peso-medio);
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.menu-lateral__icono {
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radio-completo);
+  background-color: var(--nr-celeste);
+  font-size: var(--tamano-m);
+  line-height: 1;
+}
+
+.menu-lateral__texto {
+  flex: 1;
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.menu-lateral__enlace:hover {
+  background-color: var(--nr-celeste);
+  color: var(--color-primario);
+  text-decoration: none;
+}
+
+.menu-lateral__enlace.activo,
+.menu-lateral__enlace[aria-current="page"] {
+  background-color: var(--color-accion);
+  color: var(--color-texto-inverso);
+  font-weight: var(--peso-negrita);
+  box-shadow: var(--sombra-1);
+}
+
+.menu-lateral__enlace.activo .menu-lateral__icono,
+.menu-lateral__enlace[aria-current="page"] .menu-lateral__icono {
+  background-color: var(--color-superficie);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .menu-lateral__enlace:not(.activo):hover {
+    transform: translateX(3px);
+  }
+}
+
+#contenido {
+  grid-area: main;
+  padding-top: var(--espacio-xl);
+  padding-bottom: var(--espacio-2xl);
+  min-width: 0;
+}
+
+/* Pie de página en azul petróleo con la franja de colores de NeuroRitmo */
+.pie-app {
+  grid-area: footer;
+  position: relative;
+  background-color: var(--color-primario);
+  color: var(--color-texto-inverso);
+  padding: var(--espacio-l) var(--espacio-m);
+  font-size: var(--tamano-s);
+  text-align: center;
+}
+
+.pie-app::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--nr-turquesa), var(--nr-verde), var(--nr-amarillo), var(--nr-coral));
+}
+
+.pie-app p {
+  margin: 0;
+  color: var(--nr-celeste);
+}
+
+/* Disparador de menú móvil */
+.menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--nr-celeste);
+  border: 1px solid var(--color-borde);
+  color: var(--color-primario);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radio-m);
+  cursor: pointer;
+  font-size: var(--tamano-l);
+  line-height: 1;
+}
+
+body.menu-contraido:not(.menu-temporal-expandido) {
+  grid-template-columns: var(--ancho-menu-contraido) minmax(0, 1fr);
+}
+
+body.menu-contraido.menu-temporal-expandido {
+  grid-template-columns: var(--ancho-menu-lateral) minmax(0, 1fr);
+}
+
+body.menu-contraido:not(.menu-temporal-expandido) .menu-lateral {
+  padding-inline: var(--espacio-s);
+}
+
+body.menu-contraido:not(.menu-temporal-expandido) .menu-lateral__nav {
+  gap: var(--espacio-s);
+}
+
+body.menu-contraido:not(.menu-temporal-expandido) .menu-lateral__titulo-grupo,
+body.menu-contraido:not(.menu-temporal-expandido) .menu-lateral__texto,
+body.menu-contraido:not(.menu-temporal-expandido) .menu-lateral__fijar-texto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+body.menu-contraido:not(.menu-temporal-expandido) .menu-lateral__enlace {
+  position: relative;
+  justify-content: center;
+  padding: var(--espacio-s);
+}
+
+body.menu-contraido:not(.menu-temporal-expandido) .menu-lateral__grupo + .menu-lateral__grupo {
+  padding-top: var(--espacio-s);
+}
+
+body.menu-contraido:not(.menu-temporal-expandido) .menu-lateral__contador {
+  position: absolute;
+  margin: 0;
+  transform: translate(var(--espacio-m), calc(var(--espacio-s) * -1));
+}
+
+body.menu-oculto {
+  grid-template-columns: 0 minmax(0, 1fr);
+}
+
+body.menu-oculto .menu-lateral {
+  display: none;
+}
+
+/* Responsivo por debajo de 768 px: el menú es un cajón lateral que se abre con el botón */
+@media (max-width: 767px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu-lateral {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: min(290px, 86vw);
+    height: 100vh;
+    z-index: 800; /* por encima del avatar flotante (700) mientras el menú está abierto */
+    border-radius: 0 var(--radio-l) var(--radio-l) 0;
+    box-shadow: 0 0 0 9999px var(--color-velo), var(--sombra-3);
+    overflow-y: auto;
+  }
+
+  .menu-lateral__cerrar {
+    display: inline-grid;
+    place-items: center;
+    flex: 0 0 auto;
+  }
+
+  .menu-lateral__fijar {
+    display: none;
+  }
+
+  .menu-lateral.abierto {
+    display: flex;
+    flex-direction: column;
+    animation: menu-entrar 0.25s ease-out;
+  }
+
+  body.menu-movil-abierto .avatar-guia {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .menu-lateral__nav {
+    position: static;
+  }
+
+  #contenido {
+    padding-top: var(--espacio-l);
+    padding-bottom: var(--espacio-xl);
+  }
+}
+
+@keyframes menu-entrar {
+  from { transform: translateX(-100%); }
+  to { transform: none; }
+}

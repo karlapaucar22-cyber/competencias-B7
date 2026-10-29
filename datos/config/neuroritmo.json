@@ -1,0 +1,704 @@
+{
+  "titulo": "NeuroRitmo: Misión Cerebro Sonoro",
+  "asignaturaId": "asi_000001",
+  "cancionPrincipalId": "can_000001",
+  "narrativa": "Te uniste al equipo de exploradores NeuroRitmo. En el Centro de Estudio Sonoro de la universidad hay estudiantes que no saben cómo usar la música para aprender: algunos se distraen, otros olvidan lo que estudian y otros llegan estresados a sus evaluaciones. Para restablecer el equilibrio, activa las tres estaciones del mapa — Atención, Memoria e Integración pedagógica — superando la misión de cada una.",
+  "objetivo": "Al finalizar NeuroRitmo justificarás la selección de una estrategia sonora (música instrumental, pausa sonora o silencio) para una tarea académica concreta, a partir del análisis de la atención, la memoria de trabajo, el control inhibitorio y la autorregulación emocional implicados en ella.",
+  "duracion": "60 a 75 min",
+  "reglasJuego": [
+    "Lee o escucha la situación completa antes de responder. El audio está silenciado por defecto y siempre hay transcripción.",
+    "Toda decisión requiere una justificación: se puntúan ambas (60 puntos por decisiones y 40 por justificación en cada misión).",
+    "La siguiente misión se desbloquea con 70/100. Puedes reintentar: se conserva tu mejor puntuación y las pistas no restan puntos.",
+    "Neuri, el tutor de IA, orienta pero no responde por ti: contrasta sus sugerencias con el material del curso."
+  ],
+  "alertas": {
+    "misionBaja": {
+      "activa": true,
+      "intentos": 2
+    },
+    "misionPendiente": {
+      "activa": true,
+      "dias": 5
+    },
+    "mensajesApoyo": [
+      "Vi que la misión de NeuroRitmo va más lenta de lo previsto. ¿Te ayudo a planificar el siguiente paso? Tu mejor puntaje se conserva."
+    ]
+  },
+  "galeria": {
+    "titulo": "Galería NeuroRitmo",
+    "temaId": "tem_000005"
+  },
+  "recursos": {
+    "screencast": {
+      "titulo": "Neurociencia Sonora: Mapeo Cerebral y Funciones Ejecutivas",
+      "formato": "Screencast (Loom / Genially) · subtema 1.1",
+      "autoria": "Antonella Monserrat Chica García",
+      "url": "https://view.genially.com/6aca29b16ddf6a28c8dadcaf",
+      "licencia": "CC BY-NC-SA 4.0 declarada en el informe; no verificada en Genially"
+    },
+    "infografia": {
+      "titulo": "Mapeo Socioemocional: Autorregulación y Bienestar Universitario",
+      "formato": "Infografía interactiva (Genially / Canva) · subtema 1.2",
+      "autoria": "Michelle Yumehy Cruzatti Calderón",
+      "url": "https://view.genially.com/6ac9441095a03db4389b6f2f",
+      "alterno": "https://canva.link/oj6h7lfrhjp9zu0",
+      "licencia": "CC BY-NC-SA 4.0 declarada en el informe; no verificada en los destinos"
+    },
+    "matriz": {
+      "titulo": "Matriz de autodiagnóstico musical",
+      "formato": "Adaptación interactiva de la matriz incluida en las páginas 34–35 del informe original",
+      "autoria": "Asociada a la ficha didáctica de Antonella Monserrat Chica García; confirmar autoría del archivo",
+      "url": "/paginas/autodiagnostico-musical.html",
+      "estado": "disponible",
+      "licencia": "CC BY-NC-SA 4.0 declarada en el informe; no verificable sin el archivo"
+    }
+  },
+  "misiones": [
+    {
+      "id": "m1",
+      "numero": 1,
+      "titulo": "Detectives de la atención",
+      "estacion": "Atención",
+      "nivel": "Explorador",
+      "subtemas": "1.1 y 1.2",
+      "temaId": "tem_000003",
+      "insignia": "observador-atencional",
+      "narrativa": "Llega al Centro de Estudio Sonoro un pedido frecuente: «Quiero estudiar con música, ¿me conviene?». Como detective, observa la tarea, formula una hipótesis y compruébala en la Sala de estudio sonora, sin dar por hecho que una misma música sirve para todas las personas.",
+      "instrucciones": "En los ítems 1 a 3 escribe tu hipótesis, configura el ambiente (silencio, música instrumental suave o canción con letra; volumen bajo o medio) y compara tu predicción con la explicación del simulador. En el ítem 4 identifica el proceso principal del caso. Al final elige dos tarjetas de argumento y redacta tu justificación.",
+      "finalizacion": "¡Caso cerrado! Ya sabes formular una hipótesis sobre el sonido y la atención y cómo comprobarla con indicadores observables. Recuerda: lo que funciona para una persona o tarea no tiene por qué funcionar para otra.",
+      "aviso": "El simulador es un modelo educativo basado en tendencias de la evidencia, no una predicción individual: tu experiencia puede ser distinta y conviene comprobarla.",
+      "items": [
+        {
+          "id": "i1",
+          "tipo": "simulador",
+          "titulo": "Sala de estudio sonora · Lectura comprensiva",
+          "concepto": "Atención selectiva e interferencia verbal",
+          "recurso": "screencast",
+          "situacion": "Sofía debe leer un artículo científico denso y luego explicar sus ideas principales (lectura comprensiva con alta demanda de procesamiento verbal). Suele estudiar con sus canciones favoritas con letra.",
+          "configuraciones": {
+            "silencio": {
+              "puntos": 15,
+              "resultado": "favorable",
+              "explicacion": "Es la condición más defendible para empezar: reduce la competencia con el procesamiento verbal y sirve de base para comparar otras condiciones. Un metaanálisis de 65 estudios encontró efectos pequeños pero consistentes de deterioro de la lectura con ruido, habla y música, mayores con habla inteligible y música con letra (Vasilev et al., 2018)."
+            },
+            "instrumental-bajo": {
+              "puntos": 9,
+              "resultado": "neutro",
+              "explicacion": "Es razonable para comprobar, pero en promedio los estudios sobre lectura encuentran efectos pequeños y desfavorables incluso con música de fondo. Conviene compararla con silencio y registrar cuántas ideas principales recuerdas."
+            },
+            "instrumental-medio": {
+              "puntos": 0,
+              "resultado": "desfavorable",
+              "explicacion": "A volumen medio la música compite más por la atención. En una lectura densa, aumenta el riesgo de releer y perder el hilo."
+            },
+            "letra-bajo": {
+              "puntos": 0,
+              "resultado": "desfavorable",
+              "explicacion": "La motivación importa, pero la letra es lenguaje y compite con el procesamiento verbal de la lectura, incluso a volumen bajo."
+            },
+            "letra-medio": {
+              "puntos": 0,
+              "resultado": "desfavorable",
+              "explicacion": "Letra y volumen medio suman dos fuentes de interferencia: es la condición menos prudente para comprender un texto complejo."
+            }
+          },
+          "pistas": [
+            "¿Qué proceso mental usas al leer un texto denso? ¿Qué estímulos sonoros usan también el lenguaje?",
+            "La atención selectiva y la memoria de trabajo tienen capacidad limitada: dos fuentes verbales (texto y letra) compiten por ellas.",
+            "Ejemplo paralelo: intentar escribir un correo mientras alguien te dicta números en voz alta. ¿Qué te costaría más?"
+          ]
+        },
+        {
+          "id": "i2",
+          "tipo": "simulador",
+          "titulo": "Sala de estudio sonora · Tarea mecánica",
+          "concepto": "Demanda de la tarea y activación",
+          "recurso": "screencast",
+          "situacion": "Luis debe ordenar alfabéticamente y dar formato a 40 referencias bibliográficas de su informe. Es una tarea repetitiva, con poca demanda de comprensión verbal, y suele aburrirse a los pocos minutos.",
+          "configuraciones": {
+            "silencio": {
+              "puntos": 15,
+              "resultado": "favorable",
+              "explicacion": "El silencio es una opción válida para cualquier tarea y algunas personas se concentran mejor así. Si Luis se aburre, puede comparar con música instrumental suave."
+            },
+            "instrumental-bajo": {
+              "puntos": 15,
+              "resultado": "favorable",
+              "explicacion": "En una tarea repetitiva con poca demanda verbal, una música instrumental suave puede ayudar a mantener la activación sin competir con el lenguaje. Su utilidad depende de la persona: conviene comprobarla (Kämpfe et al., 2011)."
+            },
+            "instrumental-medio": {
+              "puntos": 9,
+              "resultado": "neutro",
+              "explicacion": "Puede mantener la activación, pero a volumen medio aumenta la probabilidad de distracción y de errores de formato. Prueba primero un volumen bajo."
+            },
+            "letra-bajo": {
+              "puntos": 9,
+              "resultado": "neutro",
+              "explicacion": "Como la tarea exige poco procesamiento verbal, la letra interfiere menos que en una lectura; aun así, ordenar referencias implica leer nombres y títulos. Compruébalo contando errores."
+            },
+            "letra-medio": {
+              "puntos": 0,
+              "resultado": "desfavorable",
+              "explicacion": "Letra y volumen medio pueden atraer la atención hacia la canción y aumentar los errores al leer nombres y años de las referencias."
+            }
+          },
+          "pistas": [
+            "¿Cuánta comprensión de lenguaje exige ordenar referencias comparado con leer un artículo denso?",
+            "Cuando la demanda verbal de la tarea es baja, un sonido sin letra compite menos; el nivel de activación también influye en el rendimiento.",
+            "Ejemplo paralelo: doblar ropa con música suave frente a estudiar un texto nuevo con la misma música."
+          ]
+        },
+        {
+          "id": "i3",
+          "tipo": "simulador",
+          "titulo": "Sala de estudio sonora · Repaso con estrés alto",
+          "concepto": "Regulación de la activación y autorregulación",
+          "recurso": "infografia",
+          "situacion": "Mateo tiene un examen oral en 30 minutos y siente tensión (4 de 5). Le quedan 10 minutos para repasar un esquema que ya estudió. Un compañero le dice: «A mí me funciona una lista de reproducción energética».",
+          "configuraciones": {
+            "silencio": {
+              "puntos": 9,
+              "resultado": "neutro",
+              "explicacion": "El silencio reduce la interferencia durante el repaso, pero no atiende la tensión alta. Puede combinarse con una pausa sonora breve o una respiración pausada antes de repasar."
+            },
+            "instrumental-bajo": {
+              "puntos": 15,
+              "resultado": "favorable",
+              "explicacion": "Una música instrumental suave y agradable para Mateo puede ayudar a regular la activación sin añadir lenguaje. Las revisiones reportan efectos de las intervenciones musicales sobre el estrés (de Witte et al., 2020), pero varían entre personas: conviene anotar la tensión de 1 a 5 antes y después."
+            },
+            "instrumental-medio": {
+              "puntos": 9,
+              "resultado": "neutro",
+              "explicacion": "Puede ayudar a algunas personas a regularse, pero a volumen medio aumenta la activación y la distracción justo cuando la tensión ya es alta."
+            },
+            "letra-bajo": {
+              "puntos": 0,
+              "resultado": "desfavorable",
+              "explicacion": "Repasar un esquema exige lenguaje: la letra compite con él. Si la canción le ayuda a regularse, mejor escucharla antes del repaso, no durante."
+            },
+            "letra-medio": {
+              "puntos": 0,
+              "resultado": "desfavorable",
+              "explicacion": "Mezcla dos objetivos —regular la tensión y repasar— y añade interferencia verbal y más activación cuando la tensión ya es alta."
+            }
+          },
+          "pistas": [
+            "¿Qué necesita Mateo en este momento: más activación, menos tensión o ambas cosas a la vez que repasa?",
+            "La regulación de la activación busca un nivel de energía adecuado para la tarea; las respuestas emocionales a la música varían entre personas.",
+            "Ejemplo paralelo: una deportista que escucha una pista tranquila antes de competir, pero no durante la jugada."
+          ]
+        },
+        {
+          "id": "i4",
+          "tipo": "opcion",
+          "titulo": "Quiz situacional",
+          "concepto": "Funciones ejecutivas",
+          "recurso": "screencast",
+          "situacion": "Daniel resuelve un problema de estadística y debe recordar mentalmente los dos primeros resultados para usarlos en el paso siguiente, sin anotarlos.",
+          "enunciado": "¿Qué proceso es el principal implicado en este caso?",
+          "opciones": [
+            {
+              "id": "a",
+              "texto": "Atención selectiva",
+              "puntos": 0,
+              "retro": "La atención selectiva elige a qué estímulo atender; aquí lo central es mantener y usar datos en mente."
+            },
+            {
+              "id": "b",
+              "texto": "Memoria de trabajo",
+              "puntos": 15,
+              "retro": "La memoria de trabajo mantiene y manipula información durante unos segundos para usarla en el paso siguiente."
+            },
+            {
+              "id": "c",
+              "texto": "Control inhibitorio",
+              "puntos": 0,
+              "retro": "Sería el principal si Daniel tuviera que frenar una respuesta automática o ignorar una distracción."
+            },
+            {
+              "id": "d",
+              "texto": "Regulación de la activación",
+              "puntos": 0,
+              "retro": "Se refiere a ajustar el nivel de tensión o energía; el caso no describe estrés ni cansancio."
+            }
+          ],
+          "explicacion": "La memoria de trabajo mantiene y manipula información de forma breve; el control inhibitorio suprime distracciones o respuestas automáticas; la atención sostiene el foco. Son procesos distintos que interactúan (Diamond, 2013).",
+          "pistas": [
+            "Pregúntate si Daniel debe elegir un estímulo, mantener algo «en mente», frenar un impulso o calmarse.",
+            "Hay un proceso que guarda datos durante segundos mientras los usas para otra operación.",
+            "Ejemplo paralelo: recordar un código de verificación mientras cambias de aplicación para escribirlo."
+          ]
+        }
+      ],
+      "justificacion": {
+        "consigna": "Elige las dos tarjetas de argumento que mejor sostienen tus decisiones y redacta una explicación breve que considere la tarea, las preferencias individuales y cómo comprobarías el efecto.",
+        "concepto": "Justificación: tarea, diferencias individuales y comprobación",
+        "tarjetas": [
+          {
+            "id": "t1",
+            "texto": "La lectura comprensiva exige procesar lenguaje; la letra cantada también es lenguaje y puede competir por la misma atención y memoria de trabajo.",
+            "puntos": 15
+          },
+          {
+            "id": "t2",
+            "texto": "Las respuestas ante la música varían entre personas y tareas; por eso conviene comprobar el efecto con indicadores propios (interrupciones, ideas recordadas, tensión de 1 a 5).",
+            "puntos": 15
+          },
+          {
+            "id": "t3",
+            "texto": "Una pista instrumental suave y opcional puede ser razonable en una tarea repetitiva, aunque su efecto debe comprobarse.",
+            "puntos": 8
+          },
+          {
+            "id": "t4",
+            "texto": "La música instrumental mejora la concentración de cualquier persona en cualquier tarea.",
+            "puntos": 0
+          },
+          {
+            "id": "t5",
+            "texto": "La música con letra siempre perjudica la comprensión de cualquier lector.",
+            "puntos": 0
+          },
+          {
+            "id": "t6",
+            "texto": "Si a la mayoría le funciona una lista de reproducción, también funcionará a cada persona.",
+            "puntos": 0
+          }
+        ],
+        "explicacion": "Una buena justificación relaciona la demanda de la tarea con el estímulo sonoro, reconoce que las personas responden de forma distinta y propone cómo comprobar el efecto cambiando una sola condición a la vez.",
+        "criterios": [
+          {
+            "id": "tarea",
+            "texto": "Relaciona la decisión con la demanda de la tarea",
+            "puntos": 4,
+            "indicadores": [
+              "tarea",
+              "lectura",
+              "leer",
+              "comprension",
+              "comprender",
+              "repaso",
+              "repasar",
+              "examen",
+              "mecanic",
+              "verbal",
+              "demanda"
+            ]
+          },
+          {
+            "id": "diferencias",
+            "texto": "Considera las preferencias y diferencias individuales",
+            "puntos": 3,
+            "indicadores": [
+              "persona",
+              "individual",
+              "preferencia",
+              "prefier",
+              "gusto",
+              "cada estudiante",
+              "cada uno",
+              "cada una",
+              "varia",
+              "diferente",
+              "distint"
+            ]
+          },
+          {
+            "id": "comprobacion",
+            "texto": "Explica cómo comprobaría el efecto",
+            "puntos": 3,
+            "indicadores": [
+              "comprob",
+              "compar",
+              "registr",
+              "indicador",
+              "medir",
+              "observ",
+              "evidencia",
+              "probar",
+              "prueba"
+            ]
+          }
+        ],
+        "validacionDocente": {
+          "estado": "pendiente",
+          "nota": "Criterios tomados de la Tarea 3 (Reto 1: tarea, preferencias individuales y comprobación del efecto). Indicadores y puntos propuestos por el equipo: el docente debe confirmarlos."
+        }
+      }
+    },
+    {
+      "id": "m2",
+      "numero": 2,
+      "titulo": "Laboratorio de la memoria",
+      "estacion": "Memoria",
+      "nivel": "Investigador",
+      "subtemas": "1.1",
+      "temaId": "tem_000004",
+      "insignia": "guardian-memoria",
+      "narrativa": "Un docente pide ayuda: sus estudiantes olvidan con rapidez lo que estudian. En el laboratorio de la memoria se ensayan estrategias y se distinguen las que ayudan a aprender de las que solo ayudan a recordar un dato.",
+      "instrucciones": "Forma las seis parejas de conceptos. La canción de las fases de la memoria se habilitará cuando el equipo entregue el audio y la letra autorizados; después podrás diagnosticar el caso y decidir cómo usar un ritmo o una canción breve. Al final elige dos tarjetas de argumento y redacta tu justificación.",
+      "finalizacion": "¡Experimento completado! Ya distingues entre codificar, consolidar, recuperar y espaciar el repaso, y sabes que una melodía puede ayudar a recordar el orden, pero no reemplaza la comprensión.",
+      "items": [
+        {
+          "id": "i1",
+          "tipo": "parejas",
+          "titulo": "Juego de parejas",
+          "concepto": "Procesos de memoria",
+          "recurso": "screencast",
+          "situacion": "Voltea las tarjetas y relaciona cada concepto con su definición o ejemplo. Al formar cada pareja verás una explicación breve.",
+          "pares": [
+            {
+              "id": "p1",
+              "concepto": "Codificación",
+              "definicion": "Procesar la información nueva para guardarla, por ejemplo, relacionando una fórmula con un ejemplo propio."
+            },
+            {
+              "id": "p2",
+              "concepto": "Consolidación",
+              "definicion": "Proceso por el que lo aprendido se estabiliza en la memoria con el paso del tiempo y el descanso."
+            },
+            {
+              "id": "p3",
+              "concepto": "Recuperación",
+              "definicion": "Evocar la información sin tenerla delante, como escribir los pasos de un proceso sin mirar los apuntes."
+            },
+            {
+              "id": "p4",
+              "concepto": "Repetición espaciada",
+              "definicion": "Repartir el repaso en varios días (lunes, jueves y la semana siguiente) en lugar de hacerlo en una sola noche."
+            },
+            {
+              "id": "p5",
+              "concepto": "Memoria de trabajo",
+              "definicion": "Mantener y manipular información durante unos segundos mientras se usa, como un resultado parcial en un cálculo."
+            },
+            {
+              "id": "p6",
+              "concepto": "Pista de recuperación",
+              "definicion": "Estímulo asociado a lo aprendido que ayuda a encontrar el recuerdo, como una melodía o un ritmo."
+            }
+          ],
+          "explicacion": "La codificación es el procesamiento inicial; la consolidación estabiliza la huella; la recuperación evoca sin tener la información delante; el repaso espaciado distribuye el estudio en el tiempo (Cepeda et al., 2006; Roediger & Karpicke, 2006).",
+          "pistas": [
+            "Piensa en qué hace cada persona con la información: ¿la recibe, la estabiliza, la evoca o reparte el repaso en el tiempo?",
+            "La memoria de trabajo dura segundos; la consolidación ocurre después del aprendizaje y con el tiempo.",
+            "Ejemplo paralelo: aprender la letra de un himno (codificar), recordarla al día siguiente sin ayuda (recuperar) y cantarla cada semana (espaciar)."
+          ]
+        },
+        {
+          "id": "i2",
+          "tipo": "cancion",
+          "titulo": "Canción de las fases de la memoria",
+          "concepto": "Fases de la memoria",
+          "recurso": "screencast",
+          "situacion": "Cuando el equipo entregue la canción autorizada, podrás escucharla o repetirla, leer su transcripción y completar cuatro palabras faltantes.",
+          "estado": "pendiente",
+          "estadoMensaje": "Pendiente de integrar audio y letra autorizados",
+          "audio": "",
+          "autoria": "",
+          "licencia": "",
+          "lineas": [],
+          "huecos": {},
+          "banco": [],
+          "explicacion": "",
+          "pistas": [
+            "Cada estrofa describe una fase: ¿qué ocurre primero, qué pasa con el tiempo, qué haces sin mirar y cómo repartes el repaso?",
+            "Fíjate en las palabras clave de cada estrofa: «aprendo algo nuevo», «con el tiempo», «sin mirar», «reparto».",
+            "Ejemplo paralelo: una receta tiene fases (preparar, reposar, servir, repetir otro día); la canción también."
+          ]
+        },
+        {
+          "id": "i3",
+          "tipo": "opcion",
+          "titulo": "Análisis de caso",
+          "concepto": "Pista de recuperación frente a comprensión",
+          "recurso": "screencast",
+          "situacion": "Andrés recuerda en orden los cinco conceptos de la unidad gracias a una melodía que inventó, pero cuando el docente le pide explicar cada uno, no logra hacerlo.",
+          "enunciado": "¿Cuál es el diagnóstico más adecuado?",
+          "opciones": [
+            {
+              "id": "a",
+              "texto": "La melodía funcionó como pista de recuperación del orden, pero faltó codificar con significado cada concepto: recuerda la secuencia sin comprenderla.",
+              "puntos": 15,
+              "retro": "Exacto: la melodía ayudó a encontrar el orden, pero comprender exige relacionar cada concepto con ejemplos y comprobar su explicación."
+            },
+            {
+              "id": "b",
+              "texto": "Tiene un problema de recuperación: solo necesita practicar más la melodía hasta poder explicar los conceptos.",
+              "puntos": 9,
+              "retro": "Practicar la recuperación ayuda, pero repetir la melodía no añade significado: el problema principal está en la comprensión de cada concepto."
+            },
+            {
+              "id": "c",
+              "texto": "Ya comprendió los conceptos; solo le falta vocabulario para expresarlos.",
+              "puntos": 0,
+              "retro": "Recordar una secuencia no demuestra comprensión: si no puede explicarlos, no hay evidencia de que los haya comprendido."
+            },
+            {
+              "id": "d",
+              "texto": "La música saturó su memoria de trabajo y por eso no recuerda nada de la unidad.",
+              "puntos": 0,
+              "retro": "El caso muestra que sí recuerda el orden; lo que falta es comprensión, no memoria."
+            }
+          ],
+          "explicacion": "Algunos estudios hallaron que melodías sencillas pueden facilitar el recuerdo de textos (Wallace, 1994), pero el efecto depende de las condiciones y no sustituye la comprensión.",
+          "pistas": [
+            "¿Qué parte sí funcionó en Andrés y qué parte no?",
+            "Recordar el orden de unas palabras y explicar su significado dependen de procesos distintos.",
+            "Ejemplo paralelo: cantar el alfabeto de un idioma que no hablas no significa entender las palabras."
+          ]
+        },
+        {
+          "id": "i4",
+          "tipo": "opcion",
+          "titulo": "Decisión aplicada",
+          "concepto": "Uso del ritmo para recordar una secuencia",
+          "recurso": "screencast",
+          "situacion": "Un docente quiere que su grupo recuerde el orden de tres conceptos de la unidad. Piensa crear un ritmo o estribillo corto con los nombres de los conceptos.",
+          "enunciado": "¿Cuál es el uso más defendible del ritmo o la canción breve?",
+          "opciones": [
+            {
+              "id": "a",
+              "texto": "Explicar primero cada concepto con ejemplos, crear un estribillo corto como apoyo para recordar el orden y verificar después que cada estudiante puede explicar cada concepto con sus palabras.",
+              "puntos": 15,
+              "retro": "Usa la melodía como apoyo de recuperación y mantiene la comprensión como objetivo comprobable."
+            },
+            {
+              "id": "b",
+              "texto": "Crear el estribillo y practicarlo, y dejar la explicación de cada concepto para otra clase.",
+              "puntos": 9,
+              "retro": "Puede ayudar a recordar el orden, pero invierte la secuencia: sin comprensión previa, el estribillo puede repetirse sin entender qué significa."
+            },
+            {
+              "id": "c",
+              "texto": "Pedir que memoricen el estribillo sin explicar los conceptos: si lo recuerdan, ya comprendieron.",
+              "puntos": 0,
+              "retro": "Recordar un estribillo no demuestra comprender los conceptos."
+            },
+            {
+              "id": "d",
+              "texto": "Poner una canción de fondo durante todo el estudio para que el cerebro asocie los conceptos automáticamente.",
+              "puntos": 0,
+              "retro": "Escuchar música de fondo no es lo mismo que usar una melodía como pista de recuperación, y puede competir con la tarea."
+            }
+          ],
+          "explicacion": "Una secuencia defendible es: comprender con ejemplos, usar el ritmo como apoyo para recordar el orden y comprobar la explicación de cada concepto sin el apoyo.",
+          "pistas": [
+            "Una melodía puede ayudar a «encontrar» un dato, pero ¿qué garantiza que lo entiendan?",
+            "El orden importa: primero comprender, después usar la pista sonora y al final comprobar sin ella.",
+            "Ejemplo paralelo: aprender una coreografía explicando cada paso antes de practicarla con música."
+          ]
+        }
+      ],
+      "justificacion": {
+        "consigna": "Elige las dos tarjetas de argumento que mejor sostienen tus decisiones y explica con tus palabras por qué una melodía puede servir como pista de recuperación, pero no sustituye la comprensión.",
+        "concepto": "Justificación: melodía como pista y comprensión",
+        "tarjetas": [
+          {
+            "id": "t1",
+            "texto": "El ritmo o la melodía puede actuar como pista para recuperar el orden de los elementos, pero la comprensión de cada concepto debe trabajarse y comprobarse aparte.",
+            "puntos": 15
+          },
+          {
+            "id": "t2",
+            "texto": "Intentar recordar sin mirar y repartir el repaso en el tiempo favorece la retención; el ritmo es un apoyo opcional cuya utilidad conviene comprobar.",
+            "puntos": 15
+          },
+          {
+            "id": "t3",
+            "texto": "Una melodía sencilla puede ayudar a recordar el orden, aunque no se compruebe la comprensión.",
+            "puntos": 8
+          },
+          {
+            "id": "t4",
+            "texto": "La melodía reemplaza la comprensión del contenido.",
+            "puntos": 0
+          },
+          {
+            "id": "t5",
+            "texto": "Cualquier melodía mejora la memoria de cualquier contenido.",
+            "puntos": 0
+          },
+          {
+            "id": "t6",
+            "texto": "Concentrar el estudio en una sola noche garantiza la retención.",
+            "puntos": 0
+          }
+        ],
+        "explicacion": "La evidencia sobre práctica de recuperación y repaso espaciado (Roediger & Karpicke, 2006; Cepeda et al., 2006) respalda combinar ambas estrategias. El ritmo es un apoyo opcional cuya utilidad se comprueba con una explicación o aplicación posterior."
+      },
+      "distribucion": {
+        "estado": "propuesta",
+        "fuente": "Propuesta del equipo de desarrollo (NR-04.4), no tomada de la Tarea 3. La Tarea 3 fija 60 puntos para decisiones y productos y 40 para la justificación, pero no detalla cómo se reparten los 60 entre las cuatro actividades de la Misión 2. Requiere la aprobación del docente antes de fijarse.",
+        "valores": {
+          "i1": 15,
+          "i2": 15,
+          "i3": 15,
+          "i4": 15
+        },
+        "razones": {
+          "i1": "Producto: consolida el vocabulario de seis conceptos. Se puntúa por intentos fallidos sin penalizar en exceso (mínimo 6 de 15 al completar las parejas).",
+          "i2": "Producto: cuatro palabras de igual valor; muestra la melodía como pista de recuperación, idea central de la misión.",
+          "i3": "Decisión: diagnóstico del caso. Igual valor que las demás; coincide con los 15 por ítem que la tabla B.1 indica para el quiz situacional.",
+          "i4": "Decisión aplicada de la misión. Igual valor que las demás; coincide con los 15 por ítem que la tabla B.1 indica para el quiz situacional."
+        },
+        "aprobadaPor": null,
+        "fechaAprobacion": null
+      }
+    },
+    {
+      "id": "m3",
+      "numero": 3,
+      "titulo": "Crea tu misión musical",
+      "estacion": "Integración pedagógica",
+      "nivel": "Diseñador",
+      "subtemas": "1.1 y 1.2",
+      "temaId": "tem_000005",
+      "insignia": "disenador-neuroritmico",
+      "narrativa": "El laboratorio ya sabe observar la atención y probar estrategias de memoria. Ahora un docente necesita que su grupo recuerde y explique tres conceptos de una unidad al final de una jornada en la que el grupo muestra cansancio. Diseña una microactividad musical responsable de 5 a 10 minutos.",
+      "instrucciones": "Construye la microactividad en cuatro bloques: (1) objetivo; (2) recurso sonoro o silencio y sus condiciones; (3) instrucciones y secuencia temporal; (4) comprobación del aprendizaje e indicador de autorregulación. Retoma tu matriz de autodiagnóstico musical. Pide a Neuri que revise tu borrador y envía tu diseño: tu docente lo valorará con una rúbrica de cuatro criterios.",
+      "finalizacion": "¡Misión creada! Tu microactividad quedó enviada para la valoración de tu docente. Mientras tanto, puedes compartirla en la Galería NeuroRitmo y comentar la propuesta de un compañero.",
+      "caso": "Un docente necesita que su grupo recuerde y explique tres conceptos de una unidad (por ejemplo, atención sostenida, memoria de trabajo y control inhibitorio) al final de una jornada en la que el grupo muestra cansancio. Dispone de 5 a 10 minutos.",
+      "recursosSonoros": [
+        {
+          "id": "silencio",
+          "texto": "Silencio"
+        },
+        {
+          "id": "ritmo",
+          "texto": "Ritmo corporal o de palmas creado por el grupo"
+        },
+        {
+          "id": "instrumental",
+          "texto": "Música instrumental suave"
+        },
+        {
+          "id": "cancion-principal",
+          "texto": "Canción principal del curso"
+        }
+      ],
+      "bloques": [
+        {
+          "id": "b1",
+          "texto": "Presentación del objetivo",
+          "minutos": 1
+        },
+        {
+          "id": "b2",
+          "texto": "Explicación breve de los tres conceptos con ejemplos",
+          "minutos": 2
+        },
+        {
+          "id": "b3",
+          "texto": "Creación y práctica del ritmo en parejas (apoyo sonoro)",
+          "minutos": 3
+        },
+        {
+          "id": "b4",
+          "texto": "Recuperación sin apoyo: explicar cada concepto sin mirar",
+          "minutos": 2
+        },
+        {
+          "id": "b5",
+          "texto": "Cierre y verificación (tarjeta de salida)",
+          "minutos": 1
+        },
+        {
+          "id": "b6",
+          "texto": "Escuchar la canción principal completa de fondo",
+          "minutos": 4
+        },
+        {
+          "id": "b7",
+          "texto": "Explicación extensa con diapositivas",
+          "minutos": 8
+        }
+      ],
+      "rubrica": [
+        {
+          "id": "c1",
+          "criterio": "Objetivo observable y alineado con los tres conceptos",
+          "descripcion": "",
+          "tipo": "producto",
+          "maximo": 20
+        },
+        {
+          "id": "c2",
+          "criterio": "Recurso sonoro o silencio con condiciones justificadas y secuencia de 5 a 10 minutos",
+          "descripcion": "",
+          "tipo": "producto",
+          "maximo": 20
+        },
+        {
+          "id": "c3",
+          "criterio": "Comprobación del aprendizaje e indicador de autorregulación",
+          "descripcion": "",
+          "tipo": "producto",
+          "maximo": 20
+        },
+        {
+          "id": "c4",
+          "criterio": "Justificación pedagógica (atención, recuperación o regulación) y diferencias individuales",
+          "descripcion": "",
+          "tipo": "justificacion",
+          "maximo": 40
+        }
+      ],
+      "pistas": [
+        "¿Qué podría ver u oír el docente para saber que el grupo aprendió los tres conceptos?",
+        "Recuerda las Misiones 1 y 2: el sonido puede competir con tareas verbales o servir como pista de recuperación si se retira al comprobar.",
+        "Ejemplo paralelo: una pausa activa de 7 minutos en una reunión cansada, con un objetivo claro y una pregunta de cierre."
+      ],
+      "rubricaConfig": {
+        "estado": "propuesta",
+        "version": 0,
+        "fuente": "Propuesta provisional del equipo de desarrollo (NR-05.4). La Tarea 3 indica que el docente califica la Misión 3 con una rúbrica de cuatro criterios (60 producto + 40 justificación), pero no desarrolla su lista exacta. El equipo docente debe revisar, ajustar y aprobar estos criterios antes de calificar.",
+        "aprobadaPor": null,
+        "fechaAprobacion": null,
+        "historial": []
+      }
+    }
+  ],
+  "ia": {
+    "_nota": "Uso progresivo de «Pregúntale a Neuri» (Tarea 3, apartado C). Sin servicio, pistas docentes predefinidas rotuladas como tales.",
+    "niveles": [
+      {
+        "nivel": 1,
+        "nombre": "Pregunta orientadora"
+      },
+      {
+        "nivel": 2,
+        "nombre": "Pista conceptual"
+      },
+      {
+        "nivel": 3,
+        "nombre": "Ejemplo paralelo"
+      }
+    ],
+    "misiones": {
+      "m1": {
+        "desdeIntento": 2,
+        "modos": [
+          "pista",
+          "error"
+        ],
+        "descripcion": "Desde tu segundo intento: tres niveles de ayuda y «Explícame el error»."
+      },
+      "m2": {
+        "desdeIntento": 1,
+        "modos": [
+          "pista"
+        ],
+        "descripcion": "Pistas y ejemplos paralelos en tres niveles."
+      },
+      "m3": {
+        "desdeIntento": 1,
+        "modos": [
+          "borrador"
+        ],
+        "descripcion": "Análisis formativo de tu borrador antes del envío."
+      }
+    },
+    "maxPalabras": 90
+  }
+}

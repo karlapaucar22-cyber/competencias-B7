@@ -1,0 +1,41 @@
+/* publico/css/modulos/privacidad.css */
+/* Estilos para el módulo de aviso de privacidad */
+
+.privacidad-doc {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.privacidad-doc__seccion {
+  margin-bottom: var(--espacio-xl);
+}
+
+.privacidad-doc__seccion h2 {
+  font-size: var(--tamano-l);
+  color: var(--color-primario);
+  margin-bottom: var(--espacio-s);
+}
+
+.privacidad-doc__seccion p,
+.privacidad-doc__seccion ul {
+  font-size: var(--tamano-m);
+  color: var(--color-texto);
+  line-height: var(--interlineado-base);
+  margin-bottom: var(--espacio-m);
+}
+
+.privacidad-doc__seccion ul {
+  padding-left: var(--espacio-xl);
+}
+
+.privacidad-doc__seccion li {
+  margin-bottom: var(--espacio-xs);
+}
+
+.privacidad-doc__contacto {
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-m);
+  padding: var(--espacio-m);
+  margin-top: var(--espacio-m);
+}

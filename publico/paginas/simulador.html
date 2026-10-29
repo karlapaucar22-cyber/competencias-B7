@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulador · NeuroRitmo Digital</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/componentes.css">
+  <link rel="stylesheet" href="/css/modulos/simulador.css">
+</head>
+<body>
+  <div id="plantilla"></div>
+  <main id="contenido" class="contenedor" data-avatar="Toma decisiones y observa sus consecuencias. En los juegos de roles, conversa con el personaje para lograr tu objetivo.">
+    <p id="estado" class="simulador-nota" role="status">Cargando la simulación...</p>
+
+    <div id="simulador" class="simulador" hidden>
+      <header class="simulador-encabezado">
+        <p class="simulador-eyebrow" id="temaSimulacion"></p>
+        <h1 class="simulador-titulo" id="tituloSimulacion"></h1>
+        <p id="avisoPrevia" class="alerta alerta--info" hidden>Vista previa: este recorrido no registra intentos ni puntos.</p>
+        <div class="simulador-marcador">
+          <span id="paso" class="chip"></span>
+          <span id="puntos" class="chip" aria-live="polite"></span>
+        </div>
+      </header>
+
+      <section id="escena" class="simulador-escena tarjeta" aria-labelledby="pasoTitulo" tabindex="-1">
+        <h2 id="pasoTitulo" class="sr-only">Escena</h2>
+        <img id="imagenEscena" class="simulador-imagen" alt="Ilustración de la escena" hidden>
+        <div id="textoEscena" class="simulador-texto"></div>
+        <div id="opciones" class="simulador-opciones" role="group" aria-label="¿Qué decides?"></div>
+        <div id="retro" class="simulador-retro"></div>
+      </section>
+
+      <section id="informe" class="simulador-informe tarjeta" aria-labelledby="tituloInforme" tabindex="-1" hidden>
+        <h2 id="tituloInforme" class="simulador-informe__titulo">Informe de tu recorrido</h2>
+        <div id="textoFinal" class="simulador-final"></div>
+        <p id="puntajeFinal" class="simulador-puntaje"></p>
+        <ol id="decisiones" class="simulador-decisiones"></ol>
+        <div class="simulador-acciones">
+          <button type="button" id="btnRepetir" class="btn btn--primario">↺ Repetir</button>
+          <a href="/paginas/simulaciones.html" class="btn btn--secundario">Volver a simulaciones</a>
+        </div>
+      </section>
+    </div>
+
+    <div id="rol" class="simulador" hidden>
+      <header class="simulador-encabezado">
+        <p class="simulador-eyebrow" id="rolTema"></p>
+        <h1 class="simulador-titulo" id="rolTitulo"></h1>
+        <p id="rolAvisoPrevia" class="alerta alerta--info" hidden>Vista previa: esta conversación no registra intentos ni puntos.</p>
+        <div class="simulador-marcador"><span id="rolTurnos" class="chip" aria-live="polite"></span></div>
+      </header>
+
+      <section id="rolCaso" class="simulador-caso tarjeta" aria-labelledby="tituloCaso">
+        <h2 id="tituloCaso" class="simulador-informe__titulo">El caso</h2>
+        <p class="simulador-caso__personaje"><span class="simulador-caso__avatar" aria-hidden="true">🎭</span> <strong id="rolNombre"></strong></p>
+        <div id="rolDescripcion" class="simulador-texto"></div>
+        <div id="rolContexto" class="simulador-texto"></div>
+        <div class="alerta alerta--info"><strong>Tu objetivo:</strong> <span id="rolObjetivo"></span></div>
+        <h3 class="simulador-caso__subtitulo">Cómo se evalúa</h3>
+        <ul id="rolRubrica" class="simulador-caso__rubrica"></ul>
+        <button type="button" id="btnComenzarRol" class="btn btn--primario">Comenzar la conversación</button>
+      </section>
+
+      <section id="rolChat" class="simulador-chat tarjeta" aria-labelledby="tituloChatRol" hidden>
+        <h2 id="tituloChatRol" class="sr-only">Conversación con el personaje</h2>
+        <div id="rolMensajes" class="tutor__mensajes simulador-chat__mensajes" role="log" aria-live="polite" aria-relevant="additions" tabindex="0"></div>
+        <form id="rolForm" class="tutor__form" novalidate>
+          <label for="rolEntrada" class="sr-only">Tu mensaje para el personaje (Enter envía, Mayúsculas + Enter hace un salto de línea)</label>
+          <textarea id="rolEntrada" class="tutor__entrada" rows="1" maxlength="1000" placeholder="Escribe lo que le dirías…"></textarea>
+          <button type="submit" id="rolEnviar" class="btn btn--primario tutor__enviar" aria-label="Enviar mensaje">➤</button>
+        </form>
+        <div class="simulador-acciones simulador-chat__pie">
+          <p class="simulador-nota">Respuestas generadas por IA para practicar.</p>
+          <button type="button" id="btnTerminarRol" class="btn btn--secundario btn--sm">Terminar y evaluar</button>
+        </div>
+      </section>
+
+      <section id="rolInforme" class="simulador-informe tarjeta" aria-labelledby="tituloEvaluacion" tabindex="-1" hidden>
+        <h2 id="tituloEvaluacion" class="simulador-informe__titulo">Evaluación de tu conversación</h2>
+        <p id="rolEstadoEvaluacion" class="simulador-nota" role="status"></p>
+        <p id="rolPuntaje" class="simulador-puntaje"></p>
+        <div class="tabla-contenedor" id="rolTablaCaja" hidden>
+          <table class="tabla">
+            <caption class="sr-only">Puntaje y comentario por criterio de la rúbrica</caption>
+            <thead><tr><th scope="col">Criterio</th><th scope="col">Puntos</th><th scope="col">Comentario</th></tr></thead>
+            <tbody id="rolCriterios"></tbody>
+          </table>
+        </div>
+        <div id="rolComentario" class="simulador-final"></div>
+        <div class="simulador-acciones">
+          <button type="button" id="btnReintentarEvaluacion" class="btn btn--secundario" hidden>Reintentar la evaluación</button>
+          <button type="button" id="btnRepetirRol" class="btn btn--primario">↺ Repetir</button>
+          <a href="/paginas/simulaciones.html" class="btn btn--secundario">Volver a simulaciones</a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="/js/modulos/simulador.js"></script>
+</body>
+</html>

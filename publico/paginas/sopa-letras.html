@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sopa de letras · NeuroRitmo Digital</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/componentes.css">
+  <link rel="stylesheet" href="/css/modulos/sopa-letras.css">
+</head>
+<body>
+  <div id="plantilla"></div>
+  <main id="contenido" class="contenedor" data-avatar="Busca en la cuadrícula las palabras clave del tema. Marca cada palabra de la primera a la última letra.">
+    <div class="sopa-app">
+      <nav class="migas-pan" aria-label="Navegación">
+        <ol>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/paginas/actividades.html">Actividades</a></li>
+          <li aria-current="page">Sopa de letras</li>
+        </ol>
+      </nav>
+
+      <header class="sopa-encabezado">
+        <div>
+          <h1 class="sopa-titulo">Sopa de letras</h1>
+          <p class="sopa-subtitulo">Arrastra en línea recta sobre las letras para encontrar los conceptos del tema.</p>
+        </div>
+        <div class="sopa-tema">
+          <span class="insignia insignia--primario" id="insigniaTema">Cargando tema...</span>
+          <button type="button" id="btnCambiarTema" class="btn btn--secundario btn--sm">Cambiar tema</button>
+        </div>
+      </header>
+
+      <p id="sopaCargando" class="tarjeta sopa-mensaje">Cargando términos del tema...</p>
+
+      <div id="sopaVacio" class="vacio" hidden>
+        <div class="vacio__icono" aria-hidden="true">🔤</div>
+        <h2 class="vacio__titulo">No hay suficientes palabras</h2>
+        <p class="vacio__texto">Este tema necesita al menos 3 términos de una sola palabra en el glosario.</p>
+        <div class="sopa-acciones">
+          <a href="/paginas/actividades.html" id="enlaceTema" class="btn btn--primario">Ir al tema</a>
+          <a href="/paginas/actividades.html" class="btn btn--secundario">Otras actividades</a>
+        </div>
+      </div>
+
+      <section id="sopaJuego" class="sopa-juego" hidden aria-label="Tablero del juego">
+        <div class="sopa-controles">
+          <fieldset class="sopa-dificultad">
+            <legend>Dificultad</legend>
+            <label><input type="radio" name="dificultad" value="facil" checked> Fácil</label>
+            <label><input type="radio" name="dificultad" value="media"> Media</label>
+            <label><input type="radio" name="dificultad" value="dificil"> Difícil</label>
+          </fieldset>
+
+          <dl class="sopa-estadisticas">
+            <div><dt>Encontradas</dt><dd id="datoEncontradas">0/0</dd></div>
+            <div><dt>Tiempo</dt><dd id="datoTiempo">0:00</dd></div>
+          </dl>
+
+          <button type="button" id="btnRendirse" class="btn btn--peligro">Rendirse</button>
+        </div>
+
+        <p id="avisoPalabras" class="sopa-nota" hidden></p>
+
+        <div class="sopa-area">
+          <div>
+            <p id="ayudaGrilla" class="sr-only">
+              Con el teclado: usa las flechas para moverte, Enter o Espacio para marcar la primera letra
+              y otra vez para marcar la última. Escape cancela la selección.
+            </p>
+            <div id="grilla" class="sopa-grilla" role="grid" aria-label="Sopa de letras" aria-describedby="ayudaGrilla"></div>
+          </div>
+
+          <div class="sopa-lateral">
+            <h2 class="sopa-lista-titulo">Palabras</h2>
+            <ul id="listaPalabras" class="sopa-lista"></ul>
+          </div>
+        </div>
+
+        <div id="contenedorRetro" class="sopa-retro"></div>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="/js/modulos/sopa-letras.js"></script>
+</body>
+</html>

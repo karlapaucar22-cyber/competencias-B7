@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Editor de Contenidos</title>
+<link rel="stylesheet" href="/css/tokens.css"><link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/componentes.css">
+<link rel="stylesheet" href="/css/modulos/editor-contenidos.css"></head>
+<body><div id="plantilla"></div><main id="contenido" class="contenedor">
+  <header class="editor-cabecera">
+    <div>
+      <h1>Editor de Contenidos</h1>
+      <p class="tarjeta__subtitulo">Estructuración pedagógica: organiza las unidades curriculares y sus temas asociados</p>
+    </div>
+  </header>
+
+  <!-- Selector de Asignatura -->
+  <section class="tarjeta editor-asig-tarjeta" aria-label="Selección de asignatura">
+    <div class="campo" style="margin-bottom: 0;">
+      <label for="selector-asignatura">Selecciona una asignatura:</label>
+      <select id="selector-asignatura" aria-describedby="asig-info">
+        <option value="">Cargando asignaturas disponibles...</option>
+      </select>
+    </div>
+    <div id="asig-info" class="editor-asig-info" aria-live="polite"></div>
+  </section>
+
+  <!-- Paneles de Unidades y Temas -->
+  <div class="editor-paneles-grid">
+    <!-- Panel de Unidades -->
+    <section class="tarjeta panel-unidades" aria-labelledby="titulo-panel-unidades">
+      <div class="panel-cabecera">
+        <div>
+          <h2 id="titulo-panel-unidades" class="tarjeta__titulo" style="font-size: var(--tamano-m); margin: 0;">Unidades</h2>
+          <span id="contador-unidades" class="panel-subtitulo">0 unidades</span>
+        </div>
+        <button type="button" id="btn-nueva-unidad" class="btn btn--pequeno btn--primario" disabled>
+          + Nueva Unidad
+        </button>
+      </div>
+
+      <div id="lista-unidades" class="unidades-lista" role="list" aria-live="polite">
+        <div class="editor-estado-vacio">Selecciona una asignatura para cargar sus unidades.</div>
+      </div>
+    </section>
+
+    <!-- Panel de Temas -->
+    <section class="tarjeta panel-temas" aria-labelledby="titulo-panel-temas">
+      <div class="panel-cabecera">
+        <div>
+          <h2 id="titulo-panel-temas" class="tarjeta__titulo" style="font-size: var(--tamano-m); margin: 0;">Temas</h2>
+          <span id="subtitulo-unidad-activa" class="panel-subtitulo">Selecciona una unidad</span>
+        </div>
+        <button type="button" id="btn-nuevo-tema" class="btn btn--pequeno btn--primario" disabled>
+          + Nuevo Tema
+        </button>
+      </div>
+
+      <div id="lista-temas" class="temas-lista" role="list" aria-live="polite">
+        <div class="editor-estado-vacio">Selecciona una unidad de la lista para gestionar sus temas.</div>
+      </div>
+    </section>
+  </div>
+</main>
+<script type="module" src="/js/modulos/editor-contenidos.js"></script></body></html>

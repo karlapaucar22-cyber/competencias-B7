@@ -1,0 +1,104 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Editor de Noticias · NeuroRitmo Digital</title>
+<link rel="stylesheet" href="/css/tokens.css"><link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/componentes.css">
+<link rel="stylesheet" href="/css/modulos/editor-noticia.css"></head>
+<body><div id="plantilla"></div><main id="contenido" class="contenedor">
+  <div class="editor-noticia-volver">
+    <a href="/paginas/noticias.html" class="btn btn--texto">
+      ← Volver a Noticias
+    </a>
+  </div>
+
+  <header class="editor-noticia-cabecera">
+    <div>
+      <h1 id="editor-noticia-titulo-cabecera">Nueva Noticia</h1>
+      <p class="tarjeta__subtitulo">Publica novedades institucionales, académicas, eventos o logros de NeuroRitmo Digital</p>
+    </div>
+    <div>
+      <button type="button" id="btn-guardar-noticia" class="btn btn--primario">
+        Guardar Noticia
+      </button>
+    </div>
+  </header>
+
+  <form id="form-noticia" onsubmit="return false;" class="tarjeta editor-noticia-form">
+    <div id="form-error-noticia" class="campo__error" style="display: none; margin-bottom: var(--espacio-m);" role="alert"></div>
+
+    <div class="campo">
+      <label for="noticia-titulo">Título de la noticia *</label>
+      <input type="text" id="noticia-titulo" required placeholder="Título informativo y llamativo...">
+    </div>
+
+    <div class="editor-noticia-fila">
+      <div class="campo" style="flex: 1;">
+        <label for="noticia-categoria">Categoría *</label>
+        <select id="noticia-categoria" required>
+          <option value="Institucional">Institucional</option>
+          <option value="Académica">Académica</option>
+          <option value="Eventos">Eventos</option>
+          <option value="Logros">Logros</option>
+        </select>
+      </div>
+
+      <div class="campo" style="flex: 1;">
+        <label for="noticia-tema">Tema curricular relacionado (opcional)</label>
+        <select id="noticia-tema">
+          <option value="">-- Sin tema específico --</option>
+        </select>
+      </div>
+
+      <div class="campo" style="flex: 1;">
+        <label for="noticia-estado">Estado de publicación *</label>
+        <select id="noticia-estado" required>
+          <option value="borrador">Borrador</option>
+          <option value="publicado">Publicado</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Resumen con contador max 200 caracteres -->
+    <div class="campo">
+      <div class="campo-etiqueta-meta">
+        <label for="noticia-resumen">Resumen breve * (máximo 200 caracteres)</label>
+        <span id="contador-caracteres-resumen" class="meta-contador">0 / 200</span>
+      </div>
+      <textarea id="noticia-resumen" rows="2" maxlength="200" required placeholder="Breve descripción introductoria visible en las tarjetas de noticias..."></textarea>
+    </div>
+
+    <!-- Imagen destacada con botón Subir -->
+    <div class="campo">
+      <label for="noticia-imagen">Imagen de portada (opcional)</label>
+      <div class="input-con-boton">
+        <input type="text" id="noticia-imagen" placeholder="URL de la imagen o presiona Subir para elegir un archivo local...">
+        <button type="button" id="btn-subir-imagen" class="btn btn--secundario">Subir imagen</button>
+        <input type="file" id="input-archivo-imagen" style="display: none;" accept="image/*">
+      </div>
+      <div id="imagen-previa-contenedor" class="imagen-previa-caja" style="display: none;">
+        <img id="imagen-previa-elemento" src="" alt="Vista previa de la imagen">
+      </div>
+    </div>
+
+    <!-- Casilla Destacada -->
+    <div class="campo-casilla">
+      <label class="casilla-etiqueta">
+        <input type="checkbox" id="noticia-destacada">
+        <span>Marcar como <strong>noticia destacada</strong> (aparecerá al inicio del catálogo)</span>
+      </label>
+    </div>
+
+    <!-- Cuerpo con util.formatoBasico -->
+    <div class="campo">
+      <div class="campo-etiqueta-meta">
+        <label for="noticia-cuerpo">Cuerpo de la noticia *</label>
+        <button type="button" id="btn-toggle-cuerpo-preview" class="btn btn--pequeno btn--secundario">
+          Ver vista previa
+        </button>
+      </div>
+      <textarea id="noticia-cuerpo" rows="10" required placeholder="Escribe el contenido completo. Admite **negritas**, listas con guion (- ) y párrafos separados por salto de línea."></textarea>
+      <div id="cuerpo-preview" class="resumen-caja-preview" style="display: none;" aria-live="polite"></div>
+    </div>
+  </form>
+</main>
+<script type="module" src="/js/modulos/editor-noticia.js"></script></body></html>

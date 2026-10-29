@@ -1,0 +1,237 @@
+/* publico/css/modulos/editor-contenidos.css */
+/* Estilos del editor de contenidos pedagógicos (unidades y temas) */
+
+.editor-cabecera {
+  margin-bottom: var(--espacio-m);
+}
+
+.editor-asig-tarjeta {
+  margin-bottom: var(--espacio-l);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
+}
+
+@media (min-width: 640px) {
+  .editor-asig-tarjeta {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .editor-asig-tarjeta .campo {
+    flex: 1;
+    max-width: 500px;
+  }
+}
+
+.editor-asig-info {
+  font-size: var(--tamano-xs);
+  color: var(--color-texto-suave);
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-xs);
+  flex-wrap: wrap;
+}
+
+.editor-paneles-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espacio-l);
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .editor-paneles-grid {
+    grid-template-columns: 1fr 1.2fr;
+  }
+}
+
+.panel-cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espacio-s);
+  padding-bottom: var(--espacio-m);
+  margin-bottom: var(--espacio-m);
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.panel-subtitulo {
+  font-size: var(--tamano-xs);
+  color: var(--color-texto-suave);
+  display: block;
+}
+
+.unidades-lista,
+.temas-lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
+}
+
+.editor-estado-vacio {
+  text-align: center;
+  padding: var(--espacio-xl) var(--espacio-m);
+  color: var(--color-texto-suave);
+  font-size: var(--tamano-s);
+  border: 1px dashed var(--color-borde);
+  border-radius: var(--radio-m);
+  background-color: var(--color-fondo);
+}
+
+/* Elemento de Unidad */
+.unidad-item {
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-m);
+  padding: var(--espacio-m);
+  background-color: var(--color-superficie);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
+  transition: var(--transicion);
+  cursor: pointer;
+}
+
+.unidad-item:hover {
+  border-color: var(--color-primario);
+}
+
+.unidad-item--activa {
+  border-color: var(--color-primario);
+  background-color: var(--color-fondo-info);
+  box-shadow: var(--sombra-1);
+}
+
+.unidad-item__principal {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--espacio-s);
+}
+
+.unidad-item__titulo-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+  flex: 1;
+}
+
+.unidad-item__orden {
+  font-size: var(--tamano-xs);
+  font-weight: var(--peso-negrita);
+  color: var(--color-texto-suave);
+  text-transform: uppercase;
+}
+
+.unidad-item__titulo {
+  font-size: var(--tamano-m);
+  font-weight: var(--peso-seminegrita);
+  color: var(--color-primario);
+  margin: 0;
+  line-height: var(--linea-apretada);
+}
+
+.unidad-item__acciones {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-xs);
+  flex-wrap: wrap;
+  padding-top: var(--espacio-xs);
+  border-top: 1px solid var(--color-borde);
+}
+
+/* Elemento de Tema */
+.tema-item {
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-m);
+  padding: var(--espacio-m);
+  background-color: var(--color-superficie);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
+  transition: var(--transicion);
+}
+
+.tema-item:hover {
+  border-color: var(--color-borde);
+  box-shadow: var(--sombra-1);
+}
+
+.tema-item__principal {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--espacio-s);
+}
+
+.tema-item__titulo-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+  flex: 1;
+}
+
+.tema-item__orden {
+  font-size: var(--tamano-xs);
+  font-weight: var(--peso-negrita);
+  color: var(--color-texto-suave);
+  text-transform: uppercase;
+}
+
+.tema-item__titulo {
+  font-size: var(--tamano-m);
+  font-weight: var(--peso-seminegrita);
+  color: var(--color-texto);
+  margin: 0;
+  line-height: var(--linea-apretada);
+}
+
+.tema-item__acciones {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espacio-s);
+  flex-wrap: wrap;
+  padding-top: var(--espacio-xs);
+  border-top: 1px solid var(--color-borde);
+}
+
+.tema-item__orden-botones {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-xs);
+}
+
+.tema-item__estado-acciones {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-xs);
+}
+
+/* Botón flecha orden */
+.btn-orden {
+  min-height: 28px;
+  width: 28px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radio-s);
+  font-size: var(--tamano-s);
+  font-weight: var(--peso-negrita);
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  color: var(--color-primario);
+  cursor: pointer;
+}
+
+.btn-orden:hover:not(:disabled) {
+  background-color: var(--color-superficie);
+  border-color: var(--color-primario);
+}
+
+.btn-orden:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}

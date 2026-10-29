@@ -1,0 +1,101 @@
+[
+  {
+    "id": "sim_000001",
+    "fecha": "2026-10-26T12:00:00.000Z",
+    "temaId": "tem_000001",
+    "titulo": "Música de fondo en la sesión de lectura",
+    "modo": "escenarios",
+    "estado": "publicado",
+    "escenaInicial": "e1",
+    "escenas": [
+      {
+        "id": "e1",
+        "texto": "Eres docente de un curso de bachillerato. Tus estudiantes deben leer un **artículo académico** de cuatro páginas en 30 minutos y varios piden escuchar música mientras leen. ¿Qué decides?",
+        "imagen": "",
+        "opciones": [
+          {
+            "texto": "Propongo música instrumental suave, a volumen bajo, y explico por qué.",
+            "destino": "e2",
+            "puntos": 10,
+            "consecuencia": "Buena decisión: la música sin letra compite menos con el bucle fonológico, que la lectura necesita para procesar el lenguaje."
+          },
+          {
+            "texto": "Pongo la lista de reproducción favorita del grupo, con canciones populares con letra.",
+            "destino": "e3",
+            "puntos": -5,
+            "consecuencia": "Las letras compiten con las vías lingüísticas de la memoria de trabajo fonológica; la comprensión lectora suele bajar."
+          }
+        ]
+      },
+      {
+        "id": "e2",
+        "texto": "A los diez minutos, dos estudiantes dicen que la música los distrae; otros aseguran que les ayuda a concentrarse. ¿Cómo respondes?",
+        "imagen": "",
+        "opciones": [
+          {
+            "texto": "Ofrezco opciones: audífonos con música instrumental o silencio, según cada estudiante.",
+            "destino": "e4",
+            "puntos": 10,
+            "consecuencia": "Reconoces las diferencias individuales: el efecto de la música sobre la atención no es igual para todas las personas."
+          },
+          {
+            "texto": "Mantengo la música para todos, porque a la mayoría le ayuda.",
+            "destino": "e6",
+            "puntos": -5,
+            "consecuencia": "Asumir que la música mejora la concentración de cualquier persona es un error frecuente; quienes se distraen pierden el hilo de la lectura."
+          }
+        ]
+      },
+      {
+        "id": "e3",
+        "texto": "Tras diez minutos notas que muchos releen el mismo párrafo y algunos cantan en voz baja. ¿Qué haces?",
+        "imagen": "",
+        "opciones": [
+          {
+            "texto": "Hago una pausa, pregunto qué notan y acordamos cambiar a música instrumental o silencio.",
+            "destino": "e4",
+            "puntos": 5,
+            "consecuencia": "Corregir a tiempo, y hacerlo con ellos, fortalece la metacognición: reconocen cómo la letra afectó su atención."
+          },
+          {
+            "texto": "Subo el volumen para tapar el ruido del pasillo.",
+            "destino": "e6",
+            "puntos": -5,
+            "consecuencia": "Más volumen y más letra aumentan la carga sobre la atención selectiva y el control inhibitorio."
+          }
+        ]
+      },
+      {
+        "id": "e4",
+        "texto": "Termina la lectura. Quieres comprobar si comprendieron y ayudarles a recordar la **secuencia de ideas** del artículo. ¿Qué propones?",
+        "imagen": "",
+        "opciones": [
+          {
+            "texto": "Un resumen en parejas apoyado en un patrón rítmico (palmas) para ordenar las ideas clave.",
+            "destino": "e5",
+            "puntos": 10,
+            "consecuencia": "El ritmo ayuda a estructurar y retener secuencias conceptuales, y el trabajo en parejas activa la recuperación de lo leído."
+          },
+          {
+            "texto": "Nada más: la música ya les ayudó, así que no hace falta repasar.",
+            "destino": "e6",
+            "puntos": -5,
+            "consecuencia": "Sin práctica de recuperación, la retención baja; la música por sí sola no garantiza el aprendizaje."
+          }
+        ]
+      },
+      {
+        "id": "e5",
+        "texto": "**Final logrado.** Tus estudiantes comprendieron el artículo y explican sus ideas en orden. Reflexión: la música puede apoyar el aprendizaje cuando se elige según la tarea y la persona.",
+        "imagen": "",
+        "opciones": []
+      },
+      {
+        "id": "e6",
+        "texto": "**Final por mejorar.** La sesión terminó, pero varios estudiantes no logran resumir las ideas principales. Reflexión: revisa cómo la letra de las canciones, el volumen y la falta de repaso compiten con la memoria de trabajo fonológica.",
+        "imagen": "",
+        "opciones": []
+      }
+    ]
+  }
+]

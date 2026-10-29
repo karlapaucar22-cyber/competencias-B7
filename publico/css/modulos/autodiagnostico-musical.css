@@ -1,0 +1,142 @@
+.autodiagnostico {
+  display: grid;
+  gap: var(--espacio-l);
+  overflow-x: clip;
+}
+
+.autodiagnostico > *,
+.autodiagnostico .tarjeta {
+  min-inline-size: 0;
+}
+
+.autodiagnostico__portada {
+  display: grid;
+  gap: var(--espacio-l);
+  border-inline-start: var(--espacio-xs) solid var(--color-accion);
+}
+
+.autodiagnostico__antetitulo {
+  color: var(--color-accion);
+  font-size: var(--tamano-s);
+  font-weight: var(--peso-negrita);
+  text-transform: uppercase;
+}
+
+.autodiagnostico__tabla-contenedor {
+  inline-size: auto;
+  max-inline-size: 100%;
+  overflow-x: auto;
+  contain: inline-size;
+  border: thin solid var(--color-borde);
+  border-radius: var(--radio-m);
+}
+
+.autodiagnostico__tabla {
+  inline-size: 100%;
+  border-collapse: collapse;
+  background: var(--color-superficie);
+}
+
+.autodiagnostico__tabla caption {
+  padding: var(--espacio-s);
+  font-weight: var(--peso-negrita);
+  text-align: start;
+}
+
+.autodiagnostico__tabla th,
+.autodiagnostico__tabla td {
+  padding: var(--espacio-s);
+  border: thin solid var(--color-borde);
+  text-align: start;
+  vertical-align: top;
+}
+
+.autodiagnostico__tabla thead,
+.autodiagnostico__tabla tbody th {
+  background: var(--color-fondo-info);
+}
+
+.autodiagnostico__nota,
+.autodiagnostico__meta {
+  color: var(--color-texto-suave);
+  font-size: var(--tamano-s);
+}
+
+.autodiagnostico__reproductor {
+  display: grid;
+  gap: var(--espacio-s);
+}
+
+.autodiagnostico__reproductor audio {
+  inline-size: 100%;
+}
+
+.autodiagnostico__formulario,
+.autodiagnostico__preguntas {
+  display: grid;
+  gap: var(--espacio-l);
+}
+
+.autodiagnostico fieldset {
+  display: grid;
+  gap: var(--espacio-s);
+  margin-block: var(--espacio-m);
+  padding: var(--espacio-m);
+  border: thin solid var(--color-borde);
+  border-radius: var(--radio-m);
+}
+
+.autodiagnostico legend {
+  padding-inline: var(--espacio-xs);
+  font-weight: var(--peso-negrita);
+}
+
+.autodiagnostico__opcion {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espacio-s);
+  padding: var(--espacio-s);
+  border-radius: var(--radio-s);
+  background: var(--color-fondo);
+  cursor: pointer;
+}
+
+.autodiagnostico__opcion:has(input:checked) {
+  background: var(--color-fondo-info);
+  outline: var(--espacio-xs) solid var(--color-primario);
+}
+
+.autodiagnostico__opcion input {
+  flex: 0 0 auto;
+  margin-block-start: var(--espacio-xs);
+}
+
+.autodiagnostico__escala {
+  display: grid;
+  gap: var(--espacio-xs);
+}
+
+.autodiagnostico__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espacio-s);
+}
+
+.autodiagnostico__dimensiones {
+  display: grid;
+  gap: var(--espacio-s);
+  margin-block: var(--espacio-m);
+}
+
+.autodiagnostico__dimension {
+  padding: var(--espacio-m);
+  border: thin solid var(--color-borde);
+  border-radius: var(--radio-m);
+  background: var(--color-fondo-info);
+}
+
+.autodiagnostico__dimension h3,
+.autodiagnostico__dimension p {
+  margin-block: var(--espacio-xs);
+}

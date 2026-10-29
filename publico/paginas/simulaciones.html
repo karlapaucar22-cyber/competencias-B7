@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulaciones · NeuroRitmo Digital</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/componentes.css">
+  <link rel="stylesheet" href="/css/modulos/simulaciones.css">
+</head>
+<body>
+  <div id="plantilla"></div>
+  <main id="contenido" class="contenedor">
+    <div class="simulaciones-app">
+      <header class="simulaciones-encabezado">
+        <div>
+          <h1 class="simulaciones-titulo">Simulaciones</h1>
+          <p class="simulaciones-subtitulo">Practica situaciones reales: toma decisiones y descubre sus consecuencias.</p>
+        </div>
+        <a id="btnNueva" class="btn btn--primario" href="/paginas/editor-simulacion.html" hidden>＋ Nueva</a>
+      </header>
+
+      <p id="filtroTema" class="simulaciones-nota" hidden></p>
+      <p id="estado" class="simulaciones-nota" role="status">Cargando simulaciones...</p>
+      <div id="listado" class="simulaciones-listado"></div>
+
+      <div id="vacio" class="vacio" hidden>
+        <div class="vacio__icono" aria-hidden="true">🎭</div>
+        <h2 class="vacio__titulo">Todavía no hay simulaciones</h2>
+        <p class="vacio__texto" id="vacioTexto">Cuando tu docente publique una simulación aparecerá aquí.</p>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="/js/modulos/simulaciones.js"></script>
+</body>
+</html>

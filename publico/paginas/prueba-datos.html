@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prueba de datos · NeuroRitmo Digital</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/componentes.css">
+  <link rel="stylesheet" href="/css/modulos/prueba-datos.css">
+</head>
+<body>
+  <div id="plantilla"></div>
+  <main id="contenido" class="contenedor">
+    <div class="pila" style="gap: var(--espacio-xl);">
+      
+      <!-- Formulario para crear registro -->
+      <section class="tarjeta">
+        <h2 style="margin-bottom: var(--espacio-xs);">Registro de prueba</h2>
+        <p style="color: var(--color-texto-suave); margin-bottom: var(--espacio-l);">
+          Guarda y consulta información en la colección <code>prueba</code> mediante el cliente API y almacenamiento JSON del servidor.
+        </p>
+
+        <form id="form-prueba">
+          <div class="campo">
+            <label for="texto">Texto del registro</label>
+            <input type="text" id="texto" name="texto" placeholder="Escribe un mensaje de prueba..." autocomplete="off" required>
+          </div>
+          <div>
+            <button type="submit" class="btn btn--primario" id="btn-guardar">Guardar registro</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Listado de registros -->
+      <section class="tarjeta">
+        <div class="fila" style="justify-content: space-between; margin-bottom: var(--espacio-m);">
+          <h3 style="margin: 0;">Registros guardados</h3>
+          <button type="button" class="btn btn--secundario btn--pequeno" id="btn-recargar">Recargar lista</button>
+        </div>
+        <div id="contenedor-registros">
+          <!-- Renderizado dinámico desde prueba-datos.js -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+  <script type="module" src="/js/modulos/prueba-datos.js"></script>
+</body>
+</html>

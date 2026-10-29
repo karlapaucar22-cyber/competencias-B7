@@ -1,0 +1,65 @@
+{
+  "puntos": {
+    "tema-revisado": 5,
+    "ahorcado": 10,
+    "pareja": 10,
+    "sopa-letras": 10,
+    "crucigrama": 20,
+    "quiz": 50,
+    "simulacion": 30,
+    "foro": 2
+  },
+  "bonoSinErrores": 5,
+  "unicas": {
+    "tema-revisado": [
+      "temaId"
+    ],
+    "quiz": [
+      "temaId",
+      "nivel"
+    ],
+    "simulacion": [
+      "detalle.simulacionId"
+    ]
+  },
+  "requiereAprobado": [
+    "quiz"
+  ],
+  "maxDiario": {
+    "ahorcado": 10,
+    "pareja": 10,
+    "sopa-letras": 10,
+    "crucigrama": 5,
+    "foro": 5
+  },
+  "limiteIntentosHora": 60,
+  "quiz": {
+    "preguntasPorNivel": 10,
+    "porcentajeAprobacion": 70
+  },
+  "certificado": {
+    "nivelQuizRequerido": 5,
+    "temasConNivelRequerido": 1,
+    "puntosMinimos": 400,
+    "temasRevisadosPct": 80
+  },
+  "neuroritmo": {
+    "_nota": "Reglas de NeuroRitmo (Tarea 3). No usan las reglas del quiz de cinco niveles (quiz, requiereAprobado, unicas, bonoSinErrores, maxDiario, certificado).",
+    "misiones": [
+      "m1",
+      "m2",
+      "m3"
+    ],
+    "puntosPorMision": 100,
+    "decision": 60,
+    "justificacion": 40,
+    "aprobacion": 70,
+    "logroTotal": 240,
+    "justificacionMinimaM3": 24,
+    "conservarMejorIntento": true,
+    "descuentoPorPista": 0,
+    "mejoraMinima": 15,
+    "mejoraRequiereRetro": true,
+    "ecoPalabrasMinimas": 15
+  }
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel docente · NeuroRitmo Digital</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/componentes.css">
+  <link rel="stylesheet" href="/css/modulos/panel-docente.css">
+</head>
+<body>
+  <div id="plantilla"></div>
+  <main id="contenido" class="contenedor">
+    <div class="panel-app">
+      <header class="panel-encabezado">
+        <div>
+          <h1 class="panel-titulo">Panel docente</h1>
+          <p class="panel-subtitulo">Progreso de tus estudiantes por grupo. Pulsa un nombre para ver su detalle.</p>
+        </div>
+        <div class="panel-controles">
+          <div class="campo panel-grupo">
+            <label for="selectorGrupo">Grupo</label>
+            <select id="selectorGrupo"><option value="">Cargando grupos...</option></select>
+          </div>
+          <button type="button" id="btnExportar" class="btn btn--secundario" disabled>⬇ Exportar CSV</button>
+        </div>
+      </header>
+
+      <p id="panelError" class="alerta alerta--error" role="alert" hidden></p>
+
+      <div id="sinGrupos" class="vacio" hidden>
+        <div class="vacio__icono" aria-hidden="true">👥</div>
+        <h2 class="vacio__titulo">No tienes grupos asignados</h2>
+        <p class="vacio__texto">Cuando el administrador te asigne grupos en el distributivo, aparecerán aquí.</p>
+      </div>
+
+      <div id="contenidoGrupo" hidden>
+        <ul class="panel-resumen" id="resumenGrupo"></ul>
+
+        <section class="tarjeta panel-seccion" aria-labelledby="tituloEstudiantes">
+          <h2 id="tituloEstudiantes" class="panel-seccion-titulo">Estudiantes</h2>
+          <p class="panel-nota" id="notaAlertas"></p>
+          <div class="tabla-contenedor">
+            <table class="tabla panel-tabla" id="tablaEstudiantes">
+              <caption class="sr-only">Estudiantes del grupo. Las columnas se pueden ordenar.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" aria-sort="ascending"><button type="button" class="panel-orden" data-campo="nombre">Estudiante</button></th>
+                  <th scope="col" aria-sort="none"><button type="button" class="panel-orden" data-campo="promedio">Promedio</button></th>
+                  <th scope="col" aria-sort="none"><button type="button" class="panel-orden" data-campo="actividades">Actividades</button></th>
+                  <th scope="col" aria-sort="none"><button type="button" class="panel-orden" data-campo="pctTemas">% temas</button></th>
+                  <th scope="col" aria-sort="none"><button type="button" class="panel-orden" data-campo="ultimaConexion">Última conexión</button></th>
+                  <th scope="col" aria-sort="none"><button type="button" class="panel-orden" data-campo="alertasActivas">Alertas</button></th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="tarjeta panel-seccion" aria-labelledby="tituloTemas">
+          <h2 id="tituloTemas" class="panel-seccion-titulo">Promedio por tema</h2>
+          <p class="panel-nota">Promedio sobre 10 del grupo en cada tema publicado.</p>
+          <div class="panel-grafico">
+            <canvas id="graficoTemas" role="img" aria-describedby="tablaTemas"></canvas>
+          </div>
+          <div class="sr-only" id="envolturaTemas">
+            <table id="tablaTemas">
+              <caption>Promedio por tema</caption>
+              <thead><tr><th scope="col">Tema</th><th scope="col">Promedio</th><th scope="col">Intentos</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="tarjeta panel-seccion" aria-labelledby="tituloNeuroritmo">
+          <h2 id="tituloNeuroritmo" class="panel-seccion-titulo">NeuroRitmo: Misión Cerebro Sonoro</h2>
+          <p class="panel-nota" id="notaNeuro" role="status">Cargando NeuroRitmo...</p>
+          <div id="contenidoNeuro" hidden>
+            <ul class="panel-resumen" id="resumenNeuro"></ul>
+            <div class="tabla-contenedor">
+              <table class="tabla panel-tabla" id="tablaNeuro">
+                <caption class="sr-only">Mejor nota, intentos y estado por misión de cada estudiante</caption>
+                <thead><tr><th scope="col">Estudiante</th><th scope="col">Misión 1</th><th scope="col">Misión 2</th><th scope="col">Misión 3</th><th scope="col">Total</th><th scope="col">Alertas</th></tr></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+            <h3 class="panel-subtitulo">Resultados por concepto</h3>
+            <div class="tabla-contenedor">
+              <table class="tabla panel-tabla" id="tablaNeuroConceptos">
+                <caption class="sr-only">Logro por concepto de las misiones</caption>
+                <thead><tr><th scope="col">Misión</th><th scope="col">Concepto</th><th scope="col">Respuestas</th><th scope="col">Logro</th><th scope="col">Pistas</th></tr></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+            <h3 class="panel-subtitulo">Alertas de apoyo</h3>
+            <ul class="panel-lista" id="listaNeuroAlertas"></ul>
+            <h3 class="panel-subtitulo">Plazos de las misiones</h3>
+            <form id="formPlazos" class="panel-plazos" novalidate>
+              <div class="campo"><label for="plazo-m1">Misión 1</label><input type="date" id="plazo-m1" name="m1"></div>
+              <div class="campo"><label for="plazo-m2">Misión 2</label><input type="date" id="plazo-m2" name="m2"></div>
+              <div class="campo"><label for="plazo-m3">Misión 3</label><input type="date" id="plazo-m3" name="m3"></div>
+              <button type="submit" class="btn btn--secundario">Guardar plazos</button>
+            </form>
+            <p class="panel-nota">Si un estudiante no supera una misión en su plazo, recibirás una alerta de apoyo (acompañamiento, no etiquetado).</p>
+          </div>
+          <a class="btn btn--primario" href="/index.html#panel" id="enlaceNeuro">Abrir el panel de NeuroRitmo</a>
+        </section>
+
+        <section class="tarjeta panel-seccion" aria-labelledby="tituloTutor">
+          <h2 id="tituloTutor" class="panel-seccion-titulo">Uso del tutor</h2>
+          <p class="panel-nota" id="notaTutor" role="status">Cargando el uso del tutor...</p>
+          <div id="contenidoTutor" hidden>
+            <h3 class="panel-tutor-titulo">Temas más consultados</h3>
+            <div class="panel-grafico panel-grafico--tutor">
+              <canvas id="graficoTutor" role="img" aria-describedby="tablaTutorTemas"></canvas>
+            </div>
+            <div class="sr-only" id="envolturaTutorTemas">
+              <table id="tablaTutorTemas">
+                <caption>Los 5 temas más consultados al tutor</caption>
+                <thead><tr><th scope="col">Tema</th><th scope="col">Consultas</th></tr></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+            <h3 class="panel-tutor-titulo">Consultas por estudiante</h3>
+            <div class="tabla-contenedor">
+              <table class="tabla panel-tabla" id="tablaTutorEstudiantes">
+                <caption class="sr-only">Mensajes enviados al tutor por cada estudiante del grupo</caption>
+                <thead><tr><th scope="col">Estudiante</th><th scope="col">Consultas</th></tr></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script type="module" src="/js/modulos/panel-docente.js"></script>
+</body>
+</html>

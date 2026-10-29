@@ -1,0 +1,13 @@
+[
+  {
+    "id": "can_000001",
+    "fecha": "2026-10-24T18:00:00.000Z",
+    "titulo": "El Ritmo de la Corteza Cerebral",
+    "temaId": "tem_000001",
+    "audio": "/recursos/subidas/733d6bc26aeaaa7301c992e908c1cc6d.mp3",
+    "letra": "Escucha el pulso que viaja al compás,\nla corteza auditiva despierta la paz.\nLlega el estímulo al lóbulo temporal,\nneuronas en coro en un salto sinusal.\n\nMemoria de trabajo guardando el patrón,\ninhibe el desvío, fija la atención.\nLa música guía la mente a crear,\nneuroeducación para transformar.",
+    "lrc": "[00:00.00] El Ritmo de la Corteza Cerebral\n[00:02.00] Escucha el pulso que viaja al compás\n[00:06.00] La corteza auditiva despierta la paz\n[00:10.50] Llega el estímulo al lóbulo temporal\n[00:15.00] Neuronas en coro en un salto sinusal\n[00:20.00] Memoria de trabajo guardando el patrón\n[00:25.00] Inhibe el desvío, fija la atención\n[00:30.00] La música guía la mente a crear\n[00:35.00] Neuroeducación para transformar",
+    "autoria": "Cátedra de Neuroeducación y Música UNEMI",
+    "licencia": "CC BY-SA"
+  }
+]

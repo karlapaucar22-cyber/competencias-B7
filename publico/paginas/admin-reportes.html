@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reportes · NeuroRitmo Digital</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/componentes.css">
+  <link rel="stylesheet" href="/css/modulos/admin-reportes.css">
+</head>
+<body>
+  <div id="plantilla"></div>
+  <main id="contenido" class="contenedor">
+    <div class="reportes-app">
+      <header class="reportes-encabezado">
+        <h1 class="reportes-titulo">Reportes de contenido</h1>
+        <p class="reportes-subtitulo">Publicaciones del foro que la comunidad marcó como inapropiadas. Revisa cada una y decide.</p>
+      </header>
+
+      <p id="reportesEstado" class="reportes-nota" role="status">Cargando reportes...</p>
+      <ul id="listaReportes" class="reportes-lista"></ul>
+
+      <div id="reportesVacio" class="vacio" hidden>
+        <div class="vacio__icono" aria-hidden="true">✅</div>
+        <h2 class="vacio__titulo">No hay reportes pendientes</h2>
+        <p class="vacio__texto">Cuando alguien reporte una publicación aparecerá aquí.</p>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="/js/modulos/admin-reportes.js"></script>
+</body>
+</html>

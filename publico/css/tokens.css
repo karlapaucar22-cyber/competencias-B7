@@ -1,0 +1,196 @@
+/* publico/css/tokens.css */
+/* Tokens de diseño de NeuroRitmo Digital: Design System global NeuroRitmo
+   (design_system/design-system-neuroritmo.md). Los nombres --color-* se conservan para todos los
+   módulos; sus valores salen de la paleta --nr-* definida más abajo. */
+
+:root {
+  /* ==========================================================================
+     Colores globales y semánticos (paleta NeuroRitmo, contraste AA verificado)
+     ========================================================================== */
+  --color-primario: var(--nr-petroleo);            /* títulos y superficies oscuras; blanco 13,6:1 */
+  --primario: var(--color-primario);
+
+  --color-primario-oscuro: #082A3D;
+  --primario-oscuro: var(--color-primario-oscuro);
+
+  --color-secundario: var(--nr-azul);              /* blanco 5,9:1 */
+  --secundario: var(--color-secundario);
+
+  --color-acento: var(--nr-amarillo);              /* recompensas y destacados; texto petróleo 7,3:1 */
+  --acento: var(--color-acento);
+
+  --color-accion: var(--nr-turquesa-oscuro);       /* botones e interacción; blanco 4,9:1 */
+  --color-accion-hover: #066A6F;
+
+  --color-exito: var(--nr-verde-oscuro);           /* blanco 5,3:1 */
+  --exito: var(--color-exito);
+
+  --color-advertencia: #8A5200;                     /* ámbar oscuro legible como texto; blanco 5,9:1 */
+  --advertencia: var(--color-advertencia);
+
+  --color-error: var(--nr-coral-oscuro);           /* blanco 6,4:1 */
+  --error: var(--color-error);
+
+  --color-info: var(--nr-turquesa-oscuro);         /* enlaces; 4,9:1 sobre blanco */
+  --info: var(--color-info);
+
+  --color-fondo: var(--nr-fondo);
+  --fondo: var(--color-fondo);
+
+  --color-superficie: #FFFFFF;
+  --superficie: var(--color-superficie);
+
+  --color-borde: var(--nr-borde);
+  --borde: var(--color-borde);
+
+  --color-texto: var(--nr-texto);
+  --texto: var(--color-texto);
+
+  --color-texto-suave: var(--nr-texto-suave);
+  --texto-suave: var(--color-texto-suave);
+
+  --color-texto-inverso: #FFFFFF;
+  --texto-inverso: var(--color-texto-inverso);
+
+  /* Fondos suaves de estados (alertas, insignias, filas) */
+  --color-fondo-info: var(--nr-celeste);
+  --color-fondo-exito: var(--nr-menta);
+  --color-fondo-advertencia: var(--nr-amarillo-suave);
+  --color-fondo-error: var(--nr-coral-suave);
+  --color-velo: rgba(11, 56, 80, 0.55);            /* fondo de modales y menú móvil */
+  --color-velo-claro: rgba(255, 255, 255, 0.85);   /* indicador de carga global */
+  --color-superficie-translucida: rgba(255, 255, 255, 0.92); /* encabezado fijo */
+  --color-borde-inverso: rgba(255, 255, 255, 0.4); /* bordes sobre fondos oscuros */
+  --color-realce-inverso: rgba(255, 255, 255, 0.12); /* realce al pasar sobre fondos oscuros */
+  --color-fondo-video: #000000;                    /* bandas del reproductor de video */
+  --color-foco: var(--nr-amarillo);
+
+  /* Agenda: color por tipo de evento (contraste AA con texto inverso) */
+  --color-evento-tarea: var(--color-info);
+  --color-evento-reunion: var(--color-secundario);
+  --color-evento-fecha-limite: var(--color-error);
+  --color-evento-recordatorio: var(--color-exito);
+
+  /* NeuroRitmo (design_system/design-system-neuroritmo.md, Tarea 3 págs. 17-18).
+     Texto blanco solo sobre --nr-turquesa-oscuro o --nr-petroleo; turquesa, verde, amarillo y coral
+     claros llevan texto --nr-petroleo (contraste AA). */
+  --nr-petroleo: #0B3850;
+  --nr-azul: #126B82;
+  --nr-turquesa: #12A6A5;
+  --nr-turquesa-oscuro: #087D83;
+  --nr-verde: #41AA79;
+  --nr-verde-oscuro: #217A52;
+  --nr-menta: #DFF5E8;
+  --nr-amarillo: #FFBA24;
+  --nr-amarillo-suave: #FFF4D6;
+  --nr-coral: #F57A71;
+  --nr-coral-suave: #FFF1EF;
+  --nr-coral-oscuro: #A8392F;
+  --nr-celeste: #EAF8FD;
+  --nr-lila: #EAE6F6;
+  --nr-fondo: #F6FBFD;
+  --nr-texto: #143E51;
+  --nr-texto-suave: #4C6B79;
+  --nr-borde: #BFE9ED;
+  --nr-radio: 18px;
+  --nr-sombra: 0 8px 24px rgba(13, 78, 100, 0.09);
+  --nr-sombra-alta: 0 14px 32px rgba(13, 78, 100, 0.16);
+  --nr-sombra-figura: drop-shadow(0 10px 14px rgba(13, 78, 100, 0.18));
+  --nr-pista: #D6EDF1;
+  --nr-verde-texto: #185F46;
+  --nr-mision-1: #2B7A66; /* #328E76 del design system, oscurecido para AA con texto blanco */
+  --nr-mision-2: var(--nr-turquesa-oscuro);
+  --nr-mision-3: var(--nr-verde-oscuro);
+
+  /* Alias usados por los componentes de NeuroRitmo (avatar Neuri, ruta de pasos) */
+  --color-neuro-texto: var(--nr-texto);
+  --color-neuro-primario: var(--nr-turquesa-oscuro);
+  --color-neuro-secundario: var(--nr-petroleo);
+  --color-neuro-acento: var(--nr-amarillo);
+  --color-neuro-suave: var(--nr-celeste);
+  --color-neuro-cerebro: #F6B8C6;
+  --color-neuro-surco: #C46F86;
+
+  /* ==========================================================================
+     Tipografía
+     ========================================================================== */
+  --fuente-base: 'Poppins', Arial, sans-serif;
+  --fuente-titulos: 'Poppins', Arial, sans-serif;
+
+  --tamano-xs: 0.75rem;    /* 12px */
+  --tamano-s: 0.875rem;    /* 14px */
+  --tamano-m: 1rem;        /* 16px */
+  --tamano-l: 1.25rem;     /* 20px */
+  --tamano-xl: 1.5rem;     /* 24px */
+  --tamano-2xl: 2rem;      /* 32px */
+  --tamano-3xl: 2.5rem;    /* 40px */
+
+  --peso-regular: 400;
+  --peso-medio: 500;
+  --peso-seminegrita: 600;
+  --peso-negrita: 700;
+  --peso-extranegrita: 800;
+
+  --interlineado-ajustado: 1.2;
+  --interlineado-base: 1.6;
+  --interlineado-amplio: 1.8;
+
+  /* ==========================================================================
+     Espaciados
+     ========================================================================== */
+  --espacio-xs: 4px;   /* 0.25rem */
+  --espacio-s: 8px;    /* 0.5rem */
+  --espacio-m: 16px;   /* 1rem */
+  --espacio-l: 24px;   /* 1.5rem */
+  --espacio-xl: 32px;  /* 2rem */
+  --espacio-2xl: 48px; /* 3rem */
+
+  /* ==========================================================================
+     Radios de borde
+     ========================================================================== */
+  --radio-s: 6px;
+  --radio-m: 12px;
+  --radio-l: 18px;
+  --radio-completo: 9999px;
+
+  /* ==========================================================================
+     Sombras
+     ========================================================================== */
+  --sombra-1: 0 4px 14px rgba(13, 78, 100, 0.07);
+  --sombra-2: 0 8px 24px rgba(13, 78, 100, 0.10);
+  --sombra-3: 0 16px 36px rgba(13, 78, 100, 0.16);
+  --degradado-progreso: linear-gradient(90deg, var(--nr-turquesa) 0%, var(--nr-verde) 100%);
+  --degradado-suave: linear-gradient(130deg, var(--nr-celeste) 0%, var(--nr-menta) 100%);
+
+  /* ==========================================================================
+     Transición y dimensiones
+     ========================================================================== */
+  --transicion: all 0.2s ease-in-out;
+  --ancho-maximo: 1280px;
+  --ancho-menu-lateral: calc(var(--espacio-2xl) * 5 + var(--espacio-l));
+  --ancho-menu-contraido: calc(var(--espacio-2xl) + var(--espacio-l));
+
+  /* ==========================================================================
+     Alias de compatibilidad: nombres usados por módulos anteriores que no estaban
+     definidos (el navegador ignoraba esas declaraciones). Apuntan a los tokens reales.
+     ========================================================================== */
+  --linea-apretada: var(--interlineado-ajustado);
+  --linea-base: var(--interlineado-base);
+  --linea-normal: var(--interlineado-base);
+  --linea-comoda: var(--interlineado-amplio);
+  --linea-amplia: var(--interlineado-amplio);
+  --texto-xs: var(--tamano-xs);
+  --texto-sm: var(--tamano-s);
+  --texto-base: var(--tamano-m);
+  --texto-lg: var(--tamano-l);
+  --texto-2xl: var(--tamano-2xl);
+  --texto-3xl: var(--tamano-3xl);
+  --tamano-4xl: 3rem;
+  --espacio-xxl: var(--espacio-2xl);
+  --sombra-s: var(--sombra-1);
+  --sombra-sm: var(--sombra-1);
+  --sombra-m: var(--sombra-2);
+  --sombra-l: var(--sombra-3);
+  --color-alerta: var(--color-advertencia);
+  --color-peligro: var(--color-error);
+}

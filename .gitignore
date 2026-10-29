@@ -1,0 +1,19 @@
+node_modules/
+.env
+.render-data/
+datos/*.json
+datos/*.jsonl
+datos/mensajes/
+datos/respaldos/
+publico/recursos/subidas/
+# Registros de PM2 (la carpeta se conserva con .gitkeep)
+registros/*.log
+Tareas/
+scratch/
+publicar-github/
+.tmp-*
+*.zip
+!datos/config/
+!datos/semilla/
+# Contiene la clave de la API de IA: nunca al repositorio
+datos/config/ia.json

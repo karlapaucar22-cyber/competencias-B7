@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi progreso · NeuroRitmo Digital</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/componentes.css">
+  <link rel="stylesheet" href="/css/modulos/mi-progreso.css">
+</head>
+<body>
+  <div id="plantilla"></div>
+  <main id="contenido" class="contenedor">
+    <div class="progreso-app">
+      <header class="progreso-encabezado">
+        <h1 class="progreso-titulo">Mi progreso</h1>
+        <p class="progreso-subtitulo" id="textoConexion">Cargando tu resumen...</p>
+      </header>
+
+      <p id="progresoError" class="alerta alerta--error" role="alert" hidden></p>
+
+      <section aria-labelledby="tituloIndicadores">
+        <h2 id="tituloIndicadores" class="sr-only">Indicadores</h2>
+        <ul class="progreso-tarjetas" id="tarjetas">
+          <li class="tarjeta progreso-tarjeta">
+            <span class="progreso-tarjeta__icono" aria-hidden="true">🎯</span>
+            <span class="progreso-tarjeta__valor" id="valorPuntos">—</span>
+            <span class="progreso-tarjeta__etiqueta">Puntos</span>
+          </li>
+          <li class="tarjeta progreso-tarjeta">
+            <span class="progreso-tarjeta__icono" aria-hidden="true">🏆</span>
+            <span class="progreso-tarjeta__valor" id="valorNivel">—</span>
+            <span class="progreso-tarjeta__etiqueta">Nivel máximo del quiz</span>
+          </li>
+          <li class="tarjeta progreso-tarjeta">
+            <span class="progreso-tarjeta__icono" aria-hidden="true">📚</span>
+            <span class="progreso-tarjeta__valor" id="valorTemas">—</span>
+            <span class="progreso-tarjeta__etiqueta">Temas revisados</span>
+            <div class="progreso" role="progressbar" id="barraTemas" aria-label="Temas revisados" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <span class="progreso__barra" id="rellenoTemas"></span>
+            </div>
+          </li>
+          <li class="tarjeta progreso-tarjeta">
+            <span class="progreso-tarjeta__icono" aria-hidden="true">📈</span>
+            <span class="progreso-tarjeta__valor" id="valorPromedio">—</span>
+            <span class="progreso-tarjeta__etiqueta">Promedio sobre 10</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="tarjeta progreso-neuro" id="seccionNeuroritmo" aria-labelledby="tituloNeuroritmo" hidden>
+        <h2 id="tituloNeuroritmo" class="progreso-seccion-titulo">🧠 NeuroRitmo: tu ruta</h2>
+        <p class="progreso-nota" id="neuroResumen"></p>
+        <ul class="progreso-neuro__misiones" id="neuroMisiones"></ul>
+        <h3 class="progreso-neuro__subtitulo">Insignias</h3>
+        <ul class="progreso-neuro__insignias" id="neuroInsignias"></ul>
+        <h3 class="progreso-neuro__subtitulo">Conceptos a reforzar</h3>
+        <ul class="progreso-neuro__reforzar" id="neuroReforzar"></ul>
+        <p><a class="btn btn--secundario" href="/index.html#mapa">Ir al mapa de misiones</a></p>
+      </section>
+
+      <div id="sinDatos" class="vacio" hidden>
+        <div class="vacio__icono" aria-hidden="true">📊</div>
+        <h2 class="vacio__titulo">Aún no hay actividades con nota</h2>
+        <p class="vacio__texto">Cuando completes juegos o quizzes verás aquí tu evolución y tu promedio por actividad.</p>
+        <a href="/paginas/actividades.html" class="btn btn--primario">Ir a Actividades</a>
+      </div>
+
+      <div id="graficos" class="progreso-graficos" hidden>
+        <section class="tarjeta progreso-grafico" aria-labelledby="tituloEvolucion">
+          <h2 id="tituloEvolucion" class="progreso-seccion-titulo">Evolución semanal</h2>
+          <p class="progreso-nota">Promedio sobre 10 de cada semana con actividad (últimas 8).</p>
+          <div class="progreso-grafico__lienzo">
+            <canvas id="graficoEvolucion" role="img" aria-describedby="tablaEvolucion"></canvas>
+          </div>
+          <div class="sr-only">
+            <table id="tablaEvolucion">
+              <caption>Promedio por semana</caption>
+              <thead><tr><th scope="col">Semana del</th><th scope="col">Promedio</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="tarjeta progreso-grafico" aria-labelledby="tituloActividades">
+          <h2 id="tituloActividades" class="progreso-seccion-titulo">Promedio por actividad</h2>
+          <p class="progreso-nota">Entre paréntesis, el número de intentos.</p>
+          <div class="progreso-grafico__lienzo">
+            <canvas id="graficoActividades" role="img" aria-describedby="tablaActividades"></canvas>
+          </div>
+          <div class="sr-only">
+            <table id="tablaActividades">
+              <caption>Promedio por actividad</caption>
+              <thead><tr><th scope="col">Actividad</th><th scope="col">Promedio</th><th scope="col">Intentos</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <section class="tarjeta progreso-pendientes" aria-labelledby="tituloPendientes">
+        <h2 id="tituloPendientes" class="progreso-seccion-titulo">Temas pendientes de revisar</h2>
+        <ul id="listaPendientes" class="progreso-pendientes__lista"></ul>
+        <div id="sinPendientes" class="vacio" hidden>
+          <div class="vacio__icono" aria-hidden="true">🎉</div>
+          <h3 class="vacio__titulo">¡Revisaste todos los temas!</h3>
+          <p class="vacio__texto">Repasa con el quiz por niveles para consolidar lo aprendido.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script type="module" src="/js/modulos/mi-progreso.js"></script>
+</body>
+</html>

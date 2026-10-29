@@ -1,0 +1,252 @@
+/* publico/css/modulos/crucigrama.css · Crucigrama */
+
+.cruci-app,
+.cruci-juego {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+}
+
+.cruci-app > *,
+.cruci-juego > * {
+  min-width: 0;
+}
+
+.cruci-encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--espacio-s);
+  border-bottom: 1px solid var(--color-borde);
+  padding-bottom: var(--espacio-m);
+}
+
+.cruci-titulo {
+  font-size: var(--tamano-2xl);
+  font-weight: var(--peso-negrita);
+  margin: 0 0 var(--espacio-xs);
+}
+
+.cruci-subtitulo {
+  color: var(--color-texto-suave);
+  margin: 0;
+}
+
+.cruci-tema,
+.cruci-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espacio-s);
+}
+
+.cruci-mensaje {
+  text-align: center;
+  padding: var(--espacio-xl);
+}
+
+.cruci-barra {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--espacio-m);
+}
+
+.cruci-estadisticas {
+  display: flex;
+  gap: var(--espacio-l);
+  margin: 0;
+}
+
+.cruci-estadisticas dt {
+  font-size: var(--tamano-xs);
+  color: var(--color-texto-suave);
+  text-transform: uppercase;
+}
+
+.cruci-estadisticas dd {
+  margin: 0;
+  font-size: var(--tamano-l);
+  font-weight: var(--peso-negrita);
+  font-variant-numeric: tabular-nums;
+}
+
+.cruci-pista-actual {
+  min-height: 1.5em;
+  margin: 0;
+  padding: var(--espacio-s) var(--espacio-m);
+  border-left: 4px solid var(--color-acento);
+  border-radius: var(--radio-s);
+  background-color: var(--color-fondo);
+  font-weight: var(--peso-seminegrita);
+}
+
+/* Cuadrícula y pistas */
+.cruci-area {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-l);
+}
+
+@media (min-width: 900px) {
+  .cruci-area {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .cruci-grilla-contenedor {
+    flex: 1 1 auto;
+  }
+
+  .cruci-pistas {
+    flex: 0 0 20rem;
+  }
+}
+
+.cruci-grilla-contenedor {
+  min-width: 0;
+  overflow-x: auto;
+}
+
+.cruci-grilla {
+  --columnas: 10;
+  display: grid;
+  grid-template-columns: repeat(var(--columnas), minmax(1.4rem, 2.6rem));
+  gap: 2px;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.cruci-vacia {
+  aspect-ratio: 1;
+}
+
+.cruci-celda {
+  position: relative;
+  aspect-ratio: 1;
+  min-width: 0;
+}
+
+.cruci-celda input {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 2px solid var(--color-primario);
+  border-radius: var(--radio-s);
+  background-color: var(--color-superficie);
+  color: var(--color-texto);
+  font-family: inherit;
+  font-size: var(--tamano-m);
+  font-weight: var(--peso-negrita);
+  text-align: center;
+  text-transform: uppercase;
+  caret-color: transparent;
+}
+
+.cruci-numero {
+  position: absolute;
+  top: 1px;
+  left: 3px;
+  font-size: calc(var(--tamano-xs) * 0.8);
+  font-weight: var(--peso-negrita);
+  line-height: 1;
+  color: var(--color-texto-suave);
+  pointer-events: none;
+}
+
+.cruci-celda--palabra input {
+  background-color: var(--color-fondo);
+}
+
+.cruci-celda--actual input,
+.cruci-celda input:focus {
+  outline: 3px solid var(--color-acento);
+  outline-offset: 0;
+  background-color: var(--color-superficie);
+}
+
+.cruci-celda--correcta input {
+  border-color: var(--color-exito);
+  color: var(--color-exito);
+}
+
+.cruci-celda--incorrecta input {
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+
+.cruci-celda--revelada input {
+  border-style: dashed;
+  color: var(--color-info);
+}
+
+.cruci-pistas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+}
+
+.cruci-pistas__titulo {
+  margin: 0 0 var(--espacio-xs);
+  font-size: var(--tamano-l);
+  color: var(--color-primario);
+}
+
+.cruci-pistas__lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cruci-pista {
+  display: flex;
+  gap: var(--espacio-s);
+  width: 100%;
+  min-height: 44px;
+  padding: var(--espacio-xs) var(--espacio-s);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-m);
+  background-color: var(--color-superficie);
+  color: var(--color-texto);
+  font-family: inherit;
+  font-size: var(--tamano-s);
+  text-align: left;
+  cursor: pointer;
+}
+
+.cruci-pista:hover {
+  border-color: var(--color-primario);
+}
+
+.cruci-pista:focus-visible {
+  outline: 3px solid var(--color-info);
+  outline-offset: 2px;
+}
+
+.cruci-pista[aria-current="true"] {
+  border-color: var(--color-acento);
+  background-color: var(--color-fondo);
+  box-shadow: inset 4px 0 0 var(--color-acento);
+}
+
+.cruci-pista__numero {
+  flex: 0 0 auto;
+  font-weight: var(--peso-negrita);
+  color: var(--color-primario);
+}
+
+.cruci-pista--correcta {
+  border-color: var(--color-exito);
+  color: var(--color-texto-suave);
+  text-decoration: line-through;
+}
+
+.cruci-pista--incorrecta {
+  border-color: var(--color-error);
+}

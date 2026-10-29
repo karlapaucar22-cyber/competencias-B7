@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noticia · NeuroRitmo Digital</title>
+<link rel="stylesheet" href="/css/tokens.css"><link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/componentes.css">
+<link rel="stylesheet" href="/css/modulos/noticia.css"></head>
+<body><div id="plantilla"></div><main id="contenido" class="contenedor">
+  <div class="noticia-detalle-volver">
+    <a href="/paginas/noticias.html" class="btn btn--texto">
+      ← Volver a Noticias
+    </a>
+  </div>
+
+  <div id="noticia-cargando" class="tarjeta" style="text-align: center; padding: var(--espacio-xxl);">
+    <div class="cargando cargando--activo" style="position: static; height: 60px;"></div>
+    <p>Cargando noticia...</p>
+  </div>
+
+  <article id="noticia-articulo" class="tarjeta noticia-articulo" style="display: none;">
+    <header class="noticia-articulo__cabecera">
+      <div class="noticia-articulo__meta">
+        <span id="noticia-categoria-badge" class="insignia insignia--primario">Categoría</span>
+        <span id="noticia-destacada-badge" class="insignia insignia--acento" style="display: none;">⭐ Destacada</span>
+        <span id="noticia-fecha" class="noticia-articulo__fecha"></span>
+        <div id="noticia-accion-editar" style="margin-left: auto; display: none;">
+          <a href="#" id="enlace-editar-noticia" class="btn btn--pequeno btn--secundario">Editar noticia</a>
+        </div>
+      </div>
+
+      <h1 id="noticia-titulo" class="noticia-articulo__titulo"></h1>
+      <p id="noticia-resumen" class="noticia-articulo__resumen"></p>
+    </header>
+
+    <div id="noticia-imagen-contenedor" class="noticia-articulo__imagen-caja" style="display: none;">
+      <img id="noticia-imagen" src="" alt="Imagen de la noticia" class="noticia-articulo__imagen">
+    </div>
+
+    <div id="noticia-cuerpo" class="noticia-articulo__cuerpo"></div>
+
+    <footer id="noticia-pie-tema" class="noticia-articulo__pie" style="display: none;">
+      <div class="noticia-tema-bloque">
+        <span class="noticia-tema-bloque__etiqueta">Tema de estudio relacionado:</span>
+        <a href="#" id="enlace-tema-relacionado" class="btn btn--pequeno btn--primario">
+          Explorar tema →
+        </a>
+      </div>
+    </footer>
+  </article>
+</main>
+<script type="module" src="/js/modulos/noticia.js"></script></body></html>

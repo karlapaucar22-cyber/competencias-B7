@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Participantes · NeuroRitmo Digital</title>
+<link rel="stylesheet" href="/css/tokens.css"><link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/componentes.css">
+<link rel="stylesheet" href="/css/modulos/participantes.css"></head>
+<body><div id="plantilla"></div><main id="contenido" class="contenedor">
+  <header class="participantes-encabezado">
+    <div>
+      <p class="participantes-etiqueta">Comunidad de aprendizaje</p>
+      <h1>Participantes</h1>
+      <p id="nombreAsignatura" class="tarjeta__subtitulo">Cargando asignatura…</p>
+    </div>
+  </header>
+
+  <p id="participantesEstado" class="foros-nota" role="status">Cargando participantes…</p>
+
+  <section class="participantes-seccion" aria-labelledby="tituloDocente">
+    <h2 id="tituloDocente">Docente</h2>
+    <div id="docenteResponsable" class="participantes-docente"></div>
+  </section>
+
+  <section class="participantes-seccion" aria-labelledby="tituloEstudiantes">
+    <div class="participantes-seccion__cabecera">
+      <div>
+        <h2 id="tituloEstudiantes">Estudiantes</h2>
+        <p id="contadorEstudiantes" class="participantes-contador" aria-live="polite"></p>
+      </div>
+      <div class="campo participantes-buscador">
+        <label for="buscarParticipante">Buscar por nombre</label>
+        <input type="search" id="buscarParticipante" placeholder="Escribe un nombre…" autocomplete="off">
+      </div>
+    </div>
+    <ul id="listaEstudiantes" class="participantes-lista" aria-live="polite"></ul>
+    <p id="participantesVacio" class="vacio__texto" hidden>No hay estudiantes que coincidan con la búsqueda.</p>
+  </section>
+
+  <p class="participantes-privacidad">Solo se muestran nombres, avatares y roles académicos de integrantes de esta asignatura. Los datos de contacto permanecen privados.</p>
+</main>
+<script type="module" src="/js/modulos/participantes.js"></script></body></html>

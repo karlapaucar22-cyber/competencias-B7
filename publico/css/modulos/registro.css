@@ -1,0 +1,70 @@
+/* publico/css/modulos/registro.css */
+/* Estilos para el módulo de registro de estudiantes */
+
+.auth-contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 220px);
+  padding: var(--espacio-m) 0;
+}
+
+.auth-tarjeta {
+  width: 100%;
+  max-width: 520px;
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-l);
+  padding: var(--espacio-xl);
+  box-shadow: var(--sombra-2);
+}
+
+.auth-tarjeta__encabezado {
+  text-align: center;
+  margin-bottom: var(--espacio-l);
+}
+
+.auth-tarjeta__titulo {
+  font-size: var(--tamano-xl);
+  font-weight: var(--peso-extranegrita);
+  color: var(--color-primario);
+  margin-bottom: var(--espacio-xs);
+}
+
+.auth-tarjeta__subtitulo {
+  font-size: var(--tamano-s);
+  color: var(--color-texto-suave);
+  margin: 0;
+}
+
+.casilla-privacidad {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espacio-s);
+  margin-top: var(--espacio-s);
+  margin-bottom: var(--espacio-m);
+}
+
+.casilla-privacidad input[type="checkbox"] {
+  min-height: auto;
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  cursor: pointer;
+}
+
+.casilla-privacidad label {
+  font-size: var(--tamano-s);
+  color: var(--color-texto);
+  cursor: pointer;
+  line-height: var(--interlineado-base);
+}
+
+.auth-tarjeta__pie {
+  margin-top: var(--espacio-l);
+  padding-top: var(--espacio-m);
+  border-top: 1px solid var(--color-borde);
+  text-align: center;
+  font-size: var(--tamano-s);
+  color: var(--color-texto-suave);
+}

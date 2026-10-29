@@ -1,0 +1,188 @@
+/* publico/css/modulos/mi-progreso.css · Panel del estudiante */
+
+.progreso-app {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-l);
+}
+
+.progreso-encabezado {
+  border-bottom: 1px solid var(--color-borde);
+  padding-bottom: var(--espacio-m);
+}
+
+.progreso-titulo {
+  font-size: var(--tamano-2xl);
+  font-weight: var(--peso-negrita);
+  margin: 0 0 var(--espacio-xs);
+}
+
+.progreso-subtitulo,
+.progreso-nota {
+  margin: 0;
+  color: var(--color-texto-suave);
+  font-size: var(--tamano-s);
+}
+
+/* Tarjetas de indicadores */
+.progreso-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
+  gap: var(--espacio-m);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.progreso-tarjeta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+}
+
+.progreso-tarjeta__icono {
+  font-size: var(--tamano-xl);
+}
+
+.progreso-tarjeta__valor {
+  font-size: var(--tamano-2xl);
+  font-weight: var(--peso-extranegrita);
+  color: var(--color-primario);
+  line-height: var(--interlineado-ajustado);
+}
+
+.progreso-tarjeta__etiqueta {
+  font-size: var(--tamano-s);
+  color: var(--color-texto-suave);
+}
+
+.progreso-tarjeta .progreso {
+  margin-bottom: 0;
+}
+
+/* Gráficos */
+.progreso-graficos {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--espacio-m);
+}
+
+@media (min-width: 900px) {
+  .progreso-graficos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.progreso-grafico {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+  min-width: 0;
+}
+
+.progreso-seccion-titulo {
+  margin: 0;
+  font-size: var(--tamano-l);
+  color: var(--color-primario);
+}
+
+.progreso-grafico__lienzo {
+  position: relative;
+  height: 16rem;
+  margin-top: var(--espacio-s);
+}
+
+/* Pendientes */
+.progreso-pendientes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
+}
+
+.progreso-pendientes__lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.progreso-pendientes__lista a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--espacio-s);
+  min-height: 44px;
+  padding: var(--espacio-s) var(--espacio-m);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-m);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  text-decoration: none;
+  transition: var(--transicion);
+}
+
+.progreso-pendientes__lista a:hover {
+  border-color: var(--color-primario);
+  background-color: var(--color-superficie);
+}
+
+.progreso-pendientes__lista a:focus-visible {
+  outline: 3px solid var(--color-info);
+  outline-offset: 2px;
+}
+
+.progreso-pendientes__accion {
+  flex: 0 0 auto;
+  font-size: var(--tamano-s);
+  font-weight: var(--peso-seminegrita);
+  color: var(--color-primario);
+}
+
+/* NeuroRitmo en el panel del estudiante (NR-06.4) */
+.progreso-neuro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
+}
+
+.progreso-neuro__subtitulo {
+  font-size: var(--tamano-m);
+  margin: var(--espacio-s) 0 0;
+}
+
+.progreso-neuro__misiones,
+.progreso-neuro__insignias,
+.progreso-neuro__reforzar {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--espacio-s);
+}
+
+.progreso-neuro__insignias {
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+}
+
+.progreso-neuro__mision,
+.progreso-neuro__insignia,
+.progreso-neuro__concepto {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+  padding: var(--espacio-s);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-m);
+  overflow-wrap: anywhere;
+}
+
+.progreso-neuro__insignia {
+  border-style: dashed;
+}
+
+.progreso-neuro__insignia--obtenida {
+  border-style: solid;
+  border-color: var(--color-exito);
+}

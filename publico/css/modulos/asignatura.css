@@ -1,0 +1,190 @@
+/* publico/css/modulos/asignatura.css */
+/* Estilos para el detalle de la asignatura con unidades y temas del estudiante */
+
+.asignatura-volver {
+  margin-bottom: var(--espacio-s);
+}
+
+.asignatura-detalle-cabecera {
+  margin-bottom: var(--espacio-l);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
+}
+
+.asignatura-detalle-cabecera__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-s);
+}
+
+.asignatura-detalle-cabecera__titulo {
+  font-size: var(--tamano-xl);
+  font-weight: var(--peso-negrita);
+  color: var(--color-primario);
+  margin: 0;
+  line-height: var(--linea-apretada);
+}
+
+.asignatura-detalle-cabecera__desc {
+  font-size: var(--tamano-s);
+  color: var(--color-texto);
+  line-height: var(--linea-base);
+  margin: 0;
+}
+
+.asignatura-detalle-avance {
+  margin-top: var(--espacio-m);
+  padding: var(--espacio-s) var(--espacio-m);
+  background-color: var(--color-fondo);
+  border-radius: var(--radio-m);
+  border: 1px solid var(--color-borde);
+}
+
+.asignatura-detalle-avance__cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--tamano-s);
+  color: var(--color-primario);
+}
+
+/* Acceso al tutor desde la cabecera */
+.asignatura-tutor-acceso {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espacio-s);
+  margin-top: var(--espacio-s);
+}
+
+.asignatura-tutor-acceso__texto {
+  font-size: var(--tamano-s);
+  color: var(--color-texto-suave);
+}
+
+/* Unidades + tutor lateral fijo en pantallas anchas */
+.asignatura-cuerpo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--espacio-l);
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .asignatura-cuerpo {
+    grid-template-columns: minmax(0, 1fr) minmax(22rem, 26rem);
+  }
+}
+
+.unidades-temas-lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-l);
+}
+
+.unidad-bloque-est {
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-l);
+  background-color: var(--color-superficie);
+  padding: var(--espacio-l);
+  box-shadow: var(--sombra-1);
+}
+
+.unidad-bloque-est__titulo {
+  font-size: var(--tamano-m);
+  font-weight: var(--peso-negrita);
+  color: var(--color-primario);
+  margin: 0 0 var(--espacio-m) 0;
+  padding-bottom: var(--espacio-s);
+  border-bottom: 2px solid var(--color-fondo);
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-s);
+}
+
+.temas-filas-lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
+}
+
+.tema-fila-est {
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-m);
+  padding: var(--espacio-m);
+  background-color: var(--color-fondo);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
+  transition: var(--transicion);
+}
+
+@media (min-width: 640px) {
+  .tema-fila-est {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.tema-fila-est:hover {
+  background-color: var(--color-superficie);
+  border-color: var(--color-primario);
+  box-shadow: var(--sombra-1);
+}
+
+.tema-fila-est__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+  flex: 1;
+}
+
+.tema-fila-est__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-xs);
+  font-size: var(--tamano-xs);
+  color: var(--color-texto-suave);
+}
+
+.tema-fila-est__titulo {
+  font-size: var(--tamano-m);
+  font-weight: var(--peso-seminegrita);
+  color: var(--color-texto);
+  margin: 0;
+  line-height: var(--linea-apretada);
+}
+
+.tema-fila-est__acciones {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-s);
+  flex-wrap: wrap;
+}
+
+.badge-revisado {
+  background-color: var(--color-fondo-exito);
+  border: 1px solid var(--nr-verde);
+  color: var(--color-exito);
+  font-weight: var(--peso-negrita);
+  font-size: var(--tamano-xs);
+  padding: var(--espacio-xs) var(--espacio-s);
+  border-radius: var(--radio-completo);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.badge-pendiente {
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  color: var(--color-texto-suave);
+  font-size: var(--tamano-xs);
+  padding: var(--espacio-xs) var(--espacio-s);
+  border-radius: var(--radio-completo);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}

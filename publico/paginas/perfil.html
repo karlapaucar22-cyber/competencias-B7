@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mi Perfil</title>
+<link rel="stylesheet" href="/css/tokens.css"><link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/componentes.css">
+<link rel="stylesheet" href="/css/modulos/perfil.css"></head>
+<body><div id="plantilla"></div><main id="contenido" class="contenedor">
+  <div class="perfil-grid">
+    <!-- Tarjeta de Información Personal -->
+    <article class="tarjeta">
+      <header class="tarjeta__encabezado">
+        <h1 class="tarjeta__titulo">Datos Personales</h1>
+        <p class="tarjeta__subtitulo">Actualiza tu nombre, apellido y foto de perfil</p>
+      </header>
+
+      <div class="perfil-foto-area">
+        <div id="avatar-contenedor" class="perfil-avatar">
+          <span id="avatar-iniciales">--</span>
+          <img id="avatar-img" class="oculto" alt="Foto de perfil">
+        </div>
+        <div>
+          <label for="input-foto" class="btn btn--secundario btn--pequeno" style="cursor: pointer;">
+            Cambiar foto
+          </label>
+          <input type="file" id="input-foto" class="sr-only" accept="image/jpeg,image/png,image/webp">
+          <p class="campo__error" id="error-foto"></p>
+        </div>
+        <div class="perfil-rol-badge">
+          <span id="badge-rol" class="chip">--</span>
+        </div>
+      </div>
+
+      <form id="form-perfil" novalidate>
+        <div class="campo">
+          <label for="perfil-nombre">Nombre</label>
+          <input type="text" id="perfil-nombre" name="nombre" required>
+          <span id="error-nombre" class="campo__error" aria-live="polite"></span>
+        </div>
+
+        <div class="campo">
+          <label for="perfil-apellido">Apellido</label>
+          <input type="text" id="perfil-apellido" name="apellido" required>
+          <span id="error-apellido" class="campo__error" aria-live="polite"></span>
+        </div>
+
+        <div class="campo">
+          <label for="perfil-correo">Correo electrónico</label>
+          <input type="email" id="perfil-correo" name="correo" disabled>
+        </div>
+
+        <button type="submit" id="btn-guardar-perfil" class="btn btn--primario" style="width: 100%;">
+          Guardar Cambios
+        </button>
+      </form>
+    </article>
+
+    <!-- Tarjeta de Seguridad y Contraseña -->
+    <article class="tarjeta">
+      <header class="tarjeta__encabezado">
+        <h2 class="tarjeta__titulo">Seguridad</h2>
+        <p class="tarjeta__subtitulo">Cambia tu contraseña de acceso a la plataforma</p>
+      </header>
+
+      <form id="form-clave" novalidate>
+        <div class="campo">
+          <label for="clave-actual">Contraseña actual</label>
+          <input type="password" id="clave-actual" name="actual" autocomplete="current-password" required>
+          <span id="error-actual" class="campo__error" aria-live="polite"></span>
+        </div>
+
+        <div class="campo">
+          <label for="clave-nueva">Nueva contraseña</label>
+          <input type="password" id="clave-nueva" name="nueva" autocomplete="new-password" placeholder="Mínimo 8 caracteres (letras y números)" required>
+          <span id="error-nueva" class="campo__error" aria-live="polite"></span>
+        </div>
+
+        <div class="campo">
+          <label for="clave-repetir">Repetir nueva contraseña</label>
+          <input type="password" id="clave-repetir" name="repetir" autocomplete="new-password" required>
+          <span id="error-repetir" class="campo__error" aria-live="polite"></span>
+        </div>
+
+        <button type="submit" id="btn-guardar-clave" class="btn btn--secundario" style="width: 100%; margin-top: var(--espacio-s);">
+          Actualizar Contraseña
+        </button>
+      </form>
+    </article>
+  </div>
+
+  <!-- Sección de logros (se completa en Sprint 5) -->
+  <section id="logros"></section>
+</main>
+<script type="module" src="/js/modulos/perfil.js"></script></body></html>

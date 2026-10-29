@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz por niveles · NeuroRitmo Digital</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/componentes.css">
+  <link rel="stylesheet" href="/css/modulos/quiz.css">
+</head>
+<body>
+  <div id="plantilla"></div>
+  <main id="contenido" class="contenedor" data-avatar="Responde las preguntas de cada nivel. Aprueba un nivel para desbloquear el siguiente y ganar tu diploma.">
+    <div class="quiz-app">
+      <nav class="migas-pan" aria-label="Navegación">
+        <ol>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/paginas/actividades.html">Actividades</a></li>
+          <li aria-current="page">Quiz por niveles</li>
+        </ol>
+      </nav>
+
+      <header class="quiz-encabezado">
+        <div>
+          <h1 class="quiz-titulo">Misión NeuroRitmo: Neuroeducación, música y desarrollo cognitivo</h1>
+          <p class="quiz-subtitulo">Avanza por tres niveles temáticos basados en la Tarea 3. Aprueba cada nivel para desbloquear el siguiente.</p>
+        </div>
+        <div class="quiz-tema">
+          <span class="insignia insignia--primario" id="insigniaTema">Cargando tema...</span>
+          <button type="button" id="btnCambiarTema" class="btn btn--secundario btn--sm">Cambiar tema</button>
+        </div>
+      </header>
+
+      <p id="quizCargando" class="tarjeta quiz-mensaje">Cargando niveles...</p>
+
+      <!-- Vista 1: niveles -->
+      <section id="vistaNiveles" hidden aria-labelledby="tituloNiveles">
+        <h2 id="tituloNiveles" class="sr-only">Niveles del quiz</h2>
+        <ol id="listaNiveles" class="quiz-niveles"></ol>
+      </section>
+
+      <!-- Vista 2: preguntas -->
+      <section id="vistaPregunta" class="quiz-juego" hidden aria-labelledby="tituloNivel">
+        <div class="quiz-juego__cabecera">
+          <h2 id="tituloNivel" class="quiz-juego__titulo"></h2>
+          <button type="button" id="btnAbandonar" class="btn btn--texto btn--sm">Salir del quiz</button>
+        </div>
+        <p id="textoProgreso" class="quiz-progreso-texto"></p>
+        <div class="progreso" role="progressbar" id="barraProgreso" aria-labelledby="textoProgreso" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <span class="progreso__barra" id="rellenoProgreso"></span>
+        </div>
+
+        <form id="formPregunta" class="tarjeta quiz-pregunta" novalidate>
+          <fieldset class="quiz-pregunta__grupo">
+            <legend id="enunciado" class="quiz-pregunta__enunciado" tabindex="-1"></legend>
+            <div id="zonaRespuesta"></div>
+          </fieldset>
+          <div id="contenedorRetro" class="quiz-retro"></div>
+          <div class="quiz-acciones">
+            <button type="submit" id="btnResponder" class="btn btn--primario" disabled>Responder</button>
+            <button type="button" id="btnSiguiente" class="btn btn--acento" hidden>Siguiente</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Vista 3: resultado -->
+      <section id="vistaResultado" class="tarjeta quiz-resultado" hidden aria-labelledby="tituloResultado">
+        <div class="quiz-resultado__icono" id="iconoResultado" aria-hidden="true"></div>
+        <h2 id="tituloResultado" class="quiz-resultado__titulo" tabindex="-1"></h2>
+        <p id="textoResultado" class="quiz-resultado__texto"></p>
+        <div class="quiz-acciones quiz-acciones--centro">
+          <button type="button" id="btnDiploma" class="btn btn--primario" hidden>Descargar diploma</button>
+          <button type="button" id="btnReintentar" class="btn btn--acento" hidden>Reintentar</button>
+          <button type="button" id="btnVolver" class="btn btn--secundario">Volver a los niveles</button>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="/js/modulos/quiz.js"></script>
+</body>
+</html>

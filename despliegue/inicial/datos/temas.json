@@ -1,0 +1,677 @@
+[
+  {
+    "id": "tem_000001",
+    "unidadId": "uni_000001",
+    "titulo": "Procesamiento cerebral y funciones ejecutivas en la escucha musical",
+    "orden": 1,
+    "objetivos": [
+      "Analizar el procesamiento auditivo en la corteza cerebral.",
+      "Identificar el rol de la memoria de trabajo y el control inhibitorio.",
+      "Evaluar la interferencia cognitiva de la música con letra en la lectura comprensiva."
+    ],
+    "resumen": "Aborda las bases neurobiológicas del procesamiento auditivo primario y secundario, y cómo los estímulos musicales interactúan con las funciones ejecutivas, especialmente la atención selectiva, la memoria de trabajo fonológica y el control inhibitorio durante actividades de aprendizaje.",
+    "ejemplos": [
+      "Lectura de textos académicos con música instrumental suave vs canciones con letra.",
+      "Uso de patrones rítmicos para la estructuración y retención de secuencias conceptuales."
+    ],
+    "erroresFrecuentes": [
+      "Asumir que escuchar música produce mejoras universales de concentración en cualquier persona.",
+      "Ignorar que las letras de canciones compiten con las vías lingüísticas del bucle fonológico."
+    ],
+    "preguntasGuia": [
+      "¿Por qué la música con letra interfiere con la comprensión de textos complejos?",
+      "¿Cómo modula el control inhibitorio los distractores auditivos del entorno?"
+    ],
+    "recursos": [
+      {
+        "tipo": "lectura",
+        "titulo": "Efectos de la música sobre las funciones cognitivas",
+        "url": "https://www.scielo.org.pe/pdf/rnp/v80n1/a08v80n1.pdf"
+      },
+      {
+        "tipo": "enlace",
+        "titulo": "Neurociencia Sonora: Mapeo Cerebral y Funciones Ejecutivas (screencast original)",
+        "url": "https://view.genially.com/6aca29b16ddf6a28c8dadcaf"
+      },
+      {
+        "tipo": "actividad",
+        "titulo": "Explorador interactivo de atención, memoria y aprendizaje musical",
+        "url": "/paginas/recurso-neurociencia.html"
+      },
+      {
+        "tipo": "video",
+        "titulo": "Archivo de video original",
+        "url": "/api/recursos-didacticos/funciones-ejecutivas",
+        "estado": "disponible",
+        "detalle": "Video MP4 original integrado en la ventana de contenido."
+      }
+    ],
+    "palabrasClave": [
+      "neuroeducacion",
+      "cortex",
+      "atencion",
+      "memoria",
+      "inhibicion"
+    ],
+    "dificultad": "intermedio",
+    "fuentes": "Custodio & Cano-Campos (2017); Diamond (2020); Mora (2019)",
+    "estado": "publicado",
+    "fecha": "2026-01-15T08:00:00.000Z"
+  },
+  {
+    "id": "tem_000002",
+    "unidadId": "uni_000001",
+    "titulo": "Impacto socioemocional y autorregulación a través de las artes sonoras",
+    "orden": 2,
+    "objetivos": [
+      "Examinar la conexión neurofuncional entre el sistema límbico y la respuesta sonora.",
+      "Diseñar pausas y ambientes sonoros para modular el estrés percibido y la activación fisiológica.",
+      "Desarrollar estrategias metacognitivas y de autorregulación del estudio."
+    ],
+    "resumen": "Explora la relación entre la percepción musical, las estructuras del sistema límbico (amígdala e hipocampo) y la respuesta del sistema nervioso autónomo, fundamentando el diseño de intervenciones sonoras conscientes para la gestión del estrés, la disposición afectiva y la autorregulación pedagógica.",
+    "ejemplos": [
+      "Implementación de una pausa sonora de relajación con tempo lento previo a un examen.",
+      "Autodiagnóstico del ambiente sonoro ideal según la fatiga cognitiva del estudiante."
+    ],
+    "erroresFrecuentes": [
+      "Considerar la música relajante como una solución estándar sin considerar la variabilidad individual.",
+      "Sobrecargar sensorialmente el espacio educativo con estímulos sonoros permanentes."
+    ],
+    "preguntasGuia": [
+      "¿Cómo incide la cadencia rítmica en la variabilidad de la frecuencia cardíaca y el estrés?",
+      "¿De qué forma el autodiagnóstico sonoro fortalece la autorregulación?"
+    ],
+    "recursos": [
+      {
+        "tipo": "lectura",
+        "titulo": "Efectos de las intervenciones musicales en el estrés",
+        "url": "https://doi.org/10.1080/17437199.2019.1627897"
+      },
+      {
+        "tipo": "audio",
+        "titulo": "Cómo hackea la música nuestro cerebro",
+        "url": "/api/recursos-didacticos/musica-cerebro",
+        "estado": "disponible",
+        "detalle": "Audio M4A original integrado en la ventana de contenido."
+      }
+    ],
+    "palabrasClave": [
+      "autorregulacion",
+      "estres",
+      "limbico",
+      "emocion",
+      "plasticidad"
+    ],
+    "dificultad": "avanzado",
+    "fuentes": "de Witte et al. (2020); Granados (2019); Sailer & Homner (2020)",
+    "estado": "publicado",
+    "fecha": "2026-01-15T08:00:00.000Z"
+  },
+  {
+    "id": "tem_000003",
+    "unidadId": "uni_000002",
+    "orden": 1,
+    "titulo": "Atención, procesamiento verbal y sonido al estudiar",
+    "objetivos": [
+      "Analizar la demanda cognitiva de una tarea antes de elegir una condición sonora.",
+      "Formular hipótesis prudentes sobre el efecto del silencio, la música instrumental y la música con letra.",
+      "Proponer indicadores observables para comprobar si una estrategia sonora es útil para uno mismo."
+    ],
+    "resumen": "Misión 1 de NeuroRitmo («Detectives de la atención»). La música de fondo no tiene un efecto único: un metaanálisis encontró un efecto global nulo, con perjuicio para la lectura, pequeños efectos desfavorables sobre la memoria y efectos positivos sobre las reacciones emocionales (Kämpfe et al., 2011). En la lectura, el ruido, el habla y la música producen un efecto pequeño pero desfavorable, mayor con habla inteligible y música con letra, porque la letra también es lenguaje y compite con el procesamiento verbal (Vasilev et al., 2018).\n\nPor eso la decisión no es «música sí o no», sino una **hipótesis comprobable**: identificar qué exige la tarea (atención sostenida, memoria de trabajo, control inhibitorio), elegir una condición base (por ejemplo, silencio o ruido ambiente bajo), compararla con una alternativa razonable y registrar indicadores como el tiempo de lectura, las ideas recordadas o la sensación de tensión. Lo que funciona para una persona o tarea no tiene por qué funcionar para otra.",
+    "ejemplos": [
+      "Sofía debe leer un artículo científico denso: conviene empezar con silencio como condición base y compararlo después con música instrumental suave a volumen bajo.",
+      "Antes de un examen oral, una pausa sonora breve puede ayudar a regular la activación, siempre que se compruebe con un indicador propio de tensión.",
+      "Un pódcast conversacional mientras se lee suele interferir más que la música instrumental, porque el habla inteligible compite con la lectura."
+    ],
+    "erroresFrecuentes": [
+      "Afirmar que la música instrumental mejora la concentración de cualquier persona en cualquier tarea.",
+      "Afirmar que la música con letra siempre perjudica a todos los lectores: el efecto es pequeño y varía entre personas.",
+      "Elegir la condición sonora solo por motivación, sin considerar la demanda verbal de la tarea."
+    ],
+    "preguntasGuia": [
+      "¿Qué procesos cognitivos exige la tarea que vas a realizar?",
+      "¿Por qué la letra de una canción puede competir con la comprensión lectora?",
+      "¿Qué dos condiciones compararías y qué indicador registrarías para decidir?"
+    ],
+    "recursos": [
+      {
+        "tipo": "lectura",
+        "titulo": "Vasilev et al. (2018). Auditory distraction during reading: A Bayesian meta-analysis",
+        "url": "https://doi.org/10.1177/1745691617747398"
+      },
+      {
+        "tipo": "lectura",
+        "titulo": "Kämpfe et al. (2011). The impact of background music on adult listeners",
+        "url": "https://doi.org/10.1177/0305735610376261"
+      }
+    ],
+    "palabrasClave": [
+      "atencion",
+      "procesamiento verbal",
+      "musica con letra",
+      "hipotesis",
+      "indicadores"
+    ],
+    "dificultad": "intermedio",
+    "fuentes": "Kämpfe et al. (2011); Vasilev et al. (2018); Diamond (2013); Meneses Granados (2019)",
+    "estado": "publicado",
+    "fecha": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "tem_000004",
+    "unidadId": "uni_000002",
+    "orden": 2,
+    "titulo": "Memoria: codificación, recuperación y repetición espaciada",
+    "objetivos": [
+      "Diferenciar codificación, recuperación y repetición espaciada en estrategias de estudio.",
+      "Ordenar un protocolo de repaso que combine recuperación y espaciado.",
+      "Decidir cuándo un ritmo o una melodía puede servir como pista de recuperación sin sustituir la comprensión."
+    ],
+    "resumen": "Misión 2 de NeuroRitmo («Laboratorio de la memoria»). **Codificar** es dar significado a la información cuando se estudia por primera vez (por ejemplo, relacionar una fórmula con un ejemplo cotidiano). **Recuperar** es traer la información a la mente sin mirar los apuntes y luego comparar con el original: la práctica de recuperación mejora la retención en pruebas diferidas (Roediger & Karpicke, 2006). La **repetición espaciada** distribuye los repasos en varios días; el intervalo óptimo depende de cuánto tiempo se necesite recordar (Cepeda et al., 2006).\n\nUna melodía sencilla y fácil de aprender puede facilitar el recuerdo de un texto o del orden de una secuencia en algunas condiciones (Wallace, 1994), pero funciona como pista de recuperación: ayuda a recordar el orden, no reemplaza la comprensión del concepto.",
+    "ejemplos": [
+      "Pedro escribe sin mirar los cinco pasos de un proceso y luego los compara con sus apuntes (recuperación).",
+      "Ana repasa el tema el lunes, el jueves y el martes siguiente en lugar de estudiar todo en una noche (repetición espaciada).",
+      "Un docente usa un estribillo breve para recordar el orden de tres conceptos y después pide explicarlos con palabras propias."
+    ],
+    "erroresFrecuentes": [
+      "Creer que releer muchas veces equivale a practicar la recuperación.",
+      "Pensar que existe un intervalo de repaso universal para todas las personas y materias.",
+      "Usar una canción para memorizar definiciones sin comprobar si se comprenden."
+    ],
+    "preguntasGuia": [
+      "¿En qué se diferencia recordar un dato de comprender un concepto?",
+      "¿Cómo organizarías tus repasos de la próxima semana usando espaciado y recuperación?",
+      "¿Qué harías después de usar una melodía para comprobar que hubo comprensión?"
+    ],
+    "recursos": [
+      {
+        "tipo": "lectura",
+        "titulo": "Roediger & Karpicke (2006). Test-enhanced learning",
+        "url": "https://doi.org/10.1111/j.1467-9280.2006.01693.x"
+      },
+      {
+        "tipo": "lectura",
+        "titulo": "Cepeda et al. (2006). Distributed practice in verbal recall tasks",
+        "url": "https://doi.org/10.1037/0033-2909.132.3.354"
+      }
+    ],
+    "palabrasClave": [
+      "codificacion",
+      "recuperacion",
+      "repeticion espaciada",
+      "melodia",
+      "repaso"
+    ],
+    "dificultad": "intermedio",
+    "fuentes": "Roediger & Karpicke (2006); Cepeda et al. (2006); Wallace (1994)",
+    "estado": "publicado",
+    "fecha": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "tem_000005",
+    "unidadId": "uni_000002",
+    "orden": 3,
+    "titulo": "Diseño de microactividades musicales con evidencia de aprendizaje",
+    "objetivos": [
+      "Formular un objetivo de aprendizaje observable y medible.",
+      "Seleccionar y justificar un recurso sonoro de uso responsable.",
+      "Organizar una secuencia de 5 a 10 minutos con verificación del aprendizaje."
+    ],
+    "resumen": "Misión 3 de NeuroRitmo («Crea tu misión musical»). Una microactividad musical de 5 a 10 minutos se diseña en cuatro pasos: **objetivo** observable (por ejemplo, «cada estudiante explicará con sus palabras tres conceptos y aplicará uno a un ejemplo nuevo»), **recurso sonoro** justificado y con volumen controlado, **secuencia** coherente (explicar los conceptos antes de practicar con apoyo sonoro, recuperar sin apoyo después y cerrar con la verificación) y **verificación** con evidencias observables.\n\nEl disfrute es deseable, pero no es un resultado de aprendizaje comprobable. La lista de cotejo revisa la duración total, el orden de los bloques, la recuperación sin apoyo y que la verificación sea el último paso.",
+    "ejemplos": [
+      "Objetivo bien formulado: «Al finalizar, cada estudiante explicará con sus palabras los tres conceptos y aplicará uno a un ejemplo nuevo».",
+      "Secuencia: explicación breve, práctica con un ritmo de apoyo, recuperación sin música y cierre con una pregunta de aplicación."
+    ],
+    "erroresFrecuentes": [
+      "Formular objetivos vagos como «que comprendan mejor» o «que disfruten la actividad».",
+      "Practicar con la melodía y no comprobar después si el estudiante recupera la información sin apoyo.",
+      "Elegir indicadores que no se pueden observar ni registrar."
+    ],
+    "preguntasGuia": [
+      "¿Qué conducta observable demostraría que tu estudiante aprendió?",
+      "¿Por qué la recuperación sin apoyo debe ir después de la práctica con música?",
+      "¿Qué tres indicadores elegirías para verificar la utilidad de tu microactividad?"
+    ],
+    "recursos": [
+      {
+        "tipo": "lectura",
+        "titulo": "Wallace (1994). Memory for music: Effect of melody on recall of text",
+        "url": "https://doi.org/10.1037/0278-7393.20.6.1471"
+      }
+    ],
+    "palabrasClave": [
+      "microactividad",
+      "objetivo observable",
+      "secuencia",
+      "verificacion",
+      "lista de cotejo"
+    ],
+    "dificultad": "avanzado",
+    "fuentes": "Proyecto NeuroRitmo: Misión Cerebro Sonoro (Tarea 3 grupal); Wallace (1994); Redecker (2017)",
+    "estado": "publicado",
+    "fecha": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "tem_000006",
+    "unidadId": "uni_000003",
+    "orden": 1,
+    "titulo": "El marco DigCompEdu y la competencia digital del educador",
+    "objetivos": [
+      "Reconocer las áreas del marco europeo DigCompEdu.",
+      "Relacionar cada área con decisiones concretas al diseñar un recurso educativo digital.",
+      "Valorar la propia competencia digital docente para planificar su desarrollo."
+    ],
+    "resumen": "El marco europeo **DigCompEdu** (Redecker, 2017) describe la competencia digital de los educadores en áreas como recursos digitales, enseñanza y aprendizaje, evaluación y retroalimentación, empoderamiento de los estudiantes y desarrollo de la competencia digital de los estudiantes.\n\nEn el proyecto NeuroRitmo estas áreas se traducen en acciones: seleccionar o crear recursos sonoros pertinentes (recursos digitales), diseñar una secuencia breve mediada por tecnología (enseñanza y aprendizaje), definir indicadores y evidencias (evaluación y retroalimentación), permitir que cada estudiante elija y compruebe sus estrategias (empoderamiento) y evaluar críticamente las sugerencias de una IA generativa protegiendo los datos personales (competencia digital de los estudiantes).",
+    "ejemplos": [
+      "Elegir un audio instrumental con licencia abierta y controles de volumen para una microactividad.",
+      "Diseñar una rúbrica breve que convierta la retroalimentación en decisiones de mejora."
+    ],
+    "erroresFrecuentes": [
+      "Reducir la competencia digital docente al manejo de herramientas.",
+      "Usar recursos digitales sin un propósito pedagógico ni criterios de evaluación."
+    ],
+    "preguntasGuia": [
+      "¿Qué área de DigCompEdu se pone en juego cuando defines indicadores de aprendizaje?",
+      "¿Qué evidencia mostraría que un recurso digital realmente apoya el aprendizaje?"
+    ],
+    "recursos": [
+      {
+        "tipo": "lectura",
+        "titulo": "Redecker (2017). European framework for the digital competence of educators: DigCompEdu",
+        "url": "https://doi.org/10.2760/159770"
+      }
+    ],
+    "palabrasClave": [
+      "digcompedu",
+      "competencia digital",
+      "recursos digitales",
+      "evaluacion",
+      "empoderamiento"
+    ],
+    "dificultad": "basico",
+    "fuentes": "Redecker (2017); Proyecto NeuroRitmo, Anexo A.3",
+    "estado": "publicado",
+    "fecha": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "tem_000007",
+    "unidadId": "uni_000004",
+    "orden": 1,
+    "titulo": "Gamificación con función pedagógica",
+    "objetivos": [
+      "Explicar qué aporta la gamificación al aprendizaje según la evidencia.",
+      "Distinguir elementos de juego con función pedagógica de recompensas decorativas.",
+      "Justificar la elección de una mecánica según el aprendizaje buscado."
+    ],
+    "resumen": "Un metaanálisis sobre gamificación del aprendizaje reporta efectos positivos sobre resultados cognitivos, motivacionales y conductuales, aunque heterogéneos y menos estables en los dos últimos (Sailer & Homner, 2020). Por eso la gamificación no debe depender de recompensas decorativas: cada elemento necesita una **función pedagógica**.\n\nEn NeuroRitmo la narrativa de «detectives» orienta a formular y comprobar hipótesis; las misiones avanzan de reconocer a aplicar y a diseñar; las pistas graduadas apoyan sin entregar la respuesta; los reintentos con tope de puntos fomentan aprender del error; las insignias señalan el dominio de cada estación sin crear un ranking; y la barra de progreso hace visible el camino hacia la condición de logro. La mecánica elegida (resolver casos, decidir y justificar) responde a que el aprendizaje buscado es de aplicación y toma de decisiones, no de repetición de definiciones.",
+    "ejemplos": [
+      "Cada reto combina una decisión (60 % de los puntos) con su justificación (40 %) para no premiar respuestas adivinadas.",
+      "Las insignias «Observador atencional», «Guardián de la memoria» y «Diseñador NeuroRítmico» marcan el dominio de cada estación."
+    ],
+    "erroresFrecuentes": [
+      "Añadir puntos e insignias sin relación con el objetivo de aprendizaje.",
+      "Usar rankings públicos que comparan a los estudiantes y pueden desalentar.",
+      "Suponer que la gamificación siempre mejora la motivación de todos."
+    ],
+    "preguntasGuia": [
+      "¿Qué función pedagógica cumple cada elemento de juego de tu propuesta?",
+      "¿Por qué se evita el ranking entre estudiantes en NeuroRitmo?"
+    ],
+    "recursos": [
+      {
+        "tipo": "lectura",
+        "titulo": "Sailer & Homner (2020). The gamification of learning: A meta-analysis",
+        "url": "https://doi.org/10.1007/s10648-019-09498-w"
+      }
+    ],
+    "palabrasClave": [
+      "gamificacion",
+      "mecanica",
+      "insignias",
+      "progreso",
+      "retroalimentacion"
+    ],
+    "dificultad": "intermedio",
+    "fuentes": "Sailer & Homner (2020); Proyecto NeuroRitmo, sección 2 y Anexo A.5",
+    "estado": "publicado",
+    "fecha": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "tem_000008",
+    "unidadId": "uni_000004",
+    "orden": 2,
+    "titulo": "Diseño de una experiencia educativa gamificada",
+    "objetivos": [
+      "Completar una ficha de diseño con contexto, objetivo, narrativa, mecánica, reglas y retos.",
+      "Definir un sistema de progreso, retroalimentación y condición de logro coherentes.",
+      "Representar el recorrido del estudiante mediante un flujo o storyboard."
+    ],
+    "resumen": "La ficha de diseño organiza la experiencia gamificada en tres bloques: **identificación y contexto** (público, asignatura, tema, necesidad educativa y objetivo observable), **diseño de la experiencia** (narrativa, misión principal, mecánica, reglas, retos o niveles, sistema de progreso, retroalimentación y condición de logro) e **integración de IA** (función, entrada, respuesta esperada y aporte pedagógico).\n\nEn NeuroRitmo hay tres misiones de 100 puntos; la siguiente se desbloquea con al menos 70/100 y la condición de logro exige 240/300. Las pistas gradúan la ayuda (la primera no resta puntos; la segunda limita los puntos de decisión), se permite un segundo intento con tope y se conserva el mejor puntaje. El storyboard de ocho pantallas (bienvenida, instrucciones, mapa de misiones, actividad, retroalimentación, resumen, resultados y reintento) muestra el recorrido completo.",
+    "ejemplos": [
+      "Regla: «Leer la situación completa antes de responder y justificar las decisiones, no solo seleccionar una opción».",
+      "Retroalimentación: indicar qué concepto se aplicó bien, qué conviene revisar y una pista concreta."
+    ],
+    "erroresFrecuentes": [
+      "Definir umbrales de aprobación contradictorios entre misiones y logro final.",
+      "Diseñar retos que no avanzan en complejidad cognitiva.",
+      "Omitir la retroalimentación después de cada respuesta."
+    ],
+    "preguntasGuia": [
+      "¿Cómo se relacionan tus retos con los niveles de la taxonomía de Bloom?",
+      "¿Qué ocurre en tu experiencia cuando un estudiante no alcanza el puntaje mínimo?"
+    ],
+    "recursos": [
+      {
+        "tipo": "lectura",
+        "titulo": "Sailer & Homner (2020). The gamification of learning",
+        "url": "https://doi.org/10.1007/s10648-019-09498-w"
+      }
+    ],
+    "palabrasClave": [
+      "ficha de diseño",
+      "narrativa",
+      "reglas",
+      "pistas",
+      "storyboard"
+    ],
+    "dificultad": "intermedio",
+    "fuentes": "Proyecto NeuroRitmo, sección 3 (ficha de diseño), sección 4 y Anexos C y D",
+    "estado": "publicado",
+    "fecha": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "tem_000009",
+    "unidadId": "uni_000005",
+    "orden": 1,
+    "titulo": "La IA generativa como tutor de apoyo",
+    "objetivos": [
+      "Describir una función educativa concreta para la IA generativa.",
+      "Especificar la cadena entrada → IA → respuesta → aporte pedagógico.",
+      "Distinguir qué tareas requieren un modelo generativo y cuáles deben resolverse con lógica programada."
+    ],
+    "resumen": "En NeuroRitmo la IA generativa se plantea como **tutor de apoyo, no como evaluador**: explica errores, ofrece pistas graduadas y genera ejemplos paralelos a partir de la respuesta del estudiante, su justificación y el concepto que desea reforzar, sin recibir datos personales.\n\nLa respuesta esperada tiene de 2 a 4 frases, una pregunta orientadora y, cuando es pertinente, un ejemplo alternativo, distinguiendo una posibilidad pedagógica de una afirmación científica universal. Se proponen dos niveles: el Nivel 1 funciona sin IA externa (pistas y explicaciones redactadas de antemano) y el Nivel 2 añade IA generativa mediante un servidor propio. Calcular puntos, validar respuestas y desbloquear misiones **nunca** se delega a la IA: se mantiene la lógica programada.",
+    "ejemplos": [
+      "Entrada: Misión 1, ítem 1.1; respuesta «canciones con letra»; justificación «la letra me motiva»; concepto: procesamiento verbal.",
+      "Salida esperada: una explicación prudente de 2 a 4 frases y una pregunta como «¿qué dos condiciones compararías y qué indicador registrarías?»."
+    ],
+    "erroresFrecuentes": [
+      "Permitir que la IA asigne calificaciones o decida si una explicación es científicamente correcta.",
+      "Hacer que el juego dependa de la IA para funcionar.",
+      "Pedir a la IA respuestas directas en lugar de preguntas orientadoras."
+    ],
+    "preguntasGuia": [
+      "¿Qué información mínima necesita la IA para dar una pista útil?",
+      "¿Por qué la IA no debe calificar en esta propuesta?"
+    ],
+    "recursos": [
+      {
+        "tipo": "lectura",
+        "titulo": "Miao & Holmes (2023). Guidance for generative AI in education and research (UNESCO)",
+        "url": "https://unesdoc.unesco.org/ark:/48223/pf0000386693"
+      }
+    ],
+    "palabrasClave": [
+      "ia generativa",
+      "tutor",
+      "pistas graduadas",
+      "prompt",
+      "ejemplo paralelo"
+    ],
+    "dificultad": "intermedio",
+    "fuentes": "Miao & Holmes (2023); Proyecto NeuroRitmo, sección 3C y Anexo E",
+    "estado": "publicado",
+    "fecha": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "tem_000010",
+    "unidadId": "uni_000005",
+    "orden": 2,
+    "titulo": "Uso responsable de la IA: privacidad, sesgos y supervisión",
+    "objetivos": [
+      "Identificar riesgos de calidad, sesgo y privacidad al usar IA generativa en educación.",
+      "Aplicar medidas de uso responsable alineadas con la guía de la UNESCO y la LOPDP de Ecuador.",
+      "Definir el rol de supervisión del docente sobre lo que genera la IA."
+    ],
+    "resumen": "La IA generativa puede producir errores o afirmaciones demasiado generales, y sus ejemplos pueden reflejar sesgos culturales. Por eso se exigen formato breve, tono prudente y **revisión docente** de las instrucciones y de muestras de respuestas.\n\nEn privacidad, no se piden nombres ni datos sensibles; el texto libre puede contener datos personales, por lo que se advierte al estudiante y se filtra antes de enviarlo. Debe cumplirse la **Ley Orgánica de Protección de Datos Personales** de Ecuador (2021) y la guía de la UNESCO recomienda validar ética y pedagógicamente las herramientas antes de usarlas (Miao & Holmes, 2023). En seguridad, las claves del servicio nunca van en el navegador: pasan por un servidor propio con límite de uso, y el texto del estudiante se trata como dato, no como instrucción. Toda respuesta se identifica como generada por IA e invita a contrastarla.",
+    "ejemplos": [
+      "Aviso visible: «Respuesta generada por IA: contrástala con el material del curso».",
+      "El docente puede desactivar el asistente y el juego sigue funcionando con el contenido predefinido."
+    ],
+    "erroresFrecuentes": [
+      "Poner la clave de la API en el código del navegador.",
+      "Enviar a la IA nombres o datos personales de los estudiantes.",
+      "Aceptar las respuestas de la IA sin contrastarlas con fuentes del curso."
+    ],
+    "preguntasGuia": [
+      "¿Qué datos de tus estudiantes nunca deberían enviarse a un servicio de IA?",
+      "¿Cómo comprobarías que una explicación generada por IA es correcta?"
+    ],
+    "recursos": [
+      {
+        "tipo": "lectura",
+        "titulo": "Miao & Holmes (2023). Guidance for generative AI in education and research",
+        "url": "https://unesdoc.unesco.org/ark:/48223/pf0000386693"
+      },
+      {
+        "tipo": "lectura",
+        "titulo": "Ley Orgánica de Protección de Datos Personales (Ecuador, 2021)",
+        "url": "https://www.finanzaspopulares.gob.ec/wp-content/uploads/2021/07/ley_organica_de_proteccion_de_datos_personales.pdf"
+      }
+    ],
+    "palabrasClave": [
+      "privacidad",
+      "sesgos",
+      "lopdp",
+      "supervision docente",
+      "transparencia"
+    ],
+    "dificultad": "intermedio",
+    "fuentes": "Miao & Holmes (2023); Ley Orgánica de Protección de Datos Personales (2021); Proyecto NeuroRitmo, Anexo E.3",
+    "estado": "publicado",
+    "fecha": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "tem_000011",
+    "unidadId": "uni_000006",
+    "orden": 1,
+    "titulo": "Proyección tecnológica, accesibilidad y viabilidad",
+    "objetivos": [
+      "Proyectar las tecnologías necesarias para convertir un diseño en una página web.",
+      "Aplicar criterios de accesibilidad web (WCAG 2.2) a un recurso educativo.",
+      "Argumentar la viabilidad de una propuesta por etapas."
+    ],
+    "resumen": "La proyección tecnológica traduce el diseño en decisiones técnicas: tecnologías web estándar (HTML, CSS y JavaScript), contenido y reglas de puntuación programadas, progreso guardado y, solo en una segunda etapa, un asistente de IA generativa a través de un servidor propio que protege las claves. Una propuesta es **viable** cuando funciona completa sin servicios externos y añade la IA como ampliación opcional.\n\nLa **accesibilidad** forma parte del diseño desde el inicio: las Pautas de Accesibilidad para el Contenido Web (WCAG 2.2) orientan el uso con teclado, el contraste suficiente, las etiquetas en los controles y alternativas a interacciones como arrastrar y soltar (por ejemplo, botones «Subir» y «Bajar» para ordenar pasos).",
+    "ejemplos": [
+      "Ordenar los pasos de un protocolo con botones «Subir» y «Bajar» para garantizar el uso con teclado.",
+      "Etapa 1 sin API externa y etapa 2 con asistente de IA, para que el juego nunca dependa del servicio."
+    ],
+    "erroresFrecuentes": [
+      "Dejar la accesibilidad para el final del desarrollo.",
+      "Depender de una sola interacción (arrastrar y soltar) que no funciona con teclado.",
+      "Proponer tecnologías innecesarias para el objetivo de aprendizaje."
+    ],
+    "preguntasGuia": [
+      "¿Qué partes de tu propuesta funcionan sin conexión a un servicio de IA?",
+      "¿Cómo garantizarías que un estudiante que usa solo el teclado complete la actividad?"
+    ],
+    "recursos": [
+      {
+        "tipo": "lectura",
+        "titulo": "W3C (2023). Web Content Accessibility Guidelines (WCAG) 2.2",
+        "url": "https://www.w3.org/TR/2023/REC-WCAG22-20231005/"
+      }
+    ],
+    "palabrasClave": [
+      "accesibilidad",
+      "wcag",
+      "viabilidad",
+      "servidor",
+      "proyeccion tecnologica"
+    ],
+    "dificultad": "basico",
+    "fuentes": "W3C (2023); Proyecto NeuroRitmo, sección 3E y Anexo F",
+    "estado": "publicado",
+    "fecha": "2026-10-25T00:00:00.000Z"
+  },
+  {
+    "id": "tem_000012",
+    "unidadId": "uni_000007",
+    "orden": 1,
+    "titulo": "Fundamentos de Neuroeducación y Desarrollo Cognitivo Musical",
+    "objetivos": [
+      "Analizar una situación de lectura o estudio para justificar, como hipótesis comprobable, el uso del silencio o de una estrategia sonora a partir del procesamiento auditivo, la atención, la memoria de trabajo y el control inhibitorio implicados."
+    ],
+    "resumen": "**Lección 1.1 · Procesamiento cerebral y funciones ejecutivas en la escucha y práctica musical**\n\n**BORRADOR · Pendiente de aprobación docente de la corrección científica y la redacción final.**\n\n**Explicación sustentada**\n\nLos documentos del proyecto sitúan el procesamiento auditivo, la escucha y la práctica musical en relación con funciones que interactúan durante el estudio. La atención sostenida mantiene el foco en el tiempo; la memoria de trabajo mantiene y manipula información de forma breve; y el control inhibitorio ayuda a suprimir distracciones o respuestas automáticas para sostener una meta (Diamond, 2013; Meneses Granados, 2019). Son procesos distintos: escuchar o practicar música no demuestra, por sí solo, una mejora de la atención, la memoria o el aprendizaje.\n\nLa decisión de estudiar con sonido debe considerar la demanda de la tarea y el tipo de estímulo auditivo. Un metaanálisis sobre música de fondo encontró un efecto global nulo, junto con efectos específicos: perjuicio para la lectura, efectos pequeños desfavorables sobre la memoria y efectos positivos sobre las reacciones emocionales (Kämpfe et al., 2011). Otro metaanálisis halló efectos pequeños pero consistentes de distracción auditiva durante la lectura con ruido, habla y música; la interferencia fue mayor con habla inteligible y música con letra (Vasilev et al., 2018). Por ello, el proyecto formula estas decisiones como hipótesis que deben comprobarse según la tarea y la persona, no como leyes generales.\n\n**Vocabulario**\n- **Procesamiento auditivo:** tratamiento de la información sonora implicado en la escucha y la práctica musical dentro del subtema estudiado.\n- **Atención sostenida:** mantenimiento del foco durante un periodo.\n- **Memoria de trabajo:** mantenimiento y manipulación breve de información necesaria para el paso siguiente.\n- **Control inhibitorio:** supresión de estímulos o respuestas irrelevantes para sostener una meta.\n- **Hipótesis comprobable:** predicción prudente que compara condiciones y se revisa con indicadores observables.",
+    "ejemplos": [
+      "Sofía debe leer un artículo científico denso y explicar sus ideas principales. Como punto de partida, usa silencio o ruido ambiente constante y bajo; después compara esa condición con música instrumental suave a volumen bajo. Registra el tiempo de lectura y las ideas principales que puede explicar sin mirar. Sus canciones favoritas con letra pueden motivarla, pero esa preferencia no prueba que favorezcan la comprensión: la letra también exige procesamiento verbal."
+    ],
+    "erroresFrecuentes": [
+      "No interpretar los resultados promedio como una predicción individual: el efecto puede variar según la tarea y la persona.",
+      "No concluir que toda música perjudica por igual ni que la magnitud del efecto sobre la lectura sea grande.",
+      "No convertir la preferencia o la motivación musical en evidencia de comprensión o memoria.",
+      "No confundir música de fondo durante una tarea verbal exigente con el uso deliberado de un ritmo o una melodía como pista de recuperación."
+    ],
+    "preguntasGuia": [
+      "En una lectura académica concreta, ¿qué información necesitas mantener en mente y qué estímulos auditivos tendrías que inhibir para no perder el hilo?",
+      "¿Qué dos condiciones compararías y qué indicador observable usarías para comprobar si una estrategia sonora te ayuda en esa tarea?"
+    ],
+    "recursos": [
+      {
+        "tipo": "enlace",
+        "titulo": "1.1 · Neurociencia Sonora: Mapeo Cerebral y Funciones Ejecutivas (screencast, A. M. Chica García; CC BY-NC-SA 4.0 declarada en el informe, no verificada en Genially)",
+        "url": "https://view.genially.com/6aca29b16ddf6a28c8dadcaf"
+      },
+      {
+        "tipo": "enlace",
+        "titulo": "1.2 · Mapeo Socioemocional: Autorregulación y Bienestar Universitario (infografía, M. Y. Cruzatti Calderón; CC BY-NC-SA 4.0 declarada en el informe, no verificada en Genially)",
+        "url": "https://view.genially.com/6ac9441095a03db4389b6f2f"
+      },
+      {
+        "tipo": "actividad",
+        "titulo": "Repaso · Misión 1: Detectives de la atención",
+        "url": "/index.html#mision-m1"
+      }
+    ],
+    "palabrasClave": [
+      "neuroeducacion",
+      "atencion",
+      "memoria de trabajo",
+      "control inhibitorio",
+      "autorregulacion"
+    ],
+    "dificultad": "intermedio",
+    "fuentes": "**Fuentes entregadas**\n- Diamond, A. (2013). Executive functions. Annual Review of Psychology, 64, 135–168.\n- Kämpfe, J., Sedlmeier, P., & Renkewitz, F. (2011). The impact of background music on adult listeners: A meta-analysis. Psychology of Music, 39(4), 424–448. https://doi.org/10.1177/0305735610376261\n- Meneses Granados, N. (2019). Neuroeducación. Sólo se puede aprender aquello que se ama, de Francisco Mora Teruel [Reseña de libro]. Perfiles Educativos, 41(165), 210–216. https://doi.org/10.22201/iisue.24486167e.2019.165.59403\n- Vasilev, M. R., Kirkby, J. A., & Angele, B. (2018). Auditory distraction during reading: A Bayesian meta-analysis of a continuing controversy. Perspectives on Psychological Science, 13(5), 567–597. https://doi.org/10.1177/1745691617747398\n- NeuroRitmo: Misión Cerebro Sonoro. Proyecto académico final, apartados A.4 y B.1 (documento entregado).\n\n**BORRADOR:** el documento fuente exige revisión docente de la corrección científica y la redacción final.",
+    "estado": "borrador",
+    "fecha": "2026-10-27T00:00:00.000Z"
+  },
+  {
+    "unidadId": "uni_000007",
+    "orden": 2,
+    "titulo": "1.2 · Impacto socioemocional y autorregulación a través de las artes",
+    "objetivos": [
+      "Justificar la elección de música suave, una pausa sonora o silencio para una situación académica concreta, considerando la experiencia emocional, el estrés percibido, las diferencias individuales y un indicador propio de autorregulación."
+    ],
+    "resumen": "**Lección 1.2 · Sonido, experiencia emocional y autorregulación**\n\n**BORRADOR · Pendiente de revisión docente de la corrección científica y la redacción final.**\n\n**Introducción**\n\nEn contextos académicos se usa música para acompañar el estudio, crear un ambiente agradable o regular el estado emocional. Los documentos entregados advierten que estas decisiones no deben basarse en costumbres ni afirmaciones generales: conviene distinguir el objetivo de regular la activación del objetivo de aprender contenido nuevo, considerar la tarea y observar la respuesta individual.\n\n**Relación entre sonido y experiencia emocional**\n\nLa música de fondo no tiene un efecto único. Kämpfe et al. (2011) encontraron un efecto global nulo, con efectos específicos que se compensan: desfavorables para la lectura y la memoria, y positivos sobre las reacciones emocionales. Esto permite considerar el sonido como una posible estrategia emocional, pero no demuestra que mejore siempre la concentración, la memoria o el rendimiento.\n\n**Estrés percibido y estrategias de autorregulación**\n\nLos metaanálisis de de Witte et al. (2020) reportan un efecto significativo de las intervenciones musicales sobre indicadores de estrés, dependiente de moderadores y del contexto. El documento aclara que una intervención musical no equivale a cualquier uso cotidiano ni sustituye otras estrategias. Una decisión prudente separa la regulación emocional del repaso de contenido nuevo y compara la tensión percibida antes y después, por ejemplo con una escala personal de 1 a 5.\n\n**Diferencias individuales**\n\nLas respuestas emocionales y de activación ante la música varían entre personas y situaciones. La lista que funciona para un compañero no predice el efecto en otra persona. Música suave, pausa sonora o silencio son alternativas que deben elegirse según la tarea, la respuesta individual y un indicador observable.\n\n**Caso de selección · Antes de una exposición académica**\n\nValeria presentará un trabajo en 20 minutos, percibe su tensión en 4 de 5 y todavía debe revisar ideas clave. Debe escoger una condición y justificarla:\n- **Música suave:** probarla durante unos minutos antes del repaso final si la identifica como agradable; registrar la tensión antes y después y detenerla al revisar contenido verbal exigente.\n- **Pausa sonora:** usar un intervalo breve de transición sin añadir una tarea verbal, observar su nivel de tensión y decidir después si continúa en silencio.\n- **Silencio:** elegirlo durante la revisión de ideas si el sonido añade distracción o compite con la tarea.\n\nLa justificación no es «esta opción funciona siempre», sino «la elijo para este objetivo, en esta situación, y comprobaré su utilidad con la tensión percibida y la capacidad de explicar las ideas principales».",
+    "ejemplos": [
+      "Antes de un examen oral, Mateo prueba durante unos minutos música que reconoce como agradable, no mientras aprende contenido nuevo, y compara su tensión percibida antes y después.",
+      "En una tarea repetitiva de clasificación, una pista instrumental suave y opcional puede probarse con la alternativa de silencio; su utilidad debe comprobarse.",
+      "Durante la preparación de una exposición, una pausa sonora o el silencio puede reducir estímulos añadidos mientras la persona observa su activación y revisa si puede explicar las ideas clave."
+    ],
+    "erroresFrecuentes": [
+      "Afirmar que la música reduce el estrés de todas las personas por igual.",
+      "Suponer que una experiencia agradable demuestra mejora de concentración, memoria o rendimiento.",
+      "Copiar la lista de otra persona sin comprobar la respuesta propia.",
+      "Usar sonido continuo mientras se aprende contenido verbal nuevo y atribuir cualquier resultado únicamente a la música."
+    ],
+    "preguntasGuia": [
+      "¿Qué indicador propio observarías antes y después de probar una estrategia sonora para distinguir una sensación agradable de una autorregulación útil?",
+      "¿En qué momento de una tarea académica elegirías música suave, una pausa sonora o silencio, y qué evidencia usarías para revisar esa decisión?"
+    ],
+    "recursos": [
+      {
+        "tipo": "enlace",
+        "titulo": "1.2 · Mapeo Socioemocional: Autorregulación y Bienestar Universitario (M. Y. Cruzatti Calderón; CC BY-NC-SA 4.0 declarada en el informe, no verificada en Genially)",
+        "url": "https://view.genially.com/6ac9441095a03db4389b6f2f"
+      },
+      {
+        "tipo": "actividad",
+        "titulo": "Aplicación · Misión 1: Detectives de la atención",
+        "url": "/index.html#mision-m1"
+      },
+      {
+        "tipo": "actividad",
+        "titulo": "Diseño y verificación · Misión 3: Crea tu misión musical",
+        "url": "/index.html#mision-m3"
+      }
+    ],
+    "palabrasClave": [
+      "experiencia emocional",
+      "estres percibido",
+      "autorregulacion",
+      "diferencias individuales",
+      "musica suave",
+      "pausa sonora",
+      "silencio"
+    ],
+    "dificultad": "intermedio",
+    "fuentes": "**Fuentes entregadas**\n- de Witte, M., Spruit, A., van Hooren, S., Moonen, X., & Stams, G.-J. (2020). Effects of music interventions on stress-related outcomes: A systematic review and two meta-analyses. Health Psychology Review, 14(2), 294–324. https://doi.org/10.1080/17437199.2019.1627897\n- Kämpfe, J., Sedlmeier, P., & Renkewitz, F. (2011). The impact of background music on adult listeners: A meta-analysis. Psychology of Music, 39(4), 424–448. https://doi.org/10.1177/0305735610376261\n- NeuroRitmo: Misión Cerebro Sonoro. Proyecto académico final, apartados 2, A.4, B.1 (M1-I3) y B.3 (documento entregado).\n\n**BORRADOR:** requiere revisión docente de la corrección científica y la redacción final.",
+    "estado": "borrador",
+    "id": "tem_000013",
+    "fecha": "2026-10-27T14:57:13.289Z"
+  },
+  {
+    "id": "tem_000014",
+    "unidadId": "uni_000002",
+    "orden": 4,
+    "titulo": "Misión NeuroRitmo: Neuroeducación, música y desarrollo cognitivo",
+    "objetivos": [
+      "Distinguir atención, memoria de trabajo y control inhibitorio al analizar condiciones sonoras de estudio.",
+      "Relacionar codificación, recuperación, repetición espaciada y pistas musicales sin confundir recuerdo con comprensión.",
+      "Diseñar decisiones de autorregulación y microactividades musicales breves con evidencia observable de aprendizaje."
+    ],
+    "resumen": "Evaluación complementaria de los contenidos académicos de la Tarea 3. Integra las decisiones prudentes de la Misión 1 sobre atención y sonido, los procesos de memoria y las pistas de recuperación de la Misión 2, y el diseño de microactividades de 5 a 10 minutos de la Misión 3. La música no se presenta como mejora universal: cada decisión considera la demanda de la tarea, las diferencias individuales y una forma de comprobar el efecto.",
+    "ejemplos": [
+      "Comparar silencio y música instrumental suave durante una tarea concreta usando indicadores observables.",
+      "Recuperar conceptos sin mirar y distribuir el repaso en varios días.",
+      "Diseñar una microactividad con objetivo, recurso sonoro o silencio, secuencia y comprobación final."
+    ],
+    "erroresFrecuentes": [
+      "Afirmar que la música siempre mejora la concentración, la memoria o el rendimiento.",
+      "Confundir recordar una secuencia musical con comprender los conceptos.",
+      "Diseñar una actividad agradable sin objetivo observable ni comprobación del aprendizaje."
+    ],
+    "preguntasGuia": [
+      "¿Qué demanda cognitiva tiene la tarea y cómo comprobarías el efecto de la condición sonora?",
+      "¿Cómo distinguirías una pista de recuperación de una evidencia de comprensión?",
+      "¿Qué evidencia observable cerrararía una microactividad musical de 5 a 10 minutos?"
+    ],
+    "recursos": [
+      {
+        "tipo": "actividad",
+        "titulo": "Misión 1 · Detectives de la atención",
+        "url": "/index.html#mision-m1"
+      },
+      {
+        "tipo": "actividad",
+        "titulo": "Misión 2 · Laboratorio de la memoria",
+        "url": "/index.html#mision-m2"
+      },
+      {
+        "tipo": "actividad",
+        "titulo": "Misión 3 · Crea tu misión musical",
+        "url": "/index.html#mision-m3"
+      }
+    ],
+    "palabrasClave": [
+      "atención",
+      "funciones ejecutivas",
+      "memoria",
+      "autorregulación",
+      "microactividad musical"
+    ],
+    "dificultad": "intermedio",
+    "fuentes": "NeuroRitmo: Misión Cerebro Sonoro. Contenidos académicos y configuración de las Misiones 1, 2 y 3 entregados en la Tarea 3.",
+    "estado": "publicado",
+    "fecha": "2026-10-28T00:00:00.000Z"
+  }
+]

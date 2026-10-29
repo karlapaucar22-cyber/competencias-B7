@@ -1,0 +1,81 @@
+/* publico/css/modulos/asignaturas.css */
+/* Estilos para el catálogo de asignaturas y barras de avance del estudiante */
+
+.asignaturas-est-cabecera {
+  margin-bottom: var(--espacio-l);
+}
+
+.asignaturas-est-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espacio-l);
+}
+
+@media (min-width: 640px) {
+  .asignaturas-est-grid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+}
+
+.tarjeta-asignatura-est {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  transition: var(--transicion);
+}
+
+.tarjeta-asignatura-est:hover {
+  border-color: var(--color-primario);
+  box-shadow: var(--sombra-2);
+}
+
+.tarjeta-asignatura-est__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espacio-xs);
+  margin-bottom: var(--espacio-s);
+}
+
+.tarjeta-asignatura-est__titulo {
+  font-size: var(--tamano-l);
+  font-weight: var(--peso-negrita);
+  color: var(--color-primario);
+  margin: 0 0 var(--espacio-s) 0;
+  line-height: var(--linea-apretada);
+}
+
+.tarjeta-asignatura-est__desc {
+  font-size: var(--tamano-s);
+  color: var(--color-texto);
+  line-height: var(--linea-base);
+  margin: 0 0 var(--espacio-m) 0;
+  flex-grow: 1;
+}
+
+.tarjeta-asignatura-est__avance {
+  margin: var(--espacio-m) 0;
+  padding: var(--espacio-s) var(--espacio-m);
+  background-color: var(--color-fondo);
+  border-radius: var(--radio-m);
+  border: 1px solid var(--color-borde);
+}
+
+.tarjeta-asignatura-est__avance-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--tamano-xs);
+  font-weight: var(--peso-seminegrita);
+  color: var(--color-primario);
+  margin-bottom: var(--espacio-xs);
+}
+
+.tarjeta-asignatura-est__avance-detalle {
+  font-size: var(--tamano-xs);
+  color: var(--color-texto-suave);
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--espacio-xs);
+}

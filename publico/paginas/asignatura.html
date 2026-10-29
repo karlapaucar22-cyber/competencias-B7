@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asignatura · NeuroRitmo Digital</title>
+<link rel="stylesheet" href="/css/tokens.css"><link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/componentes.css">
+<link rel="stylesheet" href="/css/modulos/asignatura.css"></head>
+<body><div id="plantilla"></div><main id="contenido" class="contenedor">
+  <div class="asignatura-volver">
+    <a href="/paginas/asignaturas.html" class="btn btn--texto">
+      ← Volver a Mis Asignaturas
+    </a>
+  </div>
+
+  <header class="tarjeta asignatura-detalle-cabecera">
+    <div class="asignatura-detalle-cabecera__meta">
+      <span id="asig-nivel-badge" class="insignia insignia--acento">Cargando...</span>
+    </div>
+    <h1 id="asig-titulo" class="asignatura-detalle-cabecera__titulo">Cargando asignatura...</h1>
+    <p id="asig-descripcion" class="asignatura-detalle-cabecera__desc"></p>
+
+    <div class="asignatura-detalle-avance" id="asig-avance-caja" style="display: none;">
+      <div class="asignatura-detalle-avance__cabecera">
+        <span>Tu progreso en esta asignatura:</span>
+        <strong id="asig-avance-porcentaje">0%</strong>
+      </div>
+      <div class="progreso" role="progressbar" id="asig-avance-barra" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        <span class="progreso__barra" id="asig-barra-fill" style="width: 0%;"></span>
+      </div>
+      <span id="asig-avance-detalle" style="font-size: var(--tamano-xs); color: var(--color-texto-suave);"></span>
+    </div>
+
+    <div class="asignatura-tutor-acceso" id="tutor-acceso" hidden>
+      <button type="button" id="btn-abrir-tutor" class="btn btn--acento">💬 Preguntar al tutor socrático</button>
+      <span class="asignatura-tutor-acceso__texto">Resuelve dudas de esta asignatura razonando paso a paso.</span>
+    </div>
+  </header>
+
+  <div class="asignatura-cuerpo">
+    <section class="asignatura-unidades-seccion" aria-labelledby="titulo-unidades-asignatura">
+      <h2 id="titulo-unidades-asignatura" class="sr-only">Unidades y temas de la asignatura</h2>
+      <div id="contenedor-unidades-temas" class="unidades-temas-lista" aria-live="polite">
+        <div class="tarjeta" style="text-align: center; padding: var(--espacio-xl);">
+          <div class="cargando cargando--activo" style="position: static; height: 60px;"></div>
+          <p>Cargando unidades y temas...</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+<script type="module" src="/js/modulos/asignatura.js"></script></body></html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mis Asignaturas</title>
+<link rel="stylesheet" href="/css/tokens.css"><link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/componentes.css">
+<link rel="stylesheet" href="/css/modulos/asignaturas.css"></head>
+<body><div id="plantilla"></div><main id="contenido" class="contenedor">
+  <header class="asignaturas-est-cabecera">
+    <div>
+      <h1>Mis Asignaturas</h1>
+      <p class="tarjeta__subtitulo">Consulta tus materias matriculadas y monitorea tu porcentaje de avance curricular</p>
+    </div>
+  </header>
+
+  <div id="lista-asignaturas-est" class="asignaturas-est-grid" aria-live="polite">
+    <div class="tarjeta" style="text-align: center; padding: var(--espacio-xl); grid-column: 1 / -1;">
+      <div class="cargando cargando--activo" style="position: static; height: 60px;"></div>
+      <p>Cargando asignaturas y cálculo de avance...</p>
+    </div>
+  </div>
+</main>
+<script type="module" src="/js/modulos/asignaturas.js"></script></body></html>

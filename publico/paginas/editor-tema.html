@@ -1,0 +1,240 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ficha del Tema y Glosario</title>
+<link rel="stylesheet" href="/css/tokens.css"><link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/componentes.css">
+<link rel="stylesheet" href="/css/modulos/editor-tema.css"></head>
+<body><div id="plantilla"></div><main id="contenido" class="contenedor">
+  <div class="editor-tema-volver">
+    <a href="/paginas/editor-contenidos.html" id="enlace-volver" class="btn btn--texto">
+      ← Volver al editor de contenidos
+    </a>
+  </div>
+
+  <header class="editor-tema-cabecera">
+    <div>
+      <span id="tema-unidad-nombre" class="editor-tema-cabecera__miga">Cargando unidad...</span>
+      <h1 id="tema-titulo-cabecera" class="editor-tema-cabecera__titulo">Ficha del Tema</h1>
+    </div>
+    <div class="editor-tema-cabecera__acciones">
+      <span id="badge-estado-tema" class="insignia" style="margin-right: var(--espacio-s);">Borrador</span>
+      <button type="button" id="btn-guardar-ficha" class="btn btn--primario">
+        Guardar Ficha
+      </button>
+    </div>
+  </header>
+
+  <div id="tema-cargando" class="tarjeta" style="text-align: center; padding: var(--espacio-xxl);">
+    <div class="cargando cargando--activo" style="position: static; height: 60px;"></div>
+    <p>Cargando información del tema...</p>
+  </div>
+
+  <div id="tema-formulario-contenedor" style="display: none;">
+    <!-- SECCIÓN 1: FICHA PEDAGÓGICA -->
+    <form id="form-ficha-tema" onsubmit="return false;" class="tarjeta seccion-ficha">
+      <h2 class="tarjeta__titulo" style="border-bottom: 1px solid var(--color-borde); padding-bottom: var(--espacio-s);">
+        Ficha Pedagógica del Tema
+      </h2>
+
+      <div class="editor-fila-campos">
+        <div class="campo" style="flex: 2;">
+          <label for="campo-titulo">Título del tema *</label>
+          <input type="text" id="campo-titulo" required placeholder="Título descriptivo del tema">
+        </div>
+
+        <div class="campo" style="flex: 1;">
+          <label for="campo-dificultad">Nivel de dificultad *</label>
+          <select id="campo-dificultad">
+            <option value="basico">Básico</option>
+            <option value="intermedio">Intermedio</option>
+            <option value="avanzado">Avanzado</option>
+          </select>
+        </div>
+
+        <div class="campo" style="flex: 1;">
+          <label for="campo-estado">Estado de publicación *</label>
+          <select id="campo-estado">
+            <option value="borrador">Borrador</option>
+            <option value="publicado">Publicado</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Resumen con contador -->
+      <div class="campo">
+        <div class="campo-etiqueta-con-meta">
+          <label for="campo-resumen">Resumen conceptual *</label>
+          <div class="meta-contador">
+            <span id="contador-palabras-resumen">0 palabras</span>
+            <span class="meta-recomendacion">(Recomendado: 300 a 800 palabras)</span>
+          </div>
+        </div>
+        <textarea id="campo-resumen" rows="8" placeholder="Escribe el resumen conceptual estructurado. Admite negritas (**texto**), listas con guion (- elemento) y párrafos."></textarea>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: var(--espacio-xs);">
+          <span style="font-size: var(--tamano-xs); color: var(--color-texto-suave);">Admite formato básico (**negrita**, listas con - )</span>
+          <button type="button" id="btn-toggle-preview" class="btn btn--pequeno btn--secundario">
+            Ver vista previa
+          </button>
+        </div>
+        <div id="resumen-preview" class="resumen-caja-preview" style="display: none;" aria-live="polite"></div>
+      </div>
+
+      <!-- Listas dinámicas -->
+      <div class="campo-lista-dinamica">
+        <div class="campo-lista-dinamica__cabecera">
+          <div>
+            <label class="campo-lista-label">Objetivos de aprendizaje</label>
+            <span class="campo-lista-desc">Metas cognitivas que el estudiante alcanzará</span>
+          </div>
+          <button type="button" id="btn-agregar-objetivo" class="btn btn--pequeno btn--secundario">+ Agregar objetivo</button>
+        </div>
+        <div id="contenedor-objetivos" class="lista-items-contenedor"></div>
+      </div>
+
+      <div class="campo-lista-dinamica">
+        <div class="campo-lista-dinamica__cabecera">
+          <div>
+            <label class="campo-lista-label">Ejemplos prácticos y aplicaciones</label>
+            <span class="campo-lista-desc">Casos reales o situaciones de aplicación del conocimiento</span>
+          </div>
+          <button type="button" id="btn-agregar-ejemplo" class="btn btn--pequeno btn--secundario">+ Agregar ejemplo</button>
+        </div>
+        <div id="contenedor-ejemplos" class="lista-items-contenedor"></div>
+      </div>
+
+      <div class="campo-lista-dinamica">
+        <div class="campo-lista-dinamica__cabecera">
+          <div>
+            <label class="campo-lista-label">Errores frecuentes y concepciones erróneas</label>
+            <span class="campo-lista-desc">Mitos comunes o interpretaciones equivocadas a aclarar</span>
+          </div>
+          <button type="button" id="btn-agregar-error" class="btn btn--pequeno btn--secundario">+ Agregar error</button>
+        </div>
+        <div id="contenedor-errores" class="lista-items-contenedor"></div>
+      </div>
+
+      <div class="campo-lista-dinamica">
+        <div class="campo-lista-dinamica__cabecera">
+          <div>
+            <label class="campo-lista-label">Preguntas guía de reflexión</label>
+            <span class="campo-lista-desc">Interrogantes que promueven la indagación socrática</span>
+          </div>
+          <button type="button" id="btn-agregar-pregunta" class="btn btn--pequeno btn--secundario">+ Agregar pregunta</button>
+        </div>
+        <div id="contenedor-preguntas" class="lista-items-contenedor"></div>
+      </div>
+
+      <!-- Recursos didácticos -->
+      <div class="campo-lista-dinamica">
+        <div class="campo-lista-dinamica__cabecera">
+          <div>
+            <label class="campo-lista-label">Recursos didácticos asociados</label>
+            <span class="campo-lista-desc">Lecturas, videos, audios, imágenes o enlaces de apoyo</span>
+          </div>
+          <button type="button" id="btn-agregar-recurso" class="btn btn--pequeno btn--secundario">+ Agregar recurso</button>
+        </div>
+        <div id="contenedor-recursos" class="lista-items-contenedor"></div>
+      </div>
+
+      <!-- Palabras clave y Fuentes -->
+      <div class="editor-fila-campos">
+        <div class="campo" style="flex: 1;">
+          <label for="campo-palabras-clave">Palabras clave</label>
+          <input type="text" id="campo-palabras-clave" placeholder="Separadas por comas (ej. cortex, ritmo, inhibicion)">
+          <span style="font-size: var(--tamano-xs); color: var(--color-texto-suave);">Escribe las etiquetas separadas por comas.</span>
+        </div>
+
+        <div class="campo" style="flex: 1;">
+          <label for="campo-fuentes">Fuentes bibliográficas y referencias</label>
+          <textarea id="campo-fuentes" rows="3" placeholder="Autores, año y referencias académicas del tema..."></textarea>
+        </div>
+      </div>
+    </form>
+
+    <!-- SECCIÓN 2: GLOSARIO DEL TEMA -->
+    <section class="tarjeta seccion-glosario" aria-labelledby="titulo-glosario">
+      <div class="glosario-cabecera">
+        <div>
+          <h2 id="titulo-glosario" class="tarjeta__titulo" style="margin: 0;">Glosario del Tema</h2>
+          <p class="tarjeta__subtitulo" style="margin: 0;">Términos clave para el aprendizaje y los juegos educativos gamificados</p>
+        </div>
+        <div class="glosario-cabecera__acciones">
+          <button type="button" id="btn-generar-ia" class="btn btn--secundario">
+            ✨ Generar con IA
+          </button>
+          <button type="button" id="btn-agregar-termino" class="btn btn--primario">
+            + Agregar Término
+          </button>
+        </div>
+      </div>
+
+      <!-- Indicadores de Apto para juegos -->
+      <div class="glosario-metricas" aria-live="polite">
+        <div class="glosario-metrica-item">
+          <span class="glosario-metrica-etiqueta">Total términos:</span>
+          <span id="metrica-total-terminos" class="glosario-metrica-valor">0</span>
+        </div>
+        <div class="glosario-metrica-item">
+          <span class="glosario-metrica-etiqueta">De 6 letras:</span>
+          <span id="metrica-seis-letras" class="glosario-metrica-valor">0</span>
+        </div>
+        <div id="indicador-apto-juegos" class="glosario-indicador-badge">
+          <!-- Dinámico -->
+        </div>
+      </div>
+
+      <!-- Propuestas de la IA pendientes de aprobación docente -->
+      <section id="propuestas-ia" class="propuestas-ia" hidden aria-labelledby="titulo-propuestas-ia">
+        <div class="propuestas-ia__cabecera">
+          <div>
+            <h3 id="titulo-propuestas-ia" class="propuestas-ia__titulo">Propuestas de la IA</h3>
+            <p class="propuestas-ia__nota">Revisa y edita cada término. Solo se guardan los marcados. Los repetidos aparecen desmarcados.</p>
+          </div>
+          <p id="propuestas-ia-contador" class="propuestas-ia__contador" aria-live="polite"></p>
+        </div>
+        <div class="tabla-contenedor" tabindex="0" aria-label="Términos propuestos por la IA">
+          <table class="tabla propuestas-ia__tabla">
+            <caption class="sr-only">Términos propuestos por la IA. Cada fila tiene una casilla para incluirla al aprobar.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Incluir</th>
+                <th scope="col">Término</th>
+                <th scope="col">Definición (máx. 25 palabras)</th>
+                <th scope="col">Pista (máx. 10 palabras)</th>
+                <th scope="col">Retroalimentación</th>
+              </tr>
+            </thead>
+            <tbody id="propuestas-ia-cuerpo"></tbody>
+          </table>
+        </div>
+        <div class="propuestas-ia__acciones">
+          <button type="button" id="btn-aprobar-ia" class="btn btn--primario">Aprobar seleccionados</button>
+          <button type="button" id="btn-descartar-ia" class="btn btn--secundario">Descartar propuestas</button>
+        </div>
+      </section>
+
+      <!-- Tabla de términos -->
+      <div class="tabla-contenedor" tabindex="0" aria-label="Tabla de términos del glosario">
+        <table class="tabla">
+          <thead>
+            <tr>
+              <th scope="col" style="min-width: 120px;">Término</th>
+              <th scope="col">Definición (máx 25 pal.)</th>
+              <th scope="col">Pista (máx 10 pal.)</th>
+              <th scope="col">Retroalimentación</th>
+              <th scope="col" style="text-align: right; min-width: 140px;">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-glosario-cuerpo">
+            <tr>
+              <td colspan="5" style="text-align: center; color: var(--color-texto-suave); padding: var(--espacio-xl);">
+                Cargando términos del glosario...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</main>
+<script type="module" src="/js/modulos/editor-tema.js"></script></body></html>

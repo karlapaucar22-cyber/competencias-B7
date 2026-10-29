@@ -1,0 +1,32 @@
+[
+  {
+    "id": "for_000001",
+    "fecha": "2026-10-26T12:00:00.000Z",
+    "asignaturaId": "asi_000001",
+    "temaId": "tem_000005",
+    "titulo": "Galería NeuroRitmo",
+    "texto": "**Tema de discusión:** ¿Cómo diseñarías una actividad musical para fortalecer la atención, la memoria o la autorregulación en el aula?\n\nEsta actividad es **opcional**. Comparte una microactividad de 5 a 10 minutos e incluye: objetivo, recurso sonoro o silencio, secuencia, forma de comprobar el aprendizaje y justificación de tus decisiones pedagógicas. Después usa «Comentar esta propuesta» para responder constructivamente a otra persona: señala una fortaleza y una mejora posible.\n\nPublica únicamente una versión que autorices para el foro. Tu borrador y tu entrega privada de Misión 3 no se copian ni se publican automáticamente. Evita datos personales.\n\nLa insignia complementaria **Eco colaborativo** no suma puntos y solo se verifica cuando has publicado una propuesta y un comentario dirigido a la propuesta de otra persona, ambos con al menos 15 palabras. La pertinencia y el respeto siguen sujetos a moderación.",
+    "autorId": "usu_000002",
+    "autorNombre": "Felipe Arévalo",
+    "autorRol": "docente",
+    "fijado": true,
+    "cerrado": false,
+    "oculto": false,
+    "ultimoMovimiento": "2026-10-26T12:00:00.000Z"
+  },
+  {
+    "id": "for_000002",
+    "fecha": "2026-10-28T15:00:00.000Z",
+    "asignaturaId": "asi_000001",
+    "temaId": null,
+    "titulo": "Foro general: Neuroeducación, música y aprendizaje",
+    "texto": "**Pregunta inicial:** ¿De qué manera influye la música en la atención, la memoria y la autorregulación emocional durante el aprendizaje?\n\nComparte una explicación fundamentada y, si lo deseas, un ejemplo educativo de lectura, estudio o trabajo en el aula. Considera la demanda de la tarea, las diferencias individuales y la posibilidad de elegir música, una pausa sonora o silencio. Evita presentar la música como una mejora universal.\n\nLee las participaciones de tus compañeros y usa «Responder a esta participación» para ampliar una idea, formular una pregunta o aportar una sugerencia respetuosa. La docente puede orientar el diálogo y destacar respuestas que ayuden a relacionar los contenidos centrales de NeuroRitmo Digital.\n\nNo incluyas datos personales ni compartas trabajos privados sin autorización. Las publicaciones están sujetas a las reglas de convivencia y moderación de la plataforma.",
+    "autorId": "usu_000003",
+    "autorNombre": "Karla Paucar",
+    "autorRol": "docente",
+    "fijado": true,
+    "cerrado": false,
+    "oculto": false,
+    "ultimoMovimiento": "2026-10-28T15:00:00.000Z"
+  }
+]

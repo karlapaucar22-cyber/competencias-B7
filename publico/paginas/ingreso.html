@@ -1,0 +1,41 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iniciar Sesión</title>
+<link rel="stylesheet" href="/css/tokens.css"><link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/componentes.css">
+<link rel="stylesheet" href="/css/modulos/ingreso.css"></head>
+<body><div id="plantilla"></div><main id="contenido" class="contenedor">
+  <div class="auth-contenedor">
+    <div class="auth-tarjeta">
+      <header class="auth-tarjeta__encabezado">
+        <h1 class="auth-tarjeta__titulo">Iniciar Sesión</h1>
+        <p class="auth-tarjeta__subtitulo">Ingresa tus credenciales para acceder a la plataforma</p>
+      </header>
+
+      <div id="mensaje-global" class="oculto" role="alert"></div>
+
+      <form id="formulario-ingreso" novalidate>
+        <div class="campo">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" name="correo" autocomplete="email" placeholder="ejemplo@unemi.edu.ec" required>
+          <span id="error-correo" class="campo__error" aria-live="polite"></span>
+        </div>
+
+        <div class="campo">
+          <label for="clave">Contraseña</label>
+          <input type="password" id="clave" name="clave" autocomplete="current-password" placeholder="Tu contraseña" required>
+          <span id="error-clave" class="campo__error" aria-live="polite"></span>
+        </div>
+
+        <button type="submit" id="btn-ingresar" class="btn btn--primario" style="width: 100%; margin-top: var(--espacio-s);">
+          Iniciar Sesión
+        </button>
+      </form>
+
+      <footer class="auth-tarjeta__pie">
+        ¿Aún no tienes una cuenta? <a href="/paginas/registro.html">Regístrate como estudiante</a>
+      </footer>
+    </div>
+  </div>
+</main>
+<script type="module" src="/js/modulos/ingreso.js"></script></body></html>

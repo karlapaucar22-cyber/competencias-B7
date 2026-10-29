@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noticias y Novedades · NeuroRitmo Digital</title>
+<link rel="stylesheet" href="/css/tokens.css"><link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/componentes.css">
+<link rel="stylesheet" href="/css/modulos/noticias.css"></head>
+<body><div id="plantilla"></div><main id="contenido" class="contenedor">
+  <header class="noticias-cabecera">
+    <div>
+      <h1>Noticias y Novedades</h1>
+      <p class="tarjeta__subtitulo">Información institucional, avances pedagógicos, eventos y logros de nuestra comunidad</p>
+    </div>
+    <div id="acciones-docente-admin" style="display: none;">
+      <a href="/paginas/editor-noticia.html" class="btn btn--primario">
+        + Nueva Noticia
+      </a>
+    </div>
+  </header>
+
+  <!-- Filtros -->
+  <section class="noticias-filtros" aria-label="Filtros de búsqueda de noticias">
+    <div class="campo noticias-buscador" style="margin-bottom: 0;">
+      <label for="buscar-noticia" class="sr-only">Buscar noticias</label>
+      <input type="search" id="buscar-noticia" placeholder="Buscar por título o contenido...">
+    </div>
+
+    <div class="campo noticias-filtro-cat" style="margin-bottom: 0;">
+      <label for="filtro-categoria" class="sr-only">Filtrar por categoría</label>
+      <select id="filtro-categoria">
+        <option value="">Todas las categorías</option>
+        <option value="Institucional">Institucional</option>
+        <option value="Académica">Académica</option>
+        <option value="Eventos">Eventos</option>
+        <option value="Logros">Logros</option>
+      </select>
+    </div>
+
+    <div class="campo noticias-filtro-tema" style="margin-bottom: 0;">
+      <label for="filtro-tema" class="sr-only">Filtrar por tema</label>
+      <select id="filtro-tema">
+        <option value="">Todos los temas</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- Grid de tarjetas de noticias -->
+  <div id="grid-noticias" class="noticias-grid" aria-live="polite">
+    <div class="tarjeta" style="text-align: center; padding: var(--espacio-xl); grid-column: 1 / -1;">
+      <div class="cargando cargando--activo" style="position: static; height: 60px;"></div>
+      <p>Cargando noticias...</p>
+    </div>
+  </div>
+
+  <!-- Paginación -->
+  <nav class="noticias-paginacion" id="nav-paginacion" aria-label="Paginación de noticias" style="display: none;">
+    <button type="button" id="btn-pagina-anterior" class="btn btn--secundario" disabled>
+      ← Anterior
+    </button>
+    <span id="indicador-pagina" class="paginacion-indicador">Página 1 de 1</span>
+    <button type="button" id="btn-pagina-siguiente" class="btn btn--secundario" disabled>
+      Siguiente →
+    </button>
+  </nav>
+</main>
+<script type="module" src="/js/modulos/noticias.js"></script></body></html>

@@ -1,0 +1,328 @@
+/* publico/css/modulos/panel-docente.css · Panel docente */
+
+.panel-app {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-l);
+}
+
+/* Los hijos flex pueden encogerse: la tabla ancha se desplaza dentro de .tabla-contenedor */
+.panel-app > *,
+.panel-seccion > * {
+  min-width: 0;
+}
+
+.panel-encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--espacio-m);
+  border-bottom: 1px solid var(--color-borde);
+  padding-bottom: var(--espacio-m);
+}
+
+.panel-titulo {
+  font-size: var(--tamano-2xl);
+  font-weight: var(--peso-negrita);
+  margin: 0 0 var(--espacio-xs);
+}
+
+.panel-subtitulo,
+.panel-nota {
+  margin: 0;
+  color: var(--color-texto-suave);
+  font-size: var(--tamano-s);
+}
+
+.panel-controles {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--espacio-s);
+}
+
+.panel-grupo {
+  margin-bottom: 0;
+  min-width: min(100%, 20rem);
+}
+
+/* Resumen del grupo */
+.panel-resumen {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: var(--espacio-m);
+  list-style: none;
+  margin: 0 0 var(--espacio-l);
+  padding: 0;
+}
+
+.panel-resumen__valor {
+  display: block;
+  font-size: var(--tamano-xl);
+  font-weight: var(--peso-extranegrita);
+  color: var(--color-primario);
+}
+
+.panel-resumen__etiqueta {
+  font-size: var(--tamano-s);
+  color: var(--color-texto-suave);
+}
+
+.panel-seccion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
+  margin-bottom: var(--espacio-l);
+}
+
+.panel-seccion-titulo {
+  margin: 0;
+  font-size: var(--tamano-l);
+  color: var(--color-primario);
+}
+
+/* Tabla ordenable */
+.panel-tabla {
+  min-width: 40rem;
+}
+
+.panel-orden {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espacio-xs);
+  min-height: 36px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-weight: var(--peso-seminegrita);
+  cursor: pointer;
+}
+
+.panel-orden::after {
+  content: '↕';
+  color: var(--color-texto-suave);
+  font-size: var(--tamano-xs);
+}
+
+th[aria-sort="ascending"] .panel-orden::after {
+  content: '▲';
+  color: var(--color-primario);
+}
+
+th[aria-sort="descending"] .panel-orden::after {
+  content: '▼';
+  color: var(--color-primario);
+}
+
+.panel-orden:focus-visible,
+.panel-estudiante:focus-visible {
+  outline: 3px solid var(--color-info);
+  outline-offset: 2px;
+}
+
+.panel-estudiante {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-primario);
+  font: inherit;
+  font-weight: var(--peso-seminegrita);
+  text-align: left;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.panel-fila--alerta td {
+  background-color: var(--color-fondo);
+}
+
+.panel-fila--alerta td:first-child {
+  box-shadow: inset 4px 0 0 var(--color-error);
+}
+
+.panel-alerta {
+  color: var(--color-error);
+  font-weight: var(--peso-negrita);
+}
+
+.panel-sin-dato {
+  color: var(--color-texto-suave);
+}
+
+.panel-grafico {
+  position: relative;
+  height: 18rem;
+}
+
+/* Uso del tutor */
+.panel-grafico--tutor {
+  height: 14rem;
+}
+
+.panel-tutor-titulo {
+  margin: var(--espacio-m) 0 var(--espacio-s);
+  font-size: var(--tamano-m);
+  color: var(--color-texto);
+}
+
+/* Modal del estudiante */
+.panel-detalle {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-m);
+}
+
+.panel-detalle__cifras {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+  gap: var(--espacio-s);
+  margin: 0;
+}
+
+.panel-detalle__cifras div {
+  padding: var(--espacio-s);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-m);
+  background-color: var(--color-fondo);
+}
+
+.panel-detalle__cifras dt {
+  font-size: var(--tamano-xs);
+  color: var(--color-texto-suave);
+}
+
+.panel-detalle__cifras dd {
+  margin: 0;
+  font-size: var(--tamano-l);
+  font-weight: var(--peso-negrita);
+  color: var(--color-primario);
+}
+
+.panel-detalle__subtitulo {
+  margin: 0;
+  font-size: var(--tamano-m);
+  color: var(--color-primario);
+}
+
+/* Chip y modal de alertas */
+.panel-chip-alerta {
+  min-height: 32px;
+  border-color: var(--color-error);
+  color: var(--color-error);
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.panel-chip-alerta:hover {
+  background-color: var(--color-fondo);
+}
+
+.panel-chip-alerta:focus-visible {
+  outline: 3px solid var(--color-info);
+  outline-offset: 2px;
+}
+
+.panel-alertas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-s);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.panel-alerta-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--espacio-xs);
+  padding: var(--espacio-s) var(--espacio-m);
+  border: 1px solid var(--color-borde);
+  border-left: 4px solid var(--color-error);
+  border-radius: var(--radio-m);
+}
+
+.panel-alerta-item__cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--espacio-s);
+  width: 100%;
+}
+
+.panel-alerta-item__detalle {
+  margin: 0;
+  font-size: var(--tamano-s);
+}
+
+.panel-apoyo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--espacio-s);
+}
+
+.panel-apoyo__opciones {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-xs);
+  width: 100%;
+  margin: 0;
+  padding: var(--espacio-s) var(--espacio-m);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-m);
+}
+
+.panel-apoyo__opciones legend {
+  font-weight: var(--peso-seminegrita);
+  color: var(--color-primario);
+  padding: 0 var(--espacio-xs);
+}
+
+.panel-apoyo__opcion {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espacio-s);
+  font-size: var(--tamano-s);
+  cursor: pointer;
+}
+
+.panel-apoyo__opcion input {
+  margin-top: 0.2rem;
+  flex: 0 0 auto;
+}
+
+.panel-apoyo__texto {
+  width: 100%;
+  padding: var(--espacio-s) var(--espacio-m);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-m);
+  font-family: inherit;
+  font-size: var(--tamano-s);
+  resize: vertical;
+}
+
+.panel-detalle .tabla-contenedor {
+  margin-bottom: 0;
+  max-height: 18rem;
+  overflow-y: auto;
+}
+
+/* NeuroRitmo en el panel docente (NR-06.4) */
+.panel-lista {
+  margin: 0;
+  padding-left: var(--espacio-l);
+  display: grid;
+  gap: var(--espacio-xs);
+  overflow-wrap: anywhere;
+}
+
+.panel-plazos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--espacio-s);
+}

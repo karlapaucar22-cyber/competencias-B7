@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Actividades Educativas · NeuroRitmo Digital</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/componentes.css">
+  <link rel="stylesheet" href="/css/modulos/actividades.css">
+</head>
+<body>
+  <div id="plantilla"></div>
+  <main id="contenido" class="contenedor">
+    <div class="actividades-app">
+      <nav class="migas-pan" aria-label="Navegación">
+        <ol>
+          <li><a href="/index.html">Inicio</a></li>
+          <li aria-current="page">Actividades</li>
+        </ol>
+      </nav>
+
+      <div class="actividades-app__encabezado">
+        <div>
+          <h1 class="actividades-app__titulo">Actividades y Juegos Educativos</h1>
+          <p class="actividades-app__subtitulo">
+            Explora desafíos didácticos, canciones pedagógicas y juegos interactivos para reforzar tus conocimientos, acumular puntos y desbloquear insignias.
+          </p>
+        </div>
+      </div>
+
+      <div id="contenedorActividades" class="actividades-grid" aria-label="Catálogo de actividades interactivas">
+        <!-- Renderizado dinámicamente desde ACTIVIDADES -->
+      </div>
+    </div>
+  </main>
+  <script type="module" src="/js/modulos/actividades.js"></script>
+</body>
+</html>

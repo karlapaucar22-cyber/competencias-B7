@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hilo del foro · NeuroRitmo Digital</title>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/componentes.css">
+  <link rel="stylesheet" href="/css/modulos/hilo.css">
+</head>
+<body>
+  <div id="plantilla"></div>
+  <main id="contenido" class="contenedor">
+    <div class="hilo-app">
+      <a href="/paginas/foros.html" id="enlaceForos" class="btn btn--texto">← Volver a los foros</a>
+
+      <p id="hiloEstado" class="hilo-nota" role="status">Cargando el hilo...</p>
+
+      <article id="hiloPrincipal" class="hilo-publicacion hilo-publicacion--principal" hidden aria-labelledby="hiloTitulo"></article>
+
+      <section id="seccionRespuestas" hidden aria-labelledby="tituloRespuestas">
+        <h2 id="tituloRespuestas" class="hilo-seccion-titulo">Respuestas</h2>
+        <ol id="listaRespuestas" class="hilo-respuestas"></ol>
+        <nav id="paginacion" class="hilo-paginacion" aria-label="Páginas de respuestas" hidden></nav>
+      </section>
+
+      <section id="seccionResponder" class="tarjeta hilo-responder" hidden aria-labelledby="tituloResponder">
+        <h2 id="tituloResponder" class="hilo-seccion-titulo">Tu respuesta</h2>
+        <p id="hiloCerrado" class="alerta alerta--info" hidden>🔒 Este hilo está cerrado: ya no admite respuestas.</p>
+        <form id="formResponder" novalidate>
+          <div id="respuestaObjetivo" class="alerta alerta--info" role="status" hidden>
+            <span id="respuestaObjetivoTexto"></span>
+            <button type="button" id="cancelarRespuestaObjetivo" class="btn btn--texto btn--sm">Cancelar comentario dirigido</button>
+          </div>
+          <div class="campo">
+            <label for="textoRespuesta" class="sr-only">Escribe tu respuesta</label>
+            <textarea id="textoRespuesta" rows="5" maxlength="5000" placeholder="Escribe tu respuesta…" aria-describedby="contadorRespuesta ayudaRespuesta"></textarea>
+            <span id="contadorRespuesta" class="hilo-contador">0 / 5.000</span>
+            <span id="ayudaRespuesta" class="hilo-nota">Puedes usar **negrita** y listas con "- ". Podrás editarla durante 15 minutos.</span>
+          </div>
+          <button type="submit" class="btn btn--primario" id="btnResponder">Publicar respuesta</button>
+        </form>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="/js/modulos/hilo.js"></script>
+</body>
+</html>

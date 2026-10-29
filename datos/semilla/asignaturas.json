@@ -1,0 +1,16 @@
+[
+  {
+    "id": "asi_000001",
+    "nombre": "FUNDAMENTOS DE NEUROEDUCACIÓN Y DESARROLLO COGNITIVO MUSICAL",
+    "descripcion": "Estudio del impacto de los estímulos sonoros y musicales en el funcionamiento cerebral, funciones ejecutivas y autorregulación del aprendizaje.",
+    "nivel": "POSGRADO",
+    "fecha": "2026-01-15T08:00:00.000Z"
+  },
+  {
+    "id": "asi_000002",
+    "nombre": "COMPETENCIAS DIGITALES Y ESTRATEGIAS TECNOLÓGICAS",
+    "descripcion": "Asignatura de la Maestría en Educación con mención en Docencia e Investigación en Educación Superior (UNEMI). Desarrolla la competencia digital docente para diseñar experiencias de aprendizaje gamificadas, integrar la IA generativa de forma responsable y proyectar recursos educativos digitales accesibles.",
+    "nivel": "POSGRADO",
+    "fecha": "2026-10-25T00:00:00.000Z"
+  }
+]

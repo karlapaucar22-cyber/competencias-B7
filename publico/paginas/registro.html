@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Registro de Estudiante</title>
+<link rel="stylesheet" href="/css/tokens.css"><link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/componentes.css">
+<link rel="stylesheet" href="/css/modulos/registro.css"></head>
+<body><div id="plantilla"></div><main id="contenido" class="contenedor">
+  <div class="auth-contenedor">
+    <div class="auth-tarjeta">
+      <header class="auth-tarjeta__encabezado">
+        <h1 class="auth-tarjeta__titulo">Crear Cuenta</h1>
+        <p class="auth-tarjeta__subtitulo">Regístrate como estudiante para acceder a los contenidos interactivos</p>
+      </header>
+
+      <div id="mensaje-global" class="oculto" role="alert"></div>
+
+      <form id="formulario-registro" novalidate>
+        <div class="grid-auto" style="grid-template-columns: 1fr 1fr; gap: var(--espacio-m); margin-bottom: 0;">
+          <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" autocomplete="given-name" placeholder="Ej. Ana" required>
+            <span id="error-nombre" class="campo__error" aria-live="polite"></span>
+          </div>
+
+          <div class="campo">
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" name="apellido" autocomplete="family-name" placeholder="Ej. Gómez" required>
+            <span id="error-apellido" class="campo__error" aria-live="polite"></span>
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" name="correo" autocomplete="email" placeholder="ejemplo@unemi.edu.ec" required>
+          <span id="error-correo" class="campo__error" aria-live="polite"></span>
+        </div>
+
+        <div class="campo">
+          <label for="clave">Contraseña</label>
+          <input type="password" id="clave" name="clave" autocomplete="new-password" placeholder="Mínimo 8 caracteres (letras y números)" required>
+          <span id="error-clave" class="campo__error" aria-live="polite"></span>
+        </div>
+
+        <div class="casilla-privacidad">
+          <input type="checkbox" id="consentimiento" name="consentimiento" required>
+          <label for="consentimiento">
+            Acepto el <a href="/paginas/privacidad.html" target="_blank" rel="noopener noreferrer">aviso de privacidad</a> y el tratamiento de mis datos de conformidad con la LOPDP.
+          </label>
+        </div>
+        <div style="margin-top: calc(-1 * var(--espacio-s)); margin-bottom: var(--espacio-m);">
+          <span id="error-consentimiento" class="campo__error" aria-live="polite"></span>
+        </div>
+
+        <button type="submit" id="btn-registrar" class="btn btn--primario" style="width: 100%; margin-top: var(--espacio-s);">
+          Crear Cuenta
+        </button>
+      </form>
+
+      <footer class="auth-tarjeta__pie">
+        ¿Ya tienes una cuenta registrada? <a href="/paginas/ingreso.html">Inicia sesión aquí</a>
+      </footer>
+    </div>
+  </div>
+</main>
+<script type="module" src="/js/modulos/registro.js"></script></body></html>
