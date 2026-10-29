@@ -227,7 +227,7 @@ describe('Git: secretos y datos fuera del repositorio', () => {
     const pkg = JSON.parse(leer('package.json'));
     assert.ok(existe('package-lock.json'));
     assert.deepEqual(Object.keys(pkg.dependencies).sort(), ['bcryptjs', 'dotenv', 'express', 'multer']);
-    assert.equal(pkg.scripts.prestart, 'node servidor/semilla.js');
+    assert.equal(pkg.scripts.prestart, 'node despliegue/preparar-render.mjs');
     assert.equal(pkg.scripts.start, 'node servidor/server.js');
     assert.equal(pkg.scripts['crear-admin'], 'node servidor/crear-admin.js');
   });

@@ -9,7 +9,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const CONTENIDOS = ['asignaturas', 'unidades', 'temas', 'glosario', 'canciones', 'simulaciones', 'preguntas', 'insignias'];
+const CONTENIDOS = ['asignaturas', 'distributivo', 'unidades', 'temas', 'glosario', 'canciones', 'simulaciones', 'preguntas', 'insignias'];
 // Campos que apuntan a cuentas de demostración y no existirán en producción
 const CAMPOS_PERSONALES = ['autorId', 'autorNombre', 'docenteId', 'creadoPor', 'actualizadoPor'];
 
@@ -30,7 +30,10 @@ for (const col of CONTENIDOS) {
   const origen = path.join(RAIZ, 'datos', `${col}.json`);
   if (!fs.existsSync(origen)) { console.log(`- ${col}: no existe, se omite`); continue; }
   const lista = JSON.parse(fs.readFileSync(origen, 'utf8'));
-  const limpia = lista.map((r) => Object.fromEntries(Object.entries(r).filter(([k]) => !CAMPOS_PERSONALES.includes(k))));
+  const camposPersonales = col === 'distributivo'
+    ? CAMPOS_PERSONALES.filter((campo) => campo !== 'docenteId')
+    : CAMPOS_PERSONALES;
+  const limpia = lista.map((r) => Object.fromEntries(Object.entries(r).filter(([k]) => !camposPersonales.includes(k))));
   const texto = JSON.stringify(limpia, null, 2);
   for (const m of texto.matchAll(/\/recursos\/subidas\/([\w.-]+)/g)) subidas.add(m[1]);
   fs.writeFileSync(path.join(destino, 'datos', `${col}.json`), texto);

@@ -552,3 +552,11 @@ Ejecutada en el navegador (Edge sin ventana, 360 px) con **estudiante2** y **doc
 - La API privada devuelve ahora exclusivamente `nombre`, `foto` autorizada y `rol` académico. La vista separa Docente y Estudiantes, muestra nueve avatares —iniciales cuando no existe imagen—, ocho estudiantes, buscador y contador, sin correos, teléfonos, contraseñas ni controles administrativos.
 - Se conserva la ortografía del registro existente «Margareth Llive»; no se cambió el nombre legal por la variante «Margareth Ilive» de la solicitud sin una modificación verificada del usuario fuente.
 - `pruebas/nr-08.12-participantes-e2e.mjs` verificó con estudiante la lista completa, roles, contador, búsqueda, bloqueo 403, escritorio y móvil a 360 px sin desbordamiento ni errores de consola. La suite general permanece en 281 pruebas: 279 aprobadas, 0 fallidas y 2 omitidas.
+## NR-09.1 — Sincronización con Render (28 de octubre de 2026)
+
+- Diagnóstico previo en `https://competencias-b7-776n.onrender.com`: 9 usuarios, 2 asignaturas, 2 grupos, 6 unidades, 11 temas y 0 preguntas. Las tres misiones, dos foros, canción, simulación, video y audio sí respondían.
+- Diferencias frente al proyecto local: faltaban Prueba NR028, la matrícula de Felipe y Prueba en NeuroRitmo, el rol estudiantil de Felipe, 1 unidad, 3 temas y 34 preguntas.
+- Respaldo previo autorizado: `datos/respaldos/produccion-2026-10-29T02-20-46-720Z/` (ignorado por Git; contiene solo colecciones que la API administrativa permite consultar y no incluye claves ni tokens).
+- Se preparó una fusión idempotente por identificador: conserva registros existentes, agrega ausentes, une matrículas sin duplicarlas y aplica una sola vez la corrección versionada de usuarios.
+- Prueba aislada: 10 usuarios, 7 unidades, 14 temas, 34 preguntas, Karla Paucar como docente y 8 estudiantes visibles. El progreso sobrevivió a un reinicio y a un segundo checkout usando el mismo disco.
+- Estado: **PENDIENTE DE VERIFICACIÓN EN PRODUCCIÓN** hasta desplegar el commit y configurar un disco persistente con `DISCO=/var/data` en Render.

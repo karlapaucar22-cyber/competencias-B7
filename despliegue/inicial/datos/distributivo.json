@@ -1,0 +1,36 @@
+[
+  {
+    "id": "dis_000001",
+    "asignaturaId": "asi_000001",
+    "paralelo": "A",
+    "periodo": "2026-2027",
+    "docenteId": "usu_000003",
+    "estudiantes": [
+      "usu_000002",
+      "usu_000004",
+      "usu_000005",
+      "usu_000006",
+      "usu_000007",
+      "usu_000008",
+      "usu_000009",
+      "usu_000010"
+    ],
+    "fecha": "2026-01-15T08:00:00.000Z"
+  },
+  {
+    "id": "dis_000002",
+    "asignaturaId": "asi_000002",
+    "paralelo": "A",
+    "periodo": "2026-2027",
+    "docenteId": "usu_000002",
+    "estudiantes": [
+      "usu_000004",
+      "usu_000005",
+      "usu_000006",
+      "usu_000007",
+      "usu_000008",
+      "usu_000009"
+    ],
+    "fecha": "2026-10-25T00:00:00.000Z"
+  }
+]

@@ -35,3 +35,5 @@ El repositorio incluye `render.yaml` y el comando de inicio necesario para recon
 4. Despliega. Render asignará automáticamente la variable `PORT`.
 
 Sin la variable `DISCO`, el servicio usa el sistema de archivos efímero de Render: las cuentas, respuestas y cargas pueden reiniciarse después de un nuevo despliegue. Para conservarlas, configura un disco persistente y define `DISCO` con su ruta absoluta de montaje, por ejemplo `/var/data`.
+
+Para sincronizar un servicio creado manualmente, usa `npm ci` como Build Command y `npm start` como Start Command. El preinicio crea un respaldo, fusiona por identificador los contenidos de `despliegue/inicial/` y conserva los registros existentes. La ruta `/api/estado-despliegue` permite comprobar el commit, la rama y el tipo de almacenamiento sin exponer secretos.
