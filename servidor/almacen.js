@@ -233,6 +233,32 @@ export async function actualizar(col, id, cambios) {
 }
 
 /**
+ * Actualiza un registro a partir de su valor más reciente dentro de la misma cola de escritura.
+ * Evita perder cambios simultáneos en listas anidadas, como una matrícula.
+ */
+export async function actualizarCon(col, id, transformar) {
+  if (typeof transformar !== 'function') throw new Error('La transformación de actualización es obligatoria');
+  const ruta = resolverRutaColeccion(col);
+  return encolarEscritura(ruta, async () => {
+    const lista = await leer(col);
+    const indice = lista.findIndex((registro) => registro.id === id);
+    if (indice === -1) {
+      const err = new Error(`Registro con id "${id}" no encontrado en "${col}"`);
+      err.estado = 404;
+      throw err;
+    }
+    const cambios = await transformar(structuredClone(lista[indice]));
+    if (!cambios || typeof cambios !== 'object' || Array.isArray(cambios)) {
+      throw new Error('La transformación debe devolver un objeto');
+    }
+    const actualizado = { ...lista[indice], ...cambios, id };
+    lista[indice] = actualizado;
+    await escribirSeguro(ruta, JSON.stringify(lista, null, 2));
+    return actualizado;
+  });
+}
+
+/**
  * Elimina un registro de la colección por id.
  */
 export async function eliminar(col, id) {

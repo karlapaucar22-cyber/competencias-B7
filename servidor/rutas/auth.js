@@ -6,6 +6,7 @@ import crypto from 'node:crypto';
 import bcrypt from 'bcryptjs';
 import * as almacen from '../almacen.js';
 import { exigirRol } from '../auth.js';
+import { registrarEstudiante } from '../inscripcion.js';
 
 const router = Router();
 
@@ -94,12 +95,6 @@ router.post('/auth/registro', async (req, res) => {
   }
 
   try {
-    const usuarios = await almacen.leer('usuarios');
-    const yaExiste = usuarios.some((u) => u.correo && u.correo.toLowerCase() === correoNorm);
-    if (yaExiste) {
-      return res.status(400).json({ error: 'El correo electrónico ya se encuentra registrado' });
-    }
-
     const claveHash = await bcrypt.hash(clave, 10);
 
     const nuevoUsuario = {
@@ -116,7 +111,7 @@ router.post('/auth/registro', async (req, res) => {
       }
     };
 
-    const creado = await almacen.agregar('usuarios', nuevoUsuario);
+    const creado = await registrarEstudiante(nuevoUsuario);
 
     res.status(201).json({
       id: creado.id,
@@ -126,7 +121,7 @@ router.post('/auth/registro', async (req, res) => {
       rol: creado.rol
     });
   } catch (err) {
-    res.status(500).json({ error: err.message || 'Error al procesar el registro' });
+    res.status(err.estado || 500).json({ error: err.message || 'Error al procesar el registro' });
   }
 });
 

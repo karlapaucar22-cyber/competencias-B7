@@ -1,6 +1,7 @@
 {
   "titulo": "NeuroRitmo: Misión Cerebro Sonoro",
   "asignaturaId": "asi_000001",
+  "grupoRegistroId": "dis_000001",
   "cancionPrincipalId": "can_000001",
   "narrativa": "Te uniste al equipo de exploradores NeuroRitmo. En el Centro de Estudio Sonoro de la universidad hay estudiantes que no saben cómo usar la música para aprender: algunos se distraen, otros olvidan lo que estudian y otros llegan estresados a sus evaluaciones. Para restablecer el equilibrio, activa las tres estaciones del mapa — Atención, Memoria e Integración pedagógica — superando la misión de cada una.",
   "objetivo": "Al finalizar NeuroRitmo justificarás la selección de una estrategia sonora (música instrumental, pausa sonora o silencio) para una tarea académica concreta, a partir del análisis de la atención, la memoria de trabajo, el control inhibitorio y la autorregulación emocional implicados en ella.",
